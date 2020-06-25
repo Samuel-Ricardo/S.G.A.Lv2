@@ -15,7 +15,7 @@ import java.io.File;
 public class FileManager {
     
     public static final String pcUser = System.getProperty("user.");
-    public static final String defaultFolderWay = System.getProperty("user.documents") + "/Oasis";
+    public static final String defaultFolderWay = System.getProperty("user.home") + "/Documents/Oasis";
     
     public void createFolder(String name){
      
@@ -24,8 +24,11 @@ public class FileManager {
         if(folder.exists()){
             Dialoguer.message(null, "A pasta: "+name+" Já existe. \n\n Caminho: "+folder.getAbsolutePath());
         }else{
-            folder.mkdir();
+            if(folder.mkdirs()){
             Dialoguer.message(null, "A pasta: "+name+" foi criado com sucesso. \n\n Caminho: "+folder.getAbsolutePath());
+            }else{
+                 Dialoguer.message(null, "A pasta: "+name+" nao pode ser criado. \n\n Caminho: "+folder.getAbsolutePath());
+             }
         }
     }
     

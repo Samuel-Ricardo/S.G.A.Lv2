@@ -20,6 +20,8 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         
         controller = new LoginController(this);
+        
+        controller.start();
     }
 
     /**
