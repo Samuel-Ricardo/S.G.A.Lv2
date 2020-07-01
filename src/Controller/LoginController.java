@@ -12,7 +12,8 @@ import DAO.UserDAO;
 import Model.Manager;
 import Model.Student;
 import Model.User;
-import View.Dialoguer;
+import Services.FileManager;
+import Services.Dialoguer;
 import View.Login;
 import View.Start;
 
@@ -27,6 +28,7 @@ public class LoginController {
     private final UserDAO userDAO;
     private final StudentDAO studntDAO;
     private final ManagerDAO managerDAO;
+    private FileManager filemanager;
 
     public LoginController(Login view) {
 
@@ -35,7 +37,7 @@ public class LoginController {
         this.userDAO = new UserDAO();
         this.studntDAO = new StudentDAO();
         this.managerDAO = new ManagerDAO();
-
+        this.filemanager = new FileManager();
     }
 
     public void logInto() {
@@ -87,5 +89,12 @@ public class LoginController {
 
         Start start = new Start();
         start.setVisible(true);
+    }
+
+    public void start() {
+
+        filemanager.createFolder("Images");
+        filemanager.createFolder("Data");
+    
     }
 }

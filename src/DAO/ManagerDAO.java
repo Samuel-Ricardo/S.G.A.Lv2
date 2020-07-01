@@ -215,7 +215,7 @@ public class ManagerDAO {
             connect();
             PreparedStatement statement = null;
             ResultSet result = null;
-            sql = "SELECT * FROM manager_view WHERE manager_password = ? and manager_login = ?;";
+            sql = "SELECT * FROM user_view WHERE user_password = ? and user_login = ?;";
             Manager manager = null;
             
         try {
