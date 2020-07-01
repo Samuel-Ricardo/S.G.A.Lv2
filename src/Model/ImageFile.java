@@ -17,6 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.image.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
@@ -127,6 +128,25 @@ public class ImageFile {
        File search = new File("C:\\Users\\"+PCuser+"\\Documents\\SAGAL\\images\\"+imageName);
        
        return search.exists();
+    }
+    
+    public boolean existByWay(String way) {
+       
+       File search = new File(way);
+       
+       return search.exists();
+    }
+    
+    public static void resizeImage(JLabel jLabel, String way) {
+        
+        ImageIcon img = new ImageIcon(ImageFile.class.getResource(way));
+        
+        jLabel.setIcon(new ImageIcon(img.getImage().getScaledInstance(jLabel.getWidth(), jLabel.getHeight(), java.awt.Image.SCALE_DEFAULT)));
+    }
+    
+    public void resizeImage(JLabel jLabel) {
+        
+        jLabel.setIcon(new ImageIcon(imageSwing.getImage().getScaledInstance(jLabel.getWidth(), jLabel.getHeight(), java.awt.Image.SCALE_DEFAULT)));
     }
     
     public byte[] getBytes() {

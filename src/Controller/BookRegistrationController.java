@@ -8,7 +8,10 @@ package Controller;
 import Controller.Helper.BookRegistrationHelper;
 import DAO.BookDAO;
 import Model.Book;
+import Model.ImageFile;
+import Services.Dialoguer;
 import View.BookRegistrationView;
+import javax.swing.JLabel;
 
 /**
  *
@@ -16,27 +19,39 @@ import View.BookRegistrationView;
  */
 public class BookRegistrationController {
 
-    private final View.BookRegistrationView BRV;
-    private final BookDAO bookdao;
-    private final BookRegistrationHelper bookregistrationhelper;
-
-    public BookRegistrationController() {
-        this.BRV = new BookRegistrationView();
-        this.bookdao = new BookDAO();
-        this.bookregistrationhelper = new BookRegistrationHelper();
+    private final BookRegistrationView view;
+    private final BookDAO bookDao;
+    private final BookRegistrationHelper helper;
+    
+    public BookRegistrationController(BookRegistrationView view) {
+        this.view = view;
+        this.bookDao = new BookDAO();
+        this.helper = new BookRegistrationHelper(view);
     }
     
-    public void NewNook(){
-     String Author = bookregistrationhelper.getAuthor();
-     String Genre = bookregistrationhelper.getGenre();
-     String Name = bookregistrationhelper.getName();
-     String Publisher = bookregistrationhelper.getPublisher();
+    public void NewBook(){
+        
+     String Author = helper.getAuthor();
+     String Genre = helper.getGenre();
+     String Name = helper.getName();
+     String Publisher = helper.getPublisher();
         Book book = null;
      
-     bookdao.insert(book);
+     bookDao.insert(book);
      
      if (book != null){
        
      }
+    }
+
+    public void resize(JLabel jLabelImage) {
+
+        ImageFile.resizeImage(jLabelImage, "/View/Images/icons8-no-image-64px.png");
+    }
+
+    public void start() {
+        
+      
+       
     }
 }

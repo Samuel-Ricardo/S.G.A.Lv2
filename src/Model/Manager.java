@@ -14,11 +14,9 @@ import java.io.InputStream;
 public class Manager extends User implements Model.Interface.User{
     
     private String school;
-
-
     
     public Manager() {
-        super.perfilImage = new ImageFile("");
+       
     }
 
     public String getSchool() {
