@@ -1,7 +1,7 @@
 package View;
 
 import javax.swing.JOptionPane;
-import View.CadLivros;
+import View.BookRegistrationView;
 
 public class Start extends javax.swing.JFrame {
 
@@ -35,6 +35,7 @@ public class Start extends javax.swing.JFrame {
         jMenu5.setText("jMenu5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Oasis - Inicio");
 
         Desktop.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -48,6 +49,8 @@ public class Start extends javax.swing.JFrame {
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 669, Short.MAX_VALUE)
         );
+
+        Sair.setToolTipText("");
 
         jMenu4.setText("Cadastros");
 
@@ -174,7 +177,7 @@ public class Start extends javax.swing.JFrame {
     }//GEN-LAST:event_menIntSairActionPerformed
 
     private void menIntCadLivrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menIntCadLivrosActionPerformed
-       CadLivros cadlivros = new CadLivros();
+       BookRegistrationView cadlivros = new BookRegistrationView();
        cadlivros.setVisible(true);
        Desktop.add(cadlivros);
     }//GEN-LAST:event_menIntCadLivrosActionPerformed

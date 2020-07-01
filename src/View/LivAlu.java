@@ -56,6 +56,8 @@ private void pesquisar_cliente() {
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
+        setResizable(true);
+        setTitle("Oasis - Livros Alugados");
 
         jButton1.setText("Livro Devolvido!");
 

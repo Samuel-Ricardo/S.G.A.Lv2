@@ -37,6 +37,7 @@ public class LivDisp extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
+        setTitle("Oásis - Livros Disponíveis ");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

@@ -40,6 +40,7 @@ public class Login extends javax.swing.JFrame {
         lblConexao = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Oasis - Login");
 
         jLabel1.setText("Loguin:");
 

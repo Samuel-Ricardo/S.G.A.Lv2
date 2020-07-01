@@ -212,6 +212,7 @@ public class CadCliente extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
+        setTitle("Oasis - Cadastros de Clientes");
         setPreferredSize(new java.awt.Dimension(600, 108));
 
         jLabel1.setText("Id Cliente:");

@@ -13,6 +13,8 @@
     <Property name="iconifiable" type="boolean" value="true"/>
     <Property name="maximizable" type="boolean" value="true"/>
     <Property name="resizable" type="boolean" value="true"/>
+    <Property name="title" type="java.lang.String" value="Oasis - Cad&#xe1;stro de L&#xed;vros"/>
+    <Property name="toolTipText" type="java.lang.String" value=""/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -40,7 +42,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtNomeLivro" min="-2" pref="310" max="-2" attributes="0"/>
+                              <Component id="txtBookName" min="-2" pref="310" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
@@ -48,17 +50,19 @@
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Component id="jLabel4" min="-2" pref="84" max="-2" attributes="0"/>
                                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="txtGeneroLivro" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
-                                          <Component id="txtEditoraLivro" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
+                                          <Component id="txtBookGenre" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
+                                          <Component id="txtBookPublisher" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
+                                          <Component id="jsBookStok" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtAutorLivro" min="-2" pref="141" max="-2" attributes="0"/>
+                                      <Component id="txtBookAuthor" min="-2" pref="141" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="169" pref="169" max="-2" attributes="0"/>
@@ -67,16 +71,16 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-                      <Component id="btnCadastrar" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnRegisterBook" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnProcurar" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnSearchBook" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnAlterar" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnUpdateBook" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnDeletar" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnDeleteBook" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="32" max="32767" attributes="0"/>
+              <EmptySpace pref="13" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -86,31 +90,36 @@
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                  <Component id="txtNomeLivro" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtBookName" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                  <Component id="txtAutorLivro" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtBookAuthor" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                  <Component id="txtEditoraLivro" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtBookPublisher" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel4" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                  <Component id="txtGeneroLivro" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtBookGenre" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnCadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnProcurar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnAlterar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnDeletar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jsBookStok" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="76" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnRegisterBook" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSearchBook" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnUpdateBook" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnDeleteBook" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="54" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -136,45 +145,55 @@
         <Property name="text" type="java.lang.String" value="Genero do  Livro:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtNomeLivro">
+    <Component class="javax.swing.JTextField" name="txtBookName">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtAutorLivro">
+    <Component class="javax.swing.JTextField" name="txtBookAuthor">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtBookAuthorActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtEditoraLivro">
+    <Component class="javax.swing.JTextField" name="txtBookPublisher">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtGeneroLivro">
+    <Component class="javax.swing.JTextField" name="txtBookGenre">
     </Component>
-    <Component class="javax.swing.JButton" name="btnCadastrar">
+    <Component class="javax.swing.JButton" name="btnRegisterBook">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cadastrar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastrarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegisterBookActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnProcurar">
+    <Component class="javax.swing.JButton" name="btnSearchBook">
       <Properties>
         <Property name="text" type="java.lang.String" value="Procurar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProcurarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchBookActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnAlterar">
+    <Component class="javax.swing.JButton" name="btnUpdateBook">
       <Properties>
         <Property name="text" type="java.lang.String" value="Alterar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAlterarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateBookActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnDeletar">
+    <Component class="javax.swing.JButton" name="btnDeleteBook">
       <Properties>
         <Property name="text" type="java.lang.String" value="Deletar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeletarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteBookActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Quantidade de livros:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="jsBookStok">
     </Component>
   </SubComponents>
 </Form>

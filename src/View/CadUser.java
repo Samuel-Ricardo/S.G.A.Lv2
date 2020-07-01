@@ -163,7 +163,7 @@ public class CadUser extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setTitle("S.G.A.L - Cadastro de Usuários");
+        setTitle("Oasis - Cadastro de Usuários");
 
         jLabel1.setText("ID do Usuário:");
 
