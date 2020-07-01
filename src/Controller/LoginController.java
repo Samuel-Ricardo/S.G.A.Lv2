@@ -13,7 +13,7 @@ import Model.Manager;
 import Model.Student;
 import Model.User;
 import Services.FileManager;
-import View.Dialoguer;
+import Services.Dialoguer;
 import View.Login;
 import View.Start;
 
