@@ -94,6 +94,7 @@ public class LoginController {
     public void start() {
 
         filemanager.createFolder("Images");
+        filemanager.createFolder("Data");
     
     }
 }
