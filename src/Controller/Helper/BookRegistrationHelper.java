@@ -35,4 +35,8 @@ public class BookRegistrationHelper {
         return view.gettxtBookPublisher().getText();
     }
 
+    public void fillFormatedText() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

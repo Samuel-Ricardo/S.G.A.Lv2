@@ -9,8 +9,10 @@ import Controller.Helper.BookRegistrationHelper;
 import DAO.BookDAO;
 import Model.Book;
 import Model.ImageFile;
+import Model.Time;
 import Services.Dialoguer;
 import View.BookRegistrationView;
+import java.util.Date;
 import javax.swing.JLabel;
 
 /**
@@ -51,7 +53,10 @@ public class BookRegistrationController {
 
     public void start() {
         
-      
-       
+        Date date = new Date();
+        
+        String string = Time.getDateFormat().format(date);
+        
+      view.getjFormattedTextFieldAcquisition().setText(string);  
     }
 }
