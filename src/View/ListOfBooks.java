@@ -11,12 +11,12 @@ import java.awt.Desktop;
  *
  * @author hylan
  */
-public class LivDisp extends javax.swing.JInternalFrame {
+public class ListOfBooks extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form LivDis
      */
-    public LivDisp() {
+    public ListOfBooks() {
         initComponents();
     }
 

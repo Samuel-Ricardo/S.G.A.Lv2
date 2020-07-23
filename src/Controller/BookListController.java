@@ -11,4 +11,9 @@ package Controller;
  */
 public class BookListController {
     
+    private final Book view;
+    private final BookDAO bookDao;
+  //  private final BookRegistrationHelper helper;
+    
+
 }

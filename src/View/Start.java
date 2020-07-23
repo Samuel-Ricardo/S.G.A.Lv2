@@ -201,7 +201,7 @@ public class Start extends javax.swing.JFrame {
     }//GEN-LAST:event_menIntLivAlugadosActionPerformed
 
     private void menIntLivDisponíveisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menIntLivDisponíveisActionPerformed
-        LivDisp livrosDisponiveis = new LivDisp();
+        ListOfBooks livrosDisponiveis = new ListOfBooks();
         livrosDisponiveis.setVisible(true);
         Desktop.add(livrosDisponiveis);
     }//GEN-LAST:event_menIntLivDisponíveisActionPerformed
