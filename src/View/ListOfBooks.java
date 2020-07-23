@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controller.BookListController;
 import java.awt.Desktop;
 
 /**
@@ -16,8 +17,15 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
     /**
      * Creates new form LivDis
      */
+    
+    private final BookListController controller; 
+    
     public ListOfBooks() {
         initComponents();
+        
+        controller = new BookListController(this);
+        
+        controller.start();
     }
 
     /**

@@ -7,7 +7,9 @@ package Controller;
 
 import Controller.Helper.BookListHelper;
 import DAO.BookDAO;
+import Model.Book;
 import View.ListOfBooks;
+import java.util.ArrayList;
 
 /**
  *
@@ -19,10 +21,20 @@ public class BookListController {
     private final BookDAO bookDao;
     private final BookListHelper helper;
 
-    public BookListController(ListOfBooks view, BookDAO bookDao, BookListHelper helper) {
+    public BookListController(ListOfBooks view) {
         this.view = view;
-        this.bookDao = bookDao;
-        this.helper = helper;
+        this.bookDao = new BookDAO();
+        this.helper = new BookListHelper(view);
+    }
+
+    public void start() {
+    
+        ArrayList<Book> books = (ArrayList<Book>) bookDao.selectAll();
+        
+        for (Book book : books) {
+            
+            helper.setBookOnList(book);
+        }
     }
     
     

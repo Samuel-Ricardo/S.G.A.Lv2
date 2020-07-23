@@ -5,6 +5,7 @@
  */
 package Controller.Helper;
 
+import Model.Book;
 import View.ListOfBooks;
 
 /**
@@ -17,6 +18,10 @@ public class BookListHelper {
 
     public BookListHelper(ListOfBooks view) {
         this.view = view;
+    }
+
+    public void setBookOnList(Book book) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

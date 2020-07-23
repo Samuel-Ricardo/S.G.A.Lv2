@@ -61,7 +61,6 @@ public class BookPane extends JPanel{
         this.add(name);
         
        name.setText(book.getName());
-       name.setAlignmentX();
         
     }
     
