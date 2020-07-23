@@ -5,15 +5,26 @@
  */
 package Controller;
 
+import Controller.Helper.BookListHelper;
+import DAO.BookDAO;
+import View.ListOfBooks;
+
 /**
  *
  * @author Samuel
  */
 public class BookListController {
     
-    private final Book view;
+    private final ListOfBooks view;
     private final BookDAO bookDao;
-  //  private final BookRegistrationHelper helper;
-    
+    private final BookListHelper helper;
 
+    public BookListController(ListOfBooks view, BookDAO bookDao, BookListHelper helper) {
+        this.view = view;
+        this.bookDao = bookDao;
+        this.helper = helper;
+    }
+    
+    
+    
 }
