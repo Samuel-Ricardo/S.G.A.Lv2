@@ -5,7 +5,9 @@
  */
 package Controller.Helper;
 
+import Model.Time;
 import View.BookRegistrationView;
+import java.util.Date;
 
 /**
  *
@@ -42,6 +44,15 @@ public class BookRegistrationHelper {
     public int getStock() {
    
        return (int) view.getJsBookStok().getValue();
+    }
+
+    public java.sql.Date getAcquiredDate() {
+       
+    String stringDate = view.getjFormattedTextFieldAcquisition().getText();
+    
+    Time time = new Time(stringDate);
+    
+    return time.getDateSQL();
     }
 
 }

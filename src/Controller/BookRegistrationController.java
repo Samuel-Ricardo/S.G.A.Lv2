@@ -13,6 +13,7 @@ import Model.Time;
 import View.BookRegistrationView;
 import java.util.Date;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -39,10 +40,18 @@ public class BookRegistrationController {
      String Publisher = helper.getPublisher();
         Book book = null;
      
-     bookDao.insert(book);
+        java.sql.Date acquired = helper.getAcquiredDate();   
+        
+        book.setAcquired(acquired);
+        book.setAuthor(Author);
+        book.setGenre(Genre);
+        book.setName(Name);
+        book.setPublisher(Publisher);
+        book.setStock(stock);
      
-     if (book != null){
+     if (bookDao.insert(book)){
        
+         JOptionPane.showMessageDialog(view, "O livro: "+book.getName()+", foi salvo com sucesso");
      }
     }
 
