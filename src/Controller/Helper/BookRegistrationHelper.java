@@ -39,4 +39,9 @@ public class BookRegistrationHelper {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    public int getStock() {
+   
+       return (int) view.getJsBookStok().getValue();
+    }
+
 }

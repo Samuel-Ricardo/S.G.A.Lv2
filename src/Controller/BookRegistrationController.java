@@ -10,7 +10,6 @@ import DAO.BookDAO;
 import Model.Book;
 import Model.ImageFile;
 import Model.Time;
-import Services.Dialoguer;
 import View.BookRegistrationView;
 import java.util.Date;
 import javax.swing.JLabel;
@@ -36,6 +35,7 @@ public class BookRegistrationController {
      String Author = helper.getAuthor();
      String Genre = helper.getGenre();
      String Name = helper.getName();
+     int stock = helper.getStock();
      String Publisher = helper.getPublisher();
         Book book = null;
      
