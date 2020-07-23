@@ -31,16 +31,19 @@ public class BookRegistrationController {
         this.helper = new BookRegistrationHelper(view);
     }
     
-    public void NewBook(){
+    public void newBook(){
         
      String Author = helper.getAuthor();
      String Genre = helper.getGenre();
      String Name = helper.getName();
      int stock = helper.getStock();
      String Publisher = helper.getPublisher();
-        Book book = null;
      
-        java.sql.Date acquired = helper.getAcquiredDate();   
+        Book book = new Book();
+     
+        Time acquired = helper.getAcquiredDate();   
+        
+        System.out.println("deate         "+acquired.getOnlyDate());
         
         book.setAcquired(acquired);
         book.setAuthor(Author);
@@ -52,6 +55,9 @@ public class BookRegistrationController {
      if (bookDao.insert(book)){
        
          JOptionPane.showMessageDialog(view, "O livro: "+book.getName()+", foi salvo com sucesso");
+         
+     }else{
+         JOptionPane.showMessageDialog(view, "Erro ao salvar o livro: "+book.getName());
      }
     }
 

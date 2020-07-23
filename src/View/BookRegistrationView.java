@@ -218,7 +218,7 @@ public class BookRegistrationView extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegisterBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterBookActionPerformed
-
+        controller.newBook();
     }//GEN-LAST:event_btnRegisterBookActionPerformed
 
     private void btnSearchBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchBookActionPerformed

@@ -58,6 +58,8 @@ public class BookPane extends JPanel{
 
     public void load() {
        
+        this.setSize(184, 258);
+        
         this.add(name);
         
        name.setText(book.getName());

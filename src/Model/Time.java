@@ -23,6 +23,12 @@ import java.util.logging.Logger;
  */
 public class Time {
 
+    public static java.sql.Date stringTODateSQL(String stringDate) {
+   
+        
+    
+    }
+
     private Date date;
     private java.sql.Date dateSQL;
     private LocalDate localDate;
@@ -85,11 +91,11 @@ public class Time {
 
         try {
             
-            this.date = Time.defaultDate.parse(dateString);
+            this.date = Time.dateFormat.parse(dateString);
             this.dateSQL = dateToSqlDate(date);
             this.localDateTime = dateToLocalDateTime(date);
             this.localDate = dateToLocalDate(date);
-            this.localTime = dateToLocalTime(date);
+            this.localTime = LocalTime.now();
             this.timeSQL = localTimeToTimeSQL(localTime);
             this.gregorianCalendar = new GregorianCalendar();
             

@@ -46,13 +46,13 @@ public class BookRegistrationHelper {
        return (int) view.getJsBookStok().getValue();
     }
 
-    public java.sql.Date getAcquiredDate() {
+    public Time getAcquiredDate() {
        
     String stringDate = view.getjFormattedTextFieldAcquisition().getText();
-    
+        
     Time time = new Time(stringDate);
     
-    return time.getDateSQL();
+    return time;
     }
 
 }
