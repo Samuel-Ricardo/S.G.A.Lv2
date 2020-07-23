@@ -23,12 +23,6 @@ import java.util.logging.Logger;
  */
 public class Time {
 
-    public static java.sql.Date stringTODateSQL(String stringDate) {
-   
-        
-    
-    }
-
     private Date date;
     private java.sql.Date dateSQL;
     private LocalDate localDate;
