@@ -6,6 +6,7 @@
 package Controller.Helper;
 
 import Model.Book;
+import Model.Pane.BookPane;
 import View.ListOfBooks;
 
 /**
@@ -21,7 +22,12 @@ public class BookListHelper {
     }
 
     public void setBookOnList(Book book) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        BookPane pane = new BookPane(book);
+   
+        pane.getInsets().set(10, 10, 10, 10);
+        
+        view.getjPanelBookList().add(pane);
     }
     
 }

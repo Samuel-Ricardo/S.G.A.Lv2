@@ -14,7 +14,7 @@ import javax.swing.JPanel;
  */
 public class JPanelFiller {
     
-    public JPanel fillBook(Component component, JPanel panel){
+    public JPanel fillPane(Component component, JPanel panel){
         
         panel.add(component);
         

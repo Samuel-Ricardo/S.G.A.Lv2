@@ -7,6 +7,16 @@ package View;
 
 import Controller.BookListController;
 import java.awt.Desktop;
+import javax.accessibility.AccessibleContext;
+import javax.swing.Icon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRootPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.event.EventListenerList;
+import javax.swing.plaf.ComponentUI;
 
 /**
  *
@@ -37,8 +47,8 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jLabelSearch = new javax.swing.JLabel();
+        jTextFieldSearch = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanelBookList = new javax.swing.JPanel();
         jPanelBookDetails = new javax.swing.JPanel();
@@ -57,16 +67,16 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
         jLabelStock = new javax.swing.JLabel();
         jLabelPublisher = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jLabelSearchIcon = new javax.swing.JLabel();
+        jButtonUpdate = new javax.swing.JButton();
+        jButtonDelet = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setTitle("Oásis - Livros Disponíveis ");
 
-        jLabel1.setText("Pesquisar Livro:");
+        jLabelSearch.setText("Pesquisar Livro:");
 
         javax.swing.GroupLayout jPanelBookListLayout = new javax.swing.GroupLayout(jPanelBookList);
         jPanelBookList.setLayout(jPanelBookListLayout);
@@ -212,19 +222,19 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel4.setText("search Icon");
+        jLabelSearchIcon.setText("search Icon");
 
-        jButton2.setText("Alterar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonUpdate.setText("Alterar");
+        jButtonUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonUpdateActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Deletar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonDelet.setText("Deletar");
+        jButtonDelet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButtonDeletActionPerformed(evt);
             }
         });
 
@@ -237,20 +247,17 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1)
+                        .addComponent(jLabelSearch)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
-                        .addComponent(jButton2)))
+                        .addComponent(jLabelSearchIcon)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                        .addComponent(jButtonDelet)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonUpdate)))
                 .addGap(18, 18, 18)
                 .addComponent(jPanelBookDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(438, 438, 438)
-                    .addComponent(jButton3)
-                    .addContainerGap(439, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,21 +269,18 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(32, 32, 32)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel4)))
+                                    .addComponent(jTextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelSearch)
+                                    .addComponent(jLabelSearchIcon)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
-                                .addComponent(jButton2)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jButtonUpdate)
+                                    .addComponent(jButtonDelet))))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jPanelBookDetails, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(16, 16, 16)
-                    .addComponent(jButton3)
-                    .addContainerGap(485, Short.MAX_VALUE)))
         );
 
         pack();
@@ -286,24 +290,22 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButtonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpdateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButtonUpdateActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButtonDeletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeletActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jButtonDeletActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButtonDelet;
+    private javax.swing.JButton jButtonUpdate;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -314,10 +316,327 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabelGenre;
     private javax.swing.JLabel jLabelName;
     private javax.swing.JLabel jLabelPublisher;
+    private javax.swing.JLabel jLabelSearch;
+    private javax.swing.JLabel jLabelSearchIcon;
     private javax.swing.JLabel jLabelStock;
     private javax.swing.JPanel jPanelBookDetails;
     private javax.swing.JPanel jPanelBookList;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextFieldSearch;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getjButton1() {
+        return jButton1;
+    }
+
+    public void setjButton1(JButton jButton1) {
+        this.jButton1 = jButton1;
+    }
+
+    public JButton getjButtonDelet() {
+        return jButtonDelet;
+    }
+
+    public void setjButtonDelet(JButton jButtonDelet) {
+        this.jButtonDelet = jButtonDelet;
+    }
+
+    public JButton getjButtonUpdate() {
+        return jButtonUpdate;
+    }
+
+    public void setjButtonUpdate(JButton jButtonUpdate) {
+        this.jButtonUpdate = jButtonUpdate;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public JLabel getjLabelAcquiredDate() {
+        return jLabelAcquiredDate;
+    }
+
+    public void setjLabelAcquiredDate(JLabel jLabelAcquiredDate) {
+        this.jLabelAcquiredDate = jLabelAcquiredDate;
+    }
+
+    public JLabel getjLabelAuthor() {
+        return jLabelAuthor;
+    }
+
+    public void setjLabelAuthor(JLabel jLabelAuthor) {
+        this.jLabelAuthor = jLabelAuthor;
+    }
+
+    public JLabel getjLabelGenre() {
+        return jLabelGenre;
+    }
+
+    public void setjLabelGenre(JLabel jLabelGenre) {
+        this.jLabelGenre = jLabelGenre;
+    }
+
+    public JLabel getjLabelName() {
+        return jLabelName;
+    }
+
+    public void setjLabelName(JLabel jLabelName) {
+        this.jLabelName = jLabelName;
+    }
+
+    public JLabel getjLabelPublisher() {
+        return jLabelPublisher;
+    }
+
+    public void setjLabelPublisher(JLabel jLabelPublisher) {
+        this.jLabelPublisher = jLabelPublisher;
+    }
+
+    public JLabel getjLabelSearch() {
+        return jLabelSearch;
+    }
+
+    public void setjLabelSearch(JLabel jLabelSearch) {
+        this.jLabelSearch = jLabelSearch;
+    }
+
+    public JLabel getjLabelSearchIcon() {
+        return jLabelSearchIcon;
+    }
+
+    public void setjLabelSearchIcon(JLabel jLabelSearchIcon) {
+        this.jLabelSearchIcon = jLabelSearchIcon;
+    }
+
+    public JLabel getjLabelStock() {
+        return jLabelStock;
+    }
+
+    public void setjLabelStock(JLabel jLabelStock) {
+        this.jLabelStock = jLabelStock;
+    }
+
+    public JPanel getjPanelBookDetails() {
+        return jPanelBookDetails;
+    }
+
+    public void setjPanelBookDetails(JPanel jPanelBookDetails) {
+        this.jPanelBookDetails = jPanelBookDetails;
+    }
+
+    public JPanel getjPanelBookList() {
+        return jPanelBookList;
+    }
+
+    public void setjPanelBookList(JPanel jPanelBookList) {
+        this.jPanelBookList = jPanelBookList;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public void setjScrollPane2(JScrollPane jScrollPane2) {
+        this.jScrollPane2 = jScrollPane2;
+    }
+
+    public JTextField getjTextFieldSearch() {
+        return jTextFieldSearch;
+    }
+
+    public void setjTextFieldSearch(JTextField jTextFieldSearch) {
+        this.jTextFieldSearch = jTextFieldSearch;
+    }
+
+    public JRootPane getRootPane() {
+        return rootPane;
+    }
+
+    public void setRootPane(JRootPane rootPane) {
+        this.rootPane = rootPane;
+    }
+
+    public boolean isRootPaneCheckingEnabled() {
+        return rootPaneCheckingEnabled;
+    }
+
+    public void setRootPaneCheckingEnabled(boolean rootPaneCheckingEnabled) {
+        this.rootPaneCheckingEnabled = rootPaneCheckingEnabled;
+    }
+
+    public boolean isClosable() {
+        return closable;
+    }
+
+    public void setClosable(boolean closable) {
+        this.closable = closable;
+    }
+
+    public boolean isIsClosed() {
+        return isClosed;
+    }
+
+    public void setIsClosed(boolean isClosed) {
+        this.isClosed = isClosed;
+    }
+
+    public boolean isMaximizable() {
+        return maximizable;
+    }
+
+    public void setMaximizable(boolean maximizable) {
+        this.maximizable = maximizable;
+    }
+
+    public boolean isIsMaximum() {
+        return isMaximum;
+    }
+
+    public void setIsMaximum(boolean isMaximum) {
+        this.isMaximum = isMaximum;
+    }
+
+    public boolean isIconable() {
+        return iconable;
+    }
+
+    public void setIconable(boolean iconable) {
+        this.iconable = iconable;
+    }
+
+    public boolean isIsIcon() {
+        return isIcon;
+    }
+
+    public void setIsIcon(boolean isIcon) {
+        this.isIcon = isIcon;
+    }
+
+    public boolean isResizable() {
+        return resizable;
+    }
+
+    public void setResizable(boolean resizable) {
+        this.resizable = resizable;
+    }
+
+    public boolean isIsSelected() {
+        return isSelected;
+    }
+
+    public void setIsSelected(boolean isSelected) {
+        this.isSelected = isSelected;
+    }
+
+    public Icon getFrameIcon() {
+        return frameIcon;
+    }
+
+    public void setFrameIcon(Icon frameIcon) {
+        this.frameIcon = frameIcon;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public JDesktopIcon getDesktopIcon() {
+        return desktopIcon;
+    }
+
+    public void setDesktopIcon(JDesktopIcon desktopIcon) {
+        this.desktopIcon = desktopIcon;
+    }
+
+    public ComponentUI getUi() {
+        return ui;
+    }
+
+    public void setUi(ComponentUI ui) {
+        this.ui = ui;
+    }
+
+    public EventListenerList getListenerList() {
+        return listenerList;
+    }
+
+    public void setListenerList(EventListenerList listenerList) {
+        this.listenerList = listenerList;
+    }
+
+    public AccessibleContext getAccessibleContext() {
+        return accessibleContext;
+    }
+
+    public void setAccessibleContext(AccessibleContext accessibleContext) {
+        this.accessibleContext = accessibleContext;
+    }
+
+
+
 }
