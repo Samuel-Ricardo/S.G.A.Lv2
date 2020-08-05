@@ -15,7 +15,7 @@ import Model.User;
 import Services.FileManager;
 import Services.Dialoguer;
 import View.Login;
-import View.Start;
+import View.MainMenu;
 
 /**
  *
@@ -87,7 +87,7 @@ public class LoginController {
 
         view.setVisible(false);
 
-        Start start = new Start();
+        MainMenu start = new MainMenu();
         start.setVisible(true);
     }
 

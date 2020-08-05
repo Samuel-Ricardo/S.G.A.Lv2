@@ -1,12 +1,21 @@
 package View;
 
+import Controller.MainMenuController;
 import javax.swing.JOptionPane;
 import View.BookRegistrationView;
+import javax.swing.JDesktopPane;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 
-public class Start extends javax.swing.JFrame {
+public class MainMenu extends javax.swing.JFrame {
 
-    public Start() {
+    private MainMenuController controller;
+    
+    public MainMenu() {
         initComponents();
+        
+        controller = new MainMenuController(this);
     }
 
     @SuppressWarnings("unchecked")
@@ -26,6 +35,7 @@ public class Start extends javax.swing.JFrame {
         menIntLivDisponíveis = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         menListaClientes = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         menIntSAC = new javax.swing.JMenuItem();
         menIntSobre = new javax.swing.JMenuItem();
@@ -116,16 +126,24 @@ public class Start extends javax.swing.JFrame {
 
         Sair.add(jMenu2);
 
-        jMenu6.setText("Clientes");
+        jMenu6.setText("Pesquisa");
 
         menListaClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.ALT_MASK));
-        menListaClientes.setText("Lista de Clientes");
+        menListaClientes.setText("Clientes");
         menListaClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menListaClientesActionPerformed(evt);
             }
         });
         jMenu6.add(menListaClientes);
+
+        jMenuItem1.setText("Livros");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem1);
 
         Sair.add(jMenu6);
 
@@ -218,6 +236,10 @@ public class Start extends javax.swing.JFrame {
         Desktop.add(lt);
     }//GEN-LAST:event_menListaClientesActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        controller.openBookList();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -235,21 +257,23 @@ public class Start extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Start.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Start.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Start.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Start.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Start().setVisible(true);
+                new MainMenu().setVisible(true);
             }
         });
     }
@@ -263,6 +287,7 @@ public class Start extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem menAlugLivro;
     private javax.swing.JMenuItem menIntCadCli;
     private javax.swing.JMenuItem menIntCadLivros;
@@ -274,4 +299,165 @@ public class Start extends javax.swing.JFrame {
     private javax.swing.JMenuItem menIntSobre;
     private javax.swing.JMenuItem menListaClientes;
     // End of variables declaration//GEN-END:variables
+
+    public MainMenuController getController() {
+        return controller;
+    }
+
+    public void setController(MainMenuController controller) {
+        this.controller = controller;
+    }
+
+    public JDesktopPane getDesktop() {
+        return Desktop;
+    }
+
+    public void setDesktop(JDesktopPane Desktop) {
+        this.Desktop = Desktop;
+    }
+
+    public JMenuBar getSair() {
+        return Sair;
+    }
+
+    public void setSair(JMenuBar Sair) {
+        this.Sair = Sair;
+    }
+
+    public JMenu getjMenu1() {
+        return jMenu1;
+    }
+
+    public void setjMenu1(JMenu jMenu1) {
+        this.jMenu1 = jMenu1;
+    }
+
+    public JMenu getjMenu2() {
+        return jMenu2;
+    }
+
+    public void setjMenu2(JMenu jMenu2) {
+        this.jMenu2 = jMenu2;
+    }
+
+    public JMenu getjMenu3() {
+        return jMenu3;
+    }
+
+    public void setjMenu3(JMenu jMenu3) {
+        this.jMenu3 = jMenu3;
+    }
+
+    public JMenu getjMenu4() {
+        return jMenu4;
+    }
+
+    public void setjMenu4(JMenu jMenu4) {
+        this.jMenu4 = jMenu4;
+    }
+
+    public JMenu getjMenu5() {
+        return jMenu5;
+    }
+
+    public void setjMenu5(JMenu jMenu5) {
+        this.jMenu5 = jMenu5;
+    }
+
+    public JMenu getjMenu6() {
+        return jMenu6;
+    }
+
+    public void setjMenu6(JMenu jMenu6) {
+        this.jMenu6 = jMenu6;
+    }
+
+    public JMenuItem getjMenuItem1() {
+        return jMenuItem1;
+    }
+
+    public void setjMenuItem1(JMenuItem jMenuItem1) {
+        this.jMenuItem1 = jMenuItem1;
+    }
+
+    public JMenuItem getMenAlugLivro() {
+        return menAlugLivro;
+    }
+
+    public void setMenAlugLivro(JMenuItem menAlugLivro) {
+        this.menAlugLivro = menAlugLivro;
+    }
+
+    public JMenuItem getMenIntCadCli() {
+        return menIntCadCli;
+    }
+
+    public void setMenIntCadCli(JMenuItem menIntCadCli) {
+        this.menIntCadCli = menIntCadCli;
+    }
+
+    public JMenuItem getMenIntCadLivros() {
+        return menIntCadLivros;
+    }
+
+    public void setMenIntCadLivros(JMenuItem menIntCadLivros) {
+        this.menIntCadLivros = menIntCadLivros;
+    }
+
+    public static JMenuItem getMenIntCadUser() {
+        return menIntCadUser;
+    }
+
+    public static void setMenIntCadUser(JMenuItem menIntCadUser) {
+        MainMenu.menIntCadUser = menIntCadUser;
+    }
+
+    public JMenuItem getMenIntLivAlugados() {
+        return menIntLivAlugados;
+    }
+
+    public void setMenIntLivAlugados(JMenuItem menIntLivAlugados) {
+        this.menIntLivAlugados = menIntLivAlugados;
+    }
+
+    public JMenuItem getMenIntLivDisponíveis() {
+        return menIntLivDisponíveis;
+    }
+
+    public void setMenIntLivDisponíveis(JMenuItem menIntLivDisponíveis) {
+        this.menIntLivDisponíveis = menIntLivDisponíveis;
+    }
+
+    public JMenuItem getMenIntSAC() {
+        return menIntSAC;
+    }
+
+    public void setMenIntSAC(JMenuItem menIntSAC) {
+        this.menIntSAC = menIntSAC;
+    }
+
+    public JMenuItem getMenIntSair() {
+        return menIntSair;
+    }
+
+    public void setMenIntSair(JMenuItem menIntSair) {
+        this.menIntSair = menIntSair;
+    }
+
+    public JMenuItem getMenIntSobre() {
+        return menIntSobre;
+    }
+
+    public void setMenIntSobre(JMenuItem menIntSobre) {
+        this.menIntSobre = menIntSobre;
+    }
+
+    public JMenuItem getMenListaClientes() {
+        return menListaClientes;
+    }
+
+    public void setMenListaClientes(JMenuItem menListaClientes) {
+        this.menListaClientes = menListaClientes;
+    }
+
 }
