@@ -79,17 +79,7 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
 
         jLabelSearch.setText("Pesquisar Livro:");
 
-        javax.swing.GroupLayout jPanelBookListLayout = new javax.swing.GroupLayout(jPanelBookList);
-        jPanelBookList.setLayout(jPanelBookListLayout);
-        jPanelBookListLayout.setHorizontalGroup(
-            jPanelBookListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 594, Short.MAX_VALUE)
-        );
-        jPanelBookListLayout.setVerticalGroup(
-            jPanelBookListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
-        );
-
+        jPanelBookList.setLayout(new javax.swing.BoxLayout(jPanelBookList, javax.swing.BoxLayout.LINE_AXIS));
         jScrollPane2.setViewportView(jPanelBookList);
 
         jLabel2.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
@@ -349,7 +339,7 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
     public void setjButtonUpdate(JButton jButtonUpdate) {
         this.jButtonUpdate = jButtonUpdate;
     }
-
+    
     public JLabel getjLabel10() {
         return jLabel10;
     }
@@ -509,67 +499,7 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
     public void setjTextFieldSearch(JTextField jTextFieldSearch) {
         this.jTextFieldSearch = jTextFieldSearch;
     }
+
     
-    public boolean isIsClosed() {
-        return isClosed;
-    }
-
-    public void setIsClosed(boolean isClosed) {
-        this.isClosed = isClosed;
-    }
-    
-    public boolean isIsMaximum() {
-        return isMaximum;
-    }
-
-    public void setIsMaximum(boolean isMaximum) {
-        this.isMaximum = isMaximum;
-    }
-
-    public boolean isIconable() {
-        return iconable;
-    }
-
-    public void setIconable(boolean iconable) {
-        this.iconable = iconable;
-    }
-
-    public boolean isIsIcon() {
-        return isIcon;
-    }
-
-    public void setIsIcon(boolean isIcon) {
-        this.isIcon = isIcon;
-    }
-
-    public boolean isIsSelected() {
-        return isSelected;
-    }
-
-    public void setIsSelected(boolean isSelected) {
-        this.isSelected = isSelected;
-    }
-    
-    public ComponentUI getUi() {
-        return ui;
-    }
-
-    public void setUi(ComponentUI ui) {
-        this.ui = ui;
-    }
-
-    public EventListenerList getListenerList() {
-        return listenerList;
-    }
-
-    public void setListenerList(EventListenerList listenerList) {
-        this.listenerList = listenerList;
-    }
-
-    public void setAccessibleContext(AccessibleContext accessibleContext) {
-        this.accessibleContext = accessibleContext;
-    }
-
-
 
 }

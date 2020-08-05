@@ -30,8 +30,10 @@ public class BookPaneController {
             view.getjLabelName().setText(book.getName());
             view.getjLabelStock().setText(book.getStock().toString());
             view.getjLabelGenre().setText(book.getGenre());
-//            resizeImageLabe(view.getjLabelImage());
-//            setImage();
+            resizeImageLabe(view.getjLabelImage());
+            setImage();
+            
+            System.out.println("paod                   equeio");
     }
 
     public void setImage() {
@@ -44,5 +46,12 @@ public class BookPaneController {
     
         label.setSize(172, 160);
     }
-    
+
+    public BookPane getView() {
+        return view;
+    }
+
+    public Book getBook() {
+        return book;
+    }
 }

@@ -10,6 +10,7 @@ import DAO.BookDAO;
 import Model.Book;
 import View.ListOfBooks;
 import java.util.ArrayList;
+import javax.swing.BoxLayout;
 
 /**
  *
@@ -29,6 +30,8 @@ public class BookListController {
 
     public void start() {
     
+        view.getjPanelBookList().setLayout(new BoxLayout(view.getjPanelBookList(),BoxLayout.LINE_AXIS));
+        
         loadBooks();
     }
 
