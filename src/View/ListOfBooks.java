@@ -509,31 +509,7 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
     public void setjTextFieldSearch(JTextField jTextFieldSearch) {
         this.jTextFieldSearch = jTextFieldSearch;
     }
-
-    public JRootPane getRootPane() {
-        return rootPane;
-    }
-
-    public void setRootPane(JRootPane rootPane) {
-        this.rootPane = rootPane;
-    }
-
-    public boolean isRootPaneCheckingEnabled() {
-        return rootPaneCheckingEnabled;
-    }
-
-    public void setRootPaneCheckingEnabled(boolean rootPaneCheckingEnabled) {
-        this.rootPaneCheckingEnabled = rootPaneCheckingEnabled;
-    }
-
-    public boolean isClosable() {
-        return closable;
-    }
-
-    public void setClosable(boolean closable) {
-        this.closable = closable;
-    }
-
+    
     public boolean isIsClosed() {
         return isClosed;
     }
@@ -541,15 +517,7 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
     public void setIsClosed(boolean isClosed) {
         this.isClosed = isClosed;
     }
-
-    public boolean isMaximizable() {
-        return maximizable;
-    }
-
-    public void setMaximizable(boolean maximizable) {
-        this.maximizable = maximizable;
-    }
-
+    
     public boolean isIsMaximum() {
         return isMaximum;
     }
@@ -574,14 +542,6 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
         this.isIcon = isIcon;
     }
 
-    public boolean isResizable() {
-        return resizable;
-    }
-
-    public void setResizable(boolean resizable) {
-        this.resizable = resizable;
-    }
-
     public boolean isIsSelected() {
         return isSelected;
     }
@@ -589,31 +549,7 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
     public void setIsSelected(boolean isSelected) {
         this.isSelected = isSelected;
     }
-
-    public Icon getFrameIcon() {
-        return frameIcon;
-    }
-
-    public void setFrameIcon(Icon frameIcon) {
-        this.frameIcon = frameIcon;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public JDesktopIcon getDesktopIcon() {
-        return desktopIcon;
-    }
-
-    public void setDesktopIcon(JDesktopIcon desktopIcon) {
-        this.desktopIcon = desktopIcon;
-    }
-
+    
     public ComponentUI getUi() {
         return ui;
     }
@@ -628,10 +564,6 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
 
     public void setListenerList(EventListenerList listenerList) {
         this.listenerList = listenerList;
-    }
-
-    public AccessibleContext getAccessibleContext() {
-        return accessibleContext;
     }
 
     public void setAccessibleContext(AccessibleContext accessibleContext) {

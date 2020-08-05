@@ -64,6 +64,8 @@ public class BookPane extends JPanel{
         
        name.setText(book.getName());
         
+       
+       
     }
     
     
