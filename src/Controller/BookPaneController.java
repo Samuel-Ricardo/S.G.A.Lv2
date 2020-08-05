@@ -38,8 +38,7 @@ public class BookPaneController {
 
     public void setImage() {
         
-        
-        ImageFile.resizeImageByPath(view.getjLabelImage(), Book.DefaultBookImage().getFile().getAbsolutePath());
+        ImageFile.resizeImage(view.getjLabelImage(), "/View/Images/icons8-no-image-64px.png");
     }
 
     private void resizeImageLabe(JLabel label) {
