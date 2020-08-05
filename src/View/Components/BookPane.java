@@ -50,6 +50,7 @@ public class BookPane extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 0, 0));
+        setMaximumSize(new java.awt.Dimension(196, 270));
 
         jLabelName.setText("Nome:");
 

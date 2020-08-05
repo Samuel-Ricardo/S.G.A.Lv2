@@ -8,6 +8,7 @@ package Controller.Helper;
 import Model.Book;
 import View.Components.BookPane;
 import View.ListOfBooks;
+import javax.swing.Box;
 import javax.swing.JLabel;
 
 /**
@@ -28,8 +29,8 @@ public class BookListHelper {
    
         pane.getInsets().set(10, 10, 10, 10);
         
-        view.getjPanelBookList().add(pane);
-        view.getjPanelBookList();
+       // view.getjPanelBookList().add(pane);
+        view.getjPanelBookList().add(Box.createHorizontalBox().add(pane));
         
         System.out.println(pane.getController().getBook().getAuthor()+"   "+view.getjPanelBookList().getWidth());
     }
