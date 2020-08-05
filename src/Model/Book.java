@@ -6,8 +6,11 @@
 package Model;
 
 import java.io.InputStream;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 
 /**
@@ -120,9 +123,12 @@ public class Book {
 
     public static ImageFile DefaultBookImage() {
       
-        return new ImageFile("icons8-no-image-64px.png");
+        ImageFile image = null;
+        
+        System.out.println(Book.class.getResource("/View/Images/icons8-no-image-64px.png").getPath());
+        
+          image = new ImageFile(Book.class.getResource("/View/Images/icons8-no-image-64px.png").getPath());
+          
+        return image;
     }
-    
-    
-    
 }

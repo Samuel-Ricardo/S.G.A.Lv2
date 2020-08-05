@@ -8,6 +8,7 @@ package Controller;
 import Model.Book;
 import Model.ImageFile;
 import View.Components.BookPane;
+import javax.swing.JLabel;
 
 /**
  *
@@ -29,12 +30,19 @@ public class BookPaneController {
             view.getjLabelName().setText(book.getName());
             view.getjLabelStock().setText(book.getStock().toString());
             view.getjLabelGenre().setText(book.getGenre());
-            setImage();
+//            resizeImageLabe(view.getjLabelImage());
+//            setImage();
     }
 
     public void setImage() {
         
+        
         ImageFile.resizeImageByPath(view.getjLabelImage(), Book.DefaultBookImage().getFile().getAbsolutePath());
+    }
+
+    private void resizeImageLabe(JLabel label) {
+    
+        label.setSize(172, 160);
     }
     
 }

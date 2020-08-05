@@ -6,7 +6,7 @@
 package Controller.Helper;
 
 import Model.Book;
-import Model.Pane.BookPane;
+import View.Components.BookPane;
 import View.ListOfBooks;
 
 /**

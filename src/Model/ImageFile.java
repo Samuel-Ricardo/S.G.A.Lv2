@@ -15,6 +15,7 @@ import java.net.URI;
 import java.sql.Blob;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.embed.swing.JFXPanel;
 import javafx.scene.image.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -101,6 +102,7 @@ public class ImageFile {
 
     private void start() {
         try {
+            JFXPanel jfxPanel = new JFXPanel();
             
             this.length = (int) file.length();
 
@@ -111,7 +113,7 @@ public class ImageFile {
             input.read(bytes, 0, length);
 
             this.imageSwing = new ImageIcon(file.getAbsolutePath());
-            this.ImageFX = new Image(file.getAbsolutePath());
+            this.ImageFX = new Image("file:///"+file.getAbsolutePath());
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(ImageFile.class.getName()).log(Level.SEVERE, null, ex);
