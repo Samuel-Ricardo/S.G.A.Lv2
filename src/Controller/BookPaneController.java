@@ -5,7 +5,9 @@
  */
 package Controller;
 
-import View.PreView.BookFrame;
+import Model.Book;
+import Model.ImageFile;
+import View.Components.BookPane;
 
 /**
  *
@@ -13,16 +15,26 @@ import View.PreView.BookFrame;
  */
 public class BookPaneController {
     
-    private final BookFrame view;
+    private final BookPane view;
+    private final Book book;
 
-    BookPaneController(BookFrame pane) {
+    public BookPaneController(BookPane view, Book book) {
      
-        this.view = pane;
+        this.view = view;
+        this.book = book;
     }
 
     public void start() {
      
-            view.g
+            view.getjLabelName().setText(book.getName());
+            view.getjLabelStock().setText(book.getStock().toString());
+            view.getjLabelGenre().setText(book.getGenre());
+            setImage();
+    }
+
+    public void setImage() {
+        
+        ImageFile.resizeImageByPath(view.getjLabelImage(), Book.DefaultBookImage().getFile().getAbsolutePath());
     }
     
 }

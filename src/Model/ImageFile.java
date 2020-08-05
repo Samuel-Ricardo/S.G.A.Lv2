@@ -144,6 +144,13 @@ public class ImageFile {
         jLabel.setIcon(new ImageIcon(img.getImage().getScaledInstance(jLabel.getWidth(), jLabel.getHeight(), java.awt.Image.SCALE_DEFAULT)));
     }
     
+    public static void resizeImageByPath(JLabel jLabel, String way) {
+        
+        ImageIcon img = new ImageIcon(way);
+        
+        jLabel.setIcon(new ImageIcon(img.getImage().getScaledInstance(jLabel.getWidth(), jLabel.getHeight(), java.awt.Image.SCALE_DEFAULT)));
+    }
+    
     public void resizeImage(JLabel jLabel) {
         
         jLabel.setIcon(new ImageIcon(imageSwing.getImage().getScaledInstance(jLabel.getWidth(), jLabel.getHeight(), java.awt.Image.SCALE_DEFAULT)));

@@ -8,6 +8,7 @@ package Model;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.Icon;
 
 /**
  *
@@ -115,6 +116,11 @@ public class Book {
     
     public void setAcquired(java.sql.Date acquired) {
         this.acquired = new Time(acquired);
+    }
+
+    public static ImageFile DefaultBookImage() {
+      
+        return new ImageFile("icons8-no-image-64px.png");
     }
     
     
