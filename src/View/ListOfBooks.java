@@ -31,6 +31,7 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
     private final BookListController controller; 
     
     public ListOfBooks() {
+        
         initComponents();
         
         controller = new BookListController(this);

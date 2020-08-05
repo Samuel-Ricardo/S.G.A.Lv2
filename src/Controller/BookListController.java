@@ -29,6 +29,11 @@ public class BookListController {
 
     public void start() {
     
+        loadBooks();
+    }
+
+    public void loadBooks() {
+        
         ArrayList<Book> books = (ArrayList<Book>) bookDao.selectAll();
         
         for (Book book : books) {

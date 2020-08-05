@@ -23,9 +23,8 @@ public class MainMenuController {
     public void openBookList() {
    
         ListOfBooks bookList = new ListOfBooks();
-        
-        view.getDesktop();
-    
+        bookList.setVisible(true);
+        view.getDesktop().add(bookList);
     }
     
     

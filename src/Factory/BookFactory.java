@@ -25,7 +25,7 @@ public class BookFactory {
         book.setAuthor(result.getString("book_author"));
         book.setPublisher(result.getString("book_publisher"));
         book.setStock(result.getInt("book_stock")); 
-        book.setImage(ImageFactory.generateImages(result));
+        //book.setImage(ImageFactory.generateImages(result));
         book.setGenre(result.getString("book_genre"));
         book.setAcquired(result.getDate("book_acquired_date"));
         
