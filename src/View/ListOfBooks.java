@@ -6,17 +6,12 @@
 package View;
 
 import Controller.BookListController;
-import java.awt.Desktop;
-import javax.accessibility.AccessibleContext;
-import javax.swing.Icon;
+import View.Components.BookPane;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JRootPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
-import javax.swing.event.EventListenerList;
-import javax.swing.plaf.ComponentUI;
 
 /**
  *
@@ -27,6 +22,9 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
     /**
      * Creates new form LivDis
      */
+    
+    private static BookPane selectedBook;
+    
     
     private final BookListController controller; 
     
@@ -500,6 +498,12 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
         this.jTextFieldSearch = jTextFieldSearch;
     }
 
-    
+    public static BookPane getSelectedBook() {
+        return selectedBook;
+    }
+
+    public static void setSelectedBook(BookPane selectedBook) {
+        ListOfBooks.selectedBook = selectedBook;
+    }
 
 }

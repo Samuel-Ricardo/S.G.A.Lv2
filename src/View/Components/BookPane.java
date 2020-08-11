@@ -7,6 +7,7 @@ package View.Components;
 
 import Controller.BookPaneController;
 import Model.Book;
+import java.awt.Dimension;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -23,6 +24,7 @@ public class BookPane extends javax.swing.JPanel {
     private final Book book;
     
     public BookPane(Book book) {
+        
         initComponents();
         
         this.book = book;
