@@ -6,6 +6,7 @@
 package Controller.Helper;
 
 import Model.Book;
+import Model.ImageFile;
 import View.Components.BookPane;
 import View.ListOfBooks;
 import javax.swing.Box;
@@ -39,7 +40,30 @@ public class BookListHelper {
      
       Book book = ListOfBooks.getSelectedBookPane().getBook();
       
-      view.getjLabelAuthor().
+      view.getjLabelAuthor().setText(book.getAuthor());
+      view.getjLabelAcquiredDate().setText(book.getAcquired().getOnlyDate());
+      view.getjLabelGenre().setText(book.getGenre());
+      view.getjLabelName().setText(book.getName());
+      view.getjLabelPublisher().setText(book.getPublisher());
+      view.getjLabelStock().setText(book.getStock()+"");
+      
+        loadBookImage(book);
+    }
+
+    public void loadBookImage(Book book) {
+        
+        view.getjLabelImageBook().setText("");
+        
+        if(book.getImage().isEmpty() == false){
+            
+         view.getjLabelImageBook().setIcon(book.getImage().get(0).getImageSwing());
+         
+         ImageFile.resizeImageByPath(view.getjLabelImageBook(),book.getImage().get(0).getFile().getAbsolutePath());
+         
+        }else{
+            
+         ImageFile.resizeImage(view.getjLabelImageBook(), Book.DEFAULT_IMAGE_WAY);
+        }
     }
     
 }

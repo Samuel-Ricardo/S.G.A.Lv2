@@ -54,7 +54,7 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabelName = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jLabelImageBook = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -89,7 +89,7 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
         jLabelName.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
         jLabelName.setText("Name");
 
-        jLabel5.setText("Image");
+        jLabelImageBook.setText("Image");
 
         jLabel6.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel6.setText("Autor:");
@@ -155,7 +155,7 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabelStock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabelImageBook, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelBookDetailsLayout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -197,7 +197,7 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
                             .addComponent(jLabelStock)))
                     .addGroup(jPanelBookDetailsLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabelImageBook, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(41, 41, 41)
                 .addGroup(jPanelBookDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -295,7 +295,6 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -303,6 +302,7 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabelAcquiredDate;
     private javax.swing.JLabel jLabelAuthor;
     private javax.swing.JLabel jLabelGenre;
+    private javax.swing.JLabel jLabelImageBook;
     private javax.swing.JLabel jLabelName;
     private javax.swing.JLabel jLabelPublisher;
     private javax.swing.JLabel jLabelSearch;
@@ -368,12 +368,12 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
         this.jLabel3 = jLabel3;
     }
 
-    public JLabel getjLabel5() {
-        return jLabel5;
+    public JLabel getjLabelImageBook() {
+        return jLabelImageBook;
     }
 
-    public void setjLabel5(JLabel jLabel5) {
-        this.jLabel5 = jLabel5;
+    public void setjLabelImageBook(JLabel jLabel5) {
+        this.jLabelImageBook = jLabel5;
     }
 
     public JLabel getjLabel6() {

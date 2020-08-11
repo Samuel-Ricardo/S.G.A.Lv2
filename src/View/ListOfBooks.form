@@ -130,7 +130,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabelStock" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel5" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="jLabelImageBook" min="-2" pref="200" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
@@ -185,7 +185,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel5" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="jLabelImageBook" min="-2" pref="200" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
@@ -230,7 +230,7 @@
             <Property name="text" type="java.lang.String" value="Name"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel5">
+        <Component class="javax.swing.JLabel" name="jLabelImageBook">
           <Properties>
             <Property name="text" type="java.lang.String" value="Image"/>
           </Properties>

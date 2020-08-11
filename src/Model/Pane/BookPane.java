@@ -53,7 +53,7 @@ public class BookPane extends JPanel{
     }
 
     public void load(JLabel name, JLabel labelGenre, JLabel labelImage, JLabel labelStock, Book book, JLabel stockQuantity, JLabel BookGenre, ImageIcon bookImage) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
     }
 
     public void load() {

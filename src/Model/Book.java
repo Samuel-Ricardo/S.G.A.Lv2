@@ -28,7 +28,8 @@ public class Book {
     private Integer stock;
     private ArrayList<ImageFile> Image;
     private Time acquired;
-
+    public static final String DEFAULT_IMAGE_WAY = "/View/Images/icons8-no-image-64px.png";
+    
     public Book(Long id, String name, String genre, String author, String publisher, String stock, ArrayList<ImageFile> Image, Time acquired) {
         this.id = id;
         this.name = name;
