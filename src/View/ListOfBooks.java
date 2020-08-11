@@ -23,7 +23,7 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
      * Creates new form LivDis
      */
     
-    private static BookPane selectedBook;
+    private static BookPane selectedBookPane;
     
     
     private final BookListController controller; 
@@ -504,12 +504,12 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
         this.jTextFieldSearch = jTextFieldSearch;
     }
 
-    public static BookPane getSelectedBook() {
-        return selectedBook;
+    public static BookPane getSelectedBookPane() {
+        return selectedBookPane;
     }
 
-    public static void setSelectedBook(BookPane selectedBook) {
-        ListOfBooks.selectedBook = selectedBook;
+    public static void setSelectedBookPane(BookPane selectedBookPane) {
+        ListOfBooks.selectedBookPane = selectedBookPane;
     }
 
 }

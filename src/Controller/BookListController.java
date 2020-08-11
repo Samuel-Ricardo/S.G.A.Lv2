@@ -45,10 +45,9 @@ public class BookListController {
         }
     }
 
-    void loadDetails() {
+    public void loadDetails() {
         
-        System.out.println("Detalhes");
-    
+        helper.loadBookDetails();
     }
     
 

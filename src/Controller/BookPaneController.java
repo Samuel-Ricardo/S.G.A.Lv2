@@ -37,7 +37,7 @@ public class BookPaneController {
             @Override
             public void mouseClicked(MouseEvent e) {
              
-                ListOfBooks.setSelectedBook(view);
+                ListOfBooks.setSelectedBookPane(view);
                 father.getController().loadDetails();
             }
 

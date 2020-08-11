@@ -34,5 +34,12 @@ public class BookListHelper {
         
         System.out.println(pane.getController().getBook().getAuthor()+"   "+view.getjPanelBookList().getWidth());
     }
+
+    public void loadBookDetails() {
+     
+      Book book = ListOfBooks.getSelectedBookPane().getBook();
+      
+      
+    }
     
 }
