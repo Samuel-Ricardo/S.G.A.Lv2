@@ -5,9 +5,14 @@
  */
 package Model;
 
+import Time.Time;
 import java.io.InputStream;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.Icon;
 
 /**
  *
@@ -21,9 +26,10 @@ public class Book {
     private String author;
     private String publisher;
     private Integer stock;
-    private ArrayList<ImageFile> Image;
+    private ArrayList<ImageFile> Image = new ArrayList<>();
     private Time acquired;
-
+    public static final String DEFAULT_IMAGE_WAY = "/View/Images/icons8-no-image-64px.png";
+    
     public Book(Long id, String name, String genre, String author, String publisher, String stock, ArrayList<ImageFile> Image, Time acquired) {
         this.id = id;
         this.name = name;
@@ -116,7 +122,15 @@ public class Book {
     public void setAcquired(java.sql.Date acquired) {
         this.acquired = new Time(acquired);
     }
-    
-    
-    
+
+    public static ImageFile DefaultBookImage() {
+      
+        ImageFile image = null;
+        
+        System.out.println(Book.class.getResource("/View/Images/icons8-no-image-64px.png").getPath());
+        
+          image = new ImageFile(Book.class.getResource("/View/Images/icons8-no-image-64px.png").getPath());
+          
+        return image;
+    }
 }

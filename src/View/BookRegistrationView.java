@@ -5,15 +5,13 @@
  */
 package View;
 
-import java.sql.*;
-import JDBC.ConnectionFactory;
-import java.io.File;
+import Controller.BookRegistrationController;
 import javax.swing.JButton;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
+import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
-import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.JToggleButton;
 
 /**
  *
@@ -21,29 +19,14 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class BookRegistrationView extends javax.swing.JInternalFrame {
 
-    Connection conexao = null;
-    PreparedStatement pst = null;
-    ResultSet rs = null;
-
-    public void Delete() {
-
-    }
-
-    public void Update() {
-
-    }
-
-    public void Search() {
-
-    }
-
-    public void Register() {
-
-    }
+    private final BookRegistrationController controller;
 
     public BookRegistrationView() {
-        conexao = ConnectionFactory.getConnection();
+
         initComponents();
+
+        controller = new BookRegistrationController(this);
+        controller.start();
     }
 
     /**
@@ -70,6 +53,9 @@ public class BookRegistrationView extends javax.swing.JInternalFrame {
         btnDeleteBook = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jsBookStok = new javax.swing.JSpinner();
+        jLabelImageBook = new javax.swing.JLabel();
+        jLabelAcquisition = new javax.swing.JLabel();
+        jFormattedTextFieldAcquisition = new javax.swing.JFormattedTextField();
 
         jToggleButton1.setText("jToggleButton1");
 
@@ -124,6 +110,27 @@ public class BookRegistrationView extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Quantidade de livros:");
 
+        jLabelImageBook.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/icons8-no-image-64px.png"))); // NOI18N
+        jLabelImageBook.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jLabelImageBookMouseMoved(evt);
+            }
+        });
+        jLabelImageBook.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jLabelImageBookMouseReleased(evt);
+            }
+        });
+
+        jLabelAcquisition.setText("Data de aquisição:");
+
+        jFormattedTextFieldAcquisition.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        jFormattedTextFieldAcquisition.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextFieldAcquisitionActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -141,21 +148,24 @@ public class BookRegistrationView extends javax.swing.JInternalFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel3)
-                                            .addComponent(jLabel5))
+                                            .addComponent(jLabel5)
+                                            .addComponent(jLabelAcquisition)
+                                            .addComponent(jLabel4))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtBookGenre, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtBookPublisher, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jsBookStok, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtBookGenre, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+                                            .addComponent(txtBookPublisher, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+                                            .addComponent(jsBookStok, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jFormattedTextFieldAcquisition)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel2)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txtBookAuthor, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(169, 169, 169))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabelImageBook, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
+                        .addGap(61, 61, 61)
                         .addComponent(btnRegisterBook)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnSearchBook)
@@ -172,36 +182,43 @@ public class BookRegistrationView extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtBookName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtBookAuthor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtBookPublisher, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtBookGenre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jsBookStok, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtBookAuthor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtBookPublisher, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtBookGenre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jsBookStok, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelAcquisition)
+                            .addComponent(jFormattedTextFieldAcquisition, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabelImageBook, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegisterBook)
                     .addComponent(btnSearchBook)
                     .addComponent(btnUpdateBook)
                     .addComponent(btnDeleteBook))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addGap(21, 21, 21))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegisterBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterBookActionPerformed
-
+        controller.newBook();
     }//GEN-LAST:event_btnRegisterBookActionPerformed
 
     private void btnSearchBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchBookActionPerformed
@@ -220,17 +237,32 @@ public class BookRegistrationView extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBookAuthorActionPerformed
 
+    private void jLabelImageBookMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelImageBookMouseReleased
+   
+    }//GEN-LAST:event_jLabelImageBookMouseReleased
+
+    private void jLabelImageBookMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelImageBookMouseMoved
+        controller.resize(jLabelImageBook);
+    }//GEN-LAST:event_jLabelImageBookMouseMoved
+
+    private void jFormattedTextFieldAcquisitionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldAcquisitionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextFieldAcquisitionActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDeleteBook;
     private javax.swing.JButton btnRegisterBook;
     private javax.swing.JButton btnSearchBook;
     private javax.swing.JButton btnUpdateBook;
+    private javax.swing.JFormattedTextField jFormattedTextFieldAcquisition;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabelAcquisition;
+    private javax.swing.JLabel jLabelImageBook;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JSpinner jsBookStok;
     private javax.swing.JTextField txtBookAuthor;
@@ -309,7 +341,142 @@ public class BookRegistrationView extends javax.swing.JInternalFrame {
 
     public void setJsBookStok(JSpinner jsBookStok) {
         this.jsBookStok = jsBookStok;
-        
+
     }
 
+    public JButton getBtnDeleteBook() {
+        return btnDeleteBook;
+    }
+
+    public void setBtnDeleteBook(JButton btnDeleteBook) {
+        this.btnDeleteBook = btnDeleteBook;
+    }
+
+    public JButton getBtnRegisterBook() {
+        return btnRegisterBook;
+    }
+
+    public void setBtnRegisterBook(JButton btnRegisterBook) {
+        this.btnRegisterBook = btnRegisterBook;
+    }
+
+    public JButton getBtnSearchBook() {
+        return btnSearchBook;
+    }
+
+    public void setBtnSearchBook(JButton btnSearchBook) {
+        this.btnSearchBook = btnSearchBook;
+    }
+
+    public JButton getBtnUpdateBook() {
+        return btnUpdateBook;
+    }
+
+    public void setBtnUpdateBook(JButton btnUpdateBook) {
+        this.btnUpdateBook = btnUpdateBook;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabelImageBook() {
+        return jLabelImageBook;
+    }
+
+    public void setjLabelImageBook(JLabel jLabelImageBook) {
+        this.jLabelImageBook = jLabelImageBook;
+    }
+
+    public JToggleButton getjToggleButton1() {
+        return jToggleButton1;
+    }
+
+    public void setjToggleButton1(JToggleButton jToggleButton1) {
+        this.jToggleButton1 = jToggleButton1;
+    }
+
+    public JTextField getTxtBookAuthor() {
+        return txtBookAuthor;
+    }
+
+    public void setTxtBookAuthor(JTextField txtBookAuthor) {
+        this.txtBookAuthor = txtBookAuthor;
+    }
+
+    public JTextField getTxtBookGenre() {
+        return txtBookGenre;
+    }
+
+    public void setTxtBookGenre(JTextField txtBookGenre) {
+        this.txtBookGenre = txtBookGenre;
+    }
+
+    public JTextField getTxtBookName() {
+        return txtBookName;
+    }
+
+    public void setTxtBookName(JTextField txtBookName) {
+        this.txtBookName = txtBookName;
+    }
+
+    public JTextField getTxtBookPublisher() {
+        return txtBookPublisher;
+    }
+
+    public void setTxtBookPublisher(JTextField txtBookPublisher) {
+        this.txtBookPublisher = txtBookPublisher;
+    }
+
+    public JFormattedTextField getjFormattedTextFieldAcquisition() {
+        return jFormattedTextFieldAcquisition;
+    }
+
+    public void setjFormattedTextFieldAcquisition(JFormattedTextField jFormattedTextFieldAcquisition) {
+        this.jFormattedTextFieldAcquisition = jFormattedTextFieldAcquisition;
+    }
+
+    public JLabel getjLabelAcquisition() {
+        return jLabelAcquisition;
+    }
+
+    public void setjLabelAcquisition(JLabel jLabelAcquisition) {
+        this.jLabelAcquisition = jLabelAcquisition;
+    }
 }

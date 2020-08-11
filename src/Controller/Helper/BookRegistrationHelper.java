@@ -5,7 +5,9 @@
  */
 package Controller.Helper;
 
+import Time.Time;
 import View.BookRegistrationView;
+import java.util.Date;
 
 /**
  *
@@ -13,30 +15,44 @@ import View.BookRegistrationView;
  */
 public class BookRegistrationHelper {
 
-    private final BookRegistrationView bookregistrationview;
+    private final BookRegistrationView view;
 
-    public BookRegistrationHelper(BookRegistrationView bookregistrationview) {
-        this.bookregistrationview = bookregistrationview;
-    }
-
-    public BookRegistrationHelper() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public BookRegistrationHelper(BookRegistrationView view) {
+        this.view = view;
     }
 
     public String getAuthor() {
-        return bookregistrationview.gettxtBookAuthor().getText();
+        return view.gettxtBookAuthor().getText();
     }
 
     public String getGenre() {
-        return bookregistrationview.gettxtBookGenre().getText();
+        return view.gettxtBookGenre().getText();
     }
 
     public String getName() {
-        return bookregistrationview.gettxtBookName().getText();
+        return view.gettxtBookName().getText();
     }
 
     public String getPublisher() {
-        return bookregistrationview.gettxtBookPublisher().getText();
+        return view.gettxtBookPublisher().getText();
+    }
+
+    public void fillFormatedText() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public int getStock() {
+   
+       return (int) view.getJsBookStok().getValue();
+    }
+
+    public Time getAcquiredDate() {
+       
+    String stringDate = view.getjFormattedTextFieldAcquisition().getText();
+        
+    Time time = new Time(stringDate);
+    
+    return time;
     }
 
 }

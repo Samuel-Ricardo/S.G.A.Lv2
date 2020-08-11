@@ -15,24 +15,29 @@ import java.sql.SQLException;
  * @author Samuel
  */
 public class ManagerFactory {
-    
-    
-     public static Manager generateManager(ResultSet result) throws SQLException {
-        
+
+    public static Manager generateManager(ResultSet result) throws SQLException {
+
         Manager manager = new Manager();
-        
+
         manager.setId(result.getInt("id_user"));
         manager.setName(result.getString("user_name"));
         manager.setLogin(result.getString("user_login"));
         manager.setPassword(result.getString("user_password"));
         manager.setAccessLevel(result.getInt("user_access_level"));
-        manager.setPerfilImage(ImageFactory.generateImage(result));
+
+        if (ImageFactory.generateImage(result) != null) {
+
+            manager.setPerfilImage(ImageFactory.generateImage(result));
+
+        }
+
         manager.setEmail(result.getString("user_email"));
         manager.setAddress(result.getString("user_address"));
         manager.setCEP(result.getString("user_cep"));
         manager.setPhone(result.getString("user_phone"));
         manager.setSchool(result.getString("user_school"));
-        
+
         return manager;
-    }   
+    }
 }

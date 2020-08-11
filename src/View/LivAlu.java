@@ -11,7 +11,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -29,16 +28,16 @@ public class LivAlu extends javax.swing.JInternalFrame {
          conexao = ConnectionFactory.getConnection();
     }
 private void pesquisar_cliente() {
-        String sql = "select * from tbcliente  where nomecli like ?";
-        try {
-            pst = conexao.prepareStatement(sql);
-           
-            rs = pst.executeQuery();
-
-            tbLivAlugados.setModel(DbUtils.resultSetToTableModel(rs));
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
+//        String sql = "select * from tbcliente  where nomecli like ?";
+//        try {
+//           pst = conexao.prepareStatement(sql);
+//           
+//            rs = pst.executeQuery();
+//
+//            tbLivAlugados.setModel(DbUtils.resultSetToTableModel(rs));
+//        } catch (SQLException e) {
+//            JOptionPane.showMessageDialog(null, e);
+//        } 
     }
     /**
      * This method is called from within the constructor to initialize the form.

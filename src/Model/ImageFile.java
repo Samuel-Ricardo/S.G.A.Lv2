@@ -15,8 +15,10 @@ import java.net.URI;
 import java.sql.Blob;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.embed.swing.JFXPanel;
 import javafx.scene.image.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
@@ -100,6 +102,7 @@ public class ImageFile {
 
     private void start() {
         try {
+            JFXPanel jfxPanel = new JFXPanel();
             
             this.length = (int) file.length();
 
@@ -110,7 +113,7 @@ public class ImageFile {
             input.read(bytes, 0, length);
 
             this.imageSwing = new ImageIcon(file.getAbsolutePath());
-            this.ImageFX = new Image(file.getAbsolutePath());
+            this.ImageFX = new Image("file:///"+file.getAbsolutePath());
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(ImageFile.class.getName()).log(Level.SEVERE, null, ex);
@@ -127,6 +130,32 @@ public class ImageFile {
        File search = new File("C:\\Users\\"+PCuser+"\\Documents\\SAGAL\\images\\"+imageName);
        
        return search.exists();
+    }
+    
+    public boolean existByWay(String way) {
+       
+       File search = new File(way);
+       
+       return search.exists();
+    }
+    
+    public static void resizeImage(JLabel jLabel, String way) {
+        
+        ImageIcon img = new ImageIcon(ImageFile.class.getResource(way));
+        
+        jLabel.setIcon(new ImageIcon(img.getImage().getScaledInstance(jLabel.getWidth(), jLabel.getHeight(), java.awt.Image.SCALE_DEFAULT)));
+    }
+    
+    public static void resizeImageByPath(JLabel jLabel, String way) {
+        
+        ImageIcon img = new ImageIcon(way);
+        
+        jLabel.setIcon(new ImageIcon(img.getImage().getScaledInstance(jLabel.getWidth(), jLabel.getHeight(), java.awt.Image.SCALE_DEFAULT)));
+    }
+    
+    public void resizeImage(JLabel jLabel) {
+        
+        jLabel.setIcon(new ImageIcon(imageSwing.getImage().getScaledInstance(jLabel.getWidth(), jLabel.getHeight(), java.awt.Image.SCALE_DEFAULT)));
     }
     
     public byte[] getBytes() {
