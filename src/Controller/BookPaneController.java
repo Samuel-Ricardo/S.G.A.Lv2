@@ -9,6 +9,7 @@ import Model.Book;
 import Model.ImageFile;
 import View.Components.BookPane;
 import View.ListOfBooks;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -22,11 +23,41 @@ public class BookPaneController {
     
     private final BookPane view;
     private final Book book;
+    private MouseListener MouseSelectListener;
 
     public BookPaneController(BookPane view, Book book) {
      
         this.view = view;
         this.book = book;
+        
+        this.MouseSelectListener = new MouseListener() {
+            
+            @Override
+            public void mouseClicked(MouseEvent e) {
+             
+                ListOfBooks.setSelectedBook(view);
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+           
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+              
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+            
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+            
+            }
+        };
     }
 
     public void start() {
@@ -63,33 +94,11 @@ public class BookPaneController {
 
     private void selectListener() {
     
-        view.addMouseListener(new MouseListener() {
-            
-            @Override
-            public void mouseClicked(MouseEvent e) {
+        view.addMouseListener(MouseSelectListener);
+        
+         for(Component comp: view.getComponents()){
              
-                ListOfBooks.setSelectedBook(view);
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-           
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-              
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-            
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-            
-            }
-        });
+             comp.addMouseListener(new M);
+         }
     }
 }
