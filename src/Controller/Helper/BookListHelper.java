@@ -39,7 +39,7 @@ public class BookListHelper {
      
       Book book = ListOfBooks.getSelectedBookPane().getBook();
       
-      
+      view.getjLabelAuthor().
     }
     
 }

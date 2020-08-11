@@ -5,167 +5,130 @@
  */
 package Model;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.Locale;
+import java.util.TimeZone;
 
 /**
  *
  * @author Samuel
  */
 public class Time {
-
-    private Date date;
-    private java.sql.Date dateSQL;
+    
+   //Types 
+    
     private LocalDate localDate;
     private LocalTime localTime;
     private LocalDateTime localDateTime;
-    private java.sql.Time timeSQL;
-    private Calendar calendar;
-    private GregorianCalendar gregorianCalendar;
+    
+    //Calendars
+    
+    private final Calendar CALENDAR = Calendar.getInstance(BRAZIL_NORTHEAST_ZONE, BRAZIL_LOCALE);;
+    private final GregorianCalendar GREGORIAN_CALENDAR = new GregorianCalendar(BRAZIL_NORTHEAST_ZONE, BRAZIL_LOCALE);
+    
+    //Brazil ZTimeone and Locale 
+    
+    private static final TimeZone BRAZIL_NORTHEAST_ZONE = TimeZone.getTimeZone("Brazil/NorthEast");
+    private static final Locale BRAZIL_LOCALE = new Locale("pt", "BR");
+    
+    //Converters
+    
+    private LocalDateConverter localDateConverter = new LocalDateConverter();
+    private LocalTimeConverter localTimeConverter = new LocalTimeConverter();
+    private LocalDateTimeConverter localDateTimeConverter = new LocalDateTimeConverter();
+    
+    //Formats
+            
     private static final SimpleDateFormat defaultDate = new SimpleDateFormat("dd/MM/yyyy HH:mm");
     private static final SimpleDateFormat HourAndMinute = new SimpleDateFormat("HH:mm");
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    private static final SimpleDateFormat shortDateFormat = new SimpleDateFormat("dd/MM");
 
-    public Time(Date date, java.sql.Date dateSql, LocalDate localDate, LocalTime localTime, java.sql.Time timeSQL, Calendar calendar, GregorianCalendar gregorianCalendar) {
-        this.date = date;
-        this.dateSQL = dateSql;
-        this.localDate = localDate;
-        this.localTime = localTime;
-        this.timeSQL = timeSQL;
-        this.calendar = calendar;
-        this.gregorianCalendar = gregorianCalendar;
-    }
-
+    //constructors
+    
     public Time() {
 
-        this.date = new Date();
-        this.dateSQL = dateToSqlDate(date);
         this.localDate = LocalDate.now();
         this.localTime = LocalTime.now();
-        this.timeSQL = localTimeToTimeSQL(localTime);
         this.localDateTime = LocalDateTime.now();
-        this.gregorianCalendar = new GregorianCalendar();
-
+        
     }
 
     public Time(java.sql.Date sqlDate) {
 
-        this.date = SqlDateToDate(sqlDate);
-        this.dateSQL = dateToSqlDate(date);
         this.localDate = sqlDate.toLocalDate();
         this.localTime = LocalTime.now();
-        this.timeSQL = localTimeToTimeSQL(localTime);
-        this.localDateTime = LocalDateTime.now();
-        this.gregorianCalendar = new GregorianCalendar();
+        this.localDateTime = LocalDateTime.of(localDate, localTime);
+    }
+    
+    public Time(java.sql.Date sqlDate, java.sql.Time sqlTime) {
 
+        this.localDate = sqlDate.toLocalDate();
+        this.localTime = sqlTime.toLocalTime();
+        this.localDateTime = LocalDateTime.of(localDate, localTime);
     }
 
     public Time(Date date) {
-
-        this.date = date;
-        this.dateSQL = dateToSqlDate(date);
-        this.localDateTime = dateToLocalDateTime(date);
-        this.localDate = dateToLocalDate(date);
-        this.localTime = dateToLocalTime(date);
-        this.timeSQL = localTimeToTimeSQL(localTime);
-        this.gregorianCalendar = new GregorianCalendar();
-
+        
+        this.localDateTime = localDateTimeConverter.fromDate(date);
+        this.localDate = localDateConverter.fromDate(date);
+        this.localTime = localTimeConverter.fromDate(date);
     }
     
-    public Time(String dateString) {
-
-        try {
-            
-            this.date = Time.dateFormat.parse(dateString);
-            this.dateSQL = dateToSqlDate(date);
-            this.localDateTime = dateToLocalDateTime(date);
-            this.localDate = dateToLocalDate(date);
-            this.localTime = LocalTime.now();
-            this.timeSQL = localTimeToTimeSQL(localTime);
-            this.gregorianCalendar = new GregorianCalendar();
-            
-        } catch (ParseException ex) {
-            Logger.getLogger(Time.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+    public Time(String string) {
+           
+            this.localDateTime = localDateTimeConverter.toLocalDateTime(string);
+            this.localDate = localDateConverter.toLocalDate(string);
+            this.localTime = localTimeConverter.toLocalTime(string);
     }
     
     public Time(LocalDateTime dateTime) {
         
         this.localDateTime = dateTime;
         this.localDate = localDateTime.toLocalDate();
-        this.localTime = localDateTime.toLocalTime();
-        this.timeSQL = localTimeToTimeSQL(localTime);
-        this.dateSQL = localDateToDateSQL(localDate);
-        System.out.println(dateSQL.getTime()+"FFFFFFFFFFFFFFFF");
-        this.date = SqlDateToDate(dateSQL);
-        
-        this.gregorianCalendar = new GregorianCalendar();
-    
-    }
-
-    public static Date now(){
-        
-        return new Date();
+        this.localTime = localDateTime.toLocalTime();    
     }
     
-    public Date SqlDateToDate(java.sql.Date sqlDate) {
+    
+    
+
+    public static Time now(){
         
-        System.out.println(sqlDate.getTime()+"PAAAAAAAAAAAAAAAAAAAAAAAAAAaaaaa");
-        
-        return new Date(sqlDate.getTime());
+        return new Time();
     }
 
-    public java.sql.Date dateToSqlDate(Date date1) {
-
-        return new java.sql.Date(date1.getTime());
+    @Override
+    public String toString() {
+        
+        return localDateTimeConverter.defaultFormat(localDateTime);
     }
     
-    public String getStringFromDate(Date date) {
-
-        String formated = defaultDate.format(date);
-
-        return formated;
+        
+      public String getOnlyDate() {
+          
+        return localDateConverter.defaultFormat(localDate);
     }
-
-    public java.sql.Date getSQLDateFrom(Date date) {
-
-        return dateToSqlDate(date);
+      
+      public String getShortDate() {
+          
+        return localDateConverter.shortFormat(localDate);
     }
-
-    public java.sql.Time getTimeSQL() {
-        return timeSQL;
+      
+      public String getOnlyTime() {
+          
+        return localTimeConverter.shortFormat(localTime);
     }
+    
 
-    public void setTimeSQL(java.sql.Time timeSQL) {
-        this.timeSQL = timeSQL;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public java.sql.Date getDateSQL() {
-        return dateSQL;
-    }
-
-    public void setDateSQL(java.sql.Date dateSQL) {
-        this.dateSQL = dateSQL;
-    }
-
+      
+      //Getters and Setters
+      
     public LocalDate getLocalDate() {
         return localDate;
     }
@@ -190,137 +153,44 @@ public class Time {
         this.localDateTime = localDateTime;
     }
 
-    public Calendar getCalendar() {
-        return calendar;
+    public LocalDateConverter getLocalDateConverter() {
+        return localDateConverter;
     }
 
-    public void setCalendar(Calendar calendar) {
-        this.calendar = calendar;
+    public void setLocalDateConverter(LocalDateConverter localDateConverter) {
+        this.localDateConverter = localDateConverter;
     }
 
-    public GregorianCalendar getGregorianCalendar() {
-        return gregorianCalendar;
+    public LocalTimeConverter getLocalTimeConverter() {
+        return localTimeConverter;
     }
 
-    public void setGregorianCalendar(GregorianCalendar gregorianCalendar) {
-        this.gregorianCalendar = gregorianCalendar;
-    }
-    
-    
-    
-    
-    
-    private LocalDate dateToLocalDate(Date date) {
-
-        Date formatedDate = getOnlyDate(date);
-
-        LocalDate local = formatedDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-
-        return local;
+    public void setLocalTimeConverter(LocalTimeConverter localTimeConverter) {
+        this.localTimeConverter = localTimeConverter;
     }
 
-    private LocalTime dateToLocalTime(Date date) {
-
-        Date time = getHoursAndMinutes(date);
-
-        LocalTime local = time.toInstant().atZone(ZoneId.systemDefault()).toLocalTime();
-
-        return local;
+    public LocalDateTimeConverter getLocalDateTimeConverter() {
+        return localDateTimeConverter;
     }
 
-    public Date getHoursAndMinutes(Date date) {
-
-        String stringTime = Time.HourAndMinute.format(date);
-        Date time = null;
-
-        try {
-
-            time = Time.HourAndMinute.parse(stringTime);
-
-        } catch (ParseException ex) {
-            Logger.getLogger(Time.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        return time;
+    public void setLocalDateTimeConverter(LocalDateTimeConverter localDateTimeConverter) {
+        this.localDateTimeConverter = localDateTimeConverter;
     }
 
-    public Date formatDate(Date date, SimpleDateFormat format) {
-
-        String stringTime = format.format(date);
-        Date formated = null;
-
-        try {
-
-            formated = format.parse(stringTime);
-
-        } catch (ParseException ex) {
-            Logger.getLogger(Time.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        return formated;
+    public Calendar getCALENDAR() {
+        return CALENDAR;
     }
 
-    public Date getOnlyDate(Date date) {
-
-        String stringTime = Time.dateFormat.format(date);
-        Date formatedDate = null;
-
-        try {
-
-            formatedDate = Time.dateFormat.parse(stringTime);
-
-        } catch (ParseException ex) {
-            Logger.getLogger(Time.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        return formatedDate;
+    public GregorianCalendar getGREGORIAN_CALENDAR() {
+        return GREGORIAN_CALENDAR;
     }
 
-    public Date getCompletDate(Date date) {
-
-        String stringTime = Time.defaultDate.format(date);
-        Date formatedDate = null;
-
-        try {
-
-            formatedDate = Time.defaultDate.parse(stringTime);
-
-        } catch (ParseException ex) {
-            Logger.getLogger(Time.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        return formatedDate;
+    public static TimeZone getBRAZIL_NORTHEAST_ZONE() {
+        return BRAZIL_NORTHEAST_ZONE;
     }
 
-    private LocalDateTime dateToLocalDateTime(Date date) {
-
-        Date formatedDate = getCompletDate(date);
-
-        LocalDateTime local = formatedDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
-
-        return local;
-    }
-
-    private java.sql.Time localTimeToTimeSQL(LocalTime localTime) {
-    
-        return java.sql.Time.valueOf(localTime);
-    }
-
-    private java.sql.Date localDateToDateSQL(LocalDate localDate) {
-      
-        return java.sql.Date.valueOf(localDate);
-    }
-    
-    
-    
-      public String getOnlyDate() {
-          
-        return Time.dateFormat.format(date);
-    }
-      
-      public String getOnlyTime() {
-          
-        return localDateTime.getHour()+" : "+localDateTime.getMinute();
+    public static Locale getBRAZIL_LOCALE() {
+        return BRAZIL_LOCALE;
     }
 
     public static SimpleDateFormat getDefaultDate() {
@@ -334,6 +204,18 @@ public class Time {
     public static SimpleDateFormat getDateFormat() {
         return dateFormat;
     }
-      
-      
+
+    public static SimpleDateFormat getShortDateFormat() {
+        return shortDateFormat;
+    } 
+
+    public java.sql.Date getDateSQL() {
+    
+        return localDateConverter.toSQLDate(localDate);
+    }
+    
+    public java.sql.Time getTimeSQL() {
+    
+        return localTimeConverter.toSQLTime(localTime);
+    }
 }
