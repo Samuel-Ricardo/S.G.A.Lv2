@@ -5,6 +5,7 @@
  */
 package Model;
 
+import Time.Time;
 import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.util.ArrayList;

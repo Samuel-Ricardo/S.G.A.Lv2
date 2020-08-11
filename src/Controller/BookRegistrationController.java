@@ -9,7 +9,7 @@ import Controller.Helper.BookRegistrationHelper;
 import DAO.BookDAO;
 import Model.Book;
 import Model.ImageFile;
-import Model.Time;
+import Time.Time;
 import View.BookRegistrationView;
 import java.util.Date;
 import javax.swing.JLabel;

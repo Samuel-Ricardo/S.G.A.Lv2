@@ -5,7 +5,7 @@
  */
 package Controller.Helper;
 
-import Model.Time;
+import Time.Time;
 import View.BookRegistrationView;
 import java.util.Date;
 
