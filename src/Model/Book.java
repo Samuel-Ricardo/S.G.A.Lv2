@@ -26,7 +26,7 @@ public class Book {
     private String author;
     private String publisher;
     private Integer stock;
-    private ArrayList<ImageFile> Image;
+    private ArrayList<ImageFile> Image = new ArrayList<>();
     private Time acquired;
     public static final String DEFAULT_IMAGE_WAY = "/View/Images/icons8-no-image-64px.png";
     
