@@ -23,12 +23,14 @@ public class BookPaneController {
     
     private final BookPane view;
     private final Book book;
+    private final ListOfBooks father;
     private MouseListener MouseSelectListener;
 
-    public BookPaneController(BookPane view, Book book) {
+    public BookPaneController(BookPane view, Book book, ListOfBooks father) {
      
         this.view = view;
         this.book = book;
+        this.father = father;
         
         this.MouseSelectListener = new MouseListener() {
             
@@ -36,6 +38,7 @@ public class BookPaneController {
             public void mouseClicked(MouseEvent e) {
              
                 ListOfBooks.setSelectedBook(view);
+                father.getController().loadDetails();
             }
 
             @Override
@@ -98,7 +101,7 @@ public class BookPaneController {
         
          for(Component comp: view.getComponents()){
              
-             comp.addMouseListener(new M);
+             comp.addMouseListener(MouseSelectListener);
          }
     }
 }

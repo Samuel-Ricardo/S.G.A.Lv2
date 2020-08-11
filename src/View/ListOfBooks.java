@@ -314,6 +314,12 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextFieldSearch;
     // End of variables declaration//GEN-END:variables
 
+    
+    public BookListController getController(){
+        
+        return controller;
+    }
+    
     public JButton getjButton1() {
         return jButton1;
     }

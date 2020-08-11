@@ -44,7 +44,13 @@ public class BookListController {
             helper.setBookOnList(book);
         }
     }
+
+    void loadDetails() {
+        
+        System.out.println("Detalhes");
     
+    }
     
+
     
 }

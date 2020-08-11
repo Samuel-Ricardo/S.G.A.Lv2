@@ -25,7 +25,7 @@ public class BookListHelper {
 
     public void setBookOnList(Book book) {
         
-        BookPane pane = new BookPane(book);
+        BookPane pane = new BookPane(book,view);
    
         pane.getInsets().set(10, 10, 10, 10);
         

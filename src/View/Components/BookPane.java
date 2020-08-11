@@ -7,6 +7,7 @@ package View.Components;
 
 import Controller.BookPaneController;
 import Model.Book;
+import View.ListOfBooks;
 import java.awt.Dimension;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -22,14 +23,16 @@ public class BookPane extends javax.swing.JPanel {
      */
     private final BookPaneController controller;
     private final Book book;
+    private final ListOfBooks father;
     
-    public BookPane(Book book) {
+    public BookPane(Book book, ListOfBooks father) {
         
         initComponents();
         
         this.book = book;
+        this.father = father;
         
-        controller = new BookPaneController(this, book);
+        controller = new BookPaneController(this, book, father);
         
         controller.start();
     }
@@ -175,5 +178,29 @@ public class BookPane extends javax.swing.JPanel {
 
     public void setjPanel1(JPanel jPanel1) {
         this.jPanel1 = jPanel1;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public ListOfBooks getFather() {
+        return father;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
     }
 }
