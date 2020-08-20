@@ -252,7 +252,7 @@ public class BookDAO {
         connect();
         PreparedStatement statement = null;
         ResultSet result = null;
-        sql = "SELECT * FROM tb_book WHERE book_name LIKE ? OR book_genre LIKE ? OR book_author LIKE ? OR book_publisher LIKE ? OR book_stock LIKE ?;";
+        sql = "SELECT * FROM tb_book WHERE book_name LIKE ? OR book_genre LIKE ? OR book_author LIKE ? OR book_publisher LIKE ?;";//OR book_stock LIKE ?;";
         List<Book> books = new ArrayList<>();
        
       
@@ -264,7 +264,7 @@ public class BookDAO {
             statement.setString(2, "%"+search+"%");
             statement.setString(3, "%"+search+"%");
             statement.setString(4, "%"+search+"%");
-            statement.setInt(5, Integer.parseInt(search));
+           // statement.setInt(5, Integer.parseInt(search));
             
             result = statement.executeQuery();
             

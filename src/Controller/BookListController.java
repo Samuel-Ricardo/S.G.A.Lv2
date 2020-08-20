@@ -13,6 +13,7 @@ import View.ListOfBooks;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 
 /**
@@ -74,10 +75,11 @@ public class BookListController {
 
     public void loadBooks(ArrayList<Book> books) {
         
-        for (Book book : books) {
-            
-            helper.setBookOnList(book);
-        }
+        view.getjPanelBookList().removeAll();
+        
+        System.out.println("Componemtes                 "+view.getjPanelBookList().getComponents().length);
+        
+        helper.setBookOnList(books,Box.createHorizontalBox());
     }
 
     public void loadDetails() {
@@ -87,10 +89,15 @@ public class BookListController {
     
     private void deepSearch() {
     
+        //view.getjPanelBookList().removeAll();
+        
+        loadBooks((ArrayList<Book>) bookDao.deepSearch(view.getjTextFieldSearch().getText()));
     }
 
     public void fastSearch() {
        
-        loadBooks(bookDao.fastSearch());
+        //view.getjPanelBookList().removeAll();
+        
+        loadBooks((ArrayList<Book>) bookDao.fastSearch(view.getjTextFieldSearch().getText()));
     }
 }
