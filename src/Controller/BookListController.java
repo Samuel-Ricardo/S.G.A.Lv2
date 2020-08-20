@@ -8,7 +8,10 @@ package Controller;
 import Controller.Helper.BookListHelper;
 import DAO.BookDAO;
 import Model.Book;
+import Model.ImageFile;
 import View.ListOfBooks;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.BoxLayout;
 
@@ -32,6 +35,40 @@ public class BookListController {
     
         view.getjPanelBookList().setLayout(new BoxLayout(view.getjPanelBookList(),BoxLayout.LINE_AXIS));
         
+        view.getjLabelSearchIcon().setSize(55, 42);
+        
+        ImageFile.resizeImage(view.getjLabelSearchIcon(),"/View/Images/icons8-search-bar-60.png");
+        
+       view.getjLabelSearchIcon().addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+              
+                deepSearch();
+                
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+            
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            
+                deepSearch();
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+           
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+           
+            }
+       });
+        
         loadBooks();
     }
 
@@ -52,4 +89,7 @@ public class BookListController {
     
 
     
+            private void deepSearch() {
+            
+            }
 }
