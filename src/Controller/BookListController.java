@@ -69,12 +69,10 @@ public class BookListController {
             }
        });
         
-        loadBooks();
+        loadBooks((ArrayList<Book>) bookDao.selectAll());
     }
 
-    public void loadBooks() {
-        
-        ArrayList<Book> books = (ArrayList<Book>) bookDao.selectAll();
+    public void loadBooks(ArrayList<Book> books) {
         
         for (Book book : books) {
             
@@ -87,9 +85,12 @@ public class BookListController {
         helper.loadBookDetails();
     }
     
-
+    private void deepSearch() {
     
-            private void deepSearch() {
-            
-            }
+    }
+
+    public void fastSearch() {
+       
+        loadBooks(bookDao.fastSearch());
+    }
 }

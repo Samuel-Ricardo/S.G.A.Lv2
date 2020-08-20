@@ -77,6 +77,12 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
 
         jLabelSearch.setText("Pesquisar Livro:");
 
+        jTextFieldSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldSearchKeyReleased(evt);
+            }
+        });
+
         jPanelBookList.setLayout(new javax.swing.BoxLayout(jPanelBookList, javax.swing.BoxLayout.LINE_AXIS));
         jScrollPane2.setViewportView(jPanelBookList);
 
@@ -284,6 +290,10 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
     private void jButtonDeletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeletActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonDeletActionPerformed
+
+    private void jTextFieldSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldSearchKeyReleased
+        controller.fastSearch();
+    }//GEN-LAST:event_jTextFieldSearchKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
