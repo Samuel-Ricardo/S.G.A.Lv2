@@ -44,7 +44,7 @@ public class BookListHelper {
         
         System.out.println("Componemtes                 "+view.getjPanelBookList().getComponents().length);
         
-    
+        view.getjPanelBookList().updateUI();
     }
 
     public void loadBookDetails() {
