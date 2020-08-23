@@ -49,6 +49,8 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
 
         jLabelSearch = new javax.swing.JLabel();
         jTextFieldSearch = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jPanelBookList = new javax.swing.JPanel();
         jPanelBookDetails = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -68,8 +70,6 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
         jLabelSearchIcon = new javax.swing.JLabel();
         jButtonUpdate = new javax.swing.JButton();
         jButtonDelet = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jListBooks = new javax.swing.JList<>();
 
         setClosable(true);
         setIconifiable(true);
@@ -83,6 +83,9 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
                 jTextFieldSearchKeyReleased(evt);
             }
         });
+
+        jPanelBookList.setLayout(new javax.swing.BoxLayout(jPanelBookList, javax.swing.BoxLayout.LINE_AXIS));
+        jScrollPane2.setViewportView(jPanelBookList);
 
         jLabel2.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
         jLabel2.setText("Detalhes");
@@ -212,7 +215,7 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
                     .addComponent(jLabelAcquiredDate))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jButtonUpdate.setText("Alterar");
@@ -229,27 +232,25 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
             }
         });
 
-        jScrollPane1.setViewportView(jListBooks);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(jLabelSearch)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabelSearchIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                         .addComponent(jButtonDelet)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonUpdate))
-                    .addComponent(jScrollPane1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonUpdate)))
+                .addGap(18, 18, 18)
                 .addComponent(jPanelBookDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
@@ -270,9 +271,9 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
                                     .addComponent(jTextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabelSearch)
                                     .addComponent(jLabelSearchIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1)
-                        .addContainerGap())
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jPanelBookDetails, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
@@ -316,9 +317,9 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabelSearch;
     private javax.swing.JLabel jLabelSearchIcon;
     private javax.swing.JLabel jLabelStock;
-    private javax.swing.JList<BookPane> jListBooks;
     private javax.swing.JPanel jPanelBookDetails;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel jPanelBookList;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextFieldSearch;
     // End of variables declaration//GEN-END:variables
 
@@ -489,21 +490,21 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
         this.jPanelBookDetails = jPanelBookDetails;
     }
 
-//    public JPanel getjPanelBookList() {
-//        return jPanelBookList;
-//    }
-//
-//    public void setjPanelBookList(JPanel jPanelBookList) {
-//        this.jPanelBookList = jPanelBookList;
-//    }
-//
-//    public JScrollPane getjScrollPane2() {
-//        return jScrollPane2;
-//    }
-//
-//    public void setjScrollPane2(JScrollPane jScrollPane2) {
-//        this.jScrollPane2 = jScrollPane2;
-//    }
+    public JPanel getjPanelBookList() {
+        return jPanelBookList;
+    }
+
+    public void setjPanelBookList(JPanel jPanelBookList) {
+        this.jPanelBookList = jPanelBookList;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public void setjScrollPane2(JScrollPane jScrollPane2) {
+        this.jScrollPane2 = jScrollPane2;
+    }
 
     public JTextField getjTextFieldSearch() {
         return jTextFieldSearch;
@@ -519,21 +520,5 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
 
     public static void setSelectedBookPane(BookPane selectedBookPane) {
         ListOfBooks.selectedBookPane = selectedBookPane;
-    }
-
-    public JList<BookPane> getjListBooks() {
-        return jListBooks;
-    }
-
-    public void setjListBooks(JList<BookPane> jListBooks) {
-        this.jListBooks = jListBooks;
-    }
-
-    public JScrollPane getjScrollPane1() {
-        return jScrollPane1;
-    }
-
-    public void setjScrollPane1(JScrollPane jScrollPane1) {
-        this.jScrollPane1 = jScrollPane1;
     }
 }
