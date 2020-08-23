@@ -43,6 +43,8 @@ public class BookListHelper {
         view.getjPanelBookList().add(box);
         
         System.out.println("Componemtes                 "+view.getjPanelBookList().getComponents().length);
+        
+    
     }
 
     public void loadBookDetails() {

@@ -80,6 +80,7 @@ public class BookListController {
         System.out.println("Componemtes                 "+view.getjPanelBookList().getComponents().length);
         
         helper.setBookOnList(books,Box.createHorizontalBox());
+        
     }
 
     public void loadDetails() {
@@ -92,6 +93,7 @@ public class BookListController {
         //view.getjPanelBookList().removeAll();
         
         loadBooks((ArrayList<Book>) bookDao.deepSearch(view.getjTextFieldSearch().getText()));
+        
     }
 
     public void fastSearch() {
