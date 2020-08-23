@@ -77,8 +77,6 @@ public class BookListController {
         
         view.getjPanelBookList().removeAll();
         
-        System.out.println("Componemtes                 "+view.getjPanelBookList().getComponents().length);
-        
         helper.setBookOnList(books,Box.createHorizontalBox());
         
     }
