@@ -11,11 +11,16 @@ import Model.Book;
 import Model.ImageFile;
 import View.ListOfBooks;
 import java.awt.Component;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
+import javafx.scene.input.KeyCode;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.text.JTextComponent;
 
 /**
  *
@@ -161,9 +166,27 @@ public class BookListController {
         });
     }
 
-    private void saveOnPressEnter() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void saveOnPressEnter(JTextComponent text, JLabel label) {
+     
+        text.addKeyListener(new KeyListener() {
+            
+            @Override
+            public void keyTyped(KeyEvent e) {
+             }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+              }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                
+                if(e.getKeyCode() == KeyEvent.VK_ENTER){
+                    
+                    label.setText(text.getText());
+                }
+                
+            }
+        });
     }
-    
-    
 }
