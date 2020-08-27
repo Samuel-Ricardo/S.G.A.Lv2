@@ -10,6 +10,7 @@ import DAO.BookDAO;
 import Model.Book;
 import Model.ImageFile;
 import View.ListOfBooks;
+import java.awt.Component;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -41,6 +42,8 @@ public class BookListController {
         loadBooks((ArrayList<Book>) bookDao.selectAll());
         
         hideUpdateFilds();
+        
+        setUpdateFildsListeners();
     }
 
     public void startSearchBar() {
@@ -107,7 +110,7 @@ public class BookListController {
         loadBooks((ArrayList<Book>) bookDao.fastSearch(view.getjTextFieldSearch().getText()));
     }
 
-    private void hideUpdateFilds() {
+    public void hideUpdateFilds() {
       
         view.getjTextFieldName().setVisible(false);
         view.getjTextFieldAuthor().setVisible(false);
@@ -116,4 +119,51 @@ public class BookListController {
         view.getjFormattedTextFieldDate().setVisible(false);
         view.getjSpinnerStock().setVisible(false);
     }
+
+    private void setUpdateFildsListeners() {
+       
+        showOnClick(view.getjTextFieldName());
+        showOnClick(view.getjTextFieldAuthor());
+        showOnClick(view.getjTextFieldGenre());
+        showOnClick(view.getjTextFieldPublisher());
+        showOnClick(view.getjFormattedTextFieldDate());
+        showOnClick(view.getjSpinnerStock());
+        
+        saveOnPressEnter();
+    
+    }
+
+    private void showOnClick(Component component) {
+       
+        component.addMouseListener(new MouseListener() {
+            
+            @Override
+            public void mouseClicked(MouseEvent e) {
+            
+                component.setVisible(true);
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+             }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+             }
+        });
+    }
+
+    private void saveOnPressEnter() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
 }
