@@ -20,6 +20,8 @@ import javafx.scene.input.KeyCode;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.text.JTextComponent;
 
 /**
@@ -123,16 +125,18 @@ public class BookListController {
         view.getjTextFieldPublisher().setVisible(false);
         view.getjFormattedTextFieldDate().setVisible(false);
         view.getjSpinnerStock().setVisible(false);
+        
+        showLabels();
     }
 
     private void setUpdateFildsListeners() {
        
-        showOnClick(view.getjTextFieldName());
-        showOnClick(view.getjTextFieldAuthor());
-        showOnClick(view.getjTextFieldGenre());
-        showOnClick(view.getjTextFieldPublisher());
-        showOnClick(view.getjFormattedTextFieldDate());
-        showOnClick(view.getjSpinnerStock());
+        showOnClick(view.getjLabelName(),view.getjTextFieldName());
+        showOnClick(view.getjLabelAuthor(),view.getjTextFieldAuthor());
+        showOnClick(view.getjLabelGenre(),view.getjTextFieldGenre());
+        showOnClick(view.getjLabelPublisher(),view.getjTextFieldPublisher());
+        showOnClick(view.getjLabelAcquiredDate(),view.getjFormattedTextFieldDate());
+        showOnClick(view.getjLabelStock(),view.getjSpinnerStock());
         
         saveOnPressEnter(view.getjTextFieldName(),view.getjLabelName());
         saveOnPressEnter(view.getjTextFieldAuthor(),view.getjLabelAuthor());
@@ -140,38 +144,26 @@ public class BookListController {
         saveOnPressEnter(view.getjTextFieldPublisher(),view.getjLabelPublisher());
         saveOnPressEnter(view.getjFormattedTextFieldDate(),view.getjLabelAcquiredDate());
         
-         view.getjSpinnerStock().addKeyListener(new KeyListener() {
-            
+         view.getjSpinnerStock().getModel().addChangeListener(new ChangeListener() {
             @Override
-            public void keyTyped(KeyEvent e) {
-             }
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-              }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
+            public void stateChanged(ChangeEvent e) {
                 
-                if(e.getKeyCode() == KeyEvent.VK_ENTER){
-                    
                     view.getjLabelStock().setText(""+(int)view.getjSpinnerStock().getValue());
-                    view.getjSpinnerStock().setVisible(false);
-                }
-                
+                    hideUpdateFilds();
             }
-        });
+         });
     
     }
 
-    private void showOnClick(Component component) {
+    private void showOnClick(Component clicked, Component show) {
        
-        component.addMouseListener(new MouseListener() {
+        clicked.addMouseListener(new MouseListener() {
             
             @Override
             public void mouseClicked(MouseEvent e) {
             
-                component.setVisible(true);
+                clicked.setVisible(false);
+                show.setVisible(true);
             }
 
             @Override
@@ -210,10 +202,20 @@ public class BookListController {
                 if(e.getKeyCode() == KeyEvent.VK_ENTER){
                     
                     label.setText(text.getText());
-                    text.setVisible(false);
+                    hideUpdateFilds();
                 }
                 
             }
         });
+    }
+
+    private void showLabels() {
+    
+        view.getjLabelName().setVisible(true);
+        view.getjLabelAuthor().setVisible(true);
+        view.getjLabelGenre().setVisible(true);
+        view.getjLabelPublisher().setVisible(true);
+        view.getjLabelAcquiredDate().setVisible(true);
+        view.getjLabelStock().setVisible(true);   
     }
 }
