@@ -258,18 +258,20 @@ public class BookListController {
         updateBook.setAuthor(view.getjLabelAuthor().getText());
         updateBook.setGenre(view.getjLabelGenre().getText());
         updateBook.setPublisher(view.getjLabelPublisher().getText());
-        updateBook.setStock((Integer) view.getjSpinnerStock().getValue());
+        updateBook.setStock(Integer.parseInt(view.getjLabelStock().getText()));
         updateBook.setAcquired(new Time(view.getjLabelAcquiredDate().getText()));
         
-        if(updateBook != view.getSelectedBookPane().getBook()){
+ //       if(updateBook.equals(view.getSelectedBookPane().getBook()) == false){
         
             if (bookDao.update(updateBook)) {
 
-                Dialoguer.message(view, "Os dados do livro "+updateBook.getName()+" foram atualizado com sucesso");
+                Dialoguer.message(view, " Os dados do livro "+updateBook.getName()+" foram atualizado com sucesso"
+                                    + "\n"
+                                    + "\n Atualize a Pagina");
             }
-        }else{
-            
-            Dialoguer.message(view, "Nao foi realizada nenhuma modificaçao, atualizaçao nao nescessária");
-        }
+//        }else{
+//            
+//            Dialoguer.message(view, "Nao foi realizada nenhuma modificaçao, atualizaçao nao nescessária");
+//        }
     }
 }
