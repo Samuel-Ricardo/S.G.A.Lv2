@@ -36,11 +36,19 @@ public class BookListController {
     
         view.getjPanelBookList().setLayout(new BoxLayout(view.getjPanelBookList(),BoxLayout.LINE_AXIS));
         
+        startSearchBar();
+        
+        loadBooks((ArrayList<Book>) bookDao.selectAll());
+        
+        hideUpdateFilds();
+    }
+
+    public void startSearchBar() {
         view.getjLabelSearchIcon().setSize(55, 42);
         
         ImageFile.resizeImage(view.getjLabelSearchIcon(),"/View/Images/icons8-search-bar-60.png");
         
-       view.getjLabelSearchIcon().addMouseListener(new MouseListener() {
+        view.getjLabelSearchIcon().addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
               
@@ -68,9 +76,7 @@ public class BookListController {
             public void mouseExited(MouseEvent e) {
            
             }
-       });
-        
-        loadBooks((ArrayList<Book>) bookDao.selectAll());
+        });
     }
 
     public void loadBooks(ArrayList<Book> books) {
@@ -99,5 +105,15 @@ public class BookListController {
         //view.getjPanelBookList().removeAll();
         
         loadBooks((ArrayList<Book>) bookDao.fastSearch(view.getjTextFieldSearch().getText()));
+    }
+
+    private void hideUpdateFilds() {
+      
+        view.getjTextFieldName().setVisible(false);
+        view.getjTextFieldAuthor().setVisible(false);
+        view.getjTextFieldGenre().setVisible(false);
+        view.getjTextFieldPublisher().setVisible(false);
+        view.getjFormattedTextFieldDate().setVisible(false);
+        view.getjSpinnerStock().setVisible(false);
     }
 }
