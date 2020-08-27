@@ -134,7 +134,33 @@ public class BookListController {
         showOnClick(view.getjFormattedTextFieldDate());
         showOnClick(view.getjSpinnerStock());
         
-        saveOnPressEnter();
+        saveOnPressEnter(view.getjTextFieldName(),view.getjLabelName());
+        saveOnPressEnter(view.getjTextFieldAuthor(),view.getjLabelAuthor());
+        saveOnPressEnter(view.getjTextFieldGenre(),view.getjLabelGenre());
+        saveOnPressEnter(view.getjTextFieldPublisher(),view.getjLabelPublisher());
+        saveOnPressEnter(view.getjFormattedTextFieldDate(),view.getjLabelAcquiredDate());
+        
+         view.getjSpinnerStock().addKeyListener(new KeyListener() {
+            
+            @Override
+            public void keyTyped(KeyEvent e) {
+             }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+              }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                
+                if(e.getKeyCode() == KeyEvent.VK_ENTER){
+                    
+                    view.getjLabelStock().setText(""+(int)view.getjSpinnerStock().getValue());
+                    view.getjSpinnerStock().setVisible(false);
+                }
+                
+            }
+        });
     
     }
 
@@ -184,6 +210,7 @@ public class BookListController {
                 if(e.getKeyCode() == KeyEvent.VK_ENTER){
                     
                     label.setText(text.getText());
+                    text.setVisible(false);
                 }
                 
             }
