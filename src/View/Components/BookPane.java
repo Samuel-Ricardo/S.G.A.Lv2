@@ -21,7 +21,7 @@ public class BookPane extends javax.swing.JPanel {
     /**
      * Creates new form BookPane
      */
-    private final BookPaneController controller;
+    private BookPaneController controller;
     private final Book book;
     private final ListOfBooks father;
     

@@ -48,7 +48,7 @@ public class BookListHelper {
 
     public void loadBookDetails() {
 
-        Book book = view.getSelectedBookPane().getBook();
+        Book book = ListOfBooks.getSelectedBookPane().getBook();
 
         view.getjLabelAuthor().setText(book.getAuthor());
         view.getjLabelAcquiredDate().setText(book.getAcquired().getOnlyDate());

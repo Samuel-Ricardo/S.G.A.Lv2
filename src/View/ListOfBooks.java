@@ -26,7 +26,7 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
      * Creates new form LivDis
      */
     
-    private BookPane selectedBookPane;
+    private static BookPane selectedBookPane;
     
     
     private final BookListController controller; 
@@ -467,12 +467,12 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
         this.jTextFieldSearch = jTextFieldSearch;
     }
 
-    public  BookPane getSelectedBookPane() {
+    public static BookPane getSelectedBookPane() {
         return selectedBookPane;
     }
 
-    public  void setSelectedBookPane(BookPane selectedBookPane) {
-        selectedBookPane = selectedBookPane;
+    public static void setSelectedBookPane(BookPane selectedBookPane) {
+        ListOfBooks.selectedBookPane = selectedBookPane;
     }
 
     public JFormattedTextField getjFormattedTextFieldDate() {
