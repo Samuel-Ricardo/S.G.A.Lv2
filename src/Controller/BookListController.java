@@ -178,6 +178,7 @@ public class BookListController {
                 
                     view.getjLabelStock().setText(""+(int)view.getjSpinnerStock().getValue());
                     hideUpdateFilds();
+                    view.getjButtonUpdate().setEnabled(true);
             }
          });
     
@@ -231,8 +232,8 @@ public class BookListController {
                     
                     label.setText(text.getText());
                     hideUpdateFilds();
-                }
-                
+                    view.getjButtonUpdate().setEnabled(true);
+                }   
             }
         });
     }
