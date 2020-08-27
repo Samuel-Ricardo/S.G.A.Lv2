@@ -75,9 +75,9 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
         jFormattedTextFieldDate = new javax.swing.JFormattedTextField();
         jTextFieldPublisher = new javax.swing.JTextField();
         jSpinnerStock = new javax.swing.JSpinner();
-        jLabelSearchIcon = new javax.swing.JLabel();
         jButtonUpdate = new javax.swing.JButton();
         jButtonDelet = new javax.swing.JButton();
+        jLabelSearchIcon = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -158,7 +158,7 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanelBookDetails.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 468, -1, -1));
+        jPanelBookDetails.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 100, 40));
         jPanelBookDetails.add(jTextFieldGenre, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 200, -1));
         jPanelBookDetails.add(jTextFieldAuthor, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 250, -1));
         jPanelBookDetails.add(jTextFieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 250, -1));
@@ -173,11 +173,13 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
         jPanelBookDetails.add(jSpinnerStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 80, -1));
 
         jButtonUpdate.setText("Alterar");
+        jButtonUpdate.setEnabled(false);
         jButtonUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonUpdateActionPerformed(evt);
             }
         });
+        jPanelBookDetails.add(jButtonUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 470, 90, 40));
 
         jButtonDelet.setText("Deletar");
         jButtonDelet.addActionListener(new java.awt.event.ActionListener() {
@@ -185,6 +187,7 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
                 jButtonDeletActionPerformed(evt);
             }
         });
+        jPanelBookDetails.add(jButtonDelet, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 490, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -200,10 +203,7 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
                         .addComponent(jTextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabelSearchIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                        .addComponent(jButtonDelet)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonUpdate)))
+                        .addGap(75, 183, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addComponent(jPanelBookDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -213,18 +213,11 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButtonUpdate)
-                                    .addComponent(jButtonDelet)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelSearch)
-                                    .addComponent(jLabelSearchIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelSearch)
+                            .addComponent(jLabelSearchIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))

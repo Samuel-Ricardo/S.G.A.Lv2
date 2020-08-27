@@ -51,6 +51,34 @@ public class BookListController {
         hideUpdateFilds();
         
         setUpdateFildsListeners();
+        
+        view.getjPanelBookDetails().addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+            
+                hideUpdateFilds();
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+            
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+            
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+           
+            }
+        });
     }
 
     public void startSearchBar() {
