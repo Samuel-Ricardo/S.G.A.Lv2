@@ -236,7 +236,7 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButtonUpdateActionPerformed
 
     private void jButtonDeletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeletActionPerformed
-        // TODO add your handling code here:
+       controller.delete();
     }//GEN-LAST:event_jButtonDeletActionPerformed
 
     private void jTextFieldSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldSearchKeyReleased

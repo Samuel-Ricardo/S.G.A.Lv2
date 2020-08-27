@@ -13,7 +13,7 @@ import Model.Manager;
 import Model.Student;
 import Model.User;
 import Services.FileManager;
-import Services.Dialoguer;
+import Services.Dialoger;
 import View.Login;
 import View.MainMenu;
 
@@ -78,7 +78,7 @@ public class LoginController {
         }
         
         if(logged == false){
-            Dialoguer.message(view, "Usuário nao encntrado ou inexistente");
+            Dialoger.message(view, "Usuário nao encntrado ou inexistente");
         }
 
     }
