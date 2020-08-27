@@ -9,6 +9,8 @@ import Controller.Helper.BookListHelper;
 import DAO.BookDAO;
 import Model.Book;
 import Model.ImageFile;
+import Services.Dialoguer;
+import Time.Time;
 import View.ListOfBooks;
 import java.awt.Component;
 import java.awt.event.KeyEvent;
@@ -33,6 +35,7 @@ public class BookListController {
     private final ListOfBooks view;
     private final BookDAO bookDao;
     private final BookListHelper helper;
+    private Book updateBook;
 
     public BookListController(ListOfBooks view) {
         this.view = view;
@@ -128,6 +131,7 @@ public class BookListController {
     public void loadDetails() {
         
         helper.loadBookDetails();
+        updateBook = view.getSelectedBookPane().getBook();
     }
     
     private void deepSearch() {
@@ -246,5 +250,26 @@ public class BookListController {
         view.getjLabelPublisher().setVisible(true);
         view.getjLabelAcquiredDate().setVisible(true);
         view.getjLabelStock().setVisible(true);   
+    }
+
+    public void update() {
+     
+        updateBook.setName(view.getjLabelName().getText());
+        updateBook.setAuthor(view.getjLabelAuthor().getText());
+        updateBook.setGenre(view.getjLabelGenre().getText());
+        updateBook.setPublisher(view.getjLabelPublisher().getText());
+        updateBook.setStock((Integer) view.getjSpinnerStock().getValue());
+        updateBook.setAcquired(new Time(view.getjLabelAcquiredDate().getText()));
+        
+        if(updateBook != view.getSelectedBookPane().getBook()){
+        
+            if (bookDao.update(updateBook)) {
+
+                Dialoguer.message(view, "Os dados do livro "+updateBook.getName()+" foram atualizado com sucesso");
+            }
+        }else{
+            
+            Dialoguer.message(view, "Nao foi realizada nenhuma modificaçao, atualizaçao nao nescessária");
+        }
     }
 }

@@ -26,7 +26,7 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
      * Creates new form LivDis
      */
     
-    private static BookPane selectedBookPane;
+    private BookPane selectedBookPane;
     
     
     private final BookListController controller; 
@@ -232,7 +232,7 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButtonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpdateActionPerformed
-        // TODO add your handling code here:
+        controller.update();
     }//GEN-LAST:event_jButtonUpdateActionPerformed
 
     private void jButtonDeletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeletActionPerformed
@@ -467,12 +467,12 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
         this.jTextFieldSearch = jTextFieldSearch;
     }
 
-    public static BookPane getSelectedBookPane() {
+    public  BookPane getSelectedBookPane() {
         return selectedBookPane;
     }
 
-    public static void setSelectedBookPane(BookPane selectedBookPane) {
-        ListOfBooks.selectedBookPane = selectedBookPane;
+    public  void setSelectedBookPane(BookPane selectedBookPane) {
+        selectedBookPane = selectedBookPane;
     }
 
     public JFormattedTextField getjFormattedTextFieldDate() {
