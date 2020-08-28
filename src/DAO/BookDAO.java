@@ -144,7 +144,7 @@ public class BookDAO {
        return books;
     }
     
-    public List<Book> search(String method, String pesquisa){
+    public List<Book> search(String method, String search){
       
         connect();
         PreparedStatement statement = null;
@@ -157,7 +157,7 @@ public class BookDAO {
               
             statement = connection.prepareStatement(sql);
             
-            statement.setString(1, "%"+pesquisa+"%");
+            statement.setString(1, "%"+search+"%");
             
             result = statement.executeQuery();
             
@@ -210,5 +210,79 @@ public class BookDAO {
         connection = ConnectionFactory.getConnection();
 
     }
+
+    public List<Book> fastSearch(String search) {
+   
+        connect();
+        PreparedStatement statement = null;
+        ResultSet result = null;
+        sql = "SELECT * FROM tb_book WHERE book_name LIKE ? OR book_genre LIKE ?;";
+        List<Book> books = new ArrayList<>();
+       
+      
+          try {
+              
+            statement = connection.prepareStatement(sql);
+            
+            statement.setString(1, "%"+search+"%");
+            statement.setString(2, "%"+search+"%");
+            
+            result = statement.executeQuery();
+            
+            while(result.next()){
+                
+              Book book = BookFactory.generateBook(result);
+
+                
+                books.add(book);
+
+            }
+
+        } catch (SQLException ex) {
+          JOptionPane.showMessageDialog(null, "Erro ao Pesqisar: " + ex); 
+        
+        } finally{
+              ConnectionFactory.closeConnection(connection, statement,result);
+          }
+       return books;
+    }
     
+    public List<Book> deepSearch(String search) {
+   
+        connect();
+        PreparedStatement statement = null;
+        ResultSet result = null;
+        sql = "SELECT * FROM tb_book WHERE book_name LIKE ? OR book_genre LIKE ? OR book_author LIKE ? OR book_publisher LIKE ?;";//OR book_stock LIKE ?;";
+        List<Book> books = new ArrayList<>();
+       
+      
+          try {
+              
+            statement = connection.prepareStatement(sql);
+            
+            statement.setString(1, "%"+search+"%");
+            statement.setString(2, "%"+search+"%");
+            statement.setString(3, "%"+search+"%");
+            statement.setString(4, "%"+search+"%");
+           // statement.setInt(5, Integer.parseInt(search));
+            
+            result = statement.executeQuery();
+            
+            while(result.next()){
+                
+              Book book = BookFactory.generateBook(result);
+
+                
+                books.add(book);
+
+            }
+
+        } catch (SQLException ex) {
+          JOptionPane.showMessageDialog(null, "Erro ao Pesqisar: " + ex); 
+        
+        } finally{
+              ConnectionFactory.closeConnection(connection, statement,result);
+          }
+       return books;
+    }
 }

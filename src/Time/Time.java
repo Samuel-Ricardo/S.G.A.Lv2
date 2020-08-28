@@ -5,18 +5,20 @@
  */
 package Time;
 
-import Utilities.Time.LocalDateConverter;
-import Utilities.Time.LocalDateTimeConverter;
-import Utilities.Time.LocalTimeConverter;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.temporal.Temporal;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.TimeZone;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -82,13 +84,18 @@ public class Time {
         this.localDateTime = localDateTimeConverter.fromDate(date);
         this.localDate = localDateConverter.fromDate(date);
         this.localTime = localTimeConverter.fromDate(date);
+        
+        localDateTime = localDate.atTime(localTime);
     }
     
     public Time(String string) {
            
             this.localDateTime = localDateTimeConverter.toLocalDateTime(string);
+            
             this.localDate = localDateConverter.toLocalDate(string);
+
             this.localTime = localTimeConverter.toLocalTime(string);
+
     }
     
     public Time(LocalDateTime dateTime) {
@@ -98,13 +105,20 @@ public class Time {
         this.localTime = localDateTime.toLocalTime();    
     }
     
+    public Time(LocalDate localDate) {
     
+        this.localDate = localDate;
+        this.localTime = LocalTime.now();
+        this.localDateTime = LocalDateTime.of(localDate, localTime);
+    }
     
 
     public static Time now(){
         
         return new Time();
     }
+
+ 
 
     @Override
     public String toString() {
@@ -137,7 +151,9 @@ public class Time {
     }
 
     public void setLocalDate(LocalDate localDate) {
+        
         this.localDate = localDate;
+        this.localDateTime = LocalDateTime.of(localDate, localTime);
     }
 
     public LocalTime getLocalTime() {
@@ -145,7 +161,9 @@ public class Time {
     }
 
     public void setLocalTime(LocalTime localTime) {
+        
         this.localTime = localTime;
+        this.localDateTime = LocalDateTime.of(localDate, localTime);
     }
 
     public LocalDateTime getLocalDateTime() {
@@ -153,7 +171,11 @@ public class Time {
     }
 
     public void setLocalDateTime(LocalDateTime localDateTime) {
+        
         this.localDateTime = localDateTime;
+        
+        this.localTime = localDateTime.toLocalTime();
+        this.localDate = localDateTime.toLocalDate();
     }
 
     public LocalDateConverter getLocalDateConverter() {

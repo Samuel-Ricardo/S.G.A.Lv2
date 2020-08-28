@@ -12,12 +12,22 @@ import javax.swing.JOptionPane;
  *
  * @author Samuel
  */
-public class Dialoguer {
+public class Dialoger {
     
     
     public static void message(Component component, String body){
         
         JOptionPane.showMessageDialog(component, body);
         
+    }
+
+    public static boolean confirm(Component component, String body) {
+       
+       if(JOptionPane.showConfirmDialog(component, body) == JOptionPane.YES_OPTION){
+           
+           return true;
+       }else{
+           return false;
+       } 
     }
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Utilities.Time;
+package Time;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -17,12 +17,23 @@ import java.util.Date;
  */
 public class LocalDateTimeConverter {
     
-    private final DateTimeFormatter DEFAULT_FORMAT = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm:ss");
+    private final DateTimeFormatter COMPLET_FORMAT = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm:ss");
+    private final DateTimeFormatter DEFAULT_FORMAT = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm");
     private final DateTimeFormatter SHORT_FORMAT = DateTimeFormatter.ofPattern("dd/MM hh:mm");
     
     public LocalDateTime toLocalDateTime(String string){
         
-      return LocalDateTime.parse(string, DEFAULT_FORMAT);
+        try {
+            
+            String date = string.replace(" ", "");
+            
+          return  LocalDateTime.parse(string,DEFAULT_FORMAT);
+            
+        } catch (Exception e) {
+            System.out.println("Erro: "+e);
+            return null;
+        }
+       
     }
     
     public LocalDateTime fromDate(Date date) {

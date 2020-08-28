@@ -8,9 +8,12 @@ package View;
 import Controller.BookListController;
 import View.Components.BookPane;
 import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JSpinner;
 import javax.swing.JTextField;
 
 /**
@@ -66,9 +69,15 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
         jLabelStock = new javax.swing.JLabel();
         jLabelPublisher = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabelSearchIcon = new javax.swing.JLabel();
+        jTextFieldGenre = new javax.swing.JTextField();
+        jTextFieldAuthor = new javax.swing.JTextField();
+        jTextFieldName = new javax.swing.JTextField();
+        jFormattedTextFieldDate = new javax.swing.JFormattedTextField();
+        jTextFieldPublisher = new javax.swing.JTextField();
+        jSpinnerStock = new javax.swing.JSpinner();
         jButtonUpdate = new javax.swing.JButton();
         jButtonDelet = new javax.swing.JButton();
+        jLabelSearchIcon = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -77,49 +86,71 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
 
         jLabelSearch.setText("Pesquisar Livro:");
 
+        jTextFieldSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldSearchKeyReleased(evt);
+            }
+        });
+
         jPanelBookList.setLayout(new javax.swing.BoxLayout(jPanelBookList, javax.swing.BoxLayout.LINE_AXIS));
         jScrollPane2.setViewportView(jPanelBookList);
 
+        jPanelBookDetails.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel2.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
         jLabel2.setText("Detalhes");
+        jPanelBookDetails.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 0, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel3.setText("Nome:");
+        jPanelBookDetails.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 47, -1, -1));
 
         jLabelName.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
         jLabelName.setText("Name");
+        jPanelBookDetails.add(jLabelName, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 49, 265, -1));
 
         jLabelImageBook.setText("Image");
+        jPanelBookDetails.add(jLabelImageBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 138, 200, 200));
 
         jLabel6.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel6.setText("Autor:");
+        jPanelBookDetails.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 75, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel7.setText("Publicadora:");
+        jPanelBookDetails.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 379, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel8.setText("Estoque:");
+        jPanelBookDetails.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 163, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel9.setText("Data de Aquisiçao:");
+        jPanelBookDetails.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 428, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel10.setText("Genero:");
+        jPanelBookDetails.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 110, -1, -1));
 
         jLabelAuthor.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
         jLabelAuthor.setText("Name");
+        jPanelBookDetails.add(jLabelAuthor, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 75, 265, -1));
 
         jLabelGenre.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
         jLabelGenre.setText("Name");
+        jPanelBookDetails.add(jLabelGenre, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 112, 258, -1));
 
         jLabelAcquiredDate.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
         jLabelAcquiredDate.setText("Name");
+        jPanelBookDetails.add(jLabelAcquiredDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 430, 171, -1));
 
         jLabelStock.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
         jLabelStock.setText("Name");
+        jPanelBookDetails.add(jLabelStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 165, -1, -1));
 
         jLabelPublisher.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
         jLabelPublisher.setText("Name");
+        jPanelBookDetails.add(jLabelPublisher, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 224, -1));
 
         jButton1.setText("Alugar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -127,98 +158,28 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanelBookDetails.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 100, 40));
+        jPanelBookDetails.add(jTextFieldGenre, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 200, -1));
+        jPanelBookDetails.add(jTextFieldAuthor, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 250, -1));
+        jPanelBookDetails.add(jTextFieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 250, -1));
 
-        javax.swing.GroupLayout jPanelBookDetailsLayout = new javax.swing.GroupLayout(jPanelBookDetails);
-        jPanelBookDetails.setLayout(jPanelBookDetailsLayout);
-        jPanelBookDetailsLayout.setHorizontalGroup(
-            jPanelBookDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBookDetailsLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(110, 110, 110))
-            .addGroup(jPanelBookDetailsLayout.createSequentialGroup()
-                .addGroup(jPanelBookDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelBookDetailsLayout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelAcquiredDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanelBookDetailsLayout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelPublisher, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(jPanelBookDetailsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelBookDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelBookDetailsLayout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelStock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelImageBook, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelBookDetailsLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabelName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanelBookDetailsLayout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelGenre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanelBookDetailsLayout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(14, 14, 14)
-                        .addComponent(jLabelAuthor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(jPanelBookDetailsLayout.createSequentialGroup()
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanelBookDetailsLayout.setVerticalGroup(
-            jPanelBookDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelBookDetailsLayout.createSequentialGroup()
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addGroup(jPanelBookDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabelName))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelBookDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabelAuthor))
-                .addGap(13, 13, 13)
-                .addGroup(jPanelBookDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabelGenre))
-                .addGroup(jPanelBookDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelBookDetailsLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(jPanelBookDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabelStock)))
-                    .addGroup(jPanelBookDetailsLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelImageBook, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(41, 41, 41)
-                .addGroup(jPanelBookDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabelPublisher))
-                .addGap(27, 27, 27)
-                .addGroup(jPanelBookDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabelAcquiredDate))
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jLabelSearchIcon.setText("search Icon");
+        try {
+            jFormattedTextFieldDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jPanelBookDetails.add(jFormattedTextFieldDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 160, -1));
+        jPanelBookDetails.add(jTextFieldPublisher, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 200, -1));
+        jPanelBookDetails.add(jSpinnerStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 80, -1));
 
         jButtonUpdate.setText("Alterar");
+        jButtonUpdate.setEnabled(false);
         jButtonUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonUpdateActionPerformed(evt);
             }
         });
+        jPanelBookDetails.add(jButtonUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 470, 90, 40));
 
         jButtonDelet.setText("Deletar");
         jButtonDelet.addActionListener(new java.awt.event.ActionListener() {
@@ -226,6 +187,7 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
                 jButtonDeletActionPerformed(evt);
             }
         });
+        jPanelBookDetails.add(jButtonDelet, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 490, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -240,11 +202,8 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelSearchIcon)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                        .addComponent(jButtonDelet)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonUpdate)))
+                        .addComponent(jLabelSearchIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(75, 183, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addComponent(jPanelBookDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -254,18 +213,11 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelSearch)
-                                    .addComponent(jLabelSearchIcon)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButtonUpdate)
-                                    .addComponent(jButtonDelet))))
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelSearch)
+                            .addComponent(jLabelSearchIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -280,18 +232,23 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButtonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpdateActionPerformed
-        // TODO add your handling code here:
+        controller.update();
     }//GEN-LAST:event_jButtonUpdateActionPerformed
 
     private void jButtonDeletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeletActionPerformed
-        // TODO add your handling code here:
+       controller.delete();
     }//GEN-LAST:event_jButtonDeletActionPerformed
+
+    private void jTextFieldSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldSearchKeyReleased
+        controller.fastSearch();
+    }//GEN-LAST:event_jTextFieldSearchKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonDelet;
     private javax.swing.JButton jButtonUpdate;
+    private javax.swing.JFormattedTextField jFormattedTextFieldDate;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -311,9 +268,15 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanelBookDetails;
     private javax.swing.JPanel jPanelBookList;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSpinner jSpinnerStock;
+    private javax.swing.JTextField jTextFieldAuthor;
+    private javax.swing.JTextField jTextFieldGenre;
+    private javax.swing.JTextField jTextFieldName;
+    private javax.swing.JTextField jTextFieldPublisher;
     private javax.swing.JTextField jTextFieldSearch;
     // End of variables declaration//GEN-END:variables
 
+    
     
     public BookListController getController(){
         
@@ -512,4 +475,51 @@ public class ListOfBooks extends javax.swing.JInternalFrame {
         ListOfBooks.selectedBookPane = selectedBookPane;
     }
 
+    public JFormattedTextField getjFormattedTextFieldDate() {
+        return jFormattedTextFieldDate;
+    }
+
+    public void setjFormattedTextFieldDate(JFormattedTextField jFormattedTextFieldDate) {
+        this.jFormattedTextFieldDate = jFormattedTextFieldDate;
+    }
+
+    public JSpinner getjSpinnerStock() {
+        return jSpinnerStock;
+    }
+
+    public void setjSpinnerStock(JSpinner jSpinnerStock) {
+        this.jSpinnerStock = jSpinnerStock;
+    }
+
+    public JTextField getjTextFieldAuthor() {
+        return jTextFieldAuthor;
+    }
+
+    public void setjTextFieldAuthor(JTextField jTextFieldAuthor) {
+        this.jTextFieldAuthor = jTextFieldAuthor;
+    }
+
+    public JTextField getjTextFieldGenre() {
+        return jTextFieldGenre;
+    }
+
+    public void setjTextFieldGenre(JTextField jTextFieldGenre) {
+        this.jTextFieldGenre = jTextFieldGenre;
+    }
+
+    public JTextField getjTextFieldName() {
+        return jTextFieldName;
+    }
+
+    public void setjTextFieldName(JTextField jTextFieldName) {
+        this.jTextFieldName = jTextFieldName;
+    }
+
+    public JTextField getjTextFieldPublisher() {
+        return jTextFieldPublisher;
+    }
+
+    public void setjTextFieldPublisher(JTextField jTextFieldPublisher) {
+        this.jTextFieldPublisher = jTextFieldPublisher;
+    }
 }

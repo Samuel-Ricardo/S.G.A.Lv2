@@ -21,12 +21,12 @@ public class FileManager {
         File folder = new File (defaultFolderWay +"/"+name); 
         
         if(folder.exists()){
-            Dialoguer.message(null, "A pasta: "+name+" Já existe. \n\n Caminho: "+folder.getAbsolutePath());
+            Dialoger.message(null, "A pasta: "+name+" Já existe. \n\n Caminho: "+folder.getAbsolutePath());
         }else{
             if(folder.mkdirs()){
-            Dialoguer.message(null, "A pasta: "+name+" foi criado com sucesso. \n\n Caminho: "+folder.getAbsolutePath());
+            Dialoger.message(null, "A pasta: "+name+" foi criado com sucesso. \n\n Caminho: "+folder.getAbsolutePath());
             }else{
-                 Dialoguer.message(null, "A pasta: "+name+" nao pode ser criado. \n\n Caminho: "+folder.getAbsolutePath());
+                 Dialoger.message(null, "A pasta: "+name+" nao pode ser criado. \n\n Caminho: "+folder.getAbsolutePath());
              }
         }
     }
@@ -34,10 +34,10 @@ public class FileManager {
     public void createFolder(File folder){
         
         if(folder.exists()){
-            Dialoguer.message(null, "A pasta: "+folder.getName()+" Já existe. \n\n Caminho: "+folder.getAbsolutePath());
+            Dialoger.message(null, "A pasta: "+folder.getName()+" Já existe. \n\n Caminho: "+folder.getAbsolutePath());
         }else{
             folder.mkdir();
-            Dialoguer.message(null, "A pasta: "+folder.getName()+" foi criado com sucesso. \n\n Caminho: "+folder.getAbsolutePath());
+            Dialoger.message(null, "A pasta: "+folder.getName()+" foi criado com sucesso. \n\n Caminho: "+folder.getAbsolutePath());
         }
     }
     
