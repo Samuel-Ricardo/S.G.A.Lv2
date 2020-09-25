@@ -5,13 +5,14 @@
  */
 package View.Registers;
 
+import Controller.Registers.ClientRegisterController;
 import JDBC.ConnectionFactory;
 import javax.swing.JOptionPane;
 import java.sql.*;
 
 public class ClientRegister extends javax.swing.JInternalFrame {
 
-
+    private final ClientRegisterController controller = new ClientRegisterController();
 
     public ClientRegister(){
             
