@@ -9,13 +9,13 @@ import JDBC.ConnectionFactory;
 import javax.swing.JOptionPane;
 import java.sql.*;
 
-public class CadCliente extends javax.swing.JInternalFrame {
+public class ClientRegister extends javax.swing.JInternalFrame {
 
     Connection conexao = null;
     PreparedStatement pst = null;
     ResultSet rs = null;
 
-    public CadCliente() {
+    public ClientRegister() {
         conexao = ConnectionFactory.getConnection();
         initComponents();
     }

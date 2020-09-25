@@ -201,7 +201,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_menIntCadLivrosActionPerformed
 
     private void menIntCadCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menIntCadCliActionPerformed
-       CadCliente cadcli = new CadCliente();
+       ClientRegister cadcli = new ClientRegister();
        cadcli.setVisible(true);
        Desktop.add(cadcli);
     }//GEN-LAST:event_menIntCadCliActionPerformed
