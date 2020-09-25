@@ -12,12 +12,11 @@ import java.sql.*;
 
 public class ClientRegister extends javax.swing.JInternalFrame {
 
-    private final ClientRegisterController controller = new ClientRegisterController();
-
+    private final ClientRegisterController controller;
     public ClientRegister(){
             
         initComponents();
-        
+        controller = new ClientRegisterController();
     }
 
 
@@ -201,7 +200,7 @@ public class ClientRegister extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-        controller.registe();
+        controller.register();
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
 
