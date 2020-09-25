@@ -182,8 +182,6 @@ public class CadCliente extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        txtIdCli = new javax.swing.JTextField();
         btnCadastrar = new javax.swing.JButton();
         cbxCidadeCli = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
@@ -214,10 +212,6 @@ public class CadCliente extends javax.swing.JInternalFrame {
         setResizable(true);
         setTitle("Oasis - Cadastros de Clientes");
         setPreferredSize(new java.awt.Dimension(600, 108));
-
-        jLabel1.setText("Id Cliente:");
-
-        txtIdCli.setEditable(false);
 
         btnCadastrar.setText("Cadastar");
         btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
@@ -301,7 +295,6 @@ public class CadCliente extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel3)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel1)
                     .addComponent(jLabel6)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -324,14 +317,13 @@ public class CadCliente extends javax.swing.JInternalFrame {
                                         .addComponent(jLabel9)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(cbxSerieCli, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                            .addComponent(txtIdCli, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNomeCli, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(txtFoneCli, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbxCursoCli, 0, 352, Short.MAX_VALUE))
+                                .addComponent(cbxCursoCli, 0, 342, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(cbxCidadeCli, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -351,11 +343,7 @@ public class CadCliente extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtIdCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtNomeCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -393,7 +381,7 @@ public class CadCliente extends javax.swing.JInternalFrame {
                         .addComponent(cbxCidadeCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         setBounds(0, 0, 715, 355);
@@ -425,7 +413,6 @@ public class CadCliente extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> cbxCursoCli;
     private javax.swing.JComboBox<String> cbxModuloCli;
     private javax.swing.JComboBox<String> cbxSerieCli;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -439,7 +426,6 @@ public class CadCliente extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtEmailCli;
     private javax.swing.JTextField txtEnderecoCli;
     private javax.swing.JFormattedTextField txtFoneCli;
-    private javax.swing.JTextField txtIdCli;
     private javax.swing.JTextField txtMatriculaCli;
     private javax.swing.JTextField txtNomeCli;
     // End of variables declaration//GEN-END:variables

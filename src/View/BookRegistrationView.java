@@ -5,7 +5,7 @@
  */
 package View;
 
-import Controller.BookRegistrationController;
+import Controller.Registers.BookRegistrationController;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
