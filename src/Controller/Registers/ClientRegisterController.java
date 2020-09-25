@@ -5,7 +5,9 @@
  */
 package Controller.Registers;
 
+import Controller.Helper.ClientRegisterHelper;
 import DAO.StudentDAO;
+import Model.Student;
 import View.Registers.ClientRegister;
 
 /**
@@ -27,6 +29,7 @@ public class ClientRegisterController {
     
     public void register() {
        
+        Student student = helper.getStudent();
         
     }    
     

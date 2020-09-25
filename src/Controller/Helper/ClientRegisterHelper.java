@@ -5,6 +5,7 @@
  */
 package Controller.Helper;
 
+import Model.Student;
 import View.Registers.ClientRegister;
 
 /**
@@ -17,5 +18,14 @@ public class ClientRegisterHelper {
 
     public ClientRegisterHelper(ClientRegister view) {
         this.view = view;
+    }
+
+    public Student getStudent() {
+    
+        Student student = new Student();
+        
+        
+        
+        return student;
     }
 }
