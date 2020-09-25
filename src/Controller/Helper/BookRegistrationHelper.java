@@ -6,7 +6,7 @@
 package Controller.Helper;
 
 import Time.Time;
-import View.BookRegistrationView;
+import View.Registers.BookRegistrationView;
 import java.util.Date;
 
 /**

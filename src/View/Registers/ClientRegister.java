@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package View.Registers;
 
 import JDBC.ConnectionFactory;
 import javax.swing.JOptionPane;

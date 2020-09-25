@@ -1,8 +1,9 @@
 package View;
 
+import View.Registers.ClientRegister;
 import Controller.MainMenuController;
 import javax.swing.JOptionPane;
-import View.BookRegistrationView;
+import View.Registers.BookRegistrationView;
 import javax.swing.JDesktopPane;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
