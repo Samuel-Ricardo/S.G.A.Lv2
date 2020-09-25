@@ -11,169 +11,15 @@ import java.sql.*;
 
 public class ClientRegister extends javax.swing.JInternalFrame {
 
-    Connection conexao = null;
-    PreparedStatement pst = null;
-    ResultSet rs = null;
 
-    public ClientRegister() {
-        
-        conexao = ConnectionFactory.getConnection();
+
+    public ClientRegister(){
+            
         initComponents();
         
     }
 
-    public void cadastrar() {
-        String sql = "insert into tbcliente(nomecli, matriculacli, emailcli, fonecli, enderecocli, cidadecli, modulocli, seriecli, cursocli) values(?,?,?,?,?,?,?,?,?)";
-        try {
-            pst = conexao.prepareStatement(sql);
-            pst.setString(1, txtNomeCli.getText());
-            pst.setString(2, txtMatriculaCli.getText());
-            pst.setString(3, txtEmailCli.getText());
-            pst.setString(4, txtFoneCli.getText());
-            pst.setString(5, txtEnderecoCli.getText());
-            pst.setString(6, cbxCidadeCli.getSelectedItem().toString());
-            pst.setString(7, cbxModuloCli.getSelectedItem().toString());
-            pst.setString(8, cbxSerieCli.getSelectedItem().toString());
-            pst.setString(9, cbxCursoCli.getSelectedItem().toString());
-            if ((txtNomeCli.getText().isEmpty()) || (txtFoneCli.getText().isEmpty()) || (cbxCidadeCli.getSelectedItem().toString().isEmpty())) {
-                JOptionPane.showMessageDialog(null, "Por favor digite os campos obrigatórios!");
-                txtNomeCli.setText(null);
-                txtMatriculaCli.setText(null);
-                txtEmailCli.setText(null);
-                txtEnderecoCli.setText(null);
-                txtFoneCli.setText(null);
-                txtIdCli.setText(null);
-                cbxCidadeCli.setSelectedItem(null);
-                cbxModuloCli.setSelectedItem(null);
-                cbxSerieCli.setSelectedItem(null);
-                cbxCursoCli.setSelectedItem(null);
 
-            } else {
-                int adicionado = pst.executeUpdate();
-                if (adicionado > 0) {
-                    JOptionPane.showMessageDialog(null, "Cliente cadastrado com Sucesso!");
-                    txtNomeCli.setText(null);
-                    txtMatriculaCli.setText(null);
-                    txtEmailCli.setText(null);
-                    txtEnderecoCli.setText(null);
-                    txtFoneCli.setText(null);
-                    txtIdCli.setText(null);
-                    cbxCidadeCli.setSelectedItem(null);
-                    cbxModuloCli.setSelectedItem(null);
-                    cbxSerieCli.setSelectedItem(null);
-                    cbxCursoCli.setSelectedItem(null);
-                }
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
-    }
-
-    public void procurar() {
-        String sql = "select idcli, nomecli, matriculacli, emailcli, fonecli, enderecocli,cidadecli,modulocli,seriecli,cursocli from tbcliente where nomecli=?";
-        try {
-            pst = conexao.prepareStatement(sql);
-            pst.setString(1, txtNomeCli.getText());
-            rs = pst.executeQuery();
-            if (rs.next()) {
-                txtIdCli.setText(rs.getString(1));
-                txtNomeCli.setText(rs.getString(2));
-                txtMatriculaCli.setText(rs.getString(3));
-                txtEmailCli.setText(rs.getString(4));
-                txtEnderecoCli.setText(rs.getString(5));
-                txtFoneCli.setText(rs.getString(6));
-                cbxCidadeCli.setSelectedItem(rs.getString(7));
-                cbxModuloCli.setSelectedItem(rs.getString(8));
-                cbxSerieCli.setSelectedItem(rs.getString(9));
-                cbxCursoCli.setSelectedItem(rs.getString(10));
-            } else {
-                JOptionPane.showMessageDialog(null, "Cliente não encontrado!");
-                txtNomeCli.setText(null);
-                txtMatriculaCli.setText(null);
-                txtEmailCli.setText(null);
-                txtEnderecoCli.setText(null);
-                txtFoneCli.setText(null);
-                txtIdCli.setText(null);
-                cbxCidadeCli.setSelectedItem(null);
-                cbxModuloCli.setSelectedItem(null);
-                cbxSerieCli.setSelectedItem(null);
-                cbxCursoCli.setSelectedItem(null);
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
-    }
-
-    public void deletar() {
-        int confirma;
-        confirma = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja remover este usuário", "Atenção", (JOptionPane.YES_NO_OPTION));
-        if (confirma == JOptionPane.YES_OPTION) {
-            String sql = "delete from tbcliente where idcli=?";
-            try {
-                pst = conexao.prepareStatement(sql);
-                pst.setString(1, txtIdCli.getText());
-                int apagado = pst.executeUpdate();
-                if (apagado > 0) {
-                    JOptionPane.showMessageDialog(null, "Usuário removido com sucesso!");
-                    txtNomeCli.setText(null);
-                    txtMatriculaCli.setText(null);
-                    txtEmailCli.setText(null);
-                    txtEnderecoCli.setText(null);
-                    txtFoneCli.setText(null);
-                    txtIdCli.setText(null);
-                    cbxCidadeCli.setSelectedItem(null);
-                    cbxModuloCli.setSelectedItem(null);
-                    cbxSerieCli.setSelectedItem(null);
-                    cbxCursoCli.setSelectedItem(null);
-                }
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e);
-            }
-        }
-    }
-
-    public void alterar() {
-        String sql = "update tbcleinte set nomecli=?,nomecli=?,matriculacli=?,emailcli=?,fonecli=?,enderecocli=?,cidadecli=?,modulocli=?,seriecli=?,cursocli=? where idcli=?";
-        try {
-            pst = conexao.prepareStatement(sql);
-            pst.setString(1, txtNomeCli.getText());
-            pst.setString(2, txtMatriculaCli.getText());
-            pst.setString(3, txtEmailCli.getText());
-            pst.setString(4, txtFoneCli.getText());
-            pst.setString(5, txtEnderecoCli.getText());
-            pst.setString(6, cbxCidadeCli.getSelectedItem().toString());
-            pst.setString(7, cbxModuloCli.getSelectedItem().toString());
-            pst.setString(8, cbxSerieCli.getSelectedItem().toString());
-            pst.setString(9, cbxCursoCli.getSelectedItem().toString());
-            if ((txtNomeCli.getText().isEmpty()) || (txtFoneCli.getText().isEmpty()) || (cbxCidadeCli.getSelectedItem().toString().isEmpty())) {
-                JOptionPane.showMessageDialog(null, "Por favor digite os campos obrigatórios!");
-                txtNomeCli.setText(null);
-                txtMatriculaCli.setText(null);
-                txtEmailCli.setText(null);
-                txtEnderecoCli.setText(null);
-                txtFoneCli.setText(null);
-                txtIdCli.setText(null);
-                cbxCidadeCli.setSelectedItem(null);
-                cbxModuloCli.setSelectedItem(null);
-                cbxSerieCli.setSelectedItem(null);
-                cbxCursoCli.setSelectedItem(null);
-            } else {
-                JOptionPane.showMessageDialog(null, "Dados do cliente alterado com sucesso!");
-                txtNomeCli.setText(null);
-                txtMatriculaCli.setText(null);
-                txtEmailCli.setText(null);
-                txtEnderecoCli.setText(null);
-                txtFoneCli.setText(null);
-                txtIdCli.setText(null);
-                cbxCidadeCli.setSelectedItem(null);
-                cbxModuloCli.setSelectedItem(null);
-                cbxSerieCli.setSelectedItem(null);
-                cbxCursoCli.setSelectedItem(null);
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -354,7 +200,7 @@ public class ClientRegister extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-        cadastrar();
+        controller.registe();
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
 
