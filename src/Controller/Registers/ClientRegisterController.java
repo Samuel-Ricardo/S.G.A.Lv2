@@ -21,7 +21,7 @@ public class ClientRegisterController {
     public ClientRegisterController(ClientRegister view) {
         
         this.studentDao = new StudentDAO();
-        this.helper = new ClientRegisterHelper();
+        this.helper = new ClientRegisterHelper(view);
         this.view = view;
     }
     
