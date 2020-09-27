@@ -16,7 +16,7 @@ public class ClientRegister extends javax.swing.JInternalFrame {
     public ClientRegister(){
             
         initComponents();
-        controller = new ClientRegisterController();
+        controller = new ClientRegisterController(this);
     }
 
 
