@@ -479,7 +479,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Turno :"/>
+        <Property name="text" type="java.lang.String" value="Modulo :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="cbShift">

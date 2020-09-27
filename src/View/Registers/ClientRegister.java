@@ -90,7 +90,7 @@ public class ClientRegister extends javax.swing.JInternalFrame {
 
         jLabel7.setText("Cidade:");
 
-        jLabel8.setText("Turno :");
+        jLabel8.setText("Modulo :");
 
         cbShift.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INTEGRADO", "SUBSEQUENTE", "EDUCAÇÃO A DISTÂNCIA" }));
 
