@@ -17,6 +17,7 @@ public class Manager extends User implements Model.Interface.User{
     
     public Manager() {
        
+        this.accessLevel = User.ACCESS_MED;
     }
 
     public String getSchool() {
