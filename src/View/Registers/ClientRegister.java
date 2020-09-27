@@ -6,9 +6,12 @@
 package View.Registers;
 
 import Controller.Registers.ClientRegisterController;
-import JDBC.ConnectionFactory;
-import javax.swing.JOptionPane;
-import java.sql.*;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 public class ClientRegister extends javax.swing.JInternalFrame {
 
@@ -360,4 +363,230 @@ public class ClientRegister extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtRegistration;
     private javax.swing.JTextField txtSchool;
     // End of variables declaration//GEN-END:variables
+
+    //Getters and Setters
+    
+    public JButton getBtnRegister() {
+        return btnRegister;
+    }
+
+    public void setBtnRegister(JButton btnRegister) {
+        this.btnRegister = btnRegister;
+    }
+
+    public JComboBox<String> getCbCity() {
+        return cbCity;
+    }
+
+    public void setCbCity(JComboBox<String> cbCity) {
+        this.cbCity = cbCity;
+    }
+
+    public JComboBox<String> getCbCourse() {
+        return cbCourse;
+    }
+
+    public void setCbCourse(JComboBox<String> cbCourse) {
+        this.cbCourse = cbCourse;
+    }
+
+    public JComboBox<String> getCbGrade() {
+        return cbGrade;
+    }
+
+    public void setCbGrade(JComboBox<String> cbGrade) {
+        this.cbGrade = cbGrade;
+    }
+
+    public JComboBox<String> getCbShift() {
+        return cbShift;
+    }
+
+    public void setCbShift(JComboBox<String> cbShift) {
+        this.cbShift = cbShift;
+    }
+
+    public JFormattedTextField getjFormattedTextFieldCEP() {
+        return jFormattedTextFieldCEP;
+    }
+
+    public void setjFormattedTextFieldCEP(JFormattedTextField jFormattedTextFieldCEP) {
+        this.jFormattedTextFieldCEP = jFormattedTextFieldCEP;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel12() {
+        return jLabel12;
+    }
+
+    public void setjLabel12(JLabel jLabel12) {
+        this.jLabel12 = jLabel12;
+    }
+
+    public JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    public void setjLabel13(JLabel jLabel13) {
+        this.jLabel13 = jLabel13;
+    }
+
+    public JLabel getjLabel14() {
+        return jLabel14;
+    }
+
+    public void setjLabel14(JLabel jLabel14) {
+        this.jLabel14 = jLabel14;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public JLabel getjLabelPerfilImage() {
+        return jLabelPerfilImage;
+    }
+
+    public void setjLabelPerfilImage(JLabel jLabelPerfilImage) {
+        this.jLabelPerfilImage = jLabelPerfilImage;
+    }
+
+    public JPasswordField getjPasswordField() {
+        return jPasswordField;
+    }
+
+    public void setjPasswordField(JPasswordField jPasswordField) {
+        this.jPasswordField = jPasswordField;
+    }
+
+    public JTextField getTxtAddress() {
+        return txtAddress;
+    }
+
+    public void setTxtAddress(JTextField txtAddress) {
+        this.txtAddress = txtAddress;
+    }
+
+    public JTextField getTxtEmail() {
+        return txtEmail;
+    }
+
+    public void setTxtEmail(JTextField txtEmail) {
+        this.txtEmail = txtEmail;
+    }
+
+    public JTextField getTxtLogin() {
+        return txtLogin;
+    }
+
+    public void setTxtLogin(JTextField txtLogin) {
+        this.txtLogin = txtLogin;
+    }
+
+    public JTextField getTxtName() {
+        return txtName;
+    }
+
+    public void setTxtName(JTextField txtName) {
+        this.txtName = txtName;
+    }
+
+    public JFormattedTextField getTxtPhone() {
+        return txtPhone;
+    }
+
+    public void setTxtPhone(JFormattedTextField txtPhone) {
+        this.txtPhone = txtPhone;
+    }
+
+    public JTextField getTxtRegistration() {
+        return txtRegistration;
+    }
+
+    public void setTxtRegistration(JTextField txtRegistration) {
+        this.txtRegistration = txtRegistration;
+    }
+
+    public JTextField getTxtSchool() {
+        return txtSchool;
+    }
+
+    public void setTxtSchool(JTextField txtSchool) {
+        this.txtSchool = txtSchool;
+    }
 }

@@ -32,5 +32,9 @@ public class ClientRegisterController {
         Student student = helper.getStudent();
         
     }    
+
+    public void choseImage() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
