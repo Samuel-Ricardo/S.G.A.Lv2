@@ -17,14 +17,23 @@ import javax.swing.JTextField;
 public class ClientRegister extends javax.swing.JInternalFrame {
 
     private final ClientRegisterController controller;
-    private ImageFile perfilImage = new ImageFile(ClientRegister.class.getResource("/View/Images/icons8-no-image-64px.png").toString());
+    
+    private ImageFile perfilImage; 
     
     public ClientRegister(){
             
         initComponents();
         controller = new ClientRegisterController(this);
         
+        String way = ClientRegister.class.getResource("/View/Images/icons8-no-image-64px.png").toString();
+        
+        perfilImage = new ImageFile(way.replaceFirst("file:/", ""));
+                
         jLabelPerfilImage.setIcon(perfilImage.getImageSwing());
+        
+        this.updateUI();
+        
+        System.out.println(perfilImage.getFile().exists()+"      existe                 ;");
     }
 
 

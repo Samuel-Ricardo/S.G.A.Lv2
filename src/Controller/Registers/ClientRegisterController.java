@@ -51,6 +51,7 @@ public class ClientRegisterController {
             view.getjLabelPerfilImage().setIcon(image.getImageSwing());
             
             view.setPerfilImage(image);
+            view.updateUI();
         }
     }
     
