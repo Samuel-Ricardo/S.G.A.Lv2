@@ -70,38 +70,48 @@ public class ClientRegisterHelper {
 
     private String getModule() {
       
-        return view.getCB().getModel().getSelectedItem().toString();
+        return view.getCbModule().getModel().getSelectedItem().toString();
     }
 
     private String getLogin() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
+        return view.getTxtLogin().getText();
     }
 
     private String getName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+        return view.getTxtName().getText();
     }
 
     private String getPassword() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+        return new String (view.getjPasswordField().getPassword());
     }
 
     private ImageFile getPerfilImage() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+        String way = ClientRegister.class.getResource("/View/Images/icons8-no-image-64px.png").toString();
+        
+        return new ImageFile(way);
     }
 
     private String getPhone() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+        return view.getTxtPhone().getText();
     }
 
     private String getRegistration() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      
+        return view.getTxtRegistration().getText();
     }
 
     private String getSchool() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+        return view.getTxtSchool().getText();
     }
 
     private String getShift() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     
+        return view.getCbShift().getModel().getSelectedItem().toString();
     }
 }
