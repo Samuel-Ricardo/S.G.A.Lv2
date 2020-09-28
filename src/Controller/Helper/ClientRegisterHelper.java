@@ -90,9 +90,7 @@ public class ClientRegisterHelper {
 
     private ImageFile getPerfilImage() {
     
-        String way = ClientRegister.class.getResource("/View/Images/icons8-no-image-64px.png").toString();
-        
-        return new ImageFile(way);
+       return view.getPerfilImage();
     }
 
     private String getPhone() {

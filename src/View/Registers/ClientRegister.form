@@ -165,7 +165,6 @@
                               </Group>
                               <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                               <Component id="txtSchool" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="-2147483648" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel11" min="-2" max="-2" attributes="0"/>

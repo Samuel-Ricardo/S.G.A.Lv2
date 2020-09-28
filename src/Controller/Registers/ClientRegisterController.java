@@ -7,9 +7,11 @@ package Controller.Registers;
 
 import Controller.Helper.ClientRegisterHelper;
 import DAO.StudentDAO;
+import Model.ImageFile;
 import Model.Student;
 import Services.Dialoger;
 import View.Registers.ClientRegister;
+import javax.swing.JFileChooser;
 
 /**
  *
@@ -39,7 +41,17 @@ public class ClientRegisterController {
     }    
 
     public void choseImage() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   
+        JFileChooser chooser = new JFileChooser();
+        
+        if (chooser.showOpenDialog(view) == JFileChooser.APPROVE_OPTION){
+        
+            ImageFile image = new ImageFile(chooser.getSelectedFile());
+            
+            view.getjLabelPerfilImage().setIcon(image.getImageSwing());
+            
+            view.setPerfilImage(image);
+        }
     }
     
 }

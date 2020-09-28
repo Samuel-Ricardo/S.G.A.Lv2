@@ -6,6 +6,7 @@
 package View.Registers;
 
 import Controller.Registers.ClientRegisterController;
+import Model.ImageFile;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
@@ -16,10 +17,14 @@ import javax.swing.JTextField;
 public class ClientRegister extends javax.swing.JInternalFrame {
 
     private final ClientRegisterController controller;
+    private ImageFile perfilImage = new ImageFile(ClientRegister.class.getResource("/View/Images/icons8-no-image-64px.png").toString());
+    
     public ClientRegister(){
             
         initComponents();
         controller = new ClientRegisterController(this);
+        
+        jLabelPerfilImage.setIcon(perfilImage.getImageSwing());
     }
 
 
@@ -262,8 +267,7 @@ public class ClientRegister extends javax.swing.JInternalFrame {
                                         .addGap(4, 4, 4)
                                         .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(12, 12, 12)
-                                .addComponent(txtSchool, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE))
+                                .addComponent(txtSchool, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel11)
                                 .addGap(20, 20, 20)
@@ -625,5 +629,13 @@ public class ClientRegister extends javax.swing.JInternalFrame {
 
     public void setjLabel15(JLabel jLabel15) {
         this.jLabel15 = jLabel15;
+    }
+
+    public ImageFile getPerfilImage() {
+        return perfilImage;
+    }
+
+    public void setPerfilImage(ImageFile perfilImage) {
+        this.perfilImage = perfilImage;
     }
 }
