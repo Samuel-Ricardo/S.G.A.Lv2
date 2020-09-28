@@ -387,8 +387,6 @@ public class ClientRegister extends javax.swing.JInternalFrame {
 
     //Getters and Setters
     
-    
-    
     public JButton getBtnRegister() {
         return btnRegister;
     }
@@ -611,5 +609,21 @@ public class ClientRegister extends javax.swing.JInternalFrame {
 
     public void setTxtSchool(JTextField txtSchool) {
         this.txtSchool = txtSchool;
+    }
+
+    public JComboBox<String> getCbModule() {
+        return cbModule;
+    }
+
+    public void setCbModule(JComboBox<String> cbModule) {
+        this.cbModule = cbModule;
+    }
+
+    public JLabel getjLabel15() {
+        return jLabel15;
+    }
+
+    public void setjLabel15(JLabel jLabel15) {
+        this.jLabel15 = jLabel15;
     }
 }
