@@ -8,6 +8,7 @@ package Controller.Registers;
 import Controller.Helper.ClientRegisterHelper;
 import DAO.StudentDAO;
 import Model.Student;
+import Services.Dialoger;
 import View.Registers.ClientRegister;
 
 /**
@@ -31,6 +32,10 @@ public class ClientRegisterController {
        
         Student student = helper.getStudent();
         
+       if (studentDao.insert(student)){
+        
+           Dialoger.message(view, "Salvo com sucesso");
+       }
     }    
 
     public void choseImage() {
