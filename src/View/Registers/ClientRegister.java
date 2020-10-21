@@ -161,7 +161,7 @@ public class ClientRegister extends javax.swing.JInternalFrame {
 
         jLabel14.setText("Escola :");
 
-        cbShift.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INTEGRADO", "SUBSEQUENTE", "EDUCAÇÃO A DISTÂNCIA" }));
+        cbShift.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MANHÃ", "TARDE", "NOITE", "INTEGRAL (MANHÃ + TARDE)" }));
 
         jLabel15.setText("Turno");
 

@@ -6,6 +6,13 @@
 package Services;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -41,4 +48,41 @@ public class FileManager {
         }
     }
     
+    public void copyFileTo(File file,File destiny){
+        
+        if(destiny.exists()){
+            Dialoger.message(null, "O arquivo: "+destiny.getName()+" Já existe. \n\n Caminho: "+destiny.getAbsolutePath());
+        }else{
+
+            FileInputStream input = null;
+            FileOutputStream output = null;
+            
+            try {
+               
+                input = new FileInputStream(file);
+                output = new FileOutputStream(destiny);
+              
+                FileChannel fcOrigin = input.getChannel();
+                FileChannel fcDestiny = output.getChannel();
+               
+                fcOrigin.transferTo(0, fcOrigin.size(), fcDestiny);
+                
+                Dialoger.message(null, "O arquivo: "+destiny.getName()+" foi copiado com sucesso. \n\n Caminho: "+destiny.getAbsolutePath());
+           
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(FileManager.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(FileManager.class.getName()).log(Level.SEVERE, null, ex);
+           
+            } finally {
+                
+                try {
+                    input.close();
+                    output.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(FileManager.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }
 }

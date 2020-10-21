@@ -638,10 +638,11 @@
     <Component class="javax.swing.JComboBox" name="cbShift">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="INTEGRADO"/>
-            <StringItem index="1" value="SUBSEQUENTE"/>
-            <StringItem index="2" value="EDUCA&#xc7;&#xc3;O A DIST&#xc2;NCIA"/>
+          <StringArray count="4">
+            <StringItem index="0" value="MANH&#xc3;"/>
+            <StringItem index="1" value="TARDE"/>
+            <StringItem index="2" value="NOITE"/>
+            <StringItem index="3" value="INTEGRAL (MANH&#xc3; + TARDE)"/>
           </StringArray>
         </Property>
       </Properties>
