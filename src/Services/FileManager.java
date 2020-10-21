@@ -23,7 +23,7 @@ public class FileManager {
     public static final String pcUser = System.getProperty("user.");
     public static final String defaultFolderWay = System.getProperty("user.home") + "/Documents/Oasis";
     
-    public void createFolder(String name){
+    public File createFolder(String name){
      
         File folder = new File (defaultFolderWay +"/"+name); 
         
@@ -36,9 +36,11 @@ public class FileManager {
                  Dialoger.message(null, "A pasta: "+name+" nao pode ser criado. \n\n Caminho: "+folder.getAbsolutePath());
              }
         }
+        
+        return folder;
     }
     
-    public void createFolder(File folder){
+    public File createFolder(File folder){
         
         if(folder.exists()){
             Dialoger.message(null, "A pasta: "+folder.getName()+" Já existe. \n\n Caminho: "+folder.getAbsolutePath());
@@ -46,9 +48,11 @@ public class FileManager {
             folder.mkdir();
             Dialoger.message(null, "A pasta: "+folder.getName()+" foi criado com sucesso. \n\n Caminho: "+folder.getAbsolutePath());
         }
+        
+        return folder;
     }
     
-    public void copyFileTo(File file,File destiny){
+    public File copyFileTo(File file,File destiny){
         
         if(destiny.exists()){
             Dialoger.message(null, "O arquivo: "+destiny.getName()+" Já existe. \n\n Caminho: "+destiny.getAbsolutePath());
@@ -84,5 +88,10 @@ public class FileManager {
                 }
             }
         }
+        
+        return destiny;
     }
+    
+    
+    
 }
