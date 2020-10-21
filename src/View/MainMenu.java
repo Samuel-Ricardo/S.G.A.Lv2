@@ -29,14 +29,15 @@ public class MainMenu extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         menIntCadLivros = new javax.swing.JMenuItem();
         menIntCadCli = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         menIntCadUser = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         menAlugLivro = new javax.swing.JMenuItem();
-        menIntLivAlugados = new javax.swing.JMenuItem();
-        menIntLivDisponíveis = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
-        menListaClientes = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
+        menListaClientes = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         menIntSAC = new javax.swing.JMenuItem();
         menIntSobre = new javax.swing.JMenuItem();
@@ -75,13 +76,16 @@ public class MainMenu extends javax.swing.JFrame {
         jMenu4.add(menIntCadLivros);
 
         menIntCadCli.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
-        menIntCadCli.setText("Cadastross de Clientes");
+        menIntCadCli.setText("Cadastros de Alunos");
         menIntCadCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menIntCadCliActionPerformed(evt);
             }
         });
         jMenu4.add(menIntCadCli);
+
+        jMenuItem2.setText("Cadastro de Cliente");
+        jMenu4.add(jMenuItem2);
 
         menIntCadUser.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
         menIntCadUser.setForeground(new java.awt.Color(255, 0, 0));
@@ -96,7 +100,7 @@ public class MainMenu extends javax.swing.JFrame {
 
         Sair.add(jMenu4);
 
-        jMenu2.setText("Gerenciamento Aluguel");
+        jMenu2.setText("Operaçoes");
 
         menAlugLivro.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK));
         menAlugLivro.setText("Alugar Livro");
@@ -107,27 +111,17 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jMenu2.add(menAlugLivro);
 
-        menIntLivAlugados.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
-        menIntLivAlugados.setText("Livros Alugados");
-        menIntLivAlugados.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menIntLivAlugadosActionPerformed(evt);
-            }
-        });
-        jMenu2.add(menIntLivAlugados);
-
-        menIntLivDisponíveis.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.ALT_MASK));
-        menIntLivDisponíveis.setText("Livros Disponíveis");
-        menIntLivDisponíveis.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menIntLivDisponíveisActionPerformed(evt);
-            }
-        });
-        jMenu2.add(menIntLivDisponíveis);
-
         Sair.add(jMenu2);
 
         jMenu6.setText("Pesquisa");
+
+        jMenuItem1.setText("Livros");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem1);
 
         menListaClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.ALT_MASK));
         menListaClientes.setText("Clientes");
@@ -138,13 +132,16 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jMenu6.add(menListaClientes);
 
-        jMenuItem1.setText("Livros");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem3.setText("Usuarios");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                jMenuItem3ActionPerformed(evt);
             }
         });
-        jMenu6.add(jMenuItem1);
+        jMenu6.add(jMenuItem3);
+
+        jMenuItem4.setText("Aluguéis");
+        jMenu6.add(jMenuItem4);
 
         Sair.add(jMenu6);
 
@@ -213,18 +210,6 @@ public class MainMenu extends javax.swing.JFrame {
        Desktop.add(caduser);
     }//GEN-LAST:event_menIntCadUserActionPerformed
 
-    private void menIntLivAlugadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menIntLivAlugadosActionPerformed
-        LivAlu livrosAlugados = new LivAlu();
-        livrosAlugados.setVisible(true);
-        Desktop.add(livrosAlugados);
-    }//GEN-LAST:event_menIntLivAlugadosActionPerformed
-
-    private void menIntLivDisponíveisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menIntLivDisponíveisActionPerformed
-        ListOfBooks livrosDisponiveis = new ListOfBooks();
-        livrosDisponiveis.setVisible(true);
-        Desktop.add(livrosDisponiveis);
-    }//GEN-LAST:event_menIntLivDisponíveisActionPerformed
-
     private void menAlugLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menAlugLivroActionPerformed
         AlugueldeLivros aluguel = new AlugueldeLivros();
         aluguel.setVisible(true);
@@ -240,6 +225,10 @@ public class MainMenu extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         controller.openBookList();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -289,12 +278,13 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem menAlugLivro;
     private javax.swing.JMenuItem menIntCadCli;
     private javax.swing.JMenuItem menIntCadLivros;
     public static javax.swing.JMenuItem menIntCadUser;
-    private javax.swing.JMenuItem menIntLivAlugados;
-    private javax.swing.JMenuItem menIntLivDisponíveis;
     private javax.swing.JMenuItem menIntSAC;
     private javax.swing.JMenuItem menIntSair;
     private javax.swing.JMenuItem menIntSobre;
