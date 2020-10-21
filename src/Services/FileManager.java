@@ -58,13 +58,11 @@ public class FileManager {
             Dialoger.message(null, "O arquivo: "+destiny.getName()+" Já existe. \n\n Caminho: "+destiny.getAbsolutePath());
         }else{
 
-            FileInputStream input = null;
-            FileOutputStream output = null;
             
             try {
                
-                input = new FileInputStream(file);
-                output = new FileOutputStream(destiny);
+                FileInputStream input = new FileInputStream(file);
+                FileOutputStream output = new FileOutputStream(destiny);
               
                 FileChannel fcOrigin = input.getChannel();
                 FileChannel fcDestiny = output.getChannel();
@@ -72,21 +70,16 @@ public class FileManager {
                 fcOrigin.transferTo(0, fcOrigin.size(), fcDestiny);
                 
                 Dialoger.message(null, "O arquivo: "+destiny.getName()+" foi copiado com sucesso. \n\n Caminho: "+destiny.getAbsolutePath());
-           
+                
+                input.close();
+                output.close();
+                
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(FileManager.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IOException ex) {
                 Logger.getLogger(FileManager.class.getName()).log(Level.SEVERE, null, ex);
            
-            } finally {
-                
-                try {
-                    input.close();
-                    output.close();
-                } catch (IOException ex) {
-                    Logger.getLogger(FileManager.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
+            } 
         }
         
         return destiny;
