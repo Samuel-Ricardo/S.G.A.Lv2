@@ -48,10 +48,10 @@ public class ClientRegisterController {
         
             ImageFile image = new ImageFile(chooser.getSelectedFile());
             
-            view.getjLabelPerfilImage().setIcon(image.getImageSwing());
+            ImageFile.resizeImageByPath(view.getjLabelPerfilImage(), image.getFile().getAbsolutePath());
             
             view.setPerfilImage(image);
-            view.updateUI();
+            //view.getjLabelPerfilImage().updateUI();
         }
     }
     

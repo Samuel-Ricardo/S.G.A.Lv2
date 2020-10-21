@@ -23,6 +23,8 @@ public class ClientRegisterHelper {
 
     public Student getStudent() {
     
+        //view.getjLabelPerfilImage().updateUI();
+        
         Student student = new Student();
         
         student.setAddress(getAddress());

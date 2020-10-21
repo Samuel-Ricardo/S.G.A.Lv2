@@ -7,6 +7,8 @@ package View.Registers;
 
 import Controller.Registers.ClientRegisterController;
 import Model.ImageFile;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
@@ -19,6 +21,7 @@ public class ClientRegister extends javax.swing.JInternalFrame {
     private final ClientRegisterController controller;
     
     private ImageFile perfilImage; 
+    private ClientRegister thisClass = this; 
     
     public ClientRegister(){
             
@@ -28,12 +31,7 @@ public class ClientRegister extends javax.swing.JInternalFrame {
         String way = ClientRegister.class.getResource("/View/Images/icons8-no-image-64px.png").toString();
         
         perfilImage = new ImageFile(way.replaceFirst("file:/", ""));
-                
-        jLabelPerfilImage.setIcon(perfilImage.getImageSwing());
         
-        this.updateUI();
-        
-        System.out.println(perfilImage.getFile().exists()+"      existe                 ;");
     }
 
 

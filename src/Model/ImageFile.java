@@ -72,7 +72,9 @@ public class ImageFile {
             
             String PCuser = System.getProperty("user.name");
             
-            file = new File("\"C:\\Users\\"+PCuser+"\\Documents\\SAGAL\\images\\"+name+".png");
+            file = new File("C:\\Users\\"+PCuser+"\\Documents\\SAGAL\\images\\"+name+".png");
+            
+            System.out.println("arqucivo:                   "+file.getAbsolutePath());
             
             input = new FileInputStream(file);
             output = new FileOutputStream(file);
