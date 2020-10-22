@@ -8,6 +8,7 @@ package DAO;
 import Factory.StudentFactory;
 import JDBC.ConnectionFactory;
 import Model.Student;
+import Services.Dialoger;
 import com.mysql.jdbc.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,12 +17,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
-/**
- *
+/*
  * @author Samuel
  */
+
 public class StudentDAO {
     
     private Connection connection;
@@ -56,7 +56,7 @@ public class StudentDAO {
             
             return true;
         } catch (SQLException ex) {
-          JOptionPane.showMessageDialog(null, "Erro ao Salvar: " + ex); 
+              Dialoger.message(null, "Erro ao Salvar: " + ex); 
           return false;
         } finally{
               ConnectionFactory.closeConnection(connection, statement);
@@ -96,7 +96,7 @@ public class StudentDAO {
             
             return true;
         } catch (SQLException ex) {
-          JOptionPane.showMessageDialog(null, "Erro ao Atualizar: " + ex); 
+              Dialoger.message(null, "Erro ao Atualizar: " + ex); 
           return false;
         } finally{
               ConnectionFactory.closeConnection(connection, statement);
@@ -122,7 +122,7 @@ public class StudentDAO {
             
             return true;
         } catch (SQLException ex) {
-          JOptionPane.showMessageDialog(null, "Erro ao Deletar: " + ex); 
+              Dialoger.message(null, "Erro ao Deletar: " + ex); 
           return false;
         } finally{
               ConnectionFactory.closeConnection(connection, statement);
@@ -152,7 +152,7 @@ public class StudentDAO {
             }
 
         } catch (SQLException ex) {
-          JOptionPane.showMessageDialog(null, "Erro ao Pesqisar: " + ex); 
+              Dialoger.message(null, "Erro ao Pesqisar: " + ex); 
         
         } finally{
               ConnectionFactory.closeConnection(connection, statement,result);
@@ -187,7 +187,7 @@ public class StudentDAO {
             }
 
         } catch (SQLException ex) {
-          JOptionPane.showMessageDialog(null, "Erro ao Pesqisar: " + ex); 
+              Dialoger.message(null, "Erro ao Pesqisar: " + ex); 
         
         } finally{
               ConnectionFactory.closeConnection(connection, statement,result);
