@@ -54,6 +54,8 @@ public class FileManager {
     
     public File copyFileTo(File file,File destiny){
         
+        destiny = new File(destiny.getAbsolutePath()+"/"+file.getName());
+        
         if(destiny.exists()){
             Dialoger.message(null, "O arquivo: "+destiny.getName()+" Já existe. \n\n Caminho: "+destiny.getAbsolutePath());
         }else{
