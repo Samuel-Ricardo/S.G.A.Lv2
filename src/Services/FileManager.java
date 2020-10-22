@@ -85,6 +85,11 @@ public class FileManager {
         return destiny;
     }
     
-    
+    public File getFile(String name){
+        
+         File file = new File (defaultFolderWay +"/"+name); 
+         
+         return file;
+    }
     
 }

@@ -37,7 +37,7 @@ public class ClientRegisterController {
        
         Student student = helper.getStudent();
         
-        fileManager.copyFileTo(student.getPerfilImage().getFile(), MainMenu.)
+        fileManager.copyFileTo(student.getPerfilImage().getFile(), Login)
         
        if (studentDao.insert(student)){
         
