@@ -52,26 +52,26 @@ public class FileManager {
         return folder;
     }
     
-    public File copyFileTo(File file,File destiny){
+    public File copyFileTo(File file,File destinyFolder){
         
-        destiny = new File(destiny.getAbsolutePath()+"/"+file.getName());
+        destinyFolder = new File(destinyFolder.getAbsolutePath()+"/"+file.getName());
         
-        if(destiny.exists()){
-            Dialoger.message(null, "O arquivo: "+destiny.getName()+" Já existe. \n\n Caminho: "+destiny.getAbsolutePath());
+        if(destinyFolder.exists()){
+            Dialoger.message(null, "O arquivo: "+destinyFolder.getName()+" Já existe. \n\n Caminho: "+destinyFolder.getAbsolutePath());
         }else{
 
             
             try {
                
                 FileInputStream input = new FileInputStream(file);
-                FileOutputStream output = new FileOutputStream(destiny);
+                FileOutputStream output = new FileOutputStream(destinyFolder);
               
                 FileChannel fcOrigin = input.getChannel();
                 FileChannel fcDestiny = output.getChannel();
                
                 fcOrigin.transferTo(0, fcOrigin.size(), fcDestiny);
                 
-                Dialoger.message(null, "O arquivo: "+destiny.getName()+" foi copiado com sucesso. \n\n Caminho: "+destiny.getAbsolutePath());
+                Dialoger.message(null, "O arquivo: "+destinyFolder.getName()+" foi copiado com sucesso. \n\n Caminho: "+destinyFolder.getAbsolutePath());
                 
                 input.close();
                 output.close();
@@ -84,7 +84,7 @@ public class FileManager {
             } 
         }
         
-        return destiny;
+        return destinyFolder;
     }
     
     public File getFile(String name){
