@@ -31,6 +31,8 @@ public class LoginController {
     private final StudentDAO studntDAO;
     private final ManagerDAO managerDAO;
     private FileManager filemanager;
+    private static File IMAGE_CACHE_FOLDER;
+    private static File DATA_CACHE_FOLDER;
 
     public LoginController(Login view) {
 
@@ -95,8 +97,9 @@ public class LoginController {
 
     public void start() {
 
-        filemanager.createFolder("Images");
-        filemanager.createFolder("Data");
+        LoginController.setIMAGE_CACHE_FOLDER(filemanager.createFolder("Images"));
+        LoginController.setDATA_CACHE_FOLDER(filemanager.createFolder("Data")); 
+        
         
 /////////////////////////// Exemplo de Copia de Arquivo ////////////////////////////////////////////////////         
 //        String way = this.getClass().getResource("/View/Images/icons8-no-image-64px.png").getFile();
@@ -105,4 +108,31 @@ public class LoginController {
 //        filemanager.copyFileTo(image, new File(FileManager.defaultFolderWay+"/Images/"+image.getName()));
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////    
     }
+
+    public FileManager getFilemanager() {
+        return filemanager;
+    }
+
+    public void setFilemanager(FileManager filemanager) {
+        this.filemanager = filemanager;
+    }
+
+    public static File getIMAGE_CACHE_FOLDER() {
+        return IMAGE_CACHE_FOLDER;
+    }
+
+    public static void setIMAGE_CACHE_FOLDER(File IMAGE_CACHE_FOLDER) {
+        LoginController.IMAGE_CACHE_FOLDER = IMAGE_CACHE_FOLDER;
+    }
+
+    public static File getDATA_CACHE_FOLDER() {
+        return DATA_CACHE_FOLDER;
+    }
+
+    public static void setDATA_CACHE_FOLDER(File DATA_CACHE_FOLDER) {
+        LoginController.DATA_CACHE_FOLDER = DATA_CACHE_FOLDER;
+    }
+    
+    
 }
+

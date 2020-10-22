@@ -10,6 +10,7 @@ import DAO.StudentDAO;
 import Model.ImageFile;
 import Model.Student;
 import Services.Dialoger;
+import Services.FileManager;
 import View.Registers.ClientRegister;
 import javax.swing.JFileChooser;
 
@@ -22,17 +23,21 @@ public class ClientRegisterController {
     private final StudentDAO studentDao;
     private final ClientRegisterHelper helper;
     private final ClientRegister view;
+    private final FileManager fileManager;
 
     public ClientRegisterController(ClientRegister view) {
         
         this.studentDao = new StudentDAO();
         this.helper = new ClientRegisterHelper(view);
         this.view = view;
+        fileManager = new FileManager();
     }
     
     public void register() {
        
         Student student = helper.getStudent();
+        
+        fileManager.copyFileTo(student.getPerfilImage().getFile(), MainMenu.)
         
        if (studentDao.insert(student)){
         
