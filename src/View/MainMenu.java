@@ -403,22 +403,6 @@ public class MainMenu extends javax.swing.JFrame {
         MainMenu.menIntCadUser = menIntCadUser;
     }
 
-    public JMenuItem getMenIntLivAlugados() {
-        return menIntLivAlugados;
-    }
-
-    public void setMenIntLivAlugados(JMenuItem menIntLivAlugados) {
-        this.menIntLivAlugados = menIntLivAlugados;
-    }
-
-    public JMenuItem getMenIntLivDisponíveis() {
-        return menIntLivDisponíveis;
-    }
-
-    public void setMenIntLivDisponíveis(JMenuItem menIntLivDisponíveis) {
-        this.menIntLivDisponíveis = menIntLivDisponíveis;
-    }
-
     public JMenuItem getMenIntSAC() {
         return menIntSAC;
     }
@@ -451,4 +435,29 @@ public class MainMenu extends javax.swing.JFrame {
         this.menListaClientes = menListaClientes;
     }
 
+    public JMenuItem getjMenuItem2() {
+        return jMenuItem2;
+    }
+
+    public void setjMenuItem2(JMenuItem jMenuItem2) {
+        this.jMenuItem2 = jMenuItem2;
+    }
+
+    public JMenuItem getjMenuItem3() {
+        return jMenuItem3;
+    }
+
+    public void setjMenuItem3(JMenuItem jMenuItem3) {
+        this.jMenuItem3 = jMenuItem3;
+    }
+
+    public JMenuItem getjMenuItem4() {
+        return jMenuItem4;
+    }
+
+    public void setjMenuItem4(JMenuItem jMenuItem4) {
+        this.jMenuItem4 = jMenuItem4;
+    }
+
+    
 }
