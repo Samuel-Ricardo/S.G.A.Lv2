@@ -52,9 +52,9 @@ public class FileManager {
         return folder;
     }
     
-    public File copyFileTo(File file,File destinyFolder){
+    public File copyFileTo(File originalFile, File destinyFolder){
         
-        destinyFolder = new File(destinyFolder.getAbsolutePath()+"/"+file.getName());
+        destinyFolder = new File(destinyFolder.getAbsolutePath()+"/"+originalFile.getName());
         
         if(destinyFolder.exists()){
             Dialoger.message(null, "O arquivo: "+destinyFolder.getName()+" Já existe. \n\n Caminho: "+destinyFolder.getAbsolutePath());
@@ -63,7 +63,7 @@ public class FileManager {
             
             try {
                
-                FileInputStream input = new FileInputStream(file);
+                FileInputStream input = new FileInputStream(originalFile);
                 FileOutputStream output = new FileOutputStream(destinyFolder);
               
                 FileChannel fcOrigin = input.getChannel();
@@ -85,6 +85,39 @@ public class FileManager {
         }
         
         return destinyFolder;
+    }
+    
+    public File copyFile(File originalFile, File destinyFile){
+          
+        if(destinyFile.exists()){
+            Dialoger.message(null, "O arquivo: "+destinyFile.getName()+" Já existe. \n\n Caminho: "+destinyFile.getAbsolutePath());
+        }else{
+
+            
+            try {
+               
+                FileInputStream input = new FileInputStream(originalFile);
+                FileOutputStream output = new FileOutputStream(destinyFile);
+              
+                FileChannel fcOrigin = input.getChannel();
+                FileChannel fcDestiny = output.getChannel();
+               
+                fcOrigin.transferTo(0, fcOrigin.size(), fcDestiny);
+                
+                Dialoger.message(null, "O arquivo: "+destinyFile.getName()+" foi copiado com sucesso. \n\n Caminho: "+destinyFile.getAbsolutePath());
+                
+                input.close();
+                output.close();
+                
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(FileManager.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(FileManager.class.getName()).log(Level.SEVERE, null, ex);
+           
+            } 
+        }
+        
+        return destinyFile;
     }
     
     public File getFile(String name){
