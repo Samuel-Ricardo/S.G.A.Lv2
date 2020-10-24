@@ -42,7 +42,7 @@ public class BookDAO {
             statement.setString(3, book.getPublisher());
             statement.setInt(4, book.getStock());
             statement.setString(5, book.getGenre());
-            statement.setDate(6, book.getAcquired().getDateSQL());
+            statement.setDate(6, book.getAcquired().toSQLDate());
             
             statement.execute();
             
@@ -73,7 +73,7 @@ public class BookDAO {
             statement.setString(3, book.getPublisher());
             statement.setInt(4, book.getStock());
             statement.setString(5, book.getGenre());
-            statement.setDate(6, book.getAcquired().getDateSQL());  
+            statement.setDate(6, book.getAcquired().toSQLDate());  
             statement.setInt(7, book.getId().intValue());
             
             statement.execute();

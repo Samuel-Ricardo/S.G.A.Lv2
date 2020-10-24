@@ -5,6 +5,9 @@
  */
 package Time;
 
+import Time.Converters.LocalDateConverter;
+import Time.Converters.LocalDateTimeConverter;
+import Time.Converters.LocalTimeConverter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -142,7 +145,10 @@ public class Time {
         return localTimeConverter.shortFormat(localTime);
     }
     
-
+    public Date toDate() {
+       
+        return localDateConverter.toDate(localDate);
+    }
       
       //Getters and Setters
       
@@ -234,12 +240,12 @@ public class Time {
         return shortDateFormat;
     } 
 
-    public java.sql.Date getDateSQL() {
+    public java.sql.Date toSQLDate() {
     
         return localDateConverter.toSQLDate(localDate);
     }
     
-    public java.sql.Time getTimeSQL() {
+    public java.sql.Time toSQLTime() {
     
         return localTimeConverter.toSQLTime(localTime);
     }

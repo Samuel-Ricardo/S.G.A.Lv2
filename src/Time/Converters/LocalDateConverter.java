@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Time;
+package Time.Converters;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -63,5 +63,10 @@ public class LocalDateConverter {
     public String shortFormat(LocalDate localDate) {
 
         return SHORT_FORMAT.format(localDate);
+    }
+
+    public Date toDate(LocalDate localDate) {
+       
+        return Date.from(localDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
     }
 }

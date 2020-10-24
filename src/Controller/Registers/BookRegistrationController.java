@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller;
+package Controller.Registers;
 
 import Controller.Helper.BookRegistrationHelper;
 import DAO.BookDAO;
 import Model.Book;
 import Model.ImageFile;
 import Time.Time;
-import View.BookRegistrationView;
+import View.Registers.BookRegistrationView;
 import java.util.Date;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;

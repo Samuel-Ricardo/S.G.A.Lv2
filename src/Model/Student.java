@@ -30,12 +30,13 @@ public class Student extends Manager implements Model.Interface.User{
         this.course = course;
         this.shift = shift;
         this.rents = rents;
+        this.accessLevel = User.ACCESS_MIN;
     }
     
     public Student() {
         
         imagePerfil = new ImageFile("");
-        
+        this.accessLevel = User.ACCESS_MIN;
     }
     
     public String getRegistration() {
