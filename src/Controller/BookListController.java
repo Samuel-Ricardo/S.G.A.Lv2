@@ -18,7 +18,6 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
-import javafx.scene.input.KeyCode;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;

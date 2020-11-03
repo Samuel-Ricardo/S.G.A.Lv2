@@ -16,19 +16,19 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class ClientRegister extends javax.swing.JInternalFrame {
+public class StudentRegistrationView extends javax.swing.JInternalFrame {
 
     private final ClientRegisterController controller;
     
     private ImageFile perfilImage; 
-    private ClientRegister thisClass = this; 
+    private StudentRegistrationView thisClass = this; 
     
-    public ClientRegister(){
+    public StudentRegistrationView(){
             
         initComponents();
         controller = new ClientRegisterController(this);
         
-        String way = ClientRegister.class.getResource("/View/Images/icons8-no-image-64px.png").toString();
+        String way = StudentRegistrationView.class.getResource("/View/Images/icons8-no-image-64px.png").toString();
         
         perfilImage = new ImageFile(way.replaceFirst("file:/", ""));
         
@@ -246,7 +246,7 @@ public class ClientRegister extends javax.swing.JInternalFrame {
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cbCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

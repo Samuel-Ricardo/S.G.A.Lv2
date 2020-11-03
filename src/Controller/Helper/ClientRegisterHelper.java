@@ -7,7 +7,7 @@ package Controller.Helper;
 
 import Model.ImageFile;
 import Model.Student;
-import View.Registers.ClientRegister;
+import View.Registers.StudentRegistrationView;
 
 /**
  *
@@ -15,9 +15,9 @@ import View.Registers.ClientRegister;
  */
 public class ClientRegisterHelper {
     
-    private final ClientRegister view;
+    private final StudentRegistrationView view;
 
-    public ClientRegisterHelper(ClientRegister view) {
+    public ClientRegisterHelper(StudentRegistrationView view) {
         this.view = view;
     }
 

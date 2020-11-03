@@ -1,6 +1,6 @@
 package View;
 
-import View.Registers.ClientRegister;
+import View.Registers.StudentRegistrationView;
 import Controller.MainMenuController;
 import javax.swing.JOptionPane;
 import View.Registers.BookRegistrationView;
@@ -199,7 +199,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_menIntCadLivrosActionPerformed
 
     private void menIntCadCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menIntCadCliActionPerformed
-       ClientRegister cadcli = new ClientRegister();
+       StudentRegistrationView cadcli = new StudentRegistrationView();
        cadcli.setVisible(true);
        Desktop.add(cadcli);
     }//GEN-LAST:event_menIntCadCliActionPerformed
