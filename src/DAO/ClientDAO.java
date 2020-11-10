@@ -5,51 +5,45 @@
  */
 package DAO;
 
-import Factory.StudentFactory;
+import Factory.ClientFactory;
 import JDBC.ConnectionFactory;
-import Model.Student;
+import Model.Client;
 import Services.Dialoger;
 import com.mysql.jdbc.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/*
- * @author Samuel & Hylan 
+/**
+ *
+ * @author hylan
  */
-public class StudentDAO {
+public class ClientDAO {
 
     private Connection connection;
     private String sql;
 
-    public boolean insert(Student student) {
-
+    public boolean Insert(Client client) {
         connect();
         PreparedStatement statement = null;
-        sql = "INSERT INTO tb_student (student_name, student_login, student_password, student_registration, student_image_perfil, student_email , student_CEP, student_phone, student_school, student_Address, student_module, student_grade, student_course, student_shift) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+        sql = "INSERT INTO tb_client (client_name, cliente_loguin, client_password, client_CEP, client_address, client_phone, client_email, client_image_perfil) VALUES (?,?,?,?,?,?,?,?);";
 
         try {
-
             statement = connection.prepareStatement(sql);
 
-            statement.setString(1, student.getName());
-            statement.setString(2, student.getLogin());
-            statement.setString(3, student.getPassword());
-            statement.setString(4, student.getRegistration());
-            statement.setString(5, student.getPerfilImage().getFile().getName());
-            statement.setString(6, student.getEmail());
-            statement.setString(7, student.getCEP());
-            statement.setString(8, student.getPhone());
-            statement.setString(9, student.getSchool());
-            statement.setString(10, student.getAddress());
-            statement.setString(11, student.getModule());
-            statement.setString(12, student.getGrade());
-            statement.setString(13, student.getCourse());
-            statement.setString(14, student.getShift());
+            statement.setString(1, client.getName());
+            statement.setString(2, client.getLogin());
+            statement.setString(3, client.getPassword());
+            statement.setString(4, client.getCEP());
+            statement.setString(5, client.getAddress());
+            statement.setString(6, client.getPhone());
+            statement.setString(7, client.getEmail());
+            statement.setString(8, client.getPerfilImage().getFile().getName());
 
             statement.execute();
 
@@ -63,31 +57,25 @@ public class StudentDAO {
 
     }
 
-    public boolean update(Student student) {
+    public boolean update(Client client) {
 
         connect();
         PreparedStatement statement = null;
-        sql = "UPDATE tb_student SET student_name = ? , student_login = ?, student_password = ?, student_registration = ?, student_image_perfil = ?, student_email = ?,  student_CEP = ?, student_phone = ?, student_school = ?, student_Address = ?, student_module = ?, student_grade = ?, student_course = ?, student_shift = ? WHERE id_student = ?;";
+        sql = "UPDATE tb_client SET client_name = ?, cliente_loguin = ?, client_password = ?, client_CEP = ?, client_address = ?, client_phone = ?, client_email = ?, client_image_perfil = ? WHERE id_student = ?;";
 
         try {
 
             statement = connection.prepareStatement(sql);
 
-            statement.setString(1, student.getName());
-            statement.setString(2, student.getLogin());
-            statement.setString(3, student.getPassword());
-            statement.setString(4, student.getRegistration());
-            statement.setString(5, student.getPerfilImage().getFile().getName());
-            statement.setString(6, student.getEmail());
-            statement.setString(7, student.getCEP());
-            statement.setString(8, student.getPhone());
-            statement.setString(9, student.getSchool());
-            statement.setString(10, student.getAddress());
-            statement.setString(11, student.getModule());
-            statement.setString(12, student.getGrade());
-            statement.setString(13, student.getCourse());
-            statement.setString(14, student.getShift());
-            statement.setInt(15, student.getId().intValue());
+            statement.setString(1, client.getName());
+            statement.setString(2, client.getLogin());
+            statement.setString(3, client.getPassword());
+            statement.setString(4, client.getCEP());
+            statement.setString(5, client.getAddress());
+            statement.setString(6, client.getPhone());
+            statement.setString(7, client.getEmail());
+            statement.setString(8, client.getPerfilImage().getFile().getName());
+            statement.setInt(9, client.getId().intValue());
 
             statement.execute();
 
@@ -98,20 +86,18 @@ public class StudentDAO {
         } finally {
             ConnectionFactory.closeConnection(connection, statement);
         }
-
     }
 
-    public boolean delet(Student student) {
-
+    public boolean delete(Client client) {
         connect();
         PreparedStatement statement = null;
-        sql = "DELETE FROM tb_student WHERE id_student = ?;";
+        sql = "DELETE FRON tb_client WHERE id_student = ?;";
 
         try {
 
-            statement = connection.prepareStatement(sql);
+            statement = connection.clientPrepareStatement(sql);
 
-            statement.setInt(1, student.getId().intValue());
+            statement.setInt(1, client.getId().intValue());
 
             statement.execute();
 
@@ -124,13 +110,13 @@ public class StudentDAO {
         }
     }
 
-    public List<Student> selectAll() {
+    public List<Client> selectAll() {
 
         connect();
         PreparedStatement statement = null;
         ResultSet result = null;
-        sql = "SELECT * FROM tb_student;";
-        List<Student> students = new ArrayList<>();
+        sql = "SELECT * FROM tb_client;";
+        List<Client> clients = new ArrayList<>();
 
         try {
 
@@ -140,30 +126,27 @@ public class StudentDAO {
 
             while (result.next()) {
 
-                Student student = StudentFactory.generateStudent(result);
+                Client client = ClientFactory.generateClient(result);
 
-                students.add(student);
+                clients.add(client);
             }
-
         } catch (SQLException ex) {
-            Dialoger.message(null, "Erro ao Pesqisar: " + ex);
-
+            Dialoger.message(null, "Erro ao Pesquisar: " + ex);
         } finally {
             ConnectionFactory.closeConnection(connection, statement, result);
         }
-        return students;
+        return clients;
     }
 
-    public List<Student> search(String pesquisa) {
+    public List<Client> search(String pesquisa) {
 
         connect();
         PreparedStatement statement = null;
         ResultSet result = null;
-        sql = "SELECT * FROM tb_student WHERE nome LIKE ? or loguin LIKE ?;";
-        List<Student> students = new ArrayList<>();
+        sql = "SELECT * FROM tb_client WHERE nome LIKE ? or loguin LIKE ?;";
+        List<Client> clients = new ArrayList<>();
 
         try {
-
             statement = connection.prepareStatement(sql);
 
             statement.setString(1, "%" + pesquisa + "%");
@@ -173,19 +156,16 @@ public class StudentDAO {
 
             while (result.next()) {
 
-                Student student = StudentFactory.generateStudent(result);
+                Client client = ClientFactory.generateClient(result);
 
-                students.add(student);
-
+                clients.add(client);
             }
-
         } catch (SQLException ex) {
-            Dialoger.message(null, "Erro ao Pesqisar: " + ex);
-
+            Dialoger.message(null, "Erro ao Pesquisar: " + ex);
         } finally {
             ConnectionFactory.closeConnection(connection, statement, result);
         }
-        return students;
+        return clients;
     }
 
     public boolean exist(String pesquisa) {
@@ -193,11 +173,10 @@ public class StudentDAO {
         connect();
         PreparedStatement statement = null;
         ResultSet result = null;
-        sql = "SELECT * FROM tb_student WHERE nome LIKE ? or loguin LIKE ?;";
+        sql = "SELECT * FROM tb_client WHERE nome LIKE ? or loguin LIKE ?;";
         boolean exist = false;
 
         try {
-
             statement = connection.prepareStatement(sql);
 
             statement.setString(1, "%" + pesquisa + "%");
@@ -206,47 +185,41 @@ public class StudentDAO {
             result = statement.executeQuery();
 
             exist = result.next();
-
         } catch (SQLException ex) {
             Logger.getLogger(StudentDAO.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
         return exist;
     }
-
-    public Student exist(String login, String password) {
-
+    
+    public Client exist(String login, String password){
+        
         connect();
         PreparedStatement statement = null;
         ResultSet result = null;
-        sql = "SELECT * FROM student_view WHERE student_password = ? and student_login = ?;";
-        Student student = null;
-
+        sql = "SELECT * FROM client_view WHERE student_password = ? and student_login = ?;";
+        Client client = null;
+        
         try {
-
             statement = connection.prepareStatement(sql);
 
             statement.setString(1, password);
             statement.setString(2, login);
 
             result = statement.executeQuery();
-
+            
             while (result.next()) {
 
-                student = StudentFactory.generateStudent(result);
+                client = ClientFactory.generateClient(result);
 
             }
-
         } catch (SQLException ex) {
             Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return student;
+        return client;
     }
-
     private void connect() {
 
         connection = ConnectionFactory.getConnection();
-
     }
-
 }

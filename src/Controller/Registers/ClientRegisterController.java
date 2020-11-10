@@ -11,7 +11,7 @@ import Model.ImageFile;
 import Model.Student;
 import Services.Dialoger;
 import Services.FileManager;
-import View.Registers.ClientRegister;
+import View.Registers.StudentRegistrationView;
 import javax.swing.JFileChooser;
 
 /**
@@ -22,10 +22,10 @@ public class ClientRegisterController {
 
     private final StudentDAO studentDao;
     private final ClientRegisterHelper helper;
-    private final ClientRegister view;
+    private final StudentRegistrationView view;
     private final FileManager fileManager;
 
-    public ClientRegisterController(ClientRegister view) {
+    public ClientRegisterController(StudentRegistrationView view) {
         
         this.studentDao = new StudentDAO();
         this.helper = new ClientRegisterHelper(view);
