@@ -50,7 +50,7 @@ public class StudentListController {
 
         startSearchBar();
 
-        loadAllBooks();
+        loadAllStudents();
 
         hideUpdateFilds();
 
@@ -121,7 +121,7 @@ public class StudentListController {
         });
     }
 
-    public void loadBooks(ArrayList<Book> books) {
+    public void loadStudents(ArrayList<Student> books) {
 
         view.getjPanelStudentList().removeAll();
 
@@ -285,24 +285,24 @@ public class StudentListController {
 //            Dialoguer.message(view, "Nao foi realizada nenhuma modificaçao, atualizaçao nao nescessária");
 //        }
 
-        loadAllBooks();
+        loadAllStudents();
     }
 
-    public void loadAllBooks() {
-        loadBooks((ArrayList<Book>) studentDao.selectAll());
+    public void loadAllStudents() {
+        loadStudents((ArrayList<Student>) studentDao.selectAll());
     }
 
     public void delete() {
 
-        Book book = ListOfStudents.getSelectedBookPane().getBook();
+        Student student = ListOfStudents.getSelectedStudentPane().getStudent();
 
-        if (Dialoger.confirm(view, " Voce realmente deseja deletar o livro " + book.getName() + " ?"
+        if (Dialoger.confirm(view, " Voce realmente deseja deletar o livro " + student.getName() + " ?"
                 + "\n"
                 + "\n Os dados nao poderao ser recuperados")) {
 
-            studentDao.delet(book);
+            studentDao.delet(student);
 
-            loadAllBooks();
+            loadAllStudents();
         }
     }
 }

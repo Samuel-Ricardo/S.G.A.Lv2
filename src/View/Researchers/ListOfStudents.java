@@ -31,7 +31,7 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
      * Creates new form LivDis
      */
     
-    private static BookPane selectedBookPane;
+    private static BookPane selectedStudentPane;
     
     
     private final StudentListController controller; 
@@ -357,12 +357,12 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextFieldSearch;
     // End of variables declaration//GEN-END:variables
 
-    public static BookPane getSelectedBookPane() {
-        return selectedBookPane;
+    public static BookPane getSelectedStudentPane() {
+        return selectedStudentPane;
     }
 
-    public static void setSelectedBookPane(BookPane selectedBookPane) {
-        ListOfStudents.selectedBookPane = selectedBookPane;
+    public static void setSelectedStudentPane(BookPane selectedBookPane) {
+        ListOfStudents.selectedStudentPane = selectedBookPane;
     }
 
     public JButton getjButtonDelet() {
