@@ -5,10 +5,11 @@
  */
 package Controller.Componens;
 
-import Model.Book;
+import Model.Student;
 import Model.ImageFile;
-import View.Components.BookPane;
-import View.Researchers.ListOfBooks;
+import StudentPane;
+import View.Components.StudentPane;
+import View.Researchers.ListOfStudents;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.MouseEvent;
@@ -21,15 +22,15 @@ import javax.swing.JLabel;
  */
 public class StudentPaneController {
     
-    private final BookPane view;
-    private final Book book;
-    private final ListOfBooks father;
+    private final StudentPane view;
+    private final Student student;
+    private final ListOfStudents father;
     private MouseListener MouseSelectListener;
 
-    public StudentPaneController(BookPane view, Book book, ListOfBooks father) {
+    public StudentPaneController(StudentPane view, Student student, ListOfStudents father) {
      
         this.view = view;
-        this.book = book;
+        this.student = student;
         this.father = father;
         
         this.MouseSelectListener = new MouseListener() {
@@ -37,7 +38,7 @@ public class StudentPaneController {
             @Override
             public void mouseClicked(MouseEvent e) {
              
-                ListOfBooks.setSelectedBookPane(view);
+                StudentPane(view);
                 father.getController().loadDetails();
             }
 
@@ -65,9 +66,9 @@ public class StudentPaneController {
 
     public void start() {
      
-            view.getjLabelName().setText(book.getName());
-            view.getjLabelStock().setText(book.getStock().toString());
-            view.getjLabelGenre().setText(book.getGenre());
+            view.getjLabelName().setText(student.getName());
+            view.getjLabelStock().setText(student.getStock().toString());
+            view.getjLabelGenre().setText(student.getGenre());
             resizeImageLabe(view.getjLabelImage());
             setImage();
             
@@ -87,12 +88,12 @@ public class StudentPaneController {
         label.setSize(172, 160);
     }
 
-    public BookPane getView() {
+    public StudentPane getView() {
         return view;
     }
 
-    public Book getBook() {
-        return book;
+    public Student getStudent() {
+        return student;
     }
 
     private void selectListener() {

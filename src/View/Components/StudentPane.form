@@ -54,12 +54,12 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel4" min="-2" pref="60" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabelStock" pref="112" max="32767" attributes="0"/>
+                          <Component id="jLabelCourse" pref="112" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel7" min="-2" pref="60" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabelGenre" pref="112" max="32767" attributes="0"/>
+                          <Component id="jLabelGrade" pref="112" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabelImage" max="32767" attributes="0"/>
@@ -79,12 +79,12 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabelStock" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelCourse" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabelGenre" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelGrade" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="12" max="32767" attributes="0"/>
               </Group>
@@ -104,15 +104,15 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="14" style="3"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Estoque:"/>
+            <Property name="text" type="java.lang.String" value="Curso:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabelStock">
+        <Component class="javax.swing.JLabel" name="jLabelCourse">
           <Properties>
             <Property name="text" type="java.lang.String" value="Estoque:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabelGenre">
+        <Component class="javax.swing.JLabel" name="jLabelGrade">
           <Properties>
             <Property name="text" type="java.lang.String" value="genero"/>
           </Properties>
@@ -122,7 +122,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="14" style="3"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Genero:"/>
+            <Property name="text" type="java.lang.String" value="Clase:"/>
           </Properties>
         </Component>
       </SubComponents>
