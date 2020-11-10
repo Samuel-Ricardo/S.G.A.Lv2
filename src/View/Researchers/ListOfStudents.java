@@ -52,11 +52,11 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
 
         jLabelSearch = new javax.swing.JLabel();
         jTextFieldSearch = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jPanelBookList = new javax.swing.JPanel();
         jLabelSearchIcon = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanelBookDetails = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jPanelStudentList = new javax.swing.JPanel();
+        jTabbedPaneDetails = new javax.swing.JTabbedPane();
+        jPanelDetails = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabelName = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -64,48 +64,46 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabelAuthor = new javax.swing.JLabel();
-        jLabelStock = new javax.swing.JLabel();
-        jTextFieldAuthor = new javax.swing.JTextField();
+        jLabelCourse = new javax.swing.JLabel();
+        jLabelGrade = new javax.swing.JLabel();
+        jTextFieldCourse = new javax.swing.JTextField();
         jTextFieldName = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jLabelName2 = new javax.swing.JLabel();
-        jTextFieldName2 = new javax.swing.JTextField();
-        jLabelStock2 = new javax.swing.JLabel();
-        jLabelStock1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jLabelStock3 = new javax.swing.JLabel();
-        jComboBox5 = new javax.swing.JComboBox<>();
+        jLabelRegistration = new javax.swing.JLabel();
+        jTextFieldRegistration = new javax.swing.JTextField();
+        jLabelSchool = new javax.swing.JLabel();
+        jLabelShift = new javax.swing.JLabel();
+        jComboBoxGrade = new javax.swing.JComboBox<>();
+        jComboBoxShift = new javax.swing.JComboBox<>();
+        jComboBoxSchool = new javax.swing.JComboBox<>();
+        jLabelModule = new javax.swing.JLabel();
+        jComboBoxModule = new javax.swing.JComboBox<>();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        jPanel1 = new javax.swing.JPanel();
-        jLabelName4 = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        jPanelContact = new javax.swing.JPanel();
+        jLabelPhone = new javax.swing.JLabel();
+        jFormattedTextFieldPhone = new javax.swing.JFormattedTextField();
         jLabel4 = new javax.swing.JLabel();
-        jLabelName1 = new javax.swing.JLabel();
-        jTextFieldName1 = new javax.swing.JTextField();
+        jLabelEmail = new javax.swing.JLabel();
+        jTextFieldEmail = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jLabelName3 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        jPanelAddress = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        jLabelName6 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jLabelName7 = new javax.swing.JLabel();
+        jLabelAddress = new javax.swing.JLabel();
+        jComboBoxAddress = new javax.swing.JComboBox<>();
+        jLabelCEP = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
-        jPanel3 = new javax.swing.JPanel();
+        jFormattedTextFieldCEP = new javax.swing.JFormattedTextField();
+        jPanelAccount = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        jLabelName8 = new javax.swing.JLabel();
-        jTextFieldName3 = new javax.swing.JTextField();
+        jLabelLogin = new javax.swing.JLabel();
+        jTextFieldLogin = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        jLabelName9 = new javax.swing.JLabel();
-        jLabelName10 = new javax.swing.JLabel();
-        jTextFieldName4 = new javax.swing.JTextField();
+        jLabelPassword = new javax.swing.JLabel();
+        jTextFieldPassword = new javax.swing.JTextField();
         jButtonUpdate = new javax.swing.JButton();
         jButtonDelet = new javax.swing.JButton();
-        jLabelImageBook = new javax.swing.JLabel();
+        jLabelStudentImage = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -122,171 +120,163 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jTextFieldSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 390, -1));
-
-        jPanelBookList.setLayout(new javax.swing.BoxLayout(jPanelBookList, javax.swing.BoxLayout.LINE_AXIS));
-        jScrollPane2.setViewportView(jPanelBookList);
-
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 586, 453));
         getContentPane().add(jLabelSearchIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, 55, 24));
 
-        jPanelBookDetails.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelStudentList.setLayout(new javax.swing.BoxLayout(jPanelStudentList, javax.swing.BoxLayout.LINE_AXIS));
+        jScrollPane2.setViewportView(jPanelStudentList);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 586, 453));
+
+        jPanelDetails.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel3.setText("Nome:");
-        jPanelBookDetails.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+        jPanelDetails.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         jLabelName.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
         jLabelName.setText("Name");
-        jPanelBookDetails.add(jLabelName, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 265, -1));
+        jPanelDetails.add(jLabelName, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 265, -1));
 
         jLabel6.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel6.setText("Classe:");
-        jPanelBookDetails.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+        jPanelDetails.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel7.setText("Escola:");
-        jPanelBookDetails.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
+        jPanelDetails.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel8.setText("Turno:");
-        jPanelBookDetails.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+        jPanelDetails.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel9.setText("Matricula:");
-        jPanelBookDetails.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
+        jPanelDetails.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel10.setText("Curso:");
-        jPanelBookDetails.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+        jPanelDetails.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
-        jLabelAuthor.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
-        jLabelAuthor.setText("Name");
-        jPanelBookDetails.add(jLabelAuthor, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 265, -1));
+        jLabelCourse.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
+        jLabelCourse.setText("Name");
+        jPanelDetails.add(jLabelCourse, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 265, -1));
 
-        jLabelStock.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
-        jLabelStock.setText("Name");
-        jPanelBookDetails.add(jLabelStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 240, -1));
-        jPanelBookDetails.add(jTextFieldAuthor, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 270, -1));
-        jPanelBookDetails.add(jTextFieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 270, -1));
+        jLabelGrade.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
+        jLabelGrade.setText("Name");
+        jPanelDetails.add(jLabelGrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 240, -1));
+        jPanelDetails.add(jTextFieldCourse, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 270, -1));
+        jPanelDetails.add(jTextFieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 270, -1));
 
         jLabel11.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel11.setText("Modulo:");
-        jPanelBookDetails.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
+        jPanelDetails.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
 
-        jLabelName2.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
-        jLabelName2.setText("Name");
-        jPanelBookDetails.add(jLabelName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 260, -1));
-        jPanelBookDetails.add(jTextFieldName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 260, -1));
+        jLabelRegistration.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
+        jLabelRegistration.setText("Name");
+        jPanelDetails.add(jLabelRegistration, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 260, -1));
+        jPanelDetails.add(jTextFieldRegistration, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 260, -1));
 
-        jLabelStock2.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
-        jLabelStock2.setText("Name");
-        jPanelBookDetails.add(jLabelStock2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 240, -1));
+        jLabelSchool.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
+        jLabelSchool.setText("Name");
+        jPanelDetails.add(jLabelSchool, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 240, -1));
 
-        jLabelStock1.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
-        jLabelStock1.setText("Name");
-        jPanelBookDetails.add(jLabelStock1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 250, -1));
+        jLabelShift.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
+        jLabelShift.setText("Name");
+        jPanelDetails.add(jLabelShift, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 250, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanelBookDetails.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 270, -1));
+        jComboBoxGrade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanelDetails.add(jComboBoxGrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 270, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanelBookDetails.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 280, -1));
+        jComboBoxShift.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanelDetails.add(jComboBoxShift, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 280, -1));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanelBookDetails.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 270, -1));
+        jComboBoxSchool.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanelDetails.add(jComboBoxSchool, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 270, -1));
 
-        jLabelStock3.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
-        jLabelStock3.setText("Name");
-        jPanelBookDetails.add(jLabelStock3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 250, -1));
+        jLabelModule.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
+        jLabelModule.setText("Name");
+        jPanelDetails.add(jLabelModule, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 250, -1));
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanelBookDetails.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 270, -1));
-        jPanelBookDetails.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 350, 10));
-        jPanelBookDetails.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 350, 10));
+        jComboBoxModule.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanelDetails.add(jComboBoxModule, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 270, -1));
+        jPanelDetails.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 350, 10));
+        jPanelDetails.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 350, 10));
 
-        jTabbedPane1.addTab("Geral", jPanelBookDetails);
+        jTabbedPaneDetails.addTab("Geral", jPanelDetails);
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelContact.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelName4.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
-        jLabelName4.setText("Name");
-        jPanel1.add(jLabelName4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 270, -1));
+        jLabelPhone.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
+        jLabelPhone.setText("Name");
+        jPanelContact.add(jLabelPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 270, -1));
 
-        jFormattedTextField1.setText("jFormattedTextField1");
-        jPanel1.add(jFormattedTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 260, 20));
+        jFormattedTextFieldPhone.setText("jFormattedTextField1");
+        jPanelContact.add(jFormattedTextFieldPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 260, 20));
 
         jLabel4.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel4.setText("Email:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+        jPanelContact.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
-        jLabelName1.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
-        jLabelName1.setText("Name");
-        jPanel1.add(jLabelName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 270, -1));
-        jPanel1.add(jTextFieldName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 280, -1));
+        jLabelEmail.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
+        jLabelEmail.setText("Name");
+        jPanelContact.add(jLabelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 270, -1));
+        jPanelContact.add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 280, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel5.setText("Celular:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+        jPanelContact.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        jLabelName3.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
-        jLabelName3.setText("Name");
-        jPanel1.add(jLabelName3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 280, -1));
+        jTabbedPaneDetails.addTab("Contato", jPanelContact);
 
-        jTabbedPane1.addTab("Contato", jPanel1);
-
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelAddress.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel12.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel12.setText("CEP:");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+        jPanelAddress.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        jLabelName6.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
-        jLabelName6.setText("Name");
-        jPanel2.add(jLabelName6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 270, -1));
+        jLabelAddress.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
+        jLabelAddress.setText("Name");
+        jPanelAddress.add(jLabelAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 270, -1));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 250, -1));
+        jComboBoxAddress.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanelAddress.add(jComboBoxAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 250, -1));
 
-        jLabelName7.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
-        jLabelName7.setText("Name");
-        jPanel2.add(jLabelName7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 290, -1));
+        jLabelCEP.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
+        jLabelCEP.setText("Name");
+        jPanelAddress.add(jLabelCEP, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 290, -1));
 
         jLabel13.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel13.setText("Endereço:");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+        jPanelAddress.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
-        jFormattedTextField2.setText("jFormattedTextField2");
-        jPanel2.add(jFormattedTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 290, -1));
+        jFormattedTextFieldCEP.setText("jFormattedTextField2");
+        jPanelAddress.add(jFormattedTextFieldCEP, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 290, -1));
 
-        jTabbedPane1.addTab("Endereço", jPanel2);
+        jTabbedPaneDetails.addTab("Endereço", jPanelAddress);
 
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelAccount.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel14.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel14.setText("Login:");
-        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+        jPanelAccount.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
-        jLabelName8.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
-        jLabelName8.setText("Name");
-        jPanel3.add(jLabelName8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 270, -1));
-        jPanel3.add(jTextFieldName3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 280, -1));
+        jLabelLogin.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
+        jLabelLogin.setText("Name");
+        jPanelAccount.add(jLabelLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 270, -1));
+        jPanelAccount.add(jTextFieldLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 280, -1));
 
         jLabel15.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel15.setText("Senha:");
-        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+        jPanelAccount.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        jLabelName9.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
-        jLabelName9.setText("Name");
-        jPanel3.add(jLabelName9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 280, -1));
+        jLabelPassword.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
+        jLabelPassword.setText("Name");
+        jPanelAccount.add(jLabelPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 270, -1));
+        jPanelAccount.add(jTextFieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 280, -1));
 
-        jLabelName10.setFont(new java.awt.Font("Arial", 2, 16)); // NOI18N
-        jLabelName10.setText("Name");
-        jPanel3.add(jLabelName10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 270, -1));
-        jPanel3.add(jTextFieldName4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 280, -1));
+        jTabbedPaneDetails.addTab("Conta", jPanelAccount);
 
-        jTabbedPane1.addTab("Conta", jPanel3);
-
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 360, 280));
+        getContentPane().add(jTabbedPaneDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 360, 280));
 
         jButtonUpdate.setText("Alterar");
         jButtonUpdate.setEnabled(false);
@@ -295,8 +285,8 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
         jButtonDelet.setText("Deletar");
         getContentPane().add(jButtonDelet, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 500, -1, -1));
 
-        jLabelImageBook.setText("Image");
-        getContentPane().add(jLabelImageBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, 200, 200));
+        jLabelStudentImage.setText("Image");
+        getContentPane().add(jLabelStudentImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, 200, 200));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -309,13 +299,13 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonDelet;
     private javax.swing.JButton jButtonUpdate;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
+    private javax.swing.JComboBox<String> jComboBoxAddress;
+    private javax.swing.JComboBox<String> jComboBoxGrade;
+    private javax.swing.JComboBox<String> jComboBoxModule;
+    private javax.swing.JComboBox<String> jComboBoxSchool;
+    private javax.swing.JComboBox<String> jComboBoxShift;
+    private javax.swing.JFormattedTextField jFormattedTextFieldCEP;
+    private javax.swing.JFormattedTextField jFormattedTextFieldPhone;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -329,39 +319,37 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabelAuthor;
-    private javax.swing.JLabel jLabelImageBook;
+    private javax.swing.JLabel jLabelAddress;
+    private javax.swing.JLabel jLabelCEP;
+    private javax.swing.JLabel jLabelCourse;
+    private javax.swing.JLabel jLabelEmail;
+    private javax.swing.JLabel jLabelGrade;
+    private javax.swing.JLabel jLabelLogin;
+    private javax.swing.JLabel jLabelModule;
     private javax.swing.JLabel jLabelName;
-    private javax.swing.JLabel jLabelName1;
-    private javax.swing.JLabel jLabelName10;
-    private javax.swing.JLabel jLabelName2;
-    private javax.swing.JLabel jLabelName3;
-    private javax.swing.JLabel jLabelName4;
-    private javax.swing.JLabel jLabelName6;
-    private javax.swing.JLabel jLabelName7;
-    private javax.swing.JLabel jLabelName8;
-    private javax.swing.JLabel jLabelName9;
+    private javax.swing.JLabel jLabelPassword;
+    private javax.swing.JLabel jLabelPhone;
+    private javax.swing.JLabel jLabelRegistration;
+    private javax.swing.JLabel jLabelSchool;
     private javax.swing.JLabel jLabelSearch;
     private javax.swing.JLabel jLabelSearchIcon;
-    private javax.swing.JLabel jLabelStock;
-    private javax.swing.JLabel jLabelStock1;
-    private javax.swing.JLabel jLabelStock2;
-    private javax.swing.JLabel jLabelStock3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanelBookDetails;
-    private javax.swing.JPanel jPanelBookList;
+    private javax.swing.JLabel jLabelShift;
+    private javax.swing.JLabel jLabelStudentImage;
+    private javax.swing.JPanel jPanelAccount;
+    private javax.swing.JPanel jPanelAddress;
+    private javax.swing.JPanel jPanelContact;
+    private javax.swing.JPanel jPanelDetails;
+    private javax.swing.JPanel jPanelStudentList;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextFieldAuthor;
+    private javax.swing.JTabbedPane jTabbedPaneDetails;
+    private javax.swing.JTextField jTextFieldCourse;
+    private javax.swing.JTextField jTextFieldEmail;
+    private javax.swing.JTextField jTextFieldLogin;
     private javax.swing.JTextField jTextFieldName;
-    private javax.swing.JTextField jTextFieldName1;
-    private javax.swing.JTextField jTextFieldName2;
-    private javax.swing.JTextField jTextFieldName3;
-    private javax.swing.JTextField jTextFieldName4;
+    private javax.swing.JTextField jTextFieldPassword;
+    private javax.swing.JTextField jTextFieldRegistration;
     private javax.swing.JTextField jTextFieldSearch;
     // End of variables declaration//GEN-END:variables
 
