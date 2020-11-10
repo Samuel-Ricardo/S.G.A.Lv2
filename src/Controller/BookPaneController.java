@@ -8,7 +8,7 @@ package Controller;
 import Model.Book;
 import Model.ImageFile;
 import View.Components.BookPane;
-import View.ListOfBooks;
+import View.search.ListOfBooks;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.MouseEvent;

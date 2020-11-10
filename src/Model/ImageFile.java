@@ -5,6 +5,7 @@
  */
 package Model;
 
+import Services.FileManager;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -72,7 +73,7 @@ public class ImageFile {
             
             String PCuser = System.getProperty("user.name");
             
-            file = new File("C:\\Users\\"+PCuser+"\\Documents\\SAGAL\\images\\"+name+".png");
+            file = new File(FileManager.defaultFolderWay+"\\Images\\"+name);
             
             System.out.println("arqucivo:                   "+file.getAbsolutePath());
             

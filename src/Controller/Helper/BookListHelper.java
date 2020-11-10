@@ -8,7 +8,7 @@ package Controller.Helper;
 import Model.Book;
 import Model.ImageFile;
 import View.Components.BookPane;
-import View.ListOfBooks;
+import View.search.ListOfBooks;
 import java.util.ArrayList;
 import javax.swing.Box;
 import javax.swing.JLabel;

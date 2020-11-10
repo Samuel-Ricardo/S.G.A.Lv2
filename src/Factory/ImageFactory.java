@@ -6,6 +6,8 @@
 package Factory;
 
 import Model.ImageFile;
+import Services.FileManager;
+import java.io.File;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -22,11 +24,18 @@ public class ImageFactory {
         
         String imageName = result.getString("image_name");
         
+        ImageFile image;
+        
         if(ImageFile.exist(imageName) == false){
             
             image = new ImageFile(result.getBinaryStream("image_bytes"), imageName);
             
+        }else{
+            
+            image = new ImageFile(FileManager.defaultFolderWay+"/Images/"+imageName);
         }
+        
+        
         
         return image;
     }

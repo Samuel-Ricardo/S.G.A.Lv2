@@ -1,5 +1,6 @@
 package View;
 
+import View.search.ListaClientes;
 import View.Registers.StudentRegistrationView;
 import Controller.MainMenuController;
 import javax.swing.JOptionPane;

@@ -11,7 +11,7 @@ import Model.Book;
 import Model.ImageFile;
 import Services.Dialoger;
 import Time.Time;
-import View.ListOfBooks;
+import View.search.ListOfBooks;
 import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
