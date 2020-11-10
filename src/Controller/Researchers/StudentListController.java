@@ -149,11 +149,18 @@ public class StudentListController {
     public void hideUpdateFilds() {
 
         view.getjTextFieldName().setVisible(false);
-        view.getjTextFieldAuthor().setVisible(false);
-        view.getjTextFieldGenre().setVisible(false);
-        view.getjTextFieldPublisher().setVisible(false);
-        view.getjFormattedTextFieldDate().setVisible(false);
-        view.getjSpinnerStock().setVisible(false);
+        view.getjTextFieldCourse().setVisible(false);
+        view.getjTextFieldEmail().setVisible(false);
+        view.getjTextFieldLogin().setVisible(false);
+        view.getjTextFieldPassword().setVisible(false);
+        view.getjTextFieldRegistration().setVisible(false);
+        view.getjFormattedTextFieldCEP().setVisible(false);
+        view.getjFormattedTextFieldPhone().setVisible(false);
+        view.getjComboBoxAddress().setVisible(false);
+        view.getjComboBoxGrade().setVisible(false);
+        view.getjComboBoxModule().setVisible(false);
+        view.getjComboBoxSchool().setVisible(false);
+        view.getjComboBoxShift().setVisible(false);
 
         showLabels();
     }
