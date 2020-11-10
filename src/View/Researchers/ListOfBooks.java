@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View.search;
+package View.Researchers;
 
-import Controller.BookListController;
+import Controller.Researchers.BookListController;
 import View.Components.BookPane;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;

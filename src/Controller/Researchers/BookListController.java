@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller;
+package Controller.Researchers;
 
 import Controller.Helper.BookListHelper;
 import DAO.BookDAO;
@@ -11,7 +11,7 @@ import Model.Book;
 import Model.ImageFile;
 import Services.Dialoger;
 import Time.Time;
-import View.search.ListOfBooks;
+import View.Researchers.ListOfBooks;
 import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;

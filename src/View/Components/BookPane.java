@@ -7,7 +7,7 @@ package View.Components;
 
 import Controller.BookPaneController;
 import Model.Book;
-import View.search.ListOfBooks;
+import View.Researchers.ListOfBooks;
 import java.awt.Dimension;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
