@@ -1,6 +1,6 @@
 package View;
 
-import View.Researchers.ListaClientes;
+import View.Researchers.ListOfStudents;
 import View.Registers.StudentRegistrationView;
 import Controller.MainMenuController;
 import javax.swing.JOptionPane;
@@ -218,7 +218,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_menAlugLivroActionPerformed
 
     private void menListaClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menListaClientesActionPerformed
-        ListaClientes lt = new ListaClientes();
+        ListOfStudents lt = new ListOfStudents();
         lt.setVisible(true);
         Desktop.add(lt);
     }//GEN-LAST:event_menListaClientesActionPerformed
