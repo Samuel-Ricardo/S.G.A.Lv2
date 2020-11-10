@@ -6,6 +6,7 @@
 package View.Researchers;
 
 import Controller.Researchers.BookListController;
+import Controller.Researchers.StudentListController;
 import View.Components.BookPane;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
@@ -30,13 +31,13 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
     private static BookPane selectedBookPane;
     
     
-    private final BookListController controller; 
+    private final StudentListController controller; 
     
     public ListOfStudents() {
         
         initComponents();
         
-        controller = new BookListController(this);
+        controller = new StudentListController(this);
         
         controller.start();
     }
