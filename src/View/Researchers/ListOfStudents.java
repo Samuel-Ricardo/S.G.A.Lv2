@@ -9,12 +9,15 @@ import Controller.Researchers.BookListController;
 import Controller.Researchers.StudentListController;
 import View.Components.BookPane;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
 import javax.swing.JSpinner;
+import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import org.xml.sax.Attributes;
 
@@ -354,7 +357,443 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextFieldSearch;
     // End of variables declaration//GEN-END:variables
 
-    
-    
-    
+    public static BookPane getSelectedBookPane() {
+        return selectedBookPane;
+    }
+
+    public static void setSelectedBookPane(BookPane selectedBookPane) {
+        ListOfStudents.selectedBookPane = selectedBookPane;
+    }
+
+    public JButton getjButtonDelet() {
+        return jButtonDelet;
+    }
+
+    public void setjButtonDelet(JButton jButtonDelet) {
+        this.jButtonDelet = jButtonDelet;
+    }
+
+    public JButton getjButtonUpdate() {
+        return jButtonUpdate;
+    }
+
+    public void setjButtonUpdate(JButton jButtonUpdate) {
+        this.jButtonUpdate = jButtonUpdate;
+    }
+
+    public JComboBox<String> getjComboBoxAddress() {
+        return jComboBoxAddress;
+    }
+
+    public void setjComboBoxAddress(JComboBox<String> jComboBoxAddress) {
+        this.jComboBoxAddress = jComboBoxAddress;
+    }
+
+    public JComboBox<String> getjComboBoxGrade() {
+        return jComboBoxGrade;
+    }
+
+    public void setjComboBoxGrade(JComboBox<String> jComboBoxGrade) {
+        this.jComboBoxGrade = jComboBoxGrade;
+    }
+
+    public JComboBox<String> getjComboBoxModule() {
+        return jComboBoxModule;
+    }
+
+    public void setjComboBoxModule(JComboBox<String> jComboBoxModule) {
+        this.jComboBoxModule = jComboBoxModule;
+    }
+
+    public JComboBox<String> getjComboBoxSchool() {
+        return jComboBoxSchool;
+    }
+
+    public void setjComboBoxSchool(JComboBox<String> jComboBoxSchool) {
+        this.jComboBoxSchool = jComboBoxSchool;
+    }
+
+    public JComboBox<String> getjComboBoxShift() {
+        return jComboBoxShift;
+    }
+
+    public void setjComboBoxShift(JComboBox<String> jComboBoxShift) {
+        this.jComboBoxShift = jComboBoxShift;
+    }
+
+    public JFormattedTextField getjFormattedTextFieldCEP() {
+        return jFormattedTextFieldCEP;
+    }
+
+    public void setjFormattedTextFieldCEP(JFormattedTextField jFormattedTextFieldCEP) {
+        this.jFormattedTextFieldCEP = jFormattedTextFieldCEP;
+    }
+
+    public JFormattedTextField getjFormattedTextFieldPhone() {
+        return jFormattedTextFieldPhone;
+    }
+
+    public void setjFormattedTextFieldPhone(JFormattedTextField jFormattedTextFieldPhone) {
+        this.jFormattedTextFieldPhone = jFormattedTextFieldPhone;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel12() {
+        return jLabel12;
+    }
+
+    public void setjLabel12(JLabel jLabel12) {
+        this.jLabel12 = jLabel12;
+    }
+
+    public JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    public void setjLabel13(JLabel jLabel13) {
+        this.jLabel13 = jLabel13;
+    }
+
+    public JLabel getjLabel14() {
+        return jLabel14;
+    }
+
+    public void setjLabel14(JLabel jLabel14) {
+        this.jLabel14 = jLabel14;
+    }
+
+    public JLabel getjLabel15() {
+        return jLabel15;
+    }
+
+    public void setjLabel15(JLabel jLabel15) {
+        this.jLabel15 = jLabel15;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public JLabel getjLabelAddress() {
+        return jLabelAddress;
+    }
+
+    public void setjLabelAddress(JLabel jLabelAddress) {
+        this.jLabelAddress = jLabelAddress;
+    }
+
+    public JLabel getjLabelCEP() {
+        return jLabelCEP;
+    }
+
+    public void setjLabelCEP(JLabel jLabelCEP) {
+        this.jLabelCEP = jLabelCEP;
+    }
+
+    public JLabel getjLabelCourse() {
+        return jLabelCourse;
+    }
+
+    public void setjLabelCourse(JLabel jLabelCourse) {
+        this.jLabelCourse = jLabelCourse;
+    }
+
+    public JLabel getjLabelEmail() {
+        return jLabelEmail;
+    }
+
+    public void setjLabelEmail(JLabel jLabelEmail) {
+        this.jLabelEmail = jLabelEmail;
+    }
+
+    public JLabel getjLabelGrade() {
+        return jLabelGrade;
+    }
+
+    public void setjLabelGrade(JLabel jLabelGrade) {
+        this.jLabelGrade = jLabelGrade;
+    }
+
+    public JLabel getjLabelLogin() {
+        return jLabelLogin;
+    }
+
+    public void setjLabelLogin(JLabel jLabelLogin) {
+        this.jLabelLogin = jLabelLogin;
+    }
+
+    public JLabel getjLabelModule() {
+        return jLabelModule;
+    }
+
+    public void setjLabelModule(JLabel jLabelModule) {
+        this.jLabelModule = jLabelModule;
+    }
+
+    public JLabel getjLabelName() {
+        return jLabelName;
+    }
+
+    public void setjLabelName(JLabel jLabelName) {
+        this.jLabelName = jLabelName;
+    }
+
+    public JLabel getjLabelPassword() {
+        return jLabelPassword;
+    }
+
+    public void setjLabelPassword(JLabel jLabelPassword) {
+        this.jLabelPassword = jLabelPassword;
+    }
+
+    public JLabel getjLabelPhone() {
+        return jLabelPhone;
+    }
+
+    public void setjLabelPhone(JLabel jLabelPhone) {
+        this.jLabelPhone = jLabelPhone;
+    }
+
+    public JLabel getjLabelRegistration() {
+        return jLabelRegistration;
+    }
+
+    public void setjLabelRegistration(JLabel jLabelRegistration) {
+        this.jLabelRegistration = jLabelRegistration;
+    }
+
+    public JLabel getjLabelSchool() {
+        return jLabelSchool;
+    }
+
+    public void setjLabelSchool(JLabel jLabelSchool) {
+        this.jLabelSchool = jLabelSchool;
+    }
+
+    public JLabel getjLabelSearch() {
+        return jLabelSearch;
+    }
+
+    public void setjLabelSearch(JLabel jLabelSearch) {
+        this.jLabelSearch = jLabelSearch;
+    }
+
+    public JLabel getjLabelSearchIcon() {
+        return jLabelSearchIcon;
+    }
+
+    public void setjLabelSearchIcon(JLabel jLabelSearchIcon) {
+        this.jLabelSearchIcon = jLabelSearchIcon;
+    }
+
+    public JLabel getjLabelShift() {
+        return jLabelShift;
+    }
+
+    public void setjLabelShift(JLabel jLabelShift) {
+        this.jLabelShift = jLabelShift;
+    }
+
+    public JLabel getjLabelStudentImage() {
+        return jLabelStudentImage;
+    }
+
+    public void setjLabelStudentImage(JLabel jLabelStudentImage) {
+        this.jLabelStudentImage = jLabelStudentImage;
+    }
+
+    public JPanel getjPanelAccount() {
+        return jPanelAccount;
+    }
+
+    public void setjPanelAccount(JPanel jPanelAccount) {
+        this.jPanelAccount = jPanelAccount;
+    }
+
+    public JPanel getjPanelAddress() {
+        return jPanelAddress;
+    }
+
+    public void setjPanelAddress(JPanel jPanelAddress) {
+        this.jPanelAddress = jPanelAddress;
+    }
+
+    public JPanel getjPanelContact() {
+        return jPanelContact;
+    }
+
+    public void setjPanelContact(JPanel jPanelContact) {
+        this.jPanelContact = jPanelContact;
+    }
+
+    public JPanel getjPanelDetails() {
+        return jPanelDetails;
+    }
+
+    public void setjPanelDetails(JPanel jPanelDetails) {
+        this.jPanelDetails = jPanelDetails;
+    }
+
+    public JPanel getjPanelStudentList() {
+        return jPanelStudentList;
+    }
+
+    public void setjPanelStudentList(JPanel jPanelStudentList) {
+        this.jPanelStudentList = jPanelStudentList;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public void setjScrollPane2(JScrollPane jScrollPane2) {
+        this.jScrollPane2 = jScrollPane2;
+    }
+
+    public JSeparator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    public void setjSeparator1(JSeparator jSeparator1) {
+        this.jSeparator1 = jSeparator1;
+    }
+
+    public JSeparator getjSeparator2() {
+        return jSeparator2;
+    }
+
+    public void setjSeparator2(JSeparator jSeparator2) {
+        this.jSeparator2 = jSeparator2;
+    }
+
+    public JTabbedPane getjTabbedPaneDetails() {
+        return jTabbedPaneDetails;
+    }
+
+    public void setjTabbedPaneDetails(JTabbedPane jTabbedPaneDetails) {
+        this.jTabbedPaneDetails = jTabbedPaneDetails;
+    }
+
+    public JTextField getjTextFieldCourse() {
+        return jTextFieldCourse;
+    }
+
+    public void setjTextFieldCourse(JTextField jTextFieldCourse) {
+        this.jTextFieldCourse = jTextFieldCourse;
+    }
+
+    public JTextField getjTextFieldEmail() {
+        return jTextFieldEmail;
+    }
+
+    public void setjTextFieldEmail(JTextField jTextFieldEmail) {
+        this.jTextFieldEmail = jTextFieldEmail;
+    }
+
+    public JTextField getjTextFieldLogin() {
+        return jTextFieldLogin;
+    }
+
+    public void setjTextFieldLogin(JTextField jTextFieldLogin) {
+        this.jTextFieldLogin = jTextFieldLogin;
+    }
+
+    public JTextField getjTextFieldName() {
+        return jTextFieldName;
+    }
+
+    public void setjTextFieldName(JTextField jTextFieldName) {
+        this.jTextFieldName = jTextFieldName;
+    }
+
+    public JTextField getjTextFieldPassword() {
+        return jTextFieldPassword;
+    }
+
+    public void setjTextFieldPassword(JTextField jTextFieldPassword) {
+        this.jTextFieldPassword = jTextFieldPassword;
+    }
+
+    public JTextField getjTextFieldRegistration() {
+        return jTextFieldRegistration;
+    }
+
+    public void setjTextFieldRegistration(JTextField jTextFieldRegistration) {
+        this.jTextFieldRegistration = jTextFieldRegistration;
+    }
+
+    public JTextField getjTextFieldSearch() {
+        return jTextFieldSearch;
+    }
+
+    public void setjTextFieldSearch(JTextField jTextFieldSearch) {
+        this.jTextFieldSearch = jTextFieldSearch;
+    }
 }
