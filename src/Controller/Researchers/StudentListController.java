@@ -7,9 +7,9 @@ package Controller.Researchers;
 
 import Controller.Helper.StudentListHelper;
 import DAO.StudentDAO;
-import StudentDAO;
 import Model.Book;
 import Model.ImageFile;
+import Model.Student;
 import Services.Dialoger;
 import Time.Time;
 import View.Researchers.ListOfStudents;
@@ -46,7 +46,7 @@ public class StudentListController {
 
     public void start() {
 
-        view.getjPanelBookList().setLayout(new BoxLayout(view.getjPanelBookList(), BoxLayout.LINE_AXIS));
+        view.getjPanelStudentList().setLayout(new BoxLayout(view.getjPanelStudentList(), BoxLayout.LINE_AXIS));
 
         startSearchBar();
 
@@ -56,7 +56,7 @@ public class StudentListController {
 
         setUpdateFildsListeners();
 
-        view.getjPanelBookDetails().addMouseListener(new MouseListener() {
+        view.getjTabbedPaneDetails().addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
 
@@ -123,7 +123,7 @@ public class StudentListController {
 
     public void loadBooks(ArrayList<Book> books) {
 
-        view.getjPanelBookList().removeAll();
+        view.getjPanelStudentList().removeAll();
 
         helper.setBookOnList(books, Box.createHorizontalBox());
 
@@ -137,15 +137,13 @@ public class StudentListController {
 
     private void deepSearch() {
 
-        //view.getjPanelBookList().removeAll();
-        loadBooks((ArrayList<Book>) studentDao.deepSearch(view.getjTextFieldSearch().getText()));
+        loadBooks((ArrayList<Student>) studentDao.deepSearch(view.getjTextFieldSearch().getText()));
 
     }
 
     public void fastSearch() {
 
-        //view.getjPanelBookList().removeAll();
-        loadBooks((ArrayList<Book>) studentDao.fastSearch(view.getjTextFieldSearch().getText()));
+        loadBooks((ArrayList<Student>) studentDao.fastSearch(view.getjTextFieldSearch().getText()));
     }
 
     public void hideUpdateFilds() {

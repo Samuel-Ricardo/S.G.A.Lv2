@@ -154,12 +154,12 @@ public class StudentDAO {
         return students;
     }
 
-    public List<Student> search(String pesquisa) {
+    public List<Student> fastSearch(String pesquisa) {
 
         connect();
         PreparedStatement statement = null;
         ResultSet result = null;
-        sql = "SELECT * FROM tb_student WHERE nome LIKE ? or loguin LIKE ?;";
+        sql = "SELECT * FROM tb_student WHERE nome LIKE ? or loguin LIKE ? or student_registration = ?;";
         List<Student> students = new ArrayList<>();
 
         try {
@@ -168,6 +168,7 @@ public class StudentDAO {
 
             statement.setString(1, "%" + pesquisa + "%");
             statement.setString(2, "%" + pesquisa + "%");
+            statement.setString(3, "%" + pesquisa + "%");
 
             result = statement.executeQuery();
 
