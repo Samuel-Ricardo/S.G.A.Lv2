@@ -249,11 +249,19 @@ public class StudentListController {
     private void showLabels() {
 
         view.getjLabelName().setVisible(true);
-        view.getjLabelAuthor().setVisible(true);
-        view.getjLabelGenre().setVisible(true);
-        view.getjLabelPublisher().setVisible(true);
-        view.getjLabelAcquiredDate().setVisible(true);
-        view.getjLabelStock().setVisible(true);
+        view.getjLabelAddress().setVisible(true);
+        view.getjLabelCEP().setVisible(true);
+        view.getjLabelCourse().setVisible(true);
+        view.getjLabelEmail().setVisible(true);
+        view.getjLabelGrade().setVisible(true);
+        view.getjLabelLogin().setVisible(true);
+        view.getjLabelModule().setVisible(true);
+        view.getjLabelPassword().setVisible(true);
+        view.getjLabelPhone().setVisible(true);
+        view.getjLabelRegistration().setVisible(true);
+        view.getjLabelSchool().setVisible(true);
+        view.getjLabelShift().setVisible(true);
+            
     }
 
     public void update() {
