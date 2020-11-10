@@ -7,7 +7,8 @@ package View.Researchers;
 
 import Controller.Researchers.BookListController;
 import Controller.Researchers.StudentListController;
-import View.Components.BookPane;
+import View.Components.StudentPane;
+import View.Components.StudentPane;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
@@ -31,7 +32,7 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
      * Creates new form LivDis
      */
     
-    private static BookPane selectedStudentPane;
+    private static StudentPane selectedStudentPane;
     
     
     private final StudentListController controller; 
@@ -357,12 +358,12 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextFieldSearch;
     // End of variables declaration//GEN-END:variables
 
-    public static BookPane getSelectedStudentPane() {
+    public static StudentPane getSelectedStudentPane() {
         return selectedStudentPane;
     }
 
-    public static void setSelectedStudentPane(BookPane selectedBookPane) {
-        ListOfStudents.selectedStudentPane = selectedBookPane;
+    public static void setSelectedStudentPane(StudentPane selectedStudentPane) {
+        ListOfStudents.selectedStudentPane = selectedStudentPane;
     }
 
     public JButton getjButtonDelet() {
@@ -795,5 +796,9 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
 
     public void setjTextFieldSearch(JTextField jTextFieldSearch) {
         this.jTextFieldSearch = jTextFieldSearch;
+    }
+
+    public StudentListController getController() {
+        return controller;
     }
 }

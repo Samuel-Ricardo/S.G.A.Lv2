@@ -36,7 +36,7 @@ public class StudentListController {
     private final ListOfStudents view;
     private final StudentDAO studentDao;
     private final StudentListHelper helper;
-    private Book updateBook;
+    private Book updateStudent;
 
     public StudentListController(ListOfStudents view) {
         this.view = view;
@@ -132,7 +132,7 @@ public class StudentListController {
     public void loadDetails() {
 
         helper.loadBookDetails();
-        updateBook = view.getSelectedBookPane().getBook();
+        updateStudent = view.getSelectedStudentPane().getStudent();
     }
 
     private void deepSearch() {
@@ -266,17 +266,17 @@ public class StudentListController {
 
     public void update() {
 
-        updateBook.setName(view.getjLabelName().getText());
-        updateBook.setAuthor(view.getjLabelAuthor().getText());
-        updateBook.setGenre(view.getjLabelGenre().getText());
-        updateBook.setPublisher(view.getjLabelPublisher().getText());
-        updateBook.setStock(Integer.parseInt(view.getjLabelStock().getText()));
-        updateBook.setAcquired(new Time(view.getjLabelAcquiredDate().getText()));
+        updateStudent.setName(view.getjLabelName().getText());
+        updateStudent.setAuthor(view.getjLabelAuthor().getText());
+        updateStudent.setGenre(view.getjLabelGenre().getText());
+        updateStudent.setPublisher(view.getjLabelPublisher().getText());
+        updateStudent.setStock(Integer.parseInt(view.getjLabelStock().getText()));
+        updateStudent.setAcquired(new Time(view.getjLabelAcquiredDate().getText()));
 
         //       if(updateBook.equals(view.getSelectedBookPane().getBook()) == false){
-        if (studentDao.update(updateBook)) {
+        if (studentDao.update(updateStudent)) {
 
-            Dialoger.message(view, " Os dados do livro " + updateBook.getName() + " foram atualizado com sucesso"
+            Dialoger.message(view, " Os dados do livro " + updateStudent.getName() + " foram atualizado com sucesso"
                     + "\n"
                     + "\n Atualize a Pagina");
         }

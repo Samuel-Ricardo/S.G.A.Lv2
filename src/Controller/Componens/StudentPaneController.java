@@ -7,7 +7,6 @@ package Controller.Componens;
 
 import Model.Student;
 import Model.ImageFile;
-import StudentPane;
 import View.Components.StudentPane;
 import View.Researchers.ListOfStudents;
 import java.awt.Component;
@@ -38,7 +37,7 @@ public class StudentPaneController {
             @Override
             public void mouseClicked(MouseEvent e) {
              
-                StudentPane(view);
+                ListOfStudents.setSelectedStudentPane(view);
                 father.getController().loadDetails();
             }
 
@@ -67,8 +66,8 @@ public class StudentPaneController {
     public void start() {
      
             view.getjLabelName().setText(student.getName());
-            view.getjLabelStock().setText(student.getStock().toString());
-            view.getjLabelGenre().setText(student.getGenre());
+            view.getjLabelCourse().setText(student.getCourse());
+            view.getjLabelGrade().setText(student.getGrade());
             resizeImageLabe(view.getjLabelImage());
             setImage();
             
@@ -104,5 +103,17 @@ public class StudentPaneController {
              
              comp.addMouseListener(MouseSelectListener);
          }
+    }
+
+    public MouseListener getMouseSelectListener() {
+        return MouseSelectListener;
+    }
+
+    public void setMouseSelectListener(MouseListener MouseSelectListener) {
+        this.MouseSelectListener = MouseSelectListener;
+    }
+
+    public ListOfStudents getFather() {
+        return father;
     }
 }
