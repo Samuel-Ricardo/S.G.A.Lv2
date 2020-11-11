@@ -125,7 +125,7 @@ public class MainMenu extends javax.swing.JFrame {
         jMenu6.add(jMenuItem1);
 
         menListaClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.ALT_MASK));
-        menListaClientes.setText("Clientes");
+        menListaClientes.setText("Estudantes");
         menListaClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menListaClientesActionPerformed(evt);
