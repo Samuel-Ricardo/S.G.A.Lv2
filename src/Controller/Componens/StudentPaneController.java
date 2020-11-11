@@ -79,6 +79,20 @@ public class StudentPaneController {
 
     public void setImage() {
         
+        if(student.getPerfilImage() != null){
+            if(student.getPerfilImage().getFile().exists()){
+                
+                ImageFile.resizeImage(view.getjLabelImage(), student.getPerfilImage().getFile().getAbsolutePath());
+            }else{
+                setEmptyImage();
+            }
+        }else{
+            setEmptyImage();
+        }
+        
+    }
+
+    public void setEmptyImage() {
         ImageFile.resizeImage(view.getjLabelImage(), "/View/Images/icons8-no-image-64px.png");
     }
 
