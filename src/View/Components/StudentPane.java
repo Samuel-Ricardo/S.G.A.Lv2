@@ -200,5 +200,11 @@ public class StudentPane extends javax.swing.JPanel {
         this.jPanel1 = jPanel1;
     }
 
+    public Student getStudent() {
+        return student;
+    }
 
+    public ListOfStudents getFather() {
+        return father;
+    }
 }

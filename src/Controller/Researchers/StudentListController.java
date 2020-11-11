@@ -5,9 +5,10 @@
  */
 package Controller.Researchers;
 
+
 import Controller.Helper.StudentListHelper;
 import DAO.StudentDAO;
-import Model.Book;
+import Model.Student;
 import Model.ImageFile;
 import Model.Student;
 import Services.Dialoger;
@@ -36,7 +37,7 @@ public class StudentListController {
     private final ListOfStudents view;
     private final StudentDAO studentDao;
     private final StudentListHelper helper;
-    private Book updateStudent;
+    private Student updateStudent;
 
     public StudentListController(ListOfStudents view) {
         this.view = view;
@@ -125,25 +126,25 @@ public class StudentListController {
 
         view.getjPanelStudentList().removeAll();
 
-        helper.setBookOnList(books, Box.createHorizontalBox());
+        helper.setStudentOnList(books, Box.createHorizontalBox());
 
     }
 
     public void loadDetails() {
 
-        helper.loadBookDetails();
+        helper.loadStudentDetails();
         updateStudent = view.getSelectedStudentPane().getStudent();
     }
 
     private void deepSearch() {
 
-        loadBooks((ArrayList<Student>) studentDao.deepSearch(view.getjTextFieldSearch().getText()));
+        loadStudents((ArrayList<Student>) studentDao.deepSearch(view.getjTextFieldSearch().getText()));
 
     }
 
     public void fastSearch() {
 
-        loadBooks((ArrayList<Student>) studentDao.fastSearch(view.getjTextFieldSearch().getText()));
+        loadStudents((ArrayList<Student>) studentDao.fastSearch(view.getjTextFieldSearch().getText()));
     }
 
     public void hideUpdateFilds() {
@@ -273,17 +274,12 @@ public class StudentListController {
         updateStudent.setStock(Integer.parseInt(view.getjLabelStock().getText()));
         updateStudent.setAcquired(new Time(view.getjLabelAcquiredDate().getText()));
 
-        //       if(updateBook.equals(view.getSelectedBookPane().getBook()) == false){
         if (studentDao.update(updateStudent)) {
 
             Dialoger.message(view, " Os dados do livro " + updateStudent.getName() + " foram atualizado com sucesso"
                     + "\n"
                     + "\n Atualize a Pagina");
         }
-//        }else{
-//            
-//            Dialoguer.message(view, "Nao foi realizada nenhuma modificaçao, atualizaçao nao nescessária");
-//        }
 
         loadAllStudents();
     }
