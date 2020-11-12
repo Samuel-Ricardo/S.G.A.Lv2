@@ -5,7 +5,7 @@
  */
 package Controller.Registers;
 
-import Controller.Helper.Register.ClientRegisterHelper;
+import Controller.Helper.Register.StudentRegisterHelper;
 import DAO.StudentDAO;
 import Model.ImageFile;
 import Model.Student;
@@ -21,14 +21,14 @@ import javax.swing.JFileChooser;
 public class StudentRegisterController {
 
     private final StudentDAO studentDao;
-    private final ClientRegisterHelper helper;
+    private final StudentRegisterHelper helper;
     private final StudentRegistrationView view;
     private final FileManager fileManager;
 
     public StudentRegisterController(StudentRegistrationView view) {
         
         this.studentDao = new StudentDAO();
-        this.helper = new ClientRegisterHelper(view);
+        this.helper = new StudentRegisterHelper(view);
         this.view = view;
         fileManager = new FileManager();
     }

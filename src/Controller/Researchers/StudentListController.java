@@ -6,7 +6,7 @@
 package Controller.Researchers;
 
 
-import Controller.Helper.StudentListHelper;
+import Controller.Helper.Researcher.StudentListHelper;
 import DAO.StudentDAO;
 import Model.Student;
 import Model.ImageFile;

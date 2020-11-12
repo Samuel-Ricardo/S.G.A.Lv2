@@ -5,7 +5,7 @@
  */
 package Controller.Researchers;
 
-import Controller.Helper.BookListHelper;
+import Controller.Helper.Researcher.BookListHelper;
 import DAO.BookDAO;
 import Model.Book;
 import Model.ImageFile;

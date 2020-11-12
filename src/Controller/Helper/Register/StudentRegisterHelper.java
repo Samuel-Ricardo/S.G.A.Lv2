@@ -13,11 +13,11 @@ import View.Registers.StudentRegistrationView;
  *
  * @author Samuel
  */
-public class ClientRegisterHelper {
+public class StudentRegisterHelper {
     
     private final StudentRegistrationView view;
 
-    public ClientRegisterHelper(StudentRegistrationView view) {
+    public StudentRegisterHelper(StudentRegistrationView view) {
         this.view = view;
     }
 
