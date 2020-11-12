@@ -5,7 +5,7 @@
  */
 package Controller.Registers;
 
-import Controller.Helper.ClientRegisterHelper;
+import Controller.Helper.Register.ClientRegisterHelper;
 import DAO.StudentDAO;
 import Model.ImageFile;
 import Model.Student;
