@@ -18,14 +18,14 @@ import javax.swing.JFileChooser;
  *
  * @author Samuel
  */
-public class ClientRegisterController {
+public class StudentRegisterController {
 
     private final StudentDAO studentDao;
     private final ClientRegisterHelper helper;
     private final StudentRegistrationView view;
     private final FileManager fileManager;
 
-    public ClientRegisterController(StudentRegistrationView view) {
+    public StudentRegisterController(StudentRegistrationView view) {
         
         this.studentDao = new StudentDAO();
         this.helper = new ClientRegisterHelper(view);
