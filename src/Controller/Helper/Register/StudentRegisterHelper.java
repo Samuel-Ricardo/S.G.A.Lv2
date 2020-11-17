@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller.Helper;
+package Controller.Helper.Register;
 
 import Model.ImageFile;
 import Model.Student;
@@ -13,11 +13,11 @@ import View.Registers.StudentRegistrationView;
  *
  * @author Samuel
  */
-public class ClientRegisterHelper {
+public class StudentRegisterHelper {
     
     private final StudentRegistrationView view;
 
-    public ClientRegisterHelper(StudentRegistrationView view) {
+    public StudentRegisterHelper(StudentRegistrationView view) {
         this.view = view;
     }
 

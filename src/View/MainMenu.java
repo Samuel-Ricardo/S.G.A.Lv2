@@ -1,5 +1,6 @@
 package View;
 
+import View.Researchers.ListOfStudents;
 import View.Registers.StudentRegistrationView;
 import Controller.MainMenuController;
 import javax.swing.JOptionPane;
@@ -124,7 +125,7 @@ public class MainMenu extends javax.swing.JFrame {
         jMenu6.add(jMenuItem1);
 
         menListaClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.ALT_MASK));
-        menListaClientes.setText("Clientes");
+        menListaClientes.setText("Estudantes");
         menListaClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menListaClientesActionPerformed(evt);
@@ -217,7 +218,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_menAlugLivroActionPerformed
 
     private void menListaClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menListaClientesActionPerformed
-        ListaClientes lt = new ListaClientes();
+        ListOfStudents lt = new ListOfStudents();
         lt.setVisible(true);
         Desktop.add(lt);
     }//GEN-LAST:event_menListaClientesActionPerformed

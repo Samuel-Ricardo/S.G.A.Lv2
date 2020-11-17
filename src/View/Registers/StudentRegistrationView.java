@@ -1,14 +1,12 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package View.Registers;
 
-import Controller.Registers.ClientRegisterController;
+import Controller.Registers.StudentRegisterController;
 import Model.ImageFile;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
@@ -18,7 +16,7 @@ import javax.swing.JTextField;
 
 public class StudentRegistrationView extends javax.swing.JInternalFrame {
 
-    private final ClientRegisterController controller;
+    private final StudentRegisterController controller;
     
     private ImageFile perfilImage; 
     private StudentRegistrationView thisClass = this; 
@@ -26,7 +24,7 @@ public class StudentRegistrationView extends javax.swing.JInternalFrame {
     public StudentRegistrationView(){
             
         initComponents();
-        controller = new ClientRegisterController(this);
+        controller = new StudentRegisterController(this);
         
         String way = StudentRegistrationView.class.getResource("/View/Images/icons8-no-image-64px.png").toString();
         

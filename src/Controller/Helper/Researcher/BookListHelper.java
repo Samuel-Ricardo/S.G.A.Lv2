@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller.Helper;
+package Controller.Helper.Researcher;
 
 import Model.Book;
 import Model.ImageFile;
 import View.Components.BookPane;
-import View.ListOfBooks;
+import View.Researchers.ListOfBooks;
 import java.util.ArrayList;
 import javax.swing.Box;
 import javax.swing.JLabel;
