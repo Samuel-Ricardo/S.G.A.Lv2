@@ -3,22 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller;
+package Controller.Researchers;
 
-import Controller.Helper.BookListHelper;
-import DAO.BookDAO;
-import Model.Book;
+
+import Controller.Helper.Researcher.StudentListHelper;
+import DAO.StudentDAO;
+import Model.Student;
 import Model.ImageFile;
+import Model.Student;
 import Services.Dialoger;
 import Time.Time;
-import View.ListOfBooks;
+import View.Researchers.ListOfStudents;
+import View.Researchers.ListOfStudents;
 import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
-import javafx.scene.input.KeyCode;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
@@ -30,32 +32,32 @@ import javax.swing.text.JTextComponent;
  *
  * @author Samuel
  */
-public class BookListController {
+public class StudentListController {
 
-    private final ListOfBooks view;
-    private final BookDAO bookDao;
-    private final BookListHelper helper;
-    private Book updateBook;
+    private final ListOfStudents view;
+    private final StudentDAO studentDao;
+    private final StudentListHelper helper;
+    private Student updateStudent;
 
-    public BookListController(ListOfBooks view) {
+    public StudentListController(ListOfStudents view) {
         this.view = view;
-        this.bookDao = new BookDAO();
-        this.helper = new BookListHelper(view);
+        this.studentDao = new StudentDAO();
+        this.helper = new StudentListHelper(view);
     }
 
     public void start() {
 
-        view.getjPanelBookList().setLayout(new BoxLayout(view.getjPanelBookList(), BoxLayout.LINE_AXIS));
+        view.getjPanelStudentList().setLayout(new BoxLayout(view.getjPanelStudentList(), BoxLayout.LINE_AXIS));
 
         startSearchBar();
 
-        loadAllBooks();
+        loadAllStudents();
 
         hideUpdateFilds();
 
         setUpdateFildsListeners();
 
-        view.getjPanelBookDetails().addMouseListener(new MouseListener() {
+        view.getjTabbedPaneDetails().addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
 
@@ -120,41 +122,46 @@ public class BookListController {
         });
     }
 
-    public void loadBooks(ArrayList<Book> books) {
+    public void loadStudents(ArrayList<Student> books) {
 
-        view.getjPanelBookList().removeAll();
+        view.getjPanelStudentList().removeAll();
 
-        helper.setBookOnList(books, Box.createHorizontalBox());
+        helper.setStudentOnList(books, Box.createHorizontalBox());
 
     }
 
     public void loadDetails() {
 
-        helper.loadBookDetails();
-        updateBook = view.getSelectedBookPane().getBook();
+        helper.loadStudentDetails();
+        updateStudent = view.getSelectedStudentPane().getStudent();
     }
 
     private void deepSearch() {
 
-        //view.getjPanelBookList().removeAll();
-        loadBooks((ArrayList<Book>) bookDao.deepSearch(view.getjTextFieldSearch().getText()));
+        loadStudents((ArrayList<Student>) studentDao.deepSearch(view.getjTextFieldSearch().getText()));
 
     }
 
     public void fastSearch() {
 
-        //view.getjPanelBookList().removeAll();
-        loadBooks((ArrayList<Book>) bookDao.fastSearch(view.getjTextFieldSearch().getText()));
+        loadStudents((ArrayList<Student>) studentDao.fastSearch(view.getjTextFieldSearch().getText()));
     }
 
     public void hideUpdateFilds() {
 
         view.getjTextFieldName().setVisible(false);
-        view.getjTextFieldAuthor().setVisible(false);
-        view.getjTextFieldGenre().setVisible(false);
-        view.getjTextFieldPublisher().setVisible(false);
-        view.getjFormattedTextFieldDate().setVisible(false);
-        view.getjSpinnerStock().setVisible(false);
+        view.getjTextFieldCourse().setVisible(false);
+        view.getjTextFieldEmail().setVisible(false);
+        view.getjTextFieldLogin().setVisible(false);
+        view.getjTextFieldPassword().setVisible(false);
+        view.getjTextFieldRegistration().setVisible(false);
+        view.getjFormattedTextFieldCEP().setVisible(false);
+        view.getjFormattedTextFieldPhone().setVisible(false);
+        view.getjComboBoxAddress().setVisible(false);
+        view.getjComboBoxGrade().setVisible(false);
+        view.getjComboBoxModule().setVisible(false);
+        view.getjComboBoxSchool().setVisible(false);
+        view.getjComboBoxShift().setVisible(false);
 
         showLabels();
     }
@@ -243,52 +250,55 @@ public class BookListController {
     private void showLabels() {
 
         view.getjLabelName().setVisible(true);
-        view.getjLabelAuthor().setVisible(true);
-        view.getjLabelGenre().setVisible(true);
-        view.getjLabelPublisher().setVisible(true);
-        view.getjLabelAcquiredDate().setVisible(true);
-        view.getjLabelStock().setVisible(true);
+        view.getjLabelAddress().setVisible(true);
+        view.getjLabelCEP().setVisible(true);
+        view.getjLabelCourse().setVisible(true);
+        view.getjLabelEmail().setVisible(true);
+        view.getjLabelGrade().setVisible(true);
+        view.getjLabelLogin().setVisible(true);
+        view.getjLabelModule().setVisible(true);
+        view.getjLabelPassword().setVisible(true);
+        view.getjLabelPhone().setVisible(true);
+        view.getjLabelRegistration().setVisible(true);
+        view.getjLabelSchool().setVisible(true);
+        view.getjLabelShift().setVisible(true);
+            
     }
 
     public void update() {
 
-        updateBook.setName(view.getjLabelName().getText());
-        updateBook.setAuthor(view.getjLabelAuthor().getText());
-        updateBook.setGenre(view.getjLabelGenre().getText());
-        updateBook.setPublisher(view.getjLabelPublisher().getText());
-        updateBook.setStock(Integer.parseInt(view.getjLabelStock().getText()));
-        updateBook.setAcquired(new Time(view.getjLabelAcquiredDate().getText()));
+        updateStudent.setName(view.getjLabelName().getText());
+        updateStudent.setAuthor(view.getjLabelAuthor().getText());
+        updateStudent.setGenre(view.getjLabelGenre().getText());
+        updateStudent.setPublisher(view.getjLabelPublisher().getText());
+        updateStudent.setStock(Integer.parseInt(view.getjLabelStock().getText()));
+        updateStudent.setAcquired(new Time(view.getjLabelAcquiredDate().getText()));
 
-        //       if(updateBook.equals(view.getSelectedBookPane().getBook()) == false){
-        if (bookDao.update(updateBook)) {
+        if (studentDao.update(updateStudent)) {
 
-            Dialoger.message(view, " Os dados do livro " + updateBook.getName() + " foram atualizado com sucesso"
+            Dialoger.message(view, " Os dados do livro " + updateStudent.getName() + " foram atualizado com sucesso"
                     + "\n"
                     + "\n Atualize a Pagina");
         }
-//        }else{
-//            
-//            Dialoguer.message(view, "Nao foi realizada nenhuma modificaçao, atualizaçao nao nescessária");
-//        }
 
-        loadAllBooks();
+        loadAllStudents();
     }
 
-    public void loadAllBooks() {
-        loadBooks((ArrayList<Book>) bookDao.selectAll());
+    public void loadAllStudents() {
+        loadStudents((ArrayList<Student>) studentDao.selectAll());
     }
 
     public void delete() {
 
-        Book book = ListOfBooks.getSelectedBookPane().getBook();
+        Student student = ListOfStudents.getSelectedStudentPane().getStudent();
 
-        if (Dialoger.confirm(view, " Voce realmente deseja deletar o livro " + book.getName() + " ?"
+        if (Dialoger.confirm(view, " Voce realmente deseja deletar o livro " + student.getName() + " ?"
                 + "\n"
                 + "\n Os dados nao poderao ser recuperados")) {
 
-            bookDao.delet(book);
+            studentDao.delet(student);
 
-            loadAllBooks();
+            loadAllStudents();
         }
     }
 }

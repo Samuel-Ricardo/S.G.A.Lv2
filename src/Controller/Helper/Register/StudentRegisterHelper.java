@@ -3,21 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller.Helper;
+package Controller.Helper.Register;
 
 import Model.ImageFile;
 import Model.Student;
-import View.Registers.ClientRegister;
+import View.Registers.StudentRegistrationView;
 
 /**
  *
  * @author Samuel
  */
-public class ClientRegisterHelper {
+public class StudentRegisterHelper {
     
-    private final ClientRegister view;
+    private final StudentRegistrationView view;
 
-    public ClientRegisterHelper(ClientRegister view) {
+    public StudentRegisterHelper(StudentRegistrationView view) {
         this.view = view;
     }
 

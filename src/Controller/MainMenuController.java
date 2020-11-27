@@ -5,7 +5,7 @@
  */
 package Controller;
 
-import View.ListOfBooks;
+import View.Researchers.ListOfBooks;
 import View.MainMenu;
 
 /**
