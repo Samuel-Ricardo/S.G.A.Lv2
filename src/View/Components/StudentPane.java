@@ -5,9 +5,9 @@
  */
 package View.Components;
 
-import Controller.Componens.BookPaneController;
-import Model.Book;
-import View.Researchers.ListOfBooks;
+import Controller.Componens.StudentPaneController;
+import Model.Student;
+import View.Researchers.ListOfStudents;
 import java.awt.Dimension;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -16,23 +16,23 @@ import javax.swing.JPanel;
  *
  * @author Samuel
  */
-public class BookPane extends javax.swing.JPanel {
+public class StudentPane extends javax.swing.JPanel {
 
     /**
-     * Creates new form BookPane
+     * Creates new form StudentPane
      */
-    private BookPaneController controller;
-    private final Book book;
-    private final ListOfBooks father;
+    private StudentPaneController controller;
+    private final Student student;
+    private final ListOfStudents father;
     
-    public BookPane(Book book, ListOfBooks father) {
+    public StudentPane(Student student, ListOfStudents father) {
         
         initComponents();
         
-        this.book = book;
+        this.student = student;
         this.father = father;
         
-        controller = new BookPaneController(this, book, father);
+        controller = new StudentPaneController(this, student, father);
         
         controller.start();
     }
@@ -50,8 +50,8 @@ public class BookPane extends javax.swing.JPanel {
         jLabelImage = new javax.swing.JLabel();
         jLabelName = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabelStock = new javax.swing.JLabel();
-        jLabelGenre = new javax.swing.JLabel();
+        jLabelCourse = new javax.swing.JLabel();
+        jLabelGrade = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 0, 0));
@@ -60,14 +60,14 @@ public class BookPane extends javax.swing.JPanel {
         jLabelName.setText("Nome:");
 
         jLabel4.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
-        jLabel4.setText("Estoque:");
+        jLabel4.setText("Curso:");
 
-        jLabelStock.setText("Estoque:");
+        jLabelCourse.setText("Estoque:");
 
-        jLabelGenre.setText("genero");
+        jLabelGrade.setText("genero");
 
         jLabel7.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
-        jLabel7.setText("Genero:");
+        jLabel7.setText("Clase:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -80,11 +80,11 @@ public class BookPane extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelStock, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE))
+                        .addComponent(jLabelCourse, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelGenre, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE))
+                        .addComponent(jLabelGrade, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabelImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
@@ -99,11 +99,11 @@ public class BookPane extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jLabelStock))
+                    .addComponent(jLabelCourse))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jLabelGenre))
+                    .addComponent(jLabelGrade))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
@@ -129,23 +129,51 @@ public class BookPane extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabelGenre;
+    private javax.swing.JLabel jLabelCourse;
+    private javax.swing.JLabel jLabelGrade;
     private javax.swing.JLabel jLabelImage;
     private javax.swing.JLabel jLabelName;
-    private javax.swing.JLabel jLabelStock;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
-    public BookPaneController getController() {
+    public StudentPaneController getController() {
         return controller;
     }
 
-    public JLabel getjLabelGenre() {
-        return jLabelGenre;
+    public void setController(StudentPaneController controller) {
+        this.controller = controller;
     }
 
-    public void setjLabelGenre(JLabel jLabelGenre) {
-        this.jLabelGenre = jLabelGenre;
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabelCourse() {
+        return jLabelCourse;
+    }
+
+    public void setjLabelCourse(JLabel jLabelCourse) {
+        this.jLabelCourse = jLabelCourse;
+    }
+
+    public JLabel getjLabelGrade() {
+        return jLabelGrade;
+    }
+
+    public void setjLabelGrade(JLabel jLabelGrade) {
+        this.jLabelGrade = jLabelGrade;
     }
 
     public JLabel getjLabelImage() {
@@ -164,14 +192,6 @@ public class BookPane extends javax.swing.JPanel {
         this.jLabelName = jLabelName;
     }
 
-    public JLabel getjLabelStock() {
-        return jLabelStock;
-    }
-
-    public void setjLabelStock(JLabel jLabelStock) {
-        this.jLabelStock = jLabelStock;
-    }
-
     public JPanel getjPanel1() {
         return jPanel1;
     }
@@ -180,27 +200,11 @@ public class BookPane extends javax.swing.JPanel {
         this.jPanel1 = jPanel1;
     }
 
-    public Book getBook() {
-        return book;
+    public Student getStudent() {
+        return student;
     }
 
-    public ListOfBooks getFather() {
+    public ListOfStudents getFather() {
         return father;
-    }
-
-    public JLabel getjLabel4() {
-        return jLabel4;
-    }
-
-    public void setjLabel4(JLabel jLabel4) {
-        this.jLabel4 = jLabel4;
-    }
-
-    public JLabel getjLabel7() {
-        return jLabel7;
-    }
-
-    public void setjLabel7(JLabel jLabel7) {
-        this.jLabel7 = jLabel7;
     }
 }

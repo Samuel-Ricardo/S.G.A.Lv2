@@ -3,10 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Samuel/Documents/NetBeansProjects/JavaApplication1/mavenproject1/Lievro/src/View/Registers/ClientRegister.java</file>
-            <file>file:/C:/Users/Samuel/Documents/NetBeansProjects/JavaApplication1/mavenproject1/Lievro/src/Controller/Registers/ClientRegisterController.java</file>
-            <file>file:/C:/Users/Samuel/Documents/NetBeansProjects/JavaApplication1/mavenproject1/Lievro/src/Model/Student.java</file>
-            <file>file:/C:/Users/Samuel/Documents/NetBeansProjects/JavaApplication1/mavenproject1/Lievro/src/Controller/Helper/ClientRegisterHelper.java</file>
+            <file>file:/C:/Users/Samuel/Documents/NetBeansProjects/JavaApplication1/mavenproject1/Lievro/src/Controller/Researchers/StudentListController.java</file>
+            <file>file:/C:/Users/Samuel/Documents/NetBeansProjects/JavaApplication1/mavenproject1/Lievro/src/View/MainMenu.java</file>
+            <file>file:/C:/Users/Samuel/Documents/NetBeansProjects/JavaApplication1/mavenproject1/Lievro/src/View/Researchers/ListOfStudents.java</file>
+            <file>file:/C:/Users/Samuel/Documents/NetBeansProjects/JavaApplication1/mavenproject1/Lievro/src/Controller/Componens/StudentPaneController.java</file>
+            <file>file:/C:/Users/Samuel/Documents/NetBeansProjects/JavaApplication1/mavenproject1/Lievro/src/DAO/StudentDAO.java</file>
+            <file>file:/C:/Users/Samuel/Documents/NetBeansProjects/JavaApplication1/mavenproject1/Lievro/src/View/Components/StudentPane.java</file>
+            <file>file:/C:/Users/Samuel/Documents/NetBeansProjects/JavaApplication1/mavenproject1/Lievro/src/Controller/Helper/StudentListHelper.java</file>
+            <file>file:/C:/Users/Samuel/Documents/NetBeansProjects/JavaApplication1/mavenproject1/Lievro/src/Model/ImageFile.java</file>
         </group>
     </open-files>
 </project-private>

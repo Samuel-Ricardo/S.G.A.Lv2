@@ -5,7 +5,7 @@
  */
 package Controller.Registers;
 
-import Controller.Helper.BookRegistrationHelper;
+import Controller.Helper.Register.BookRegistrationHelper;
 import DAO.BookDAO;
 import Model.Book;
 import Model.ImageFile;

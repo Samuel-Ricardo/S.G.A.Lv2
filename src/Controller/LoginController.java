@@ -9,6 +9,7 @@ import Controller.Helper.LoginHelper;
 import DAO.ManagerDAO;
 import DAO.StudentDAO;
 import DAO.UserDAO;
+import Model.ImageFile;
 import Model.Manager;
 import Model.Student;
 import Model.User;
@@ -16,6 +17,7 @@ import Services.FileManager;
 import Services.Dialoger;
 import View.Login;
 import View.MainMenu;
+import java.io.File;
 
 /**
  *
@@ -95,6 +97,12 @@ public class LoginController {
 
         filemanager.createFolder("Images");
         filemanager.createFolder("Data");
-    
+        
+/////////////////////////// Exemplo de Copia de Arquivo ////////////////////////////////////////////////////         
+//        String way = this.getClass().getResource("/View/Images/icons8-no-image-64px.png").getFile();
+//        
+//        File image = new File(way);
+//        filemanager.copyFileTo(image, new File(FileManager.defaultFolderWay+"/Images/"+image.getName()));
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////    
     }
 }
