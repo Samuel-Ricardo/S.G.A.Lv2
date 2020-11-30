@@ -56,6 +56,7 @@ public class StudentDAO {
             return true;
         } catch (SQLException ex) {
             Dialoger.message(null, "Erro ao Salvar: " + ex);
+            ex.printStackTrace();
             return false;
         } finally {
             ConnectionFactory.closeConnection(connection, statement);
@@ -94,6 +95,7 @@ public class StudentDAO {
             return true;
         } catch (SQLException ex) {
             Dialoger.message(null, "Erro ao Atualizar: " + ex);
+            ex.printStackTrace();
             return false;
         } finally {
             ConnectionFactory.closeConnection(connection, statement);
@@ -118,6 +120,7 @@ public class StudentDAO {
             return true;
         } catch (SQLException ex) {
             Dialoger.message(null, "Erro ao Deletar: " + ex);
+            ex.printStackTrace();
             return false;
         } finally {
             ConnectionFactory.closeConnection(connection, statement);
@@ -147,6 +150,7 @@ public class StudentDAO {
 
         } catch (SQLException ex) {
             Dialoger.message(null, "Erro ao Pesqisar: " + ex);
+            ex.printStackTrace();
 
         } finally {
             ConnectionFactory.closeConnection(connection, statement, result);
@@ -182,6 +186,7 @@ public class StudentDAO {
 
         } catch (SQLException ex) {
             Dialoger.message(null, "Erro ao Pesqisar: " + ex);
+            ex.printStackTrace();
 
         } finally {
             ConnectionFactory.closeConnection(connection, statement, result);
@@ -226,7 +231,8 @@ public class StudentDAO {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(StudentDAO.class.getName()).log(Level.SEVERE, null, ex);
+             Dialoger.message(null, "Erro ao Pesqisar: " + ex);
+            ex.printStackTrace();
         }
         return students;
     }
@@ -252,6 +258,7 @@ public class StudentDAO {
 
         } catch (SQLException ex) {
             Logger.getLogger(StudentDAO.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
             return false;
         }
         return exist;
@@ -282,6 +289,7 @@ public class StudentDAO {
 
         } catch (SQLException ex) {
             Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
         return student;
     }
