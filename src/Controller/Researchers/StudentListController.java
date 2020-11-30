@@ -169,11 +169,19 @@ public class StudentListController {
     private void setUpdateFildsListeners() {
 
         showOnClick(view.getjLabelName(), view.getjTextFieldName());
-        showOnClick(view.getjLabelAuthor(), view.getjTextFieldAuthor());
-        showOnClick(view.getjLabelGenre(), view.getjTextFieldGenre());
-        showOnClick(view.getjLabelPublisher(), view.getjTextFieldPublisher());
-        showOnClick(view.getjLabelAcquiredDate(), view.getjFormattedTextFieldDate());
-        showOnClick(view.getjLabelStock(), view.getjSpinnerStock());
+        showOnClick(view.getjLabelAddress(), view.getjComboBoxAddress());
+        showOnClick(view.getjLabelCEP(), view.getjFormattedTextFieldCEP());
+        showOnClick(view.getjLabelCourse(), view.getjTextFieldCourse());
+        showOnClick(view.getjLabelEmail(), view.getjTextFieldEmail());
+        showOnClick(view.getjLabelGrade(), view.getjComboBoxGrade());
+        showOnClick(view.getjLabelLogin(), view.getjTextFieldLogin());
+        showOnClick(view.getjLabelGrade(), view.getjComboBoxGrade());
+        showOnClick(view.getjLabelGrade(), view.getjComboBoxGrade());
+        showOnClick(view.getjLabelGrade(), view.getjComboBoxGrade());
+        showOnClick(view.getjLabelGrade(), view.getjComboBoxGrade());
+        showOnClick(view.getjLabelGrade(), view.getjComboBoxGrade());
+        showOnClick(view.getjLabelGrade(), view.getjComboBoxGrade());
+        showOnClick(view.getjLabelGrade(), view.getjComboBoxGrade());
 
         saveOnPressEnter(view.getjTextFieldName(), view.getjLabelName());
         saveOnPressEnter(view.getjTextFieldAuthor(), view.getjLabelAuthor());
