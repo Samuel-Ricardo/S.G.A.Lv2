@@ -242,7 +242,7 @@ public class StudentDAO {
         connect();
         PreparedStatement statement = null;
         ResultSet result = null;
-        sql = "SELECT * FROM tb_student WHERE student_name LIKE ? or student_name LIKE ? or student_name LIKE ? or student_name LIKE ? or  or student_login LIKE ?;";
+        sql = "SELECT * FROM tb_student WHERE student_name LIKE ? OR student_login LIKE ?;";
         boolean exist = false;
 
         try {

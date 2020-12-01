@@ -28,6 +28,8 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import javax.swing.event.ListDataEvent;
+import javax.swing.event.ListDataListener;
 import javax.swing.text.JTextComponent;
 
 /**
@@ -223,14 +225,35 @@ public class StudentListController {
 
     public void saveOnChange(JLabel label, JComboBox comboBox ) {
         
-        comboBox.addActionListener((ActionListener) new ChangeListener() {
+        comboBox.addMouseListener(new MouseListener(){
             @Override
-            public void stateChanged(ChangeEvent e) {
-
+            public void mouseClicked(MouseEvent e) {
+                
                 label.setText(comboBox.getModel().getSelectedItem()+"");
                 hideUpdateFilds();
                 view.getjButtonUpdate().setEnabled(true);
             }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                
+            }
+            
         });
     }
 

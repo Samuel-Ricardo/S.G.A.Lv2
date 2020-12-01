@@ -27,7 +27,7 @@ public class StudentFactory {
         student.setPassword(result.getString("student_password"));
         student.setCEP(result.getString("student_CEP"));
         student.setAddress(result.getString("student_address"));
-        student.setPerfilImage(ImageFactory.generateImage(result));
+       // student.setPerfilImage(ImageFactory.generateImage(result));
         student.setEmail(result.getString("student_email"));
         student.setCourse(result.getString("student_course"));
         student.setModule(result.getString("student_module"));
