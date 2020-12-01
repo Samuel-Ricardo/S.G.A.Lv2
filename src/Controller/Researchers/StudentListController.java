@@ -289,13 +289,21 @@ public class StudentListController {
     }
 
     public void update() {
-
+        
         updateStudent.setName(view.getjLabelName().getText());
-        updateStudent.setAuthor(view.getjLabelAuthor().getText());
-        updateStudent.setGenre(view.getjLabelGenre().getText());
-        updateStudent.setPublisher(view.getjLabelPublisher().getText());
-        updateStudent.setStock(Integer.parseInt(view.getjLabelStock().getText()));
-        updateStudent.setAcquired(new Time(view.getjLabelAcquiredDate().getText()));
+        updateStudent.setAddress(view.getjLabelAddress().getText());
+        updateStudent.setCEP(view.getjLabelCEP().getText());
+        updateStudent.setCourse(view.getjLabelCourse().getText());
+        updateStudent.setEmail(view.getjLabelEmail().getText());
+        updateStudent.setGrade(view.getjLabelGrade().getText());
+        updateStudent.setLogin(view.getjLabelLogin().getText());
+        updateStudent.setModule(view.getjLabelModule().getText());
+        updateStudent.setPassword(view.getjLabelPassword().getText());
+        updateStudent.setPhone(view.getjLabelPhone().getText());
+        updateStudent.setRegistration(view.getjLabelRegistration().getText());
+        updateStudent.setSchool(view.getjLabelSchool().getText());
+        updateStudent.setShift(view.getjLabelShift().getText());
+        
 
         if (studentDao.update(updateStudent)) {
 
