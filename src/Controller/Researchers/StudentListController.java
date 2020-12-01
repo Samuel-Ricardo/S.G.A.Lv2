@@ -184,7 +184,8 @@ public class StudentListController {
         view.getjComboBoxModule().setVisible(false);
         view.getjComboBoxSchool().setVisible(false);
         view.getjComboBoxShift().setVisible(false);
-
+        view.getjButtonUpdate().setEnabled(false);
+        
         showLabels();
     }
 
