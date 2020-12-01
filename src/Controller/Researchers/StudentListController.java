@@ -16,6 +16,7 @@ import Time.Time;
 import View.Researchers.ListOfStudents;
 import View.Researchers.ListOfStudents;
 import java.awt.Component;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -23,6 +24,7 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -175,30 +177,43 @@ public class StudentListController {
         showOnClick(view.getjLabelEmail(), view.getjTextFieldEmail());
         showOnClick(view.getjLabelGrade(), view.getjComboBoxGrade());
         showOnClick(view.getjLabelLogin(), view.getjTextFieldLogin());
-        showOnClick(view.getjLabelGrade(), view.getjComboBoxGrade());
-        showOnClick(view.getjLabelGrade(), view.getjComboBoxGrade());
-        showOnClick(view.getjLabelGrade(), view.getjComboBoxGrade());
-        showOnClick(view.getjLabelGrade(), view.getjComboBoxGrade());
-        showOnClick(view.getjLabelGrade(), view.getjComboBoxGrade());
-        showOnClick(view.getjLabelGrade(), view.getjComboBoxGrade());
-        showOnClick(view.getjLabelGrade(), view.getjComboBoxGrade());
+        showOnClick(view.getjLabelModule(), view.getjComboBoxModule());
+        showOnClick(view.getjLabelPassword(), view.getjTextFieldPassword());
+        showOnClick(view.getjLabelPhone(), view.getjFormattedTextFieldPhone());
+        showOnClick(view.getjLabelRegistration(), view.getjTextFieldRegistration());
+        showOnClick(view.getjLabelSchool(), view.getjComboBoxSchool());
+        showOnClick(view.getjLabelShift(), view.getjComboBoxShift());
+        
+        saveOnPressEnter(view.getjLabelName(), view.getjTextFieldName());
+        saveOnPressEnter(view.getjLabelCEP(), view.getjFormattedTextFieldCEP());
+        saveOnPressEnter(view.getjLabelCourse(), view.getjTextFieldCourse());
+        saveOnPressEnter(view.getjLabelEmail(), view.getjTextFieldEmail());
+        saveOnPressEnter(view.getjLabelLogin(), view.getjTextFieldLogin());
+        saveOnPressEnter(view.getjLabelPassword(), view.getjTextFieldPassword());
+        saveOnPressEnter(view.getjLabelPhone(), view.getjFormattedTextFieldPhone());
+        saveOnPressEnter(view.getjLabelRegistration(), view.getjTextFieldRegistration());
 
-        saveOnPressEnter(view.getjTextFieldName(), view.getjLabelName());
-        saveOnPressEnter(view.getjTextFieldAuthor(), view.getjLabelAuthor());
-        saveOnPressEnter(view.getjTextFieldGenre(), view.getjLabelGenre());
-        saveOnPressEnter(view.getjTextFieldPublisher(), view.getjLabelPublisher());
-        saveOnPressEnter(view.getjFormattedTextFieldDate(), view.getjLabelAcquiredDate());
 
-        view.getjSpinnerStock().getModel().addChangeListener(new ChangeListener() {
+        saveOnChange(view.getjLabelAddress(), view.getjComboBoxAddress());
+        saveOnChange(view.getjLabelGrade(), view.getjComboBoxGrade());
+        saveOnChange(view.getjLabelModule(), view.getjComboBoxModule());
+        saveOnChange(view.getjLabelSchool(), view.getjComboBoxSchool());
+        saveOnChange(view.getjLabelShift(), view.getjComboBoxShift());
+       
+
+    }
+
+    public void saveOnChange(JLabel label, JComboBox comboBox ) {
+        
+        comboBox.addActionListener((ActionListener) new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
 
-                view.getjLabelStock().setText("" + (int) view.getjSpinnerStock().getValue());
+                label.setText(comboBox.getModel().getSelectedItem()+"");
                 hideUpdateFilds();
                 view.getjButtonUpdate().setEnabled(true);
             }
         });
-
     }
 
     private void showOnClick(Component clicked, Component show) {
@@ -230,7 +245,7 @@ public class StudentListController {
         });
     }
 
-    private void saveOnPressEnter(JTextComponent text, JLabel label) {
+    private void saveOnPressEnter(JLabel label, JTextComponent text) {
 
         text.addKeyListener(new KeyListener() {
 
