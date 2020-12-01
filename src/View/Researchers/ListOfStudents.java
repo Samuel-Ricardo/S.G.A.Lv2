@@ -311,7 +311,7 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextFieldSearchKeyReleased
 
     private void jButtonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpdateActionPerformed
-        // TODO add your handling code here:
+        controller.update();
     }//GEN-LAST:event_jButtonUpdateActionPerformed
 
     private void jButtonDeletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeletActionPerformed
