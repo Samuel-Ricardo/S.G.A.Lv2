@@ -285,9 +285,19 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
 
         jButtonUpdate.setText("Alterar");
         jButtonUpdate.setEnabled(false);
+        jButtonUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonUpdateActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 490, 120, 40));
 
         jButtonDelet.setText("Deletar");
+        jButtonDelet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDeletActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonDelet, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 500, -1, -1));
 
         jLabelStudentImage.setText("Image");
@@ -299,6 +309,14 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
     private void jTextFieldSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldSearchKeyReleased
         controller.fastSearch();
     }//GEN-LAST:event_jTextFieldSearchKeyReleased
+
+    private void jButtonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpdateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonUpdateActionPerformed
+
+    private void jButtonDeletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeletActionPerformed
+        controller.delete();
+    }//GEN-LAST:event_jButtonDeletActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
