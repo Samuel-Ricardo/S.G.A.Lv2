@@ -89,6 +89,24 @@ public class StudentListController {
     }
 
     public void startSearchBar() {
+        
+        view.getjTextFieldSearch().addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                fastSearch();
+            }
+        });
+        
         view.getjLabelSearchIcon().setSize(55, 42);
 
         ImageFile.resizeImage(view.getjLabelSearchIcon(), "/View/Images/icons8-search-bar-60.png");
@@ -307,7 +325,7 @@ public class StudentListController {
 
         if (studentDao.update(updateStudent)) {
 
-            Dialoger.message(view, " Os dados do livro " + updateStudent.getName() + " foram atualizado com sucesso"
+            Dialoger.message(view, " Os dados do Aluno " + updateStudent.getName() + " foram atualizado com sucesso"
                     + "\n"
                     + "\n Atualize a Pagina");
         }
@@ -323,7 +341,7 @@ public class StudentListController {
 
         Student student = ListOfStudents.getSelectedStudentPane().getStudent();
 
-        if (Dialoger.confirm(view, " Voce realmente deseja deletar o livro " + student.getName() + " ?"
+        if (Dialoger.confirm(view, " Voce realmente deseja deletar o Aluno " + student.getName() + " ?"
                 + "\n"
                 + "\n Os dados nao poderao ser recuperados")) {
 
