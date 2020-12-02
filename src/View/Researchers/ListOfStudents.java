@@ -106,6 +106,7 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabelPassword = new javax.swing.JLabel();
         jTextFieldPassword = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
         jButtonUpdate = new javax.swing.JButton();
         jButtonDelet = new javax.swing.JButton();
         jLabelStudentImage = new javax.swing.JLabel();
@@ -280,14 +281,25 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
         jPanelAccount.add(jTextFieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 280, -1));
 
         jTabbedPaneDetails.addTab("Conta", jPanelAccount);
+        jTabbedPaneDetails.addTab("Alugueis", jPanel1);
 
         getContentPane().add(jTabbedPaneDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 360, 280));
 
         jButtonUpdate.setText("Alterar");
         jButtonUpdate.setEnabled(false);
+        jButtonUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonUpdateActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 490, 120, 40));
 
         jButtonDelet.setText("Deletar");
+        jButtonDelet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDeletActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonDelet, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 500, -1, -1));
 
         jLabelStudentImage.setText("Image");
@@ -299,6 +311,14 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
     private void jTextFieldSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldSearchKeyReleased
         controller.fastSearch();
     }//GEN-LAST:event_jTextFieldSearchKeyReleased
+
+    private void jButtonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpdateActionPerformed
+        controller.update();
+    }//GEN-LAST:event_jButtonUpdateActionPerformed
+
+    private void jButtonDeletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeletActionPerformed
+        controller.delete();
+    }//GEN-LAST:event_jButtonDeletActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -340,6 +360,7 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabelSearchIcon;
     private javax.swing.JLabel jLabelShift;
     private javax.swing.JLabel jLabelStudentImage;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelAccount;
     private javax.swing.JPanel jPanelAddress;
     private javax.swing.JPanel jPanelContact;

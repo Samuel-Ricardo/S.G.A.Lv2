@@ -56,6 +56,7 @@ public class StudentDAO {
             return true;
         } catch (SQLException ex) {
             Dialoger.message(null, "Erro ao Salvar: " + ex);
+            ex.printStackTrace();
             return false;
         } finally {
             ConnectionFactory.closeConnection(connection, statement);
@@ -94,6 +95,7 @@ public class StudentDAO {
             return true;
         } catch (SQLException ex) {
             Dialoger.message(null, "Erro ao Atualizar: " + ex);
+            ex.printStackTrace();
             return false;
         } finally {
             ConnectionFactory.closeConnection(connection, statement);
@@ -118,6 +120,7 @@ public class StudentDAO {
             return true;
         } catch (SQLException ex) {
             Dialoger.message(null, "Erro ao Deletar: " + ex);
+            ex.printStackTrace();
             return false;
         } finally {
             ConnectionFactory.closeConnection(connection, statement);
@@ -147,6 +150,7 @@ public class StudentDAO {
 
         } catch (SQLException ex) {
             Dialoger.message(null, "Erro ao Pesqisar: " + ex);
+            ex.printStackTrace();
 
         } finally {
             ConnectionFactory.closeConnection(connection, statement, result);
@@ -159,7 +163,7 @@ public class StudentDAO {
         connect();
         PreparedStatement statement = null;
         ResultSet result = null;
-        sql = "SELECT * FROM tb_student WHERE nome LIKE ? or loguin LIKE ? or student_registration = ?;";
+        sql = "SELECT * FROM tb_student WHERE student_name LIKE ? or student_login LIKE ? or student_registration = ?;";
         List<Student> students = new ArrayList<>();
 
         try {
@@ -182,9 +186,52 @@ public class StudentDAO {
 
         } catch (SQLException ex) {
             Dialoger.message(null, "Erro ao Pesqisar: " + ex);
+            ex.printStackTrace();
 
         } finally {
             ConnectionFactory.closeConnection(connection, statement, result);
+        }
+        return students;
+    }
+    
+    public List<Student> deepSearch(String pesquisa) {
+
+        connect();
+        PreparedStatement statement = null;
+        ResultSet result = null;
+        sql = "SELECT * FROM tb_student WHERE student_name LIKE ? OR student_registration LIKE ? OR student_email LIKE ? OR student_phone LIKE ? OR student_CEP LIKE ? OR student_address LIKE ? OR student_module LIKE ? OR student_grade LIKE ? OR student_course LIKE ? OR student_school LIKE ? OR student_shift LIKE ? OR student_shift LIKE ? OR student_login LIKE ?;";
+        ArrayList<Student> students = new ArrayList<>();
+
+        try {
+
+            statement = connection.prepareStatement(sql);
+
+            statement.setString(1, "%" + pesquisa + "%");
+            statement.setString(2, "%" + pesquisa + "%");
+            statement.setString(3, "%" + pesquisa + "%");
+            statement.setString(4, "%" + pesquisa + "%");
+            statement.setString(5, "%" + pesquisa + "%");
+            statement.setString(6, "%" + pesquisa + "%");
+            statement.setString(7, "%" + pesquisa + "%");
+            statement.setString(8, "%" + pesquisa + "%");
+            statement.setString(9, "%" + pesquisa + "%");
+            statement.setString(10, "%" + pesquisa + "%");
+            statement.setString(11, "%" + pesquisa + "%");
+            statement.setString(12, "%" + pesquisa + "%");
+            statement.setString(13, "%" + pesquisa + "%");
+
+            result = statement.executeQuery();
+
+            while(result.next()){
+                
+                Student student = StudentFactory.generateStudent(result);
+                
+                students.add(student);
+            }
+
+        } catch (SQLException ex) {
+             Dialoger.message(null, "Erro ao Pesqisar: " + ex);
+            ex.printStackTrace();
         }
         return students;
     }
@@ -194,7 +241,7 @@ public class StudentDAO {
         connect();
         PreparedStatement statement = null;
         ResultSet result = null;
-        sql = "SELECT * FROM tb_student WHERE nome LIKE ? or loguin LIKE ?;";
+        sql = "SELECT * FROM tb_student WHERE student_name LIKE ? OR student_login LIKE ?;";
         boolean exist = false;
 
         try {
@@ -210,6 +257,7 @@ public class StudentDAO {
 
         } catch (SQLException ex) {
             Logger.getLogger(StudentDAO.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
             return false;
         }
         return exist;
@@ -240,6 +288,7 @@ public class StudentDAO {
 
         } catch (SQLException ex) {
             Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
         return student;
     }

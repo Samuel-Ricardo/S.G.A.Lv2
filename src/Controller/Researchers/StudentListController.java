@@ -16,6 +16,7 @@ import Time.Time;
 import View.Researchers.ListOfStudents;
 import View.Researchers.ListOfStudents;
 import java.awt.Component;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -23,9 +24,12 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import javax.swing.event.ListDataEvent;
+import javax.swing.event.ListDataListener;
 import javax.swing.text.JTextComponent;
 
 /**
@@ -87,6 +91,8 @@ public class StudentListController {
     }
 
     public void startSearchBar() {
+        
+        
         view.getjLabelSearchIcon().setSize(55, 42);
 
         ImageFile.resizeImage(view.getjLabelSearchIcon(), "/View/Images/icons8-search-bar-60.png");
@@ -162,35 +168,78 @@ public class StudentListController {
         view.getjComboBoxModule().setVisible(false);
         view.getjComboBoxSchool().setVisible(false);
         view.getjComboBoxShift().setVisible(false);
-
+        view.getjButtonUpdate().setEnabled(false);
+        
         showLabels();
     }
 
     private void setUpdateFildsListeners() {
 
         showOnClick(view.getjLabelName(), view.getjTextFieldName());
-        showOnClick(view.getjLabelAuthor(), view.getjTextFieldAuthor());
-        showOnClick(view.getjLabelGenre(), view.getjTextFieldGenre());
-        showOnClick(view.getjLabelPublisher(), view.getjTextFieldPublisher());
-        showOnClick(view.getjLabelAcquiredDate(), view.getjFormattedTextFieldDate());
-        showOnClick(view.getjLabelStock(), view.getjSpinnerStock());
+        showOnClick(view.getjLabelAddress(), view.getjComboBoxAddress());
+        showOnClick(view.getjLabelCEP(), view.getjFormattedTextFieldCEP());
+        showOnClick(view.getjLabelCourse(), view.getjTextFieldCourse());
+        showOnClick(view.getjLabelEmail(), view.getjTextFieldEmail());
+        showOnClick(view.getjLabelGrade(), view.getjComboBoxGrade());
+        showOnClick(view.getjLabelLogin(), view.getjTextFieldLogin());
+        showOnClick(view.getjLabelModule(), view.getjComboBoxModule());
+        showOnClick(view.getjLabelPassword(), view.getjTextFieldPassword());
+        showOnClick(view.getjLabelPhone(), view.getjFormattedTextFieldPhone());
+        showOnClick(view.getjLabelRegistration(), view.getjTextFieldRegistration());
+        showOnClick(view.getjLabelSchool(), view.getjComboBoxSchool());
+        showOnClick(view.getjLabelShift(), view.getjComboBoxShift());
+        
+        saveOnPressEnter(view.getjLabelName(), view.getjTextFieldName());
+        saveOnPressEnter(view.getjLabelCEP(), view.getjFormattedTextFieldCEP());
+        saveOnPressEnter(view.getjLabelCourse(), view.getjTextFieldCourse());
+        saveOnPressEnter(view.getjLabelEmail(), view.getjTextFieldEmail());
+        saveOnPressEnter(view.getjLabelLogin(), view.getjTextFieldLogin());
+        saveOnPressEnter(view.getjLabelPassword(), view.getjTextFieldPassword());
+        saveOnPressEnter(view.getjLabelPhone(), view.getjFormattedTextFieldPhone());
+        saveOnPressEnter(view.getjLabelRegistration(), view.getjTextFieldRegistration());
 
-        saveOnPressEnter(view.getjTextFieldName(), view.getjLabelName());
-        saveOnPressEnter(view.getjTextFieldAuthor(), view.getjLabelAuthor());
-        saveOnPressEnter(view.getjTextFieldGenre(), view.getjLabelGenre());
-        saveOnPressEnter(view.getjTextFieldPublisher(), view.getjLabelPublisher());
-        saveOnPressEnter(view.getjFormattedTextFieldDate(), view.getjLabelAcquiredDate());
 
-        view.getjSpinnerStock().getModel().addChangeListener(new ChangeListener() {
+        saveOnChange(view.getjLabelAddress(), view.getjComboBoxAddress());
+        saveOnChange(view.getjLabelGrade(), view.getjComboBoxGrade());
+        saveOnChange(view.getjLabelModule(), view.getjComboBoxModule());
+        saveOnChange(view.getjLabelSchool(), view.getjComboBoxSchool());
+        saveOnChange(view.getjLabelShift(), view.getjComboBoxShift());
+       
+
+    }
+
+    public void saveOnChange(JLabel label, JComboBox comboBox ) {
+        
+        comboBox.addMouseListener(new MouseListener(){
             @Override
-            public void stateChanged(ChangeEvent e) {
-
-                view.getjLabelStock().setText("" + (int) view.getjSpinnerStock().getValue());
+            public void mouseClicked(MouseEvent e) {
+                
+                label.setText(comboBox.getModel().getSelectedItem()+"");
                 hideUpdateFilds();
                 view.getjButtonUpdate().setEnabled(true);
             }
-        });
 
+            @Override
+            public void mousePressed(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                
+            }
+            
+        });
     }
 
     private void showOnClick(Component clicked, Component show) {
@@ -222,7 +271,7 @@ public class StudentListController {
         });
     }
 
-    private void saveOnPressEnter(JTextComponent text, JLabel label) {
+    private void saveOnPressEnter(JLabel label, JTextComponent text) {
 
         text.addKeyListener(new KeyListener() {
 
@@ -266,17 +315,25 @@ public class StudentListController {
     }
 
     public void update() {
-
+        
         updateStudent.setName(view.getjLabelName().getText());
-        updateStudent.setAuthor(view.getjLabelAuthor().getText());
-        updateStudent.setGenre(view.getjLabelGenre().getText());
-        updateStudent.setPublisher(view.getjLabelPublisher().getText());
-        updateStudent.setStock(Integer.parseInt(view.getjLabelStock().getText()));
-        updateStudent.setAcquired(new Time(view.getjLabelAcquiredDate().getText()));
+        updateStudent.setAddress(view.getjLabelAddress().getText());
+        updateStudent.setCEP(view.getjLabelCEP().getText());
+        updateStudent.setCourse(view.getjLabelCourse().getText());
+        updateStudent.setEmail(view.getjLabelEmail().getText());
+        updateStudent.setGrade(view.getjLabelGrade().getText());
+        updateStudent.setLogin(view.getjLabelLogin().getText());
+        updateStudent.setModule(view.getjLabelModule().getText());
+        updateStudent.setPassword(view.getjLabelPassword().getText());
+        updateStudent.setPhone(view.getjLabelPhone().getText());
+        updateStudent.setRegistration(view.getjLabelRegistration().getText());
+        updateStudent.setSchool(view.getjLabelSchool().getText());
+        updateStudent.setShift(view.getjLabelShift().getText());
+        
 
         if (studentDao.update(updateStudent)) {
 
-            Dialoger.message(view, " Os dados do livro " + updateStudent.getName() + " foram atualizado com sucesso"
+            Dialoger.message(view, " Os dados do Aluno " + updateStudent.getName() + " foram atualizado com sucesso"
                     + "\n"
                     + "\n Atualize a Pagina");
         }
@@ -292,7 +349,7 @@ public class StudentListController {
 
         Student student = ListOfStudents.getSelectedStudentPane().getStudent();
 
-        if (Dialoger.confirm(view, " Voce realmente deseja deletar o livro " + student.getName() + " ?"
+        if (Dialoger.confirm(view, " Voce realmente deseja deletar o Aluno " + student.getName() + " ?"
                 + "\n"
                 + "\n Os dados nao poderao ser recuperados")) {
 
