@@ -60,19 +60,25 @@ public class ImageFactory {
         try{    
             
             image = new BackupImage();
+            ImageFile imageFile = null;
             
             image.setId(new Integer(result.getInt("id_images")));
             
-            ImageFile imageFile = new ImageFile(result.getString("image_way"));
+            if(result.getString("image_way") != null){
             
-            if(imageFile.getFile().exists()){
-                
-                
-            }else{
-                
-                downloader.start();
-                downloader.download(result.getBinaryStream("image_bytes"), imageFile.getFile());
+            imageFile = new ImageFile(result.getString("image_way"));
+            
+                if(imageFile.getFile().exists()){
+
+                    System.out.println("Imagen já existe");
+                }else{
+
+                    downloader.start();
+                    downloader.download(result.getBinaryStream("image_bytes"), imageFile.getFile());
+                }
             }
+            
+            image.setImageFile(imageFile);
             
         } catch (SQLException ex) {
             Logger.getLogger(ImageFactory.class.getName()).log(Level.SEVERE, null, ex);
@@ -120,6 +126,10 @@ public class ImageFactory {
         }
         
         return images;
+    }
+
+    BackupImage generateBackupImage(String book_image_name) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
