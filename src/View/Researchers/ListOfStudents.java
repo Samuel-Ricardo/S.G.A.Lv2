@@ -106,6 +106,7 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabelPassword = new javax.swing.JLabel();
         jTextFieldPassword = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
         jButtonUpdate = new javax.swing.JButton();
         jButtonDelet = new javax.swing.JButton();
         jLabelStudentImage = new javax.swing.JLabel();
@@ -280,6 +281,7 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
         jPanelAccount.add(jTextFieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 280, -1));
 
         jTabbedPaneDetails.addTab("Conta", jPanelAccount);
+        jTabbedPaneDetails.addTab("Alugueis", jPanel1);
 
         getContentPane().add(jTabbedPaneDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 360, 280));
 
@@ -358,6 +360,7 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabelSearchIcon;
     private javax.swing.JLabel jLabelShift;
     private javax.swing.JLabel jLabelStudentImage;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelAccount;
     private javax.swing.JPanel jPanelAddress;
     private javax.swing.JPanel jPanelContact;

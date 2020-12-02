@@ -219,7 +219,6 @@ public class StudentDAO {
             statement.setString(11, "%" + pesquisa + "%");
             statement.setString(12, "%" + pesquisa + "%");
             statement.setString(13, "%" + pesquisa + "%");
-            statement.setString(14, "%" + pesquisa + "%");
 
             result = statement.executeQuery();
 
