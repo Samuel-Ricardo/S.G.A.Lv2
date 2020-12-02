@@ -9,7 +9,7 @@ import Factory.BackupImageFactory;
 import JDBC.ConnectionFactory;
 import Model.BackupImage;
 import Services.Dialoger;
-import com.mysql.jdbc.Connection;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -54,9 +54,9 @@ public class ImageDAO {
 
             statement = connection.prepareStatement(sql);
 
-            statement.setString(1, backupImage.getImage().getFile().getName());
-            statement.setString(2, backupImage.getImage().getFile().getAbsolutePath());
-            statement.setBinaryStream(3, backupImage.getImage().getInputStream());
+            statement.setString(1, backupImage.getImageFile().getFile().getName());
+            statement.setString(2, backupImage.getImageFile().getFile().getAbsolutePath());
+            statement.setBinaryStream(3, backupImage.getImageFile().getInputStream());
             if(backupImage.getPostIt() != null){
              statement.setInt(4, backupImage.getPostIt().getId());
             }else{
@@ -72,7 +72,7 @@ public class ImageDAO {
             }else{
              statement.setInt(6, 0);
             }
-            statement.setString(7, backupImage.getImage().getLengthKB()+"");
+            statement.setString(7, backupImage.getImageFile().getLengthKB()+"");
 
             statement.execute();
 
@@ -130,9 +130,9 @@ public class ImageDAO {
 
             statement = connection.prepareStatement(sql);
 
-            statement.setString(1, backupImage.getImage().getFile().getName());
-            statement.setString(2, backupImage.getImage().getFile().getAbsolutePath());
-            statement.setBinaryStream(3, backupImage.getImage().getInputStream());
+            statement.setString(1, backupImage.getImageFile().getFile().getName());
+            statement.setString(2, backupImage.getImageFile().getFile().getAbsolutePath());
+            statement.setBinaryStream(3, backupImage.getImageFile().getInputStream());
              if(backupImage.getPostIt() != null){
              statement.setInt(4, backupImage.getPostIt().getId());
             }else{
@@ -148,7 +148,7 @@ public class ImageDAO {
             }else{
              statement.setInt(6, 0);
             }
-            statement.setString(7, backupImage.getImage().getLengthKB()+"");
+            statement.setString(7, backupImage.getImageFile().getLengthKB()+"");
 
             statement.setInt(8, backupImage.getId().intValue());
 
@@ -382,7 +382,7 @@ public class ImageDAO {
 
             statement = connection.prepareStatement(sql);    
             
-            statement.setString(1, backupImage.getImage().getFile().getName());     
+            statement.setString(1, backupImage.getImageFile().getFile().getName());     
             
             result = statement.executeQuery();           
             
@@ -428,7 +428,7 @@ public class ImageDAO {
                 
             statement = connection.prepareStatement(sql);    
             
-            statement.setString(1, backupImage.getImage().getFile().getName());    
+            statement.setString(1, backupImage.getImageFile().getFile().getName());    
             
             result = statement.executeQuery();           
             
@@ -460,7 +460,7 @@ public class ImageDAO {
 
             statement = connection.prepareStatement(sql);    
             
-            statement.setString(1, backupImage.getImage().getFile().getName());     
+            statement.setString(1, backupImage.getImageFile().getFile().getName());     
             
             result = statement.executeQuery();           
             
@@ -506,7 +506,7 @@ public class ImageDAO {
                 
             statement = connection.prepareStatement(sql);    
             
-            statement.setString(1, backupImage.getImage().getFile().getName());    
+            statement.setString(1, backupImage.getImageFile().getFile().getName());    
             
             result = statement.executeQuery();           
             
