@@ -30,7 +30,6 @@ public class Book {
     private BackupImage image;
     private ArrayList<BackupImage> Images = new ArrayList<>();
     private Time acquired;
-    public static final String DEFAULT_IMAGE_WAY = "/View/Images/icons8-no-image-64px.png";
     
     public Book(Long id, String name, String genre, String author, String publisher, String stock, ArrayList<BackupImage> Images, Time acquired) {
         this.id = id;

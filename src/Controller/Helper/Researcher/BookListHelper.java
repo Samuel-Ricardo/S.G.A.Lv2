@@ -7,6 +7,7 @@ package Controller.Helper.Researcher;
 
 import Model.Book;
 import Model.ImageFile;
+import Services.FileManager;
 import View.Components.BookPane;
 import View.Researchers.ListOfBooks;
 import java.util.ArrayList;
@@ -72,7 +73,7 @@ public class BookListHelper {
 
         } else {
 
-            ImageFile.resizeImage(view.getjLabelImageBook(), Book.DEFAULT_IMAGE_WAY);
+            ImageFile.resizeImage(view.getjLabelImageBook(), FileManager.NO_IMAGE);
         }
     }
 

@@ -22,6 +22,7 @@ public class FileManager {
     
     private static final String pcUser = System.getProperty("user.");
     private static final String defaultFolder = System.getProperty("user.home") + "/Documents/Oasis/";
+    public static final String NO_IMAGE = "/View/Images/icons8-no-image-64px.png";
     
     public File createFolder(String name){
      
