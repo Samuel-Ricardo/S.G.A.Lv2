@@ -20,8 +20,8 @@ import java.util.logging.Logger;
  */
 public class FileManager {
     
-    public static final String pcUser = System.getProperty("user.");
-    public static final String defaultFolder = System.getProperty("user.home") + "/Documents/Oasis/";
+    private static final String pcUser = System.getProperty("user.");
+    private static final String defaultFolder = System.getProperty("user.home") + "/Documents/Oasis/";
     
     public File createFolder(String name){
      
@@ -126,7 +126,12 @@ public class FileManager {
          
          return file;
     }
-
+    
+     if(FileManager.searchIn(FileManager.getDefaultFolder()+"Images/", imageFile.getFile().getName()) == false){
+                
+                
+            }
+    
     public static String getPcUser() {
         return pcUser;
     }

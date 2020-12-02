@@ -63,9 +63,16 @@ public class ImageFactory {
             
             image.setId(new Integer(result.getInt("id_images")));
             
-            ImageFile file = new ImageFile(result.getString("image_way"));
+            ImageFile imageFile = new ImageFile(result.getString("image_way"));
             
-            
+            if(imageFile.getFile().exists()){
+                
+                
+            }else{
+                
+                downloader.start();
+                downloader.download(result.getBinaryStream("image_bytes"), imageFile.getFile());
+            }
             
         } catch (SQLException ex) {
             Logger.getLogger(ImageFactory.class.getName()).log(Level.SEVERE, null, ex);
