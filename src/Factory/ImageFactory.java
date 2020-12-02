@@ -5,7 +5,7 @@
  */
 package Factory;
 
-import Model.Utilities.ImageFile;
+import Model.ImageFile;
 import Services.Downloader;
 import Services.FileManager;
 import java.io.File;
