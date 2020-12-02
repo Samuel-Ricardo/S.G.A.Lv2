@@ -80,9 +80,9 @@ public class StudentPaneController {
     public void setImage() {
         
         if(student.getPerfilImage() != null){
-            if(student.getPerfilImage().getFile().exists()){
+            if(student.getPerfilImage().getImageFile().getFile().exists()){
                 
-                ImageFile.resizeImage(view.getjLabelImage(), student.getPerfilImage().getFile().getAbsolutePath());
+                ImageFile.resizeImage(view.getjLabelImage(), student.getPerfilImage().getImageFile().getFile().getAbsolutePath());
             }else{
                 setEmptyImage();
             }
