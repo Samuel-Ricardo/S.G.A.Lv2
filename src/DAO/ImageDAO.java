@@ -64,7 +64,7 @@ public class ImageDAO {
 
             return true;
         } catch (SQLException ex) {
-            dialoger.errorMessage("Erro ao Inserir: ", ex);  // error message if it occurs // mensagem de erro se ocorrer /
+            dialoger.errorMessage(null,"Erro ao Inserir: ", ex);  // error message if it occurs // mensagem de erro se ocorrer /
             return false;
         } finally {
             ConnectionFactory.closeConnection(connection, statement);
@@ -92,7 +92,7 @@ public class ImageDAO {
 
             return true;
         } catch (SQLException ex) {
-            dialoger.errorMessage("Erro ao Atualizar : ", ex);  // error message if it occurs // mensagem de erro se ocorrer /
+            dialoger.errorMessage(null,"Erro ao Atualizar : ", ex);  // error message if it occurs // mensagem de erro se ocorrer /
             return false;
         } finally {
             ConnectionFactory.closeConnection(connection, statement);
@@ -116,7 +116,7 @@ public class ImageDAO {
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(ImageDAO.class.getName()).log(Level.SEVERE, null, ex);
-            dialoger.errorMessage("Erro ao Deletar: ", ex);  // error message if it occurs // mensagem de erro se ocorrer /
+            dialoger.errorMessage(null,"Erro ao Deletar: ", ex);  // error message if it occurs // mensagem de erro se ocorrer /
             return false;
         } finally {
             ConnectionFactory.closeConnection(connection, statement);
@@ -150,7 +150,7 @@ public class ImageDAO {
             }
 
         } catch (SQLException ex) {
-            dialoger.errorMessage("Erro ao consultar o banco: ", ex);  // error message if it occurs // mensagem de erro se ocorrer /
+            dialoger.errorMessage(null,"Erro ao consultar o banco: ", ex);  // error message if it occurs // mensagem de erro se ocorrer /
         } finally {
             ConnectionFactory.closeConnection(connection, statement);  // closes all connections regardless of success  // fecha todas as conexoes independente de sucesso
         }
@@ -178,7 +178,7 @@ public class ImageDAO {
             exist = result.next();
 
         } catch (SQLException ex) {
-            dialoger.errorMessage("Erro ao consultar o banco: ", ex); 
+            dialoger.errorMessage(null,"Erro ao consultar o banco: ", ex); 
             return false;
         } finally {
             ConnectionFactory.closeConnection(connection, statement); 
@@ -225,7 +225,7 @@ public class ImageDAO {
         }
 
         } catch (SQLException ex) {
-            dialoger.errorMessage("Erro ao consultar o banco: ", ex);
+            dialoger.errorMessage(null,"Erro ao consultar o banco: ", ex);
             exist.clear();
             exist.add(false);
             return exist;
@@ -256,7 +256,7 @@ public class ImageDAO {
             exist = result.next();
 
         } catch (SQLException ex) {
-            dialoger.errorMessage("Erro ao consultar o banco: ", ex); 
+            dialoger.errorMessage(null,"Erro ao consultar o banco: ", ex); 
             return false;
         } finally {
             ConnectionFactory.closeConnection(connection, statement); 
@@ -303,7 +303,7 @@ public class ImageDAO {
         }
 
         } catch (SQLException ex) {
-            dialoger.errorMessage("Erro ao consultar o banco: ", ex);
+            dialoger.errorMessage(null,"Erro ao consultar o banco: ", ex);
             exist.clear();
             exist.add(false);
             return exist;
@@ -334,7 +334,7 @@ public class ImageDAO {
             exist = result.next();
 
         } catch (SQLException ex) {
-            dialoger.errorMessage("Erro ao consultar o banco: ", ex); 
+            dialoger.errorMessage(null,"Erro ao consultar o banco: ", ex); 
             return false;
         } finally {
             ConnectionFactory.closeConnection(connection, statement); 
@@ -381,7 +381,7 @@ public class ImageDAO {
         }
 
         } catch (SQLException ex) {
-            dialoger.errorMessage("Erro ao consultar o banco: ", ex);
+            dialoger.errorMessage(null,"Erro ao consultar o banco: ", ex);
             exist.clear();
             exist.add(false);
             return exist;
