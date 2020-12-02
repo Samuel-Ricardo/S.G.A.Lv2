@@ -5,12 +5,14 @@
  */
 package Model;
 
+import DAO.ImageDAO;
 import Time.Time;
 import com.sun.swing.internal.plaf.basic.resources.basic;
 import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Icon;
@@ -142,5 +144,19 @@ public class Book {
           image = new ImageFile(Book.class.getResource("/View/Images/icons8-no-image-64px.png").getPath());
           
         return image;
+    }
+
+    public void setImage(ImageFile imageFile) {
+        
+        ImageDAO imageDao = new ImageDAO();
+        
+        List<BackupImage> images = imageDao.searchByName(imageFile.getFile().getName());
+        
+        if(images.isEmpty() == false){
+            
+            this.image = images.get(0);
+        }else{
+            System.out.println("No image");
+        }
     }
 }

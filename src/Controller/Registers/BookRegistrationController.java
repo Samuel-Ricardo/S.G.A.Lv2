@@ -55,7 +55,7 @@ public class BookRegistrationController {
         book.setName(Name);
         book.setPublisher(Publisher);
         book.setStock(stock);
-        book.setImage();
+        book.setImage(image);
      
      if (bookDao.insert(book)){
        
