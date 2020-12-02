@@ -75,7 +75,7 @@ public class ImageDAO {
         connect();
          
         PreparedStatement statement = null;
-        String sql = "UPDATE image SET image_name = ? , image_way = ? , image_bytes = ? WHERE id_image = ?;";
+        String sql = "UPDATE image SET image_name = ? , image_way = ? , image_bytes = ? WHERE id_images = ?;";
 
         try {
 
@@ -103,7 +103,7 @@ public class ImageDAO {
         connect();
 
         PreparedStatement statement = null;
-        String sql = "DELETE FROM image WHERE id_image = ?;";
+        String sql = "DELETE FROM image WHERE id_images = ?;";
 
         try {
             statement = connection.prepareStatement(sql);
@@ -232,7 +232,7 @@ public class ImageDAO {
         
         PreparedStatement statement = null;
         ResultSet result = null;
-        String sql = "SELECT * FROM image WHERE id_image = ?;";
+        String sql = "SELECT * FROM image WHERE id_images = ?;";
         boolean exist = false;
 
         try {
@@ -274,7 +274,7 @@ public class ImageDAO {
         
         PreparedStatement statement = null;
         ResultSet result = null;
-        String sql = "SELECT * FROM image WHERE id_image = ?;";
+        String sql = "SELECT * FROM image WHERE id_images = ?;";
         
 
        
