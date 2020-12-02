@@ -143,7 +143,7 @@ public class ImageDAO {
 
             while (result.next()) {
 
-                BackupImage backupImage = imageFactory.genereteBackupImage(result);
+                BackupImage backupImage = imageFactory.generateBackupImage(result);
                 
                 backupImages.add(backupImage);
                 

@@ -53,7 +53,7 @@ public class ImageFactory {
         return images;
     }
     
-    public BackupImage genereteBackupImage(ResultSet result){
+    public BackupImage generateBackupImage(ResultSet result){
         
             BackupImage image = null;
             

@@ -30,7 +30,7 @@ public class ClientFactory {
         client.setAddress(result.getString("client_address"));
         client.setPhone(result.getString("client_phone"));
         client.setEmail(result.getString("cleint_email"));
-        client.setPerfilImage(imageFactory.generate(result));
+        client.setPerfilImage(imageFactory.generateBackupImage(result));
         client.setAccessLevel(User.ACCESS_MIN);
 
         return client;
