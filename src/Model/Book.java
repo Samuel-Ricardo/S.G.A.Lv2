@@ -26,18 +26,19 @@ public class Book {
     private String author;
     private String publisher;
     private Integer stock;
-    private ArrayList<BackupImage> Image = new ArrayList<>();
+    private BackupImage image;
+    private ArrayList<BackupImage> Images = new ArrayList<>();
     private Time acquired;
     public static final String DEFAULT_IMAGE_WAY = "/View/Images/icons8-no-image-64px.png";
     
-    public Book(Long id, String name, String genre, String author, String publisher, String stock, ArrayList<BackupImage> Image, Time acquired) {
+    public Book(Long id, String name, String genre, String author, String publisher, String stock, ArrayList<BackupImage> Images, Time acquired) {
         this.id = id;
         this.name = name;
         this.genre = genre;
         this.author = author;
         this.publisher = publisher;
         this.stock = new Integer (stock);
-        this.Image = Image;
+        this.Images = Images;
         this.acquired = acquired;
     }
 
@@ -103,12 +104,15 @@ public class Book {
         this.stock = stock;
     }
 
-    public ArrayList<BackupImage> getImage() {
-        return Image;
+    
+    
+    
+    public ArrayList<BackupImage> getImages() {
+        return Images;
     }
 
-    public void setImage(ArrayList<BackupImage> Image) {
-        this.Image = Image;
+    public void setImages(ArrayList<BackupImage> Images) {
+        this.Images = Images;
     }
 
     public Time getAcquired() {
