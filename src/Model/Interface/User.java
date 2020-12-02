@@ -5,7 +5,7 @@
  */
 package Model.Interface;
 
-import Model.ImageFile;
+import Model.BackupImage;
 
 /**
  *
@@ -33,8 +33,8 @@ public interface User {
     public String getPassword();
     public void setPassword(String password);
     
-    public ImageFile getPerfilImage();
-    public void setPerfilImage(ImageFile perfilImage);
+    public BackupImage getPerfilImage();
+    public void setPerfilImage(BackupImage perfilImage);
     
     public String getEmail();
     public void setEmail(String email);
