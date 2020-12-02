@@ -53,7 +53,7 @@ public class ImageFactory {
         return images;
     }
     
-    public BackupImage generateBackupImage(ResultSet result){
+    public BackupImage genereteBackupImage(ResultSet result){
         
             BackupImage image = null;
             
@@ -85,9 +85,9 @@ public class ImageFactory {
         
         File localImage = new File(FileManager.getDefaultFolder() + "Images/" + name);
             
-        File downloadedImage = downloader.download(input, localImage);
+        downloader.download(input, localImage);
             
-        ImageFile image = new ImageFile(downloadedImage);
+        ImageFile image = new ImageFile(localImage);
         
         return image;
     }
