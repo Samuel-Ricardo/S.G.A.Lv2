@@ -48,7 +48,7 @@ public class ImageDAO {
         connect();
          
         PreparedStatement statement = null;
-        String sql = "INSERT INTO image (image_name, image_way, image_bytes, image_postIt_id, image_notification_id, image_user_id,image_size) VALUES (?,?,?,?,?,?,?);";
+        String sql = "INSERT INTO image (image_name, image_way, image_bytes) VALUES (?,?,?);";
 
         try {
 
@@ -57,22 +57,7 @@ public class ImageDAO {
             statement.setString(1, backupImage.getImageFile().getFile().getName());
             statement.setString(2, backupImage.getImageFile().getFile().getAbsolutePath());
             statement.setBinaryStream(3, backupImage.getImageFile().getInputStream());
-            if(backupImage.getPostIt() != null){
-             statement.setInt(4, backupImage.getPostIt().getId());
-            }else{
-             statement.setInt(4, 0);
-            }
-            if(backupImage.getNotification() != null){
-             statement.setInt(5, backupImage.getNotification().getId());
-            }else{
-             statement.setInt(5, 0);
-            }
-            if(backupImage.getUser() != null){
-             statement.setInt(6, backupImage.getUser().getId().intValue());
-            }else{
-             statement.setInt(6, 0);
-            }
-            statement.setString(7, backupImage.getImageFile().getLengthKB()+"");
+            statement.setString(4, backupImage.getImageFile().getLengthKB()+"");
 
             statement.execute();
 
@@ -124,7 +109,7 @@ public class ImageDAO {
         connect();
          
         PreparedStatement statement = null;
-        String sql = "UPDATE image SET image_name = ? , image_way = ? , image_bytes = ? , image_postIt_id = ? , image_notification_id = ?, image_user_id = ? , image_size = ? WHERE id_image = ?;";
+        String sql = "UPDATE image SET image_name = ? , image_way = ? , image_bytes = ?  = ?  = ? = ? , = ? WHERE id_image = ?;";
 
         try {
 
