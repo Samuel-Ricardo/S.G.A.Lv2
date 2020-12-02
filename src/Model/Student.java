@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class Student extends Manager implements Model.Interface.User{
     
-    private ImageFile imagePerfil;
+    private BackupImage imagePerfil;
     private String registration;
     private String module;
     private String grade;
@@ -22,7 +22,7 @@ public class Student extends Manager implements Model.Interface.User{
     private String shift;
     private ArrayList<Rent> rents;
 
-    public Student(ImageFile imagePerfil, String registration, String module, String grade, String course, String shift, ArrayList<Rent> rents) {
+    public Student(BackupImage imagePerfil, String registration, String module, String grade, String course, String shift, ArrayList<Rent> rents) {
         this.imagePerfil = imagePerfil;
         this.registration = registration;
         this.module = module;
@@ -35,7 +35,7 @@ public class Student extends Manager implements Model.Interface.User{
     
     public Student() {
         
-        imagePerfil = new ImageFile("");
+        imagePerfil = new BackupImage();
         this.accessLevel = User.ACCESS_MIN;
     }
     
