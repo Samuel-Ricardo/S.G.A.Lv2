@@ -64,11 +64,11 @@ public class BookListHelper {
 
         view.getjLabelImageBook().setText("");
 
-        if (book.getImage().isEmpty() == false) {
+        if (book.getImage().getImageFile().getFile().exists()) {
 
-            view.getjLabelImageBook().setIcon(book.getImage().get(0).getImageSwing());
+            view.getjLabelImageBook().setIcon(book.getImage().getImageFile().getImageSwing());
 
-            ImageFile.resizeImageByPath(view.getjLabelImageBook(), book.getImage().get(0).getFile().getAbsolutePath());
+            ImageFile.resizeImageByPath(view.getjLabelImageBook(), book.getImage().getImageFile().getFile().getAbsolutePath());
 
         } else {
 
