@@ -10,7 +10,7 @@ package Model;
  *
  * @author Samuel
  */
-public class BackupImage {
+public class BackupImage{
     
     private Integer id;
     private ImageFile imageFile;

@@ -43,7 +43,7 @@ public class ClientDAO {
             statement.setString(5, client.getAddress());
             statement.setString(6, client.getPhone());
             statement.setString(7, client.getEmail());
-            statement.setString(8, client.getPerfilImage().getFile().getName());
+            statement.setString(8, client.getPerfilImage().getImageFile().getFile().getName());
 
             statement.execute();
 
@@ -74,7 +74,7 @@ public class ClientDAO {
             statement.setString(5, client.getAddress());
             statement.setString(6, client.getPhone());
             statement.setString(7, client.getEmail());
-            statement.setString(8, client.getPerfilImage().getFile().getName());
+            statement.setString(8, client.getPerfilImage().getImageFile().getFile().getName());
             statement.setInt(9, client.getId().intValue());
 
             statement.execute();
