@@ -327,7 +327,7 @@ public class ImageDAO {
 
             statement = connection.prepareStatement(sql);    
             
-            statement.setString(1, backupImage.getImageFile().getFile().getName());     
+            statement.setString(1, backupImage.getImageFile().getFile().getAbsolutePath());     
             
             result = statement.executeQuery();           
             
@@ -373,7 +373,7 @@ public class ImageDAO {
                 
             statement = connection.prepareStatement(sql);    
             
-            statement.setString(1, backupImage.getImageFile().getFile().getName());    
+            statement.setString(1, backupImage.getImageFile().getFile().getAbsolutePath());    
             
             result = statement.executeQuery();           
             
