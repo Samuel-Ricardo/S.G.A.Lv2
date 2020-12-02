@@ -73,7 +73,7 @@ public class ImageFile {
             
             String PCuser = System.getProperty("user.name");
             
-            file = new File(FileManager.defaultFolder+"\\Images\\"+name);
+            file = new File(FileManager.getDefaultFolder()+"\\Images\\"+name);
             
             System.out.println("arqucivo:                   "+file.getAbsolutePath());
             

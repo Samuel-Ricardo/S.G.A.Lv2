@@ -77,6 +77,8 @@ public class ImageFactory {
         } catch (SQLException ex) {
             Logger.getLogger(ImageFactory.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        return image;
     }
     
     public ImageFile generateImage(String name, InputStream input){

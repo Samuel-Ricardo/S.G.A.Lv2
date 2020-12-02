@@ -127,10 +127,10 @@ public class FileManager {
          return file;
     }
     
-     if(FileManager.searchIn(FileManager.getDefaultFolder()+"Images/", imageFile.getFile().getName()) == false){
-                
-                
-            }
+//     if(FileManager.searchIn(FileManager.getDefaultFolder()+"Images/", imageFile.getFile().getName()) == false){
+//                
+//                
+//            }
     
     public static String getPcUser() {
         return pcUser;
