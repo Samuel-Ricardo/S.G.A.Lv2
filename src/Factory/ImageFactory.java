@@ -5,6 +5,7 @@
  */
 package Factory;
 
+import Model.BackupImage;
 import Model.ImageFile;
 import Services.Downloader;
 import Services.FileManager;
@@ -13,6 +14,8 @@ import java.io.InputStream;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -23,7 +26,7 @@ public class ImageFactory {
     private final Downloader downloader;
 
     public ImageFactory() {
-        this.downloader = Downloader.getDownloader();
+        this.downloader = new Downloader();
     }
 
     public ImageFactory(Downloader downloader) {
@@ -40,9 +43,9 @@ public class ImageFactory {
             
             File localImage = new File(FileManager.getDefaultFolder() +"images/"+ result.getString("image_name"));
             
-            File downloadedImage = downloader.download(result.getBinaryStream("image_bytes"), localImage);
+            downloader.download(result.getBinaryStream("image_bytes"), localImage);
             
-            ImageFile image = new ImageFile(downloadedImage);
+            ImageFile image = new ImageFile(localImage);
             
             images.add(image);
         }
@@ -50,7 +53,24 @@ public class ImageFactory {
         return images;
     }
     
-    public BackupImage generate
+    public BackupImage generateBackupImage(ResultSet result){
+        
+            BackupImage image = null;
+            
+        try{    
+            
+            image = new BackupImage();
+            
+            image.setId(new Integer(result.getInt("id_images")));
+            
+            ImageFile file = new ImageFile(result.getString("image_way"));
+            
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ImageFactory.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     public ImageFile generateImage(String name, InputStream input){
         

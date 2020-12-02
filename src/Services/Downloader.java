@@ -21,6 +21,7 @@ import java.util.logging.Logger;
 public class Downloader extends Thread{
     
     private Dialoger dialoger;
+    private boolean downloading = false;
 
     public Downloader() {
         
@@ -35,10 +36,12 @@ public class Downloader extends Thread{
         
     }
     
-    public void download(InputStream input, File destiny){
+    public boolean download(InputStream input, File destiny){
         
         try {
         
+            downloading = true;
+            
             OutputStream output = new FileOutputStream(destiny);
       
             int bit = 0;
@@ -51,11 +54,17 @@ public class Downloader extends Thread{
             input.close();
             output.close();
             
+            downloading = false;
+            return true;
+                    
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Downloader.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
         } catch (IOException ex) {
             Logger.getLogger(Downloader.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
         }
+        
         
     }
 }
