@@ -8,6 +8,7 @@ package DAO;
 import Factory.BackupImageFactory;
 import JDBC.ConnectionFactory;
 import Model.BackupImage;
+import Model.Book;
 import Services.Dialoger;
 import com.mysql.jdbc.Connection;
 import java.sql.PreparedStatement;
@@ -108,7 +109,7 @@ public class ImageDAO {
         try {
             statement = connection.prepareStatement(sql);
 
-            statement.setInt(0, backupImage.getId());
+            statement.setInt(1, backupImage.getId());
 
             statement.execute();
 
@@ -122,41 +123,7 @@ public class ImageDAO {
         }
 
     }
-
-    public List<BackupImage> selectAllFromPostIt(PostIt postIt) {
-
-        connect();
-     
-        PreparedStatement statement = null;
-        ResultSet result = null;
-        List<BackupImage> backupImages = new ArrayList<>();
-        String sql = "SELECT * FROM tb_image WHERE image_postIt_id = ?;";
-        Date userDate = null;
-
-        try {
-
-            statement = connection.prepareStatement(sql);
-
-            statement.setInt(1, postIt.getId());
-
-            result = statement.executeQuery();
-
-            while (result.next()) {
-
-                BackupImage backupImage = backupImageFactory.genereteBackupImage(result);
-                
-                backupImages.add(backupImage);
-                
-            }
-
-        } catch (SQLException ex) {
-            dialoger.errorMessage("Erro ao consultar o banco: ", ex);  // error message if it occurs // mensagem de erro se ocorrer /
-        } finally {
-            ConnectionFactory.closeConnection(connection, statement);  // closes all connections regardless of success  // fecha todas as conexoes independente de sucesso
-        }
-        
-        return backupImages;
-    }
+    
     public List<BackupImage> selectAllFromNotification(Notification notification) {
 
         connect();
