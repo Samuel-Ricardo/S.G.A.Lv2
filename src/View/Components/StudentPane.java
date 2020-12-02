@@ -5,7 +5,7 @@
  */
 package View.Components;
 
-import Controller.Componens.StudentPaneController;
+import Controller.Components.StudentPaneController;
 import Model.Student;
 import View.Researchers.ListOfStudents;
 import java.awt.Dimension;
