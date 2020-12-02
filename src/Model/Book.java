@@ -6,6 +6,7 @@
 package Model;
 
 import Time.Time;
+import com.sun.swing.internal.plaf.basic.resources.basic;
 import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -45,6 +46,7 @@ public class Book {
     public Book() {
         
         this.acquired = new Time();
+        image = new BackupImage();
         
     }
 
@@ -104,8 +106,13 @@ public class Book {
         this.stock = stock;
     }
 
-    
-    
+    public BackupImage getImage() {
+        return image;
+    }
+
+    public void setImage(BackupImage image) {
+        this.image = image;
+    }
     
     public ArrayList<BackupImage> getImages() {
         return Images;
