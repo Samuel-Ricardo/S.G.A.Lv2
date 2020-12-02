@@ -5,7 +5,9 @@
  */
 package Model;
 
+import DAO.ImageDAO;
 import java.io.InputStream;
+import java.util.List;
 
 /**
  *
@@ -114,6 +116,21 @@ public class User implements Model.Interface.User{
      @Override
     public void setPerfilImage(BackupImage perfilImage) {
         this.perfilImage = perfilImage;
+    }
+    
+     @Override
+    public void setPerfilImage(ImageFile perfilImage) {
+        
+        ImageDAO imageDao = new ImageDAO();
+        
+        List<BackupImage> images = imageDao.searchByName(perfilImage.getFile().getName());
+        
+        if(images.isEmpty() == false){
+            
+            this.perfilImage = images.get(0);
+        }else{
+            System.out.println("No image");
+        }
     }
         
      @Override

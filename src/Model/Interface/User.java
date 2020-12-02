@@ -6,6 +6,7 @@
 package Model.Interface;
 
 import Model.BackupImage;
+import Model.ImageFile;
 
 /**
  *
@@ -35,6 +36,8 @@ public interface User {
     
     public BackupImage getPerfilImage();
     public void setPerfilImage(BackupImage perfilImage);
+    
+    public void setPerfilImage(ImageFile perfilImage);
     
     public String getEmail();
     public void setEmail(String email);
