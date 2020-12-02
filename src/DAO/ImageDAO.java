@@ -69,40 +69,6 @@ public class ImageDAO {
             ConnectionFactory.closeConnection(connection, statement);
         }
     }
-//    public boolean insertAll(ArrayList<BackupImage> backupImages) {
-//  
-//        connect();
-//
-//        PreparedStatement statement = null;
-//        String sql = "INSERT INTO image (image, cor, detalhes_de_cores, importancia, id_usuario_image) VALUES (?,?,?,?,?);";
-//
-//       
-//            
-//        try {
-//
-//             for (BackupImage backupImage : backupImages) {
-//            
-//            statement = connection.prepareStatement(sql);
-//
-//            statement.setString(1, getImgetNameage()ggetNameetFile()..getName());
-//            statement.setString(2, backupImage.getPrimaryColor());
-//            statement.setString(3, backupImage.getSecondaryColor());
-//            statement.setInt(4, backupImage.getImportance().intValue());
-//            statement.setInt(5, backupImage.getUser().getId().intValue());
-//
-//            statement.execute();
-//            
-//             }
-//            return true;
-//        } catch (SQLException ex) {
-//            dialoger.errorMessage("Erro ao Inserir: ", ex);  // error message if it occurs // mensagem de erro se ocorrer /
-//            return false;
-//        } finally {
-//            ConnectionFactory.closeConnection(connection, statement);
-//        }
-//        
-//    }
-//        
 
     public boolean update(BackupImage backupImage) {
 
