@@ -126,6 +126,12 @@ public class FileManager {
          
          return file;
     }
-    
-    
+
+    public static String getPcUser() {
+        return pcUser;
+    }
+
+    public static String getDefaultFolder() {
+        return defaultFolder;
+    }
 }
