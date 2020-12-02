@@ -50,6 +50,8 @@ public class ImageFactory {
         return images;
     }
     
+    public BackupImage generate
+    
     public ImageFile generateImage(String name, InputStream input){
         
         File localImage = new File(FileManager.getDefaultFolder() + "Images/" + name);

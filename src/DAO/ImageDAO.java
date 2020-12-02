@@ -5,7 +5,7 @@
  */
 package DAO;
 
-import Factory.BackupImageFactory;
+import Factory.ImageFactory;
 import JDBC.ConnectionFactory;
 import Model.BackupImage;
 import Model.Book;
@@ -29,18 +29,18 @@ public class ImageDAO {
     private static BackupImage backupImage;
     
     private Connection connection;
-    private BackupImageFactory backupImageFactory; 
+    private ImageFactory imageFactory; 
     private Dialoger dialoger;
 
     public ImageDAO() {
         
-      backupImageFactory = new BackupImageFactory();
+      imageFactory = new ImageFactory();
       dialoger = new Dialoger();
     }
     
-    public ImageDAO(BackupImageFactory backupImageFactory) {
+    public ImageDAO(ImageFactory backupImageFactory) {
         
-        this.backupImageFactory = backupImageFactory;
+        this.imageFactory = backupImageFactory;
         dialoger = new Dialoger();
     }
 
@@ -143,7 +143,7 @@ public class ImageDAO {
 
             while (result.next()) {
 
-                BackupImage backupImage = backupImageFactory.genereteBackupImage(result);
+                BackupImage backupImage = imageFactory.genereteBackupImage(result);
                 
                 backupImages.add(backupImage);
                 
