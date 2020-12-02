@@ -75,7 +75,7 @@ public class ImageDAO {
         connect();
          
         PreparedStatement statement = null;
-        String sql = "UPDATE image SET image_name = ? , image_way = ? , image_bytes = ?  = ?  = ? = ? , = ? WHERE id_image = ?;";
+        String sql = "UPDATE image SET image_name = ? , image_way = ? , image_bytes = ? WHERE id_image = ?;";
 
         try {
 
