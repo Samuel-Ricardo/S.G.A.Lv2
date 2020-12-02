@@ -11,7 +11,10 @@ import Model.Book;
 import Model.ImageFile;
 import Time.Time;
 import View.Registers.BookRegistrationView;
+import java.io.File;
 import java.util.Date;
+import javafx.stage.FileChooser;
+import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -24,6 +27,7 @@ public class BookRegistrationController {
     private final BookRegistrationView view;
     private final BookDAO bookDao;
     private final BookRegistrationHelper helper;
+    private ImageFile image = new ImageFile("");
     
     public BookRegistrationController(BookRegistrationView view) {
         this.view = view;
@@ -51,6 +55,7 @@ public class BookRegistrationController {
         book.setName(Name);
         book.setPublisher(Publisher);
         book.setStock(stock);
+        book.setImage();
      
      if (bookDao.insert(book)){
        
@@ -72,6 +77,20 @@ public class BookRegistrationController {
         
         String string = Time.getDateFormat().format(date);
         
-      view.getjFormattedTextFieldAcquisition().setText(string);  
+      view.getjFormattedTextFieldAcquisition().setText(string);
+    }
+
+    public void chooseImage() {
+        
+        JFileChooser chooser = new JFileChooser();
+
+        if (chooser.showOpenDialog(view) == JFileChooser.APPROVE_OPTION){
+            
+            File file = chooser.getSelectedFile();
+            image = new ImageFile(file);
+            
+            ImageFile.resizeImageByPath(view.getjLabelImageBook(), file.getAbsolutePath());
+        }
+        
     }
 }

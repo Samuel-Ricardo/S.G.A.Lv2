@@ -238,7 +238,7 @@ public class BookRegistrationView extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtBookAuthorActionPerformed
 
     private void jLabelImageBookMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelImageBookMouseReleased
-   
+        controller.chooseImage();
     }//GEN-LAST:event_jLabelImageBookMouseReleased
 
     private void jLabelImageBookMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelImageBookMouseMoved
