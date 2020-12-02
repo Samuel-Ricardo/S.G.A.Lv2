@@ -33,7 +33,7 @@ public class ImageFile {
     private int lengthKB = length / 1024;
     private int lengthMB = lengthKB / 1024;
     private FileInputStream inputStream;
-    private FileOutputStream output;
+    private FileOutputStream outputStream;
     private ImageIcon imageSwing;
     private Image ImageFX;
 
@@ -78,17 +78,17 @@ public class ImageFile {
             System.out.println("arqucivo:                   "+file.getAbsolutePath());
             
             inputStream = new FileInputStream(file);
-            output = new FileOutputStream(file);
+            outputStream = new FileOutputStream(file);
             
                 System.out.println("Começou o download");
                 
                 while(inputS.read(bytes) != -1){
                     
-                    output.write(bytes);
+                    outputStream.write(bytes);
                     
                 }
                 
-            output.close();
+            outputStream.close();
             inputS.close();
             
             start();
@@ -201,12 +201,12 @@ public class ImageFile {
         this.inputStream = inputStream;
     }
 
-    public FileOutputStream getOutput() {
-        return output;
+    public FileOutputStream getOutputStream() {
+        return outputStream;
     }
 
-    public void setOutput(FileOutputStream output) {
-        this.output = output;
+    public void setOutputStream(FileOutputStream outputStream) {
+        this.outputStream = outputStream;
     }
 
     public ImageIcon getImageSwing() {
