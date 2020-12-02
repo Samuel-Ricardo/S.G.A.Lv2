@@ -22,7 +22,7 @@ public class BackupImage {
     }
 
     public BackupImage() {
-        
+        imageFile = new ImageFile("");
     }
 
     public Integer getId() {
