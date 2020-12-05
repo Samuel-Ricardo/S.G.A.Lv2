@@ -104,25 +104,25 @@ public class ImageFile {
     
 
     private void start() {
-        try {
+ //       try {
             JFXPanel jfxPanel = new JFXPanel();
             
             this.length = (int) file.length();
 
             this.bytes = new byte[length];
-            this.input = new FileInputStream(file);
-            this.output = new FileOutputStream(file);
+//            this.input = new FileInputStream(file);
+//            this.output = new FileOutputStream(file);
 
-            input.read(bytes, 0, length);
+//            input.read(bytes, 0, length);
 
             this.imageSwing = new ImageIcon(file.getAbsolutePath());
             this.ImageFX = new Image("file:///"+file.getAbsolutePath());
 
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(ImageFile.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(ImageFile.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(ImageFile.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (IOException ex) {
+//            Logger.getLogger(ImageFile.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
     
     
