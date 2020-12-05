@@ -27,6 +27,7 @@ public class BookRegistrationView extends javax.swing.JInternalFrame {
 
         controller = new BookRegistrationController(this);
         controller.start();
+       // controller.resize(jLabelImageBook);
     }
 
     /**
@@ -242,7 +243,7 @@ public class BookRegistrationView extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jLabelImageBookMouseReleased
 
     private void jLabelImageBookMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelImageBookMouseMoved
-        controller.resize(jLabelImageBook);
+        
     }//GEN-LAST:event_jLabelImageBookMouseMoved
 
     private void jFormattedTextFieldAcquisitionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldAcquisitionActionPerformed

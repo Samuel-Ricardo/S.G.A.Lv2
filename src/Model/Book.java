@@ -156,7 +156,8 @@ public class Book {
             
             this.image = images.get(0);
         }else{
-            System.out.println("No image");
+            
+            this.image.setImageFile(imageFile);
         }
     }
 }

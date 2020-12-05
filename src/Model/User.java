@@ -129,7 +129,7 @@ public class User implements Model.Interface.User{
             
             this.perfilImage = images.get(0);
         }else{
-            System.out.println("No image");
+            this.perfilImage.setImageFile(perfilImage);
         }
     }
         

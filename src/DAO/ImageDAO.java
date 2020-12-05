@@ -49,7 +49,7 @@ public class ImageDAO {
         connect();
          
         PreparedStatement statement = null;
-        String sql = "INSERT INTO image (image_name, image_way, image_bytes) VALUES (?,?,?);";
+        String sql = "INSERT INTO tb_images (image_name, image_way, image_bytes) VALUES (?,?,?);";
 
         try {
 
@@ -76,7 +76,7 @@ public class ImageDAO {
         connect();
          
         PreparedStatement statement = null;
-        String sql = "UPDATE image SET image_name = ? , image_way = ? , image_bytes = ? WHERE id_images = ?;";
+        String sql = "UPDATE tb_images SET image_name = ? , image_way = ? , image_bytes = ? WHERE id_images = ?;";
 
         try {
 
@@ -104,7 +104,7 @@ public class ImageDAO {
         connect();
 
         PreparedStatement statement = null;
-        String sql = "DELETE FROM tb_image WHERE id_images = ?;";
+        String sql = "DELETE FROM tb_images WHERE id_images = ?;";
 
         try {
             statement = connection.prepareStatement(sql);
@@ -131,7 +131,7 @@ public class ImageDAO {
         PreparedStatement statement = null;
         ResultSet result = null;
         List<BackupImage> backupImages = new ArrayList<>();
-        String sql = "SELECT * FROM tb_image WHERE image_name = ?;";
+        String sql = "SELECT * FROM tb_images WHERE image_name = ?;";
 
         try {
 
@@ -164,7 +164,7 @@ public class ImageDAO {
         
         PreparedStatement statement = null;
         ResultSet result = null;
-        String sql = "SELECT * FROM tb_image WHERE id_images = ?;";
+        String sql = "SELECT * FROM tb_images WHERE id_images = ?;";
         boolean exist = false;
 
         try {
@@ -206,7 +206,7 @@ public class ImageDAO {
         
         PreparedStatement statement = null;
         ResultSet result = null;
-        String sql = "SELECT * FROM tb_image WHERE id_images = ?;";
+        String sql = "SELECT * FROM tb_images WHERE id_images = ?;";
         
 
        
@@ -242,7 +242,7 @@ public class ImageDAO {
         
         PreparedStatement statement = null;
         ResultSet result = null;
-        String sql = "SELECT * FROM tb_image WHERE image_name = ?;";
+        String sql = "SELECT * FROM tb_images WHERE image_name = ?;";
         boolean exist = false;
 
         try {
@@ -284,7 +284,7 @@ public class ImageDAO {
         
         PreparedStatement statement = null;
         ResultSet result = null;
-        String sql = "SELECT * FROM tb_image WHERE image_name = ?;";
+        String sql = "SELECT * FROM tb_images WHERE image_name = ?;";
         
 
        
@@ -320,7 +320,7 @@ public class ImageDAO {
         
         PreparedStatement statement = null;
         ResultSet result = null;
-        String sql = "SELECT * FROM tb_image WHERE image_way = ?;";
+        String sql = "SELECT * FROM tb_images WHERE image_way = ?;";
         boolean exist = false;
 
         try {
@@ -362,7 +362,7 @@ public class ImageDAO {
         
         PreparedStatement statement = null;
         ResultSet result = null;
-        String sql = "SELECT * FROM tb_image WHERE image_way = ?;";
+        String sql = "SELECT * FROM tb_images WHERE image_way = ?;";
         
 
        
