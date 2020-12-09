@@ -26,7 +26,6 @@ public class BookFactory {
         
         Book book = new Book();
         ImageFactory imageFactory = new ImageFactory();
-        ImageDAO imageDao = new ImageDAO();
         
         book.setId(result.getInt("id_book"));
         book.setName(result.getString("book_name"));
@@ -44,10 +43,7 @@ public class BookFactory {
                 
                 BackupImage backupImage = setLocalImage(file, book);
                 
-                if(imageDao.existByName(backupImage) == false){
-                    
-                    imageDao.insert(backupImage);
-                }
+                insertImageIfNotExist(backupImage);
             }else{
                 
                 book.setImage(imageFactory.generateBackupImageByName(result.getString("book_image_name")));
@@ -57,13 +53,25 @@ public class BookFactory {
         return book;
     }
 
-    private static void setLocalImage(File file, Book book) {
+    private static void insertImageIfNotExist(BackupImage backupImage) {
+     
+        ImageDAO imageDao = new ImageDAO();
+        
+        if(imageDao.existByName(backupImage) == false){
+            
+            imageDao.insert(backupImage);
+        }
+    }
+
+    private static BackupImage setLocalImage(File file, Book book) {
         
         ImageFile imageFile = new ImageFile(file);
         BackupImage backupImage = new BackupImage();
         backupImage.setImageFile(imageFile);
         
         book.setImage(backupImage); 
+        
+        return backupImage;
     }
     
 }
