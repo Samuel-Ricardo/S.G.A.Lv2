@@ -5,6 +5,7 @@
  */
 package Factory;
 
+import DAO.ImageDAO;
 import Model.BackupImage;
 import Model.ImageFile;
 import Services.Downloader;
@@ -24,13 +25,16 @@ import java.util.logging.Logger;
 public class ImageFactory {
 
     private final Downloader downloader;
+    private final ImageDAO imageDao;
 
     public ImageFactory() {
         this.downloader = new Downloader();
+        this.imageDao = new ImageDAO();
     }
 
-    public ImageFactory(Downloader downloader) {
+    public ImageFactory(Downloader downloader, ImageDAO imageDao) {
         this.downloader = downloader;
+        this.imageDao = imageDao;
     }
     
     public  ArrayList<ImageFile> generateImages(ResultSet result) throws SQLException {
@@ -128,8 +132,10 @@ public class ImageFactory {
         return images;
     }
 
-    BackupImage generateBackupImage(String book_image_name) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public BackupImage generateBackupImageByName(String string) {
+       
+        imageDao.searchByName(string);
+    
     }
     
 }
