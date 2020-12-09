@@ -25,16 +25,13 @@ import java.util.logging.Logger;
 public class ImageFactory {
 
     private final Downloader downloader;
-    private final ImageDAO imageDao;
 
     public ImageFactory() {
         this.downloader = new Downloader();
-        this.imageDao = new ImageDAO();
     }
 
-    public ImageFactory(Downloader downloader, ImageDAO imageDao) {
+    public ImageFactory(Downloader downloader) {
         this.downloader = downloader;
-        this.imageDao = imageDao;
     }
     
     public  ArrayList<ImageFile> generateImages(ResultSet result) throws SQLException {
@@ -130,12 +127,6 @@ public class ImageFactory {
         }
         
         return images;
-    }
-
-    public BackupImage generateBackupImageByName(String string) {
-       
-        imageDao.searchByName(string);
-    
     }
     
 }

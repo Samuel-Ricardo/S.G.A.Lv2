@@ -47,7 +47,12 @@ public class BookFactory {
                 insertImageIfNotExist(imageDao, backupImage);
             }else{
                 
-                book.setImage(imageDao.searchByName(result.getString("book_image_name")).get(0));
+                List<BackupImage> searchByName = imageDao.searchByName(result.getString("book_image_name"));
+                
+                if(searchByName.isEmpty() == false){
+                
+                  book.setImage(searchByName.get(0));
+                }
             }     
         }
         
