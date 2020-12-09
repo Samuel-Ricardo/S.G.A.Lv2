@@ -90,7 +90,10 @@ public class BookPaneController {
             selectListener();
     }
 
-    
+    public void setImage() {
+        
+        ImageFile.resizeImageByPath(view.getjLabelImage(), book.getImage().getImageFile().getFile().getAbsolutePath());
+    }
     
     public void setEmptyImage() {
         
