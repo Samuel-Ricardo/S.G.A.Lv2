@@ -194,7 +194,14 @@ public class ImageFile {
     }
 
     public FileInputStream getInputStream() {
-        return inputStream;
+        try {
+            
+            return new FileInputStream(this.file);
+            
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+            return null;
+        }
     }
 
     public void setInputStream(FileInputStream inputStream) {
