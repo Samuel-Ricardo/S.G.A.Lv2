@@ -121,7 +121,7 @@ public class FileManager {
         return destinyFile;
     }
     
-    public File getFile(String name){
+    public File getFileInDefaultFolder(String name){
         
          File file = new File (defaultFolder + name); 
          

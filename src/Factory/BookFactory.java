@@ -9,6 +9,7 @@ import DAO.ImageDAO;
 import Model.BackupImage;
 import Model.Book;
 import Model.ImageFile;
+import Services.FileManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -19,10 +20,12 @@ import java.util.List;
  */
 public class BookFactory {
     
+    private FileManager fileManager = new FileManager();
+    
     public static Book generateBook(ResultSet result) throws SQLException {
         
         Book book = new Book();
-        ImageDAO imageDAO = new ImageDAO();
+        ImageFactory imageFactory = new ImageFactory();
         
        // List<BackupImage> listImage = imageDAO.searchByName("book_image_name");
         
@@ -34,7 +37,12 @@ public class BookFactory {
         book.setGenre(result.getString("book_genre"));
         book.setAcquired(result.getDate("book_acquired_date"));
         
-        
+        if(result.getString("book_image_name") != null){
+            
+            fileManager.getFileInDefaultFolder("")
+            
+            book.setImage(imageFactory.generateBackupImage(result));
+        }
         
       //  if(listImage.isEmpty() == false){
             
