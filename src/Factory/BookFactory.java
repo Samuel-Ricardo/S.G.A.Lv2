@@ -24,7 +24,7 @@ public class BookFactory {
         Book book = new Book();
         ImageDAO imageDAO = new ImageDAO();
         
-        List<BackupImage> listImage = imageDAO.searchByName("book_image_name");
+       // List<BackupImage> listImage = imageDAO.searchByName("book_image_name");
         
         book.setId(result.getInt("id_book"));
         book.setName(result.getString("book_name"));
@@ -34,12 +34,14 @@ public class BookFactory {
         book.setGenre(result.getString("book_genre"));
         book.setAcquired(result.getDate("book_acquired_date"));
         
-        if(listImage.isEmpty() == false){
+        
+        
+      //  if(listImage.isEmpty() == false){
             
-             book.setImage(imageDAO.searchByName("book_image_name").get(0));
-        }else{
-            book.setImage(new BackupImage());
-        }
+      //       book.setImage(imageDAO.searchByName("book_image_name").get(0));
+      //  }else{
+      //      book.setImage(new BackupImage());
+      //  }
         
         return book;
     }
