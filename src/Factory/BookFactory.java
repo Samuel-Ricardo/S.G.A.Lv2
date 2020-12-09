@@ -10,6 +10,7 @@ import Model.BackupImage;
 import Model.Book;
 import Model.ImageFile;
 import Services.FileManager;
+import java.io.File;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -20,7 +21,6 @@ import java.util.List;
  */
 public class BookFactory {
     
-    private FileManager fileManager = new FileManager();
     
     public static Book generateBook(ResultSet result) throws SQLException {
         
@@ -39,7 +39,7 @@ public class BookFactory {
         
         if(result.getString("book_image_name") != null){
             
-            fileManager.getFileInDefaultFolder("")
+            FileManager.getFileInDefaultFolder("Images/"+result.getString("book_image_name"));
             
             book.setImage(imageFactory.generateBackupImage(result));
         }
