@@ -112,6 +112,9 @@ public class Book {
     }
 
     public void setImage(BackupImage image) {
+        
+        
+        
         this.image = image;
     }
     
