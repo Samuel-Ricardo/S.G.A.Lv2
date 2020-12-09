@@ -69,7 +69,20 @@ public class BookPaneController {
             view.getjLabelStock().setText(book.getStock().toString());
             view.getjLabelGenre().setText(book.getGenre());
             resizeImageLabe(view.getjLabelImage());
-            setImage();
+            
+            if(book.getImage() != null){
+                
+                if(book.getImage().getImageFile().getFile().exists()){
+                    
+                    setImage();
+                    
+                }else{
+                    setEmptyImage();
+                }
+            }else{
+                setEmptyImage();
+            }
+            
             
             view.setMaximumSize(new Dimension(196, 270));
             System.out.println("paod                   equeio");
@@ -77,7 +90,9 @@ public class BookPaneController {
             selectListener();
     }
 
-    public void setImage() {
+    
+    
+    public void setEmptyImage() {
         
         ImageFile.resizeImage(view.getjLabelImage(), "/View/Images/icons8-no-image-64px.png");
     }

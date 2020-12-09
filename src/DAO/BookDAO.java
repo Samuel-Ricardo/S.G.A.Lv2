@@ -121,7 +121,7 @@ public class BookDAO {
         connect();
         PreparedStatement statement = null;
         ResultSet result = null;
-        sql = "SELECT * FROM tb_book;";
+        sql = "SELECT * FROM book_view;";
         List<Book> books = new ArrayList<>();
    
           try {
@@ -151,7 +151,7 @@ public class BookDAO {
         connect();
         PreparedStatement statement = null;
         ResultSet result = null;
-        sql = "SELECT * FROM tb_book WHERE book_"+method+" LIKE ?;";
+        sql = "SELECT * FROM book_view WHERE book_"+method+" LIKE ?;";
         List<Book> books = new ArrayList<>();
        
       
@@ -186,7 +186,7 @@ public class BookDAO {
             connect();
             PreparedStatement statement = null;
             ResultSet result = null;
-            sql = "SELECT * FROM tb_book WHERE book_name LIKE ?;";
+            sql = "SELECT * FROM book_view WHERE book_name LIKE ?;";
             boolean exist = false;
             
             
@@ -218,7 +218,7 @@ public class BookDAO {
         connect();
         PreparedStatement statement = null;
         ResultSet result = null;
-        sql = "SELECT * FROM tb_book WHERE book_name LIKE ? OR book_genre LIKE ?;";
+        sql = "SELECT * FROM book_view WHERE book_name LIKE ? OR book_genre LIKE ?;";
         List<Book> books = new ArrayList<>();
        
       
@@ -254,7 +254,7 @@ public class BookDAO {
         connect();
         PreparedStatement statement = null;
         ResultSet result = null;
-        sql = "SELECT * FROM tb_book WHERE book_name LIKE ? OR book_genre LIKE ? OR book_author LIKE ? OR book_publisher LIKE ?;";//OR book_stock LIKE ?;";
+        sql = "SELECT * FROM book_view WHERE book_name LIKE ? OR book_genre LIKE ? OR book_author LIKE ? OR book_publisher LIKE ?;";//OR book_stock LIKE ?;";
         List<Book> books = new ArrayList<>();
        
       
