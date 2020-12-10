@@ -36,9 +36,16 @@ public class BookFactory {
         book.setGenre(result.getString("book_genre"));
         book.setAcquired(result.getDate("book_acquired_date"));
         
-        if(result.getString("book_image_name") != null){
+        saveImageOnBook(result.getString("book_image_name"), book, imageDao);
+        
+        return book;
+    }
+
+    public static Book saveImageOnBook(String imageName, Book book, ImageDAO imageDao) throws SQLException {
+
+        if(imageName != null){
             
-            File file = FileManager.getFileInDefaultFolder("Images/"+result.getString("book_image_name"));
+            File file = FileManager.getFileInDefaultFolder("Images/"+imageName);
             
             if(file.exists()){
                 
@@ -47,16 +54,14 @@ public class BookFactory {
                 insertImageIfNotExist(imageDao, backupImage);
             }else{
                 
-                List<BackupImage> searchByName = imageDao.searchByName(result.getString("book_image_name"));
+                List<BackupImage> searchByName = imageDao.searchByName(imageName);
                 
                 if(searchByName.isEmpty() == false){
-                
-                  book.setImage(searchByName.get(0));
+                    
+                    book.setImage(searchByName.get(0));
                 }
             }     
         }
-        
-        return book;
     }
 
     private static void insertImageIfNotExist(ImageDAO imageDao, BackupImage backupImage) {

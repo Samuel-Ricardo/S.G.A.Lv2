@@ -59,7 +59,7 @@ public class BookRegistrationController {
      
      if (bookDao.insert(book)){
        
-         JOptionPane.showMessageDialog(view, "O livro: "+book.getName()+", foi salvo com sucesso");
+         JOptionPane.showMessageDialog(view, "O livro: "+book.getName()+", foi salvo com sucesso :)");
          
      }else{
          JOptionPane.showMessageDialog(view, "Erro ao salvar o livro: "+book.getName());

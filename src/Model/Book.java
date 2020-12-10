@@ -6,6 +6,7 @@
 package Model;
 
 import DAO.ImageDAO;
+import Factory.ImageFactory;
 import Time.Time;
 import com.sun.swing.internal.plaf.basic.resources.basic;
 import java.io.InputStream;
@@ -152,6 +153,10 @@ public class Book {
     public void setImage(ImageFile imageFile) {
         
         ImageDAO imageDao = new ImageDAO();
+        ImageFactory imageFactory = new ImageFactory();
+        
+        imageFactory.generateImagesByPath(result, name)
+        
         
         List<BackupImage> images = imageDao.searchByName(imageFile.getFile().getName());
         
