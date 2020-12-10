@@ -65,7 +65,7 @@ public class StudentFactory {
                 
                 if(searchByName.isEmpty() == false){
                     
-                    student.setImage(searchByName.get(0));
+                    student.setPerfilImage(searchByName.get(0));
                 }
             }     
         }
@@ -75,9 +75,9 @@ public class StudentFactory {
         
         ImageFile imageFile = new ImageFile(file);
         BackupImage backupImage = new BackupImage();
-        backupImage.setImageFile(imageFile);
+        student.setPerfilImage(imageFile);
         
-        student.setImage(backupImage); 
+        student.setPerfilImage(backupImage); 
         
         return backupImage;
     }
