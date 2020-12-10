@@ -50,7 +50,7 @@ public class User implements Model.Interface.User{
     }
 
     public User() {
-       
+       perfilImage = new BackupImage();
     }
     
     @Override

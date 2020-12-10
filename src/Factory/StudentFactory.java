@@ -43,7 +43,7 @@ public class StudentFactory {
         student.setShift(result.getString("student_shift"));
         student.setAccessLevel(User.ACCESS_MIN);
         
-               // student.setPerfilImage(ImageFactory.generateImage(result));
+            saveImageOnstudent(result.getString("student_image_perfil"), student, new ImageDAO());
         
         return student;
     }   
