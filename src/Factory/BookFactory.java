@@ -41,7 +41,7 @@ public class BookFactory {
         return book;
     }
 
-    public static Book saveImageOnBook(String imageName, Book book, ImageDAO imageDao) throws SQLException {
+    public static void saveImageOnBook(String imageName, Book book, ImageDAO imageDao) throws SQLException {
 
         if(imageName != null){
             

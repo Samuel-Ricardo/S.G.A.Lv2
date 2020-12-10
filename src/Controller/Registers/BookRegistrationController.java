@@ -7,12 +7,17 @@ package Controller.Registers;
 
 import Controller.Helper.Register.BookRegistrationHelper;
 import DAO.BookDAO;
+import DAO.ImageDAO;
+import Factory.BookFactory;
 import Model.Book;
 import Model.ImageFile;
 import Time.Time;
 import View.Registers.BookRegistrationView;
 import java.io.File;
+import java.sql.SQLException;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.stage.FileChooser;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
@@ -37,33 +42,42 @@ public class BookRegistrationController {
     
     public void newBook(){
         
-     String Author = helper.getAuthor();
-     String Genre = helper.getGenre();
-     String Name = helper.getName();
-     int stock = helper.getStock();
-     String Publisher = helper.getPublisher();
-     
-        Book book = new Book();
-     
-        Time acquired = helper.getAcquiredDate();   
-        
-        System.out.println("deate         "+acquired.getOnlyDate());
-        
-        book.setAcquired(acquired);
-        book.setAuthor(Author);
-        book.setGenre(Genre);
-        book.setName(Name);
-        book.setPublisher(Publisher);
-        book.setStock(stock);
-        book.setImage(image);
-     
-     if (bookDao.insert(book)){
-       
-         JOptionPane.showMessageDialog(view, "O livro: "+book.getName()+", foi salvo com sucesso :)");
-         
-     }else{
-         JOptionPane.showMessageDialog(view, "Erro ao salvar o livro: "+book.getName());
-     }
+        try {
+            
+            String Author = helper.getAuthor();
+            String Genre = helper.getGenre();
+            String Name = helper.getName();
+            int stock = helper.getStock();
+            String Publisher = helper.getPublisher();
+            
+            Book book = new Book();
+            
+            Time acquired = helper.getAcquiredDate();
+            
+            System.out.println("deate         "+acquired.getOnlyDate());
+            
+            book.setAcquired(acquired);
+            book.setAuthor(Author);
+            book.setGenre(Genre);
+            book.setName(Name);
+            book.setPublisher(Publisher);
+            book.setStock(stock);
+            book.setImage(image);
+            
+            BookFactory.saveImageOnBook(image.getFile().getName(), book, new ImageDAO());
+            
+            if (bookDao.insert(book)){
+                
+                JOptionPane.showMessageDialog(view, "O livro: "+book.getName()+", foi salvo com sucesso :)");
+                
+            }else{
+                JOptionPane.showMessageDialog(view, "Erro ao salvar o livro: "+book.getName());
+            } 
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(view, "Erro ao salvar o livro :(");
+            
+            ex.printStackTrace();
+        }
     }
 
     public void resize(JLabel jLabelImage) {
