@@ -186,7 +186,11 @@ public class ImageFile {
     public FileInputStream getInputStream() {
         try {
             
-            return new FileInputStream(this.file);
+            if(this.file.exists()){
+               return new FileInputStream(this.file);
+            }else{
+                return null;
+            }
             
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();

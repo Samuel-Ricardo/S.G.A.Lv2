@@ -58,7 +58,6 @@ public class ImageDAO {
             statement.setString(1, backupImage.getImageFile().getFile().getName());
             statement.setString(2, backupImage.getImageFile().getFile().getAbsolutePath());
             statement.setBinaryStream(3, backupImage.getImageFile().getInputStream());
-          //statement.setString(4, backupImage.getImageFile().getLengthKB()+"");
 
             statement.execute();
 
