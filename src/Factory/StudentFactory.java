@@ -71,5 +71,14 @@ public class StudentFactory {
         }
     }
 
-    
+    private static BackupImage setLocalImage(File file, Student student) {
+        
+        ImageFile imageFile = new ImageFile(file);
+        BackupImage backupImage = new BackupImage();
+        backupImage.setImageFile(imageFile);
+        
+        student.setImage(backupImage); 
+        
+        return backupImage;
+    }
 }
