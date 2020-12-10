@@ -5,11 +5,16 @@
  */
 package Factory;
 
+import DAO.ImageDAO;
+import Model.BackupImage;
 import Model.ImageFile;
 import Model.Student;
 import Model.User;
+import Services.FileManager;
+import java.io.File;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  *
@@ -27,7 +32,6 @@ public class StudentFactory {
         student.setPassword(result.getString("student_password"));
         student.setCEP(result.getString("student_CEP"));
         student.setAddress(result.getString("student_address"));
-       // student.setPerfilImage(ImageFactory.generateImage(result));
         student.setEmail(result.getString("student_email"));
         student.setCourse(result.getString("student_course"));
         student.setModule(result.getString("student_module"));
@@ -39,6 +43,33 @@ public class StudentFactory {
         student.setShift(result.getString("student_shift"));
         student.setAccessLevel(User.ACCESS_MIN);
         
+               // student.setPerfilImage(ImageFactory.generateImage(result));
+        
         return student;
     }   
+        
+        public static void saveImageOnstudent(String imageName, Student student, ImageDAO imageDao) throws SQLException {
+
+        if(imageName != null){
+            
+            File file = FileManager.getFileInDefaultFolder("Images/"+imageName);
+            
+            if(file.exists()){
+                
+                BackupImage backupImage = setLocalImage(file, student);
+                
+                BookFactory.insertImageIfNotExist(imageDao, backupImage);
+            }else{
+                
+                List<BackupImage> searchByName = imageDao.searchByName(imageName);
+                
+                if(searchByName.isEmpty() == false){
+                    
+                    student.setImage(searchByName.get(0));
+                }
+            }     
+        }
+    }
+
+    
 }

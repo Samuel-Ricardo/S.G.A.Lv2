@@ -64,7 +64,7 @@ public class BookFactory {
         }
     }
 
-    private static void insertImageIfNotExist(ImageDAO imageDao, BackupImage backupImage) {
+    public static void insertImageIfNotExist(ImageDAO imageDao, BackupImage backupImage) {
         
         if(imageDao.existByName(backupImage) == false){
             
