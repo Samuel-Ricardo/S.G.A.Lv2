@@ -20,7 +20,8 @@ public class ClientFactory {
     public static Client generateClient(ResultSet result) throws SQLException {
 
         Client client = new Client();
-
+        ImageFactory imageFactory = new ImageFactory();
+        
         client.setId(result.getInt("id_name"));
         client.setName(result.getString("client_name"));
         client.setLogin(result.getString("client_loguin"));
@@ -29,7 +30,7 @@ public class ClientFactory {
         client.setAddress(result.getString("client_address"));
         client.setPhone(result.getString("client_phone"));
         client.setEmail(result.getString("cleint_email"));
-        client.setPerfilImage(ImageFactory.generateImage(result));
+        client.setPerfilImage(imageFactory.generateBackupImage(result));
         client.setAccessLevel(User.ACCESS_MIN);
 
         return client;

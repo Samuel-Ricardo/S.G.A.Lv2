@@ -19,6 +19,7 @@ public class ManagerFactory {
     public static Manager generateManager(ResultSet result) throws SQLException {
 
         Manager manager = new Manager();
+        ImageFactory imageFactory = new ImageFactory();
 
         manager.setId(result.getInt("id_user"));
         manager.setName(result.getString("user_name"));
@@ -26,9 +27,9 @@ public class ManagerFactory {
         manager.setPassword(result.getString("user_password"));
         manager.setAccessLevel(result.getInt("user_access_level"));
 
-        if (ImageFactory.generateImage(result) != null) {
+        if (imageFactory.generateBackupImage(result) != null) {
 
-            manager.setPerfilImage(ImageFactory.generateImage(result));
+            manager.setPerfilImage(imageFactory.generateBackupImage(result));
 
         }
 

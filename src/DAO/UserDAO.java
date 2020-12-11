@@ -45,7 +45,7 @@ public class UserDAO {
             
             if(client.getPerfilImage() != null){
                 
-                statement.setString(5, client.getPerfilImage().getFile().getName());
+                statement.setString(5, client.getPerfilImage().getImageFile().getFile().getName());
             }
             
             statement.setString(6, client.getEmail());
@@ -83,7 +83,7 @@ public class UserDAO {
             
             if(client.getPerfilImage() != null){
                 
-                statement.setString(5, client.getPerfilImage().getFile().getName());
+                statement.setString(5, client.getPerfilImage().getImageFile().getFile().getName());
             }
             
             statement.setString(6, client.getEmail());

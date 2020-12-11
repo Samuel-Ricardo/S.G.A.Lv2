@@ -31,7 +31,7 @@ public class BookDAO {
         
         connect();
         PreparedStatement statement = null;
-        sql = "INSERT INTO tb_book (book_name, book_author, book_publisher, book_stock, book_genre, book_acquired_date) VALUES (?,?,?,?,?,?);";
+        sql = "INSERT INTO tb_book (book_name, book_author, book_publisher, book_stock, book_genre, book_acquired_date, book_image_name) VALUES (?,?,?,?,?,?,?);";
 
           try {
               
@@ -43,6 +43,7 @@ public class BookDAO {
             statement.setInt(4, book.getStock());
             statement.setString(5, book.getGenre());
             statement.setDate(6, book.getAcquired().toSQLDate());
+            statement.setString(7, book.getImage().getImageFile().getFile().getName());
             
             statement.execute();
             
@@ -61,7 +62,7 @@ public class BookDAO {
         
     connect();
         PreparedStatement statement = null;
-        sql = "UPDATE tb_book SET book_name = ?, book_author = ?, book_publisher = ?, book_stock = ?, book_genre = ?, book_acquired_date = ? WHERE id_book = ?;";
+        sql = "UPDATE tb_book SET book_name = ?, book_author = ?, book_publisher = ?, book_stock = ?, book_genre = ?, book_acquired_date = ?, book_image_name = ? WHERE id_book = ?;";
         
            
           try {
@@ -73,8 +74,9 @@ public class BookDAO {
             statement.setString(3, book.getPublisher());
             statement.setInt(4, book.getStock());
             statement.setString(5, book.getGenre());
-            statement.setDate(6, book.getAcquired().toSQLDate());  
-            statement.setInt(7, book.getId().intValue());
+            statement.setDate(6, book.getAcquired().toSQLDate());
+            statement.setString(7, book.getImage().getImageFile().getFile().getName());
+            statement.setInt(8, book.getId().intValue());
             
             statement.execute();
             
