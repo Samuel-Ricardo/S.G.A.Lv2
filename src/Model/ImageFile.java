@@ -6,6 +6,7 @@
 package Model;
 
 import Services.FileManager;
+import View.Login;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -134,7 +135,7 @@ public class ImageFile {
     
     public static void resizeImage(JLabel jLabel, String way) {
         
-        ImageIcon img = new ImageIcon(ImageFile.class.getResource(way));
+        ImageIcon img = new ImageIcon(Login.class.getResource(way));
         
         jLabel.setIcon(new ImageIcon(img.getImage().getScaledInstance(jLabel.getWidth(), jLabel.getHeight(), java.awt.Image.SCALE_DEFAULT)));
     }

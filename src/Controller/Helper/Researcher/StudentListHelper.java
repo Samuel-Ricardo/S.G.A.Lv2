@@ -73,7 +73,7 @@ public class StudentListHelper {
         if(student.getPerfilImage() != null){
             if(student.getPerfilImage().getImageFile().getFile().exists()){
                 
-                ImageFile.resizeImage(view.getjLabelStudentImage(), student.getPerfilImage().getImageFile().getFile().getAbsolutePath());
+                ImageFile.resizeImageByPath(view.getjLabelStudentImage(), student.getPerfilImage().getImageFile().getFile().getAbsolutePath());
             }else{
                 setEmptyImage();
             }

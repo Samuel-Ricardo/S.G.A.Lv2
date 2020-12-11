@@ -81,8 +81,8 @@ public class StudentPaneController {
         
         if(student.getPerfilImage() != null){
             if(student.getPerfilImage().getImageFile().getFile().exists()){
-                
-                ImageFile.resizeImage(view.getjLabelImage(), student.getPerfilImage().getImageFile().getFile().getAbsolutePath());
+                System.out.println("estudante criado id: "+student.getId()+" caminho da imagen: "+ student.getPerfilImage().getImageFile().getFile().getAbsolutePath());
+                ImageFile.resizeImageByPath(view.getjLabelImage(), student.getPerfilImage().getImageFile().getFile().getAbsolutePath());
             }else{
                 setEmptyImage();
             }

@@ -26,6 +26,8 @@ public class StudentFactory {
         
         Student student = new Student();
         
+            System.out.println("Criando estudante");
+        
         student.setId(result.getInt("id_student"));
         student.setName(result.getString("student_name"));
         student.setLogin(result.getString("student_login"));
@@ -44,7 +46,7 @@ public class StudentFactory {
         student.setAccessLevel(User.ACCESS_MIN);
         
             saveImageOnstudent(result.getString("student_image_perfil"), student, new ImageDAO());
-        
+            
         return student;
     }   
         
@@ -75,7 +77,7 @@ public class StudentFactory {
         
         ImageFile imageFile = new ImageFile(file);
         BackupImage backupImage = new BackupImage();
-        student.setPerfilImage(imageFile);
+        backupImage.setImageFile(imageFile);
         
         student.setPerfilImage(backupImage); 
         
