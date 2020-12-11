@@ -6,6 +6,7 @@
 package Model;
 
 import Services.FileManager;
+import View.Login;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -32,8 +33,8 @@ public class ImageFile {
     private int length ;
     private int lengthKB = length / 1024;
     private int lengthMB = lengthKB / 1024;
-    private FileInputStream input;
-    private FileOutputStream output;
+    private FileInputStream inputStream;
+    private FileOutputStream outputStream;
     private ImageIcon imageSwing;
     private Image ImageFX;
 
@@ -73,22 +74,22 @@ public class ImageFile {
             
             String PCuser = System.getProperty("user.name");
             
-            file = new File(FileManager.defaultFolderWay+"\\Images\\"+name);
+            file = new File(FileManager.getDefaultFolder()+"\\Images\\"+name);
             
             System.out.println("arqucivo:                   "+file.getAbsolutePath());
             
-            input = new FileInputStream(file);
-            output = new FileOutputStream(file);
+            inputStream = new FileInputStream(file);
+            outputStream = new FileOutputStream(file);
             
                 System.out.println("Começou o download");
                 
                 while(inputS.read(bytes) != -1){
                     
-                    output.write(bytes);
+                    outputStream.write(bytes);
                     
                 }
                 
-            output.close();
+            outputStream.close();
             inputS.close();
             
             start();
@@ -110,19 +111,9 @@ public class ImageFile {
             this.length = (int) file.length();
 
             this.bytes = new byte[length];
-//            this.input = new FileInputStream(file);
-//            this.output = new FileOutputStream(file);
-
-//            input.read(bytes, 0, length);
 
             this.imageSwing = new ImageIcon(file.getAbsolutePath());
             this.ImageFX = new Image("file:///"+file.getAbsolutePath());
-
-//        } catch (FileNotFoundException ex) {
-//            Logger.getLogger(ImageFile.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (IOException ex) {
-//            Logger.getLogger(ImageFile.class.getName()).log(Level.SEVERE, null, ex);
-//        }
     }
     
     
@@ -144,7 +135,7 @@ public class ImageFile {
     
     public static void resizeImage(JLabel jLabel, String way) {
         
-        ImageIcon img = new ImageIcon(ImageFile.class.getResource(way));
+        ImageIcon img = new ImageIcon(Login.class.getResource(way));
         
         jLabel.setIcon(new ImageIcon(img.getImage().getScaledInstance(jLabel.getWidth(), jLabel.getHeight(), java.awt.Image.SCALE_DEFAULT)));
     }
@@ -193,20 +184,31 @@ public class ImageFile {
         this.lengthMB = lengthMB;
     }
 
-    public FileInputStream getInput() {
-        return input;
+    public FileInputStream getInputStream() {
+        try {
+            
+            if(this.file.exists()){
+               return new FileInputStream(this.file);
+            }else{
+                return null;
+            }
+            
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+            return null;
+        }
     }
 
-    public void setInput(FileInputStream input) {
-        this.input = input;
+    public void setInputStream(FileInputStream inputStream) {
+        this.inputStream = inputStream;
     }
 
-    public FileOutputStream getOutput() {
-        return output;
+    public FileOutputStream getOutputStream() {
+        return outputStream;
     }
 
-    public void setOutput(FileOutputStream output) {
-        this.output = output;
+    public void setOutputStream(FileOutputStream outputStream) {
+        this.outputStream = outputStream;
     }
 
     public ImageIcon getImageSwing() {

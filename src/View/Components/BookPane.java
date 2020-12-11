@@ -5,7 +5,7 @@
  */
 package View.Components;
 
-import Controller.Componens.BookPaneController;
+import Controller.Components.BookPaneController;
 import Model.Book;
 import View.Researchers.ListOfBooks;
 import java.awt.Dimension;

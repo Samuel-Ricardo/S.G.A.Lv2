@@ -38,7 +38,7 @@ public class ManagerDAO {
             statement.setString(2, user.getLogin());
             statement.setString(3, user.getPassword());
             statement.setInt(4, user.getAccessLevel());
-            statement.setString(5, user.getPerfilImage().getFile().getName());
+            statement.setString(5, user.getPerfilImage().getImageFile().getFile().getName());
             statement.setString(6, user.getEmail());
             statement.setString(7, user.getAddress());
             statement.setString(8, user.getCEP());
@@ -72,7 +72,7 @@ public class ManagerDAO {
             statement.setString(2, user.getLogin());
             statement.setString(3, user.getPassword());
             statement.setInt(4, user.getAccessLevel());
-            statement.setString(5, user.getPerfilImage().getFile().getName());
+            statement.setString(5, user.getPerfilImage().getImageFile().getFile().getName());
             statement.setString(6, user.getEmail());
             statement.setString(7, user.getAddress());
             statement.setString(8, user.getCEP());

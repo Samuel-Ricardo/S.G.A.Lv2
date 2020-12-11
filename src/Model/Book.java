@@ -5,11 +5,14 @@
  */
 package Model;
 
+import DAO.ImageDAO;
 import Time.Time;
+import com.sun.swing.internal.plaf.basic.resources.basic;
 import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Icon;
@@ -26,24 +29,25 @@ public class Book {
     private String author;
     private String publisher;
     private Integer stock;
-    private ArrayList<ImageFile> Image = new ArrayList<>();
+    private BackupImage image;
+    private ArrayList<BackupImage> Images = new ArrayList<>();
     private Time acquired;
-    public static final String DEFAULT_IMAGE_WAY = "/View/Images/icons8-no-image-64px.png";
     
-    public Book(Long id, String name, String genre, String author, String publisher, String stock, ArrayList<ImageFile> Image, Time acquired) {
+    public Book(Long id, String name, String genre, String author, String publisher, String stock, ArrayList<BackupImage> Images, Time acquired) {
         this.id = id;
         this.name = name;
         this.genre = genre;
         this.author = author;
         this.publisher = publisher;
         this.stock = new Integer (stock);
-        this.Image = Image;
+        this.Images = Images;
         this.acquired = acquired;
     }
 
     public Book() {
         
         this.acquired = new Time();
+        image = new BackupImage();
         
     }
 
@@ -103,12 +107,21 @@ public class Book {
         this.stock = stock;
     }
 
-    public ArrayList<ImageFile> getImage() {
-        return Image;
+    public BackupImage getImage() {
+        return image;
     }
 
-    public void setImage(ArrayList<ImageFile> Image) {
-        this.Image = Image;
+    public void setImage(BackupImage image) {
+        
+        this.image = image;
+    }
+    
+    public ArrayList<BackupImage> getImages() {
+        return Images;
+    }
+
+    public void setImages(ArrayList<BackupImage> Images) {
+        this.Images = Images;
     }
 
     public Time getAcquired() {
@@ -132,5 +145,20 @@ public class Book {
           image = new ImageFile(Book.class.getResource("/View/Images/icons8-no-image-64px.png").getPath());
           
         return image;
+    }
+
+    public void setImage(ImageFile imageFile) {
+        
+        ImageDAO imageDao = new ImageDAO();
+        
+        List<BackupImage> images = imageDao.searchByName(imageFile.getFile().getName());
+        
+        if(images.isEmpty() == false){
+            
+            this.image = images.get(0);
+        }else{
+            
+            this.image.setImageFile(imageFile);
+        }
     }
 }

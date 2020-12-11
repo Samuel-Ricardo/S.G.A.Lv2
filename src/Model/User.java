@@ -5,7 +5,9 @@
  */
 package Model;
 
+import DAO.ImageDAO;
 import java.io.InputStream;
+import java.util.List;
 
 /**
  *
@@ -17,14 +19,14 @@ public class User implements Model.Interface.User{
     protected String name;
     protected String login;
     protected String password;
-    protected ImageFile perfilImage;
+    protected BackupImage perfilImage;
     protected String email;
     protected String address;
     protected String CEP;
     protected String phone;
     protected int accessLevel;
 
-    public User(Long id, String name, String login, String password, ImageFile perfilImage, String email, String address, String CEP, String phone) {
+    public User(Long id, String name, String login, String password, BackupImage perfilImage, String email, String address, String CEP, String phone) {
         this.id = id;
         this.name = name;
         this.login = login;
@@ -36,7 +38,7 @@ public class User implements Model.Interface.User{
         this.phone = phone;
     }
 
-    public User(String name, String login, String password, ImageFile perfilImage, String email, String address, String CEP, String phone) {
+    public User(String name, String login, String password, BackupImage perfilImage, String email, String address, String CEP, String phone) {
         this.name = name;
         this.login = login;
         this.password = password;
@@ -48,7 +50,7 @@ public class User implements Model.Interface.User{
     }
 
     public User() {
-       
+       perfilImage = new BackupImage();
     }
     
     @Override
@@ -107,19 +109,28 @@ public class User implements Model.Interface.User{
     }
 
      @Override
-    public ImageFile getPerfilImage() {
+    public BackupImage getPerfilImage() {
         return perfilImage;
     }
 
      @Override
-    public void setPerfilImage(ImageFile perfilImage) {
+    public void setPerfilImage(BackupImage perfilImage) {
         this.perfilImage = perfilImage;
     }
     
-        public void setPerfilImage(InputStream inputS, String name) {
+     @Override
+    public void setPerfilImage(ImageFile perfilImage) {
         
-        this.perfilImage = new ImageFile(inputS, name);
+        ImageDAO imageDao = new ImageDAO();
         
+        List<BackupImage> images = imageDao.searchByName(perfilImage.getFile().getName());
+        
+        if(images.isEmpty() == false){
+            
+            this.perfilImage = images.get(0);
+        }else{
+            this.perfilImage.setImageFile(perfilImage);
+        }
     }
         
      @Override
