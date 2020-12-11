@@ -40,7 +40,7 @@ public class StudentDAO {
             statement.setString(2, student.getLogin());
             statement.setString(3, student.getPassword());
             statement.setString(4, student.getRegistration());
-            statement.setString(5, student.getPerfilImage().getFile().getName());
+            statement.setString(5, student.getPerfilImage().getImageFile().getFile().getName());
             statement.setString(6, student.getEmail());
             statement.setString(7, student.getCEP());
             statement.setString(8, student.getPhone());
@@ -78,7 +78,7 @@ public class StudentDAO {
             statement.setString(2, student.getLogin());
             statement.setString(3, student.getPassword());
             statement.setString(4, student.getRegistration());
-            statement.setString(5, student.getPerfilImage().getFile().getName());
+            statement.setString(5, student.getPerfilImage().getImageFile().getFile().getName());
             statement.setString(6, student.getEmail());
             statement.setString(7, student.getCEP());
             statement.setString(8, student.getPhone());

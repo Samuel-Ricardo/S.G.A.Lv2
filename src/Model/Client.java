@@ -5,7 +5,7 @@
  */
 package Model;
 
-import Model.ImageFile;
+import Model.BackupImage;
 import Model.Manager;
 import Model.Rent;
 import Model.User;
@@ -16,13 +16,13 @@ import java.util.ArrayList;
  * @author hylan
  */
 public class Client extends Manager implements Model.Interface.User{
-    private ImageFile imagePerfil;
+    private BackupImage imagePerfil;
     private String registration;
     private String shift;
     private ArrayList<Rent> rents;
 
     
-    public Client(ImageFile imagePerfil, String registration, String shift, ArrayList<Rent> rents) {
+    public Client(BackupImage imagePerfil, String registration, String shift, ArrayList<Rent> rents) {
         this.imagePerfil = imagePerfil;
         this.registration = registration;
         this.shift = shift;
@@ -31,10 +31,10 @@ public class Client extends Manager implements Model.Interface.User{
     }
     public Client() {
         
-        imagePerfil = new ImageFile("");
+        imagePerfil = new BackupImage();
         this.accessLevel = User.ACCESS_MIN;
     }
-     public void setImagePerfil(ImageFile imagePerfil) {
+     public void setImagePerfil(BackupImage imagePerfil) {
         this.imagePerfil = imagePerfil;
     }
 
@@ -50,7 +50,7 @@ public class Client extends Manager implements Model.Interface.User{
         this.rents = rents;
     }
 
-    public ImageFile getImagePerfil() {
+    public BackupImage getImagePerfil() {
         return imagePerfil;
     }
 

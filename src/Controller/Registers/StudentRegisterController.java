@@ -37,7 +37,7 @@ public class StudentRegisterController {
        
         Student student = helper.getStudent();
         
-        fileManager.copyFileTo(student.getPerfilImage().getFile(), fileManager.getFile("Images"));
+        fileManager.copyFileTo(student.getPerfilImage().getImageFile().getFile(), fileManager.getFileInDefaultFolder("Images"));
         
        if (studentDao.insert(student)){
         

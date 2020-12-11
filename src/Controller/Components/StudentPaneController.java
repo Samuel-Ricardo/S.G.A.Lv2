@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller.Componens;
+package Controller.Components;
 
-import Model.Book;
+import Model.Student;
 import Model.ImageFile;
-import View.Components.BookPane;
-import View.Researchers.ListOfBooks;
+import View.Components.StudentPane;
+import View.Researchers.ListOfStudents;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.MouseEvent;
@@ -19,17 +19,17 @@ import javax.swing.JLabel;
  *
  * @author Samuel
  */
-public class BookPaneController {
+public class StudentPaneController {
     
-    private final BookPane view;
-    private final Book book;
-    private final ListOfBooks father;
+    private final StudentPane view;
+    private final Student student;
+    private final ListOfStudents father;
     private MouseListener MouseSelectListener;
 
-    public BookPaneController(BookPane view, Book book, ListOfBooks father) {
+    public StudentPaneController(StudentPane view, Student student, ListOfStudents father) {
      
         this.view = view;
-        this.book = book;
+        this.student = student;
         this.father = father;
         
         this.MouseSelectListener = new MouseListener() {
@@ -37,7 +37,7 @@ public class BookPaneController {
             @Override
             public void mouseClicked(MouseEvent e) {
              
-                ListOfBooks.setSelectedBookPane(view);
+                ListOfStudents.setSelectedStudentPane(view);
                 father.getController().loadDetails();
             }
 
@@ -65,9 +65,9 @@ public class BookPaneController {
 
     public void start() {
      
-            view.getjLabelName().setText(book.getName());
-            view.getjLabelStock().setText(book.getStock().toString());
-            view.getjLabelGenre().setText(book.getGenre());
+            view.getjLabelName().setText(student.getName());
+            view.getjLabelCourse().setText(student.getCourse());
+            view.getjLabelGrade().setText(student.getGrade());
             resizeImageLabe(view.getjLabelImage());
             setImage();
             
@@ -79,6 +79,20 @@ public class BookPaneController {
 
     public void setImage() {
         
+        if(student.getPerfilImage() != null){
+            if(student.getPerfilImage().getImageFile().getFile().exists()){
+                System.out.println("estudante criado id: "+student.getId()+" caminho da imagen: "+ student.getPerfilImage().getImageFile().getFile().getAbsolutePath());
+                ImageFile.resizeImageByPath(view.getjLabelImage(), student.getPerfilImage().getImageFile().getFile().getAbsolutePath());
+            }else{
+                setEmptyImage();
+            }
+        }else{
+            setEmptyImage();
+        }
+        
+    }
+
+    public void setEmptyImage() {
         ImageFile.resizeImage(view.getjLabelImage(), "/View/Images/icons8-no-image-64px.png");
     }
 
@@ -87,12 +101,12 @@ public class BookPaneController {
         label.setSize(172, 160);
     }
 
-    public BookPane getView() {
+    public StudentPane getView() {
         return view;
     }
 
-    public Book getBook() {
-        return book;
+    public Student getStudent() {
+        return student;
     }
 
     private void selectListener() {
@@ -103,5 +117,17 @@ public class BookPaneController {
              
              comp.addMouseListener(MouseSelectListener);
          }
+    }
+
+    public MouseListener getMouseSelectListener() {
+        return MouseSelectListener;
+    }
+
+    public void setMouseSelectListener(MouseListener MouseSelectListener) {
+        this.MouseSelectListener = MouseSelectListener;
+    }
+
+    public ListOfStudents getFather() {
+        return father;
     }
 }

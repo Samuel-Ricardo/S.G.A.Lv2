@@ -20,12 +20,13 @@ import java.util.logging.Logger;
  */
 public class FileManager {
     
-    public static final String pcUser = System.getProperty("user.");
-    public static final String defaultFolderWay = System.getProperty("user.home") + "/Documents/Oasis";
+    private static final String pcUser = System.getProperty("user.");
+    private static final String defaultFolder = System.getProperty("user.home") + "/Documents/Oasis/";
+    public static final String NO_IMAGE = "/View/Images/icons8-no-image-64px.png";
     
     public File createFolder(String name){
      
-        File folder = new File (defaultFolderWay +"/"+name); 
+        File folder = new File (defaultFolder +name); 
         
         if(folder.exists()){
             Dialoger.message(null, "A pasta: "+name+" Já existe. \n\n Caminho: "+folder.getAbsolutePath());
@@ -120,11 +121,30 @@ public class FileManager {
         return destinyFile;
     }
     
-    public File getFile(String name){
+//    public File getFileInDefaultFolder(String name){
+//        
+//         File file = new File (defaultFolder + name); 
+//         
+//         return file;
+//    }
+    
+    public static File getFileInDefaultFolder(String name){
         
-         File file = new File (defaultFolderWay +"/"+name); 
+         File file = new File (defaultFolder + name); 
          
          return file;
     }
     
+//     if(FileManager.searchIn(FileManager.getDefaultFolder()+"Images/", imageFile.getFile().getName()) == false){
+//                
+//                
+//            }
+    
+    public static String getPcUser() {
+        return pcUser;
+    }
+
+    public static String getDefaultFolder() {
+        return defaultFolder;
+    }
 }

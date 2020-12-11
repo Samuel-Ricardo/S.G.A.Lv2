@@ -7,6 +7,7 @@ package Controller.Helper.Researcher;
 
 import Model.Student;
 import Model.ImageFile;
+import Services.FileManager;
 import View.Components.StudentPane;
 import View.Researchers.ListOfStudents;
 import java.util.ArrayList;
@@ -70,9 +71,9 @@ public class StudentListHelper {
         view.getjLabelStudentImage().setText("");
         
         if(student.getPerfilImage() != null){
-            if(student.getPerfilImage().getFile().exists()){
+            if(student.getPerfilImage().getImageFile().getFile().exists()){
                 
-                ImageFile.resizeImage(view.getjLabelStudentImage(), student.getPerfilImage().getFile().getAbsolutePath());
+                ImageFile.resizeImageByPath(view.getjLabelStudentImage(), student.getPerfilImage().getImageFile().getFile().getAbsolutePath());
             }else{
                 setEmptyImage();
             }
@@ -98,7 +99,7 @@ public class StudentListHelper {
 //    }
 
     private void setEmptyImage() {
-     ImageFile.resizeImage(view.getjLabelStudentImage(), "/View/Images/icons8-no-image-64px.png");
+     ImageFile.resizeImage(view.getjLabelStudentImage(), FileManager.NO_IMAGE);
     }
 
 }

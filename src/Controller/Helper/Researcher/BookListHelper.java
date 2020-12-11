@@ -7,6 +7,7 @@ package Controller.Helper.Researcher;
 
 import Model.Book;
 import Model.ImageFile;
+import Services.FileManager;
 import View.Components.BookPane;
 import View.Researchers.ListOfBooks;
 import java.util.ArrayList;
@@ -64,15 +65,15 @@ public class BookListHelper {
 
         view.getjLabelImageBook().setText("");
 
-        if (book.getImage().isEmpty() == false) {
+        if (book.getImage().getImageFile().getFile().exists()) {
 
-            view.getjLabelImageBook().setIcon(book.getImage().get(0).getImageSwing());
+            view.getjLabelImageBook().setIcon(book.getImage().getImageFile().getImageSwing());
 
-            ImageFile.resizeImageByPath(view.getjLabelImageBook(), book.getImage().get(0).getFile().getAbsolutePath());
+            ImageFile.resizeImageByPath(view.getjLabelImageBook(), book.getImage().getImageFile().getFile().getAbsolutePath());
 
         } else {
 
-            ImageFile.resizeImage(view.getjLabelImageBook(), Book.DEFAULT_IMAGE_WAY);
+            ImageFile.resizeImage(view.getjLabelImageBook(), FileManager.NO_IMAGE);
         }
     }
 
