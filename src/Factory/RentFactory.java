@@ -29,6 +29,7 @@ public class RentFactory {
         rent.setReturned(result.getBoolean("rent_returned"));
         rent.setPenality(result.getDouble("rent_penality"));
         rent.setObrservation(result.getString("rent_observation"));
+        rent.setReturnedDate(result.getDate("returned_date"));
         rent.setBook(BookFactory.generateBook(result));
         
         if (result.getInt("id_student") != 0) {

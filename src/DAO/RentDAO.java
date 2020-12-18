@@ -33,7 +33,7 @@ public class RentDAO {
 
         connect();
         PreparedStatement statement = null;
-        sql = "INSERT INTO tb_rent (rented_date, id_of_book, id_of_student, id_of_client, rent_returned, rent_penality, rent_observation) VALUES (?,?,?,?,?,?,?);";
+        sql = "INSERT INTO tb_rent (rented_date, id_of_book, id_of_student, id_of_client, rent_returned, rent_penality, rent_observation, returned_date) VALUES (?,?,?,?,?,?,?,?);";
 
         try {
 
@@ -47,6 +47,7 @@ public class RentDAO {
             statement.setBoolean(7, rent.isReturned());
             statement.setDouble(8, rent.getPenality());
             statement.setString(9, rent.getObrservation());
+            statement.setDate(10, rent.getReturnDate().toSQLDate());
 
             statement.execute();
 
@@ -64,7 +65,7 @@ public class RentDAO {
 
         connect();
         PreparedStatement statement = null;
-        sql = "UPDATE tb_rent SET rented_date = ?, id_of_book = ?, id_of_student = ?, id_of_client = ?, rent_returned = ?, rent_penality = ?, rent_observation = ? WHERE id_rent = ?;";
+        sql = "UPDATE tb_rent SET rented_date = ?, id_of_book = ?, id_of_student = ?, id_of_client = ?, rent_returned = ?, rent_penality = ?, rent_observation = ?, returned_date = ? WHERE id_rent = ?;";
 
         try {
 
@@ -78,6 +79,8 @@ public class RentDAO {
             statement.setBoolean(7, rent.isReturned());
             statement.setDouble(8, rent.getPenality());
             statement.setString(9, rent.getObrservation());
+            statement.setDate(10, rent.getReturnDate().toSQLDate());
+            statement.setInt(11, rent.getId().intValue());
 
             statement.execute();
 

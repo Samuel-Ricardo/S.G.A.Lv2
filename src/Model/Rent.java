@@ -137,4 +137,8 @@ public class Rent {
     public void setReturnedDate(Time returnedDate) {
         this.returnedDate = returnedDate;
     }
+    
+     public void setReturnedDate(java.sql.Date returnedDate) {
+        this.returnedDate = new Time(returnedDate);
+    }
 }
