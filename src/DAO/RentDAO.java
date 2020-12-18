@@ -39,7 +39,7 @@ public class RentDAO {
 
             statement = connection.prepareStatement(sql);
 
-            statement.setDate(1, rent.getRented().toSQLDate());
+            statement.setDate(1, rent.getRentedDate().toSQLDate());
             statement.setInt(2, rent.getBook().getId().intValue());
             statement.setInt(3, rent.getStudent().getId().intValue());
             statement.setInt(4, rent.getClient().getId().intValue());
@@ -70,7 +70,7 @@ public class RentDAO {
 
             statement = connection.prepareStatement(sql);
 
-            statement.setDate(1, rent.getRented().toSQLDate());
+            statement.setDate(1, rent.getRentedDate().toSQLDate());
             statement.setInt(2, rent.getBook().getId().intValue());
             statement.setInt(3, rent.getStudent().getId().intValue());
             statement.setInt(4, rent.getClient().getId().intValue());

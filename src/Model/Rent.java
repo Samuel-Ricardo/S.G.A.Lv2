@@ -18,19 +18,21 @@ public class Rent {
     private Student student;
     private Book book;
     private User client;
-    private Time rented;
+    private Time rentedDate;
     private Time returnDate;
     private boolean returned;
+    private Time returnedDate;
     private double penality;
     private String obrservation;
 
-    public Rent(Student student, Book book, User client, Time rented, Time returnDate, boolean delivered, double penality, String obrservation) {
+    public Rent(Student student, Book book, User client, Time rented, Time returnDate, Time returnedDate, boolean delivered, double penality, String obrservation) {
         this.student = student;
         this.book = book;
         this.client = client;
-        this.rented = rented;
+        this.rentedDate = rented;
         this.returnDate = returnDate;
         this.returned = delivered;
+        this.returnedDate = returnedDate;
         this.penality = penality;
         this.obrservation = obrservation;
     }
@@ -39,8 +41,9 @@ public class Rent {
     
     public Rent() {
         
-        rented = new Time();
+        rentedDate = new Time();
         returnDate = new Time();
+        returnedDate = new Time();
     }
 
     public Long getId() {
@@ -71,16 +74,16 @@ public class Rent {
         this.book = book;
     }
 
-    public Time getRented() {
-        return rented;
+    public Time getRentedDate() {
+        return rentedDate;
     }
 
-    public void setRented(Time rented) {
-        this.rented = rented;
+    public void setRentedDate(Time rentedDate) {
+        this.rentedDate = rentedDate;
     }
     
     public void setRented(java.sql.Date rented) {
-        this.rented = new Time (rented);
+        this.rentedDate = new Time (rented);
     }
 
     public Time getReturnDate() {
@@ -126,7 +129,12 @@ public class Rent {
     public void setObrservation(String obrservation) {
         this.obrservation = obrservation;
     }
-    
-    
-    
+
+    public Time getReturnedDate() {
+        return returnedDate;
+    }
+
+    public void setReturnedDate(Time returnedDate) {
+        this.returnedDate = returnedDate;
+    }
 }
