@@ -5,6 +5,8 @@
  */
 package View.Rent;
 
+import Model.Book;
+import Model.User;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JPanel;
@@ -21,7 +23,7 @@ public class Rent extends javax.swing.JDialog {
     /**
      * Creates new form Rent
      */
-    public Rent(java.awt.Frame parent, boolean modal) {
+    public Rent(java.awt.Frame parent, boolean modal, Book chosenBook, User chosedUser) {
         super(parent, modal);
         initComponents();
     }
