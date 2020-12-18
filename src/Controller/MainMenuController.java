@@ -7,6 +7,7 @@ package Controller;
 
 import View.Researchers.ListOfBooks;
 import View.MainMenu;
+import View.Rent.Rent;
 
 /**
  *
@@ -25,6 +26,14 @@ public class MainMenuController {
         ListOfBooks bookList = new ListOfBooks();
         bookList.setVisible(true);
         view.getDesktop().add(bookList);
+    }
+
+    public void OpenRent() {
+       
+        Rent rent = new Rent(view, true, null, null);
+        
+        rent.setVisible(true);
+        view.getDesktop().add(rent);
     }
     
     

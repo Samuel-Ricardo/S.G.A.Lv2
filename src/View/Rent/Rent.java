@@ -23,6 +23,8 @@ public class Rent extends javax.swing.JDialog {
     /**
      * Creates new form Rent
      */
+    
+    
     public Rent(java.awt.Frame parent, boolean modal, Book chosenBook, User chosedUser) {
         super(parent, modal);
         initComponents();
@@ -283,7 +285,7 @@ public class Rent extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Rent dialog = new Rent(new javax.swing.JFrame(), true);
+                Rent dialog = new Rent(new javax.swing.JFrame(), true, null, null);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

@@ -212,9 +212,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_menIntCadUserActionPerformed
 
     private void menAlugLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menAlugLivroActionPerformed
-        AlugueldeLivros aluguel = new AlugueldeLivros();
-        aluguel.setVisible(true);
-        Desktop.add(aluguel);
+        controller.OpenRent();
     }//GEN-LAST:event_menAlugLivroActionPerformed
 
     private void menListaClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menListaClientesActionPerformed
