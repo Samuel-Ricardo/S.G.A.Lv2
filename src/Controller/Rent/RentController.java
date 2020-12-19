@@ -7,6 +7,7 @@ package Controller.Rent;
 
 import Controller.Helper.Rent.RentHelper;
 import DAO.RentDAO;
+import Time.Time;
 import View.Rent.RentView;
 
 /**
@@ -43,5 +44,15 @@ public class RentController {
         setUser(view.getChosenUser());
         
         loadDetails();
+    }
+
+    private void loadDetails() {
+   
+        Time time = Time.now();
+        
+        view.getjFormattedTextFieldRentDate().setText(time.getOnlyDate());
+        
+        time.addMonth();
+        
     }
 }
