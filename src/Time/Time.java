@@ -122,7 +122,7 @@ public class Time {
     }
 
     
-    public LocalDate addMonth(LocalDate localDate) {
+    public  LocalDate addMonth(LocalDate localDate) {
         
         Date date = localDateConverter.toDate(localDate);
         
@@ -131,6 +131,17 @@ public class Time {
         CALENDAR.add(Calendar.MONTH, 1);
     
         return localDateConverter.fromDate(CALENDAR.getTime());
+    }
+    
+    public void addMonth() {
+        
+        Date date = localDateConverter.toDate(localDate);
+        
+        CALENDAR.setTime(date);
+        
+        CALENDAR.add(Calendar.MONTH, 1);
+    
+        setLocalDate(localDateConverter.fromDate(CALENDAR.getTime()));
     }
  
 
