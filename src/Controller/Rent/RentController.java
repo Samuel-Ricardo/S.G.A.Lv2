@@ -21,8 +21,6 @@ public class RentController {
     private final RentView view;
     private final RentDAO rentDAO;
     private final RentHelper helper;
-    private Book book;
-    private User user;
 
     public RentController(RentView view,RentDAO rentDAO) {
         
@@ -30,8 +28,6 @@ public class RentController {
         this.rentDAO = rentDAO;
         this.helper = new RentHelper(view,rentDAO);
         
-        book = view.getChosenBook();
-        user = view.getChosenUser();
         
         start();
     }
@@ -48,7 +44,7 @@ public class RentController {
     public void start(){
         
         setBook(view.getChosenBook());
-        setUser(view.getChosenUser());
+//        setUser(view.getChosenUser());
         
         loadDetails();
     }
@@ -64,6 +60,10 @@ public class RentController {
         view.getjFormattedTextFieldReturnDate().setText(time.getOnlyDate());
         
         view.getjTextFieldPenalty().setText("1,00");
+    }
+
+    public void chooseBook() {
+        
         
     }
 }

@@ -64,15 +64,26 @@ public class RentView extends javax.swing.JDialog {
         jLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaObservation = new javax.swing.JTextArea();
+        jPanelBookSearch = new javax.swing.JPanel();
+        jPanelBookSearch1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
         jLabel1.setText("Aluguel");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(306, 23, -1, -1));
 
         jButtonChooseRenter.setText("Escolher Alugador");
+        getContentPane().add(jButtonChooseRenter, new org.netbeans.lib.awtextra.AbsoluteConstraints(568, 58, -1, -1));
 
         jButtonChooseBook.setText("Escolher Livro");
+        jButtonChooseBook.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonChooseBookActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonChooseBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 58, -1, -1));
 
         jPanelBookChosenBook.setPreferredSize(new java.awt.Dimension(200, 275));
 
@@ -87,6 +98,8 @@ public class RentView extends javax.swing.JDialog {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        getContentPane().add(jPanelBookChosenBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 102, -1, 280));
+
         jPanelChosenRenter.setPreferredSize(new java.awt.Dimension(200, 275));
 
         javax.swing.GroupLayout jPanelChosenRenterLayout = new javax.swing.GroupLayout(jPanelChosenRenter);
@@ -100,12 +113,15 @@ public class RentView extends javax.swing.JDialog {
             .addGap(0, 280, Short.MAX_VALUE)
         );
 
+        getContentPane().add(jPanelChosenRenter, new org.netbeans.lib.awtextra.AbsoluteConstraints(502, 102, -1, 280));
+
         jButtonCancel.setText("Cancelar");
         jButtonCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCancelActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 524, 221, -1));
 
         jButtonRent.setText("Alugar");
         jButtonRent.addActionListener(new java.awt.event.ActionListener() {
@@ -113,6 +129,7 @@ public class RentView extends javax.swing.JDialog {
                 jButtonRentActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonRent, new org.netbeans.lib.awtextra.AbsoluteConstraints(509, 524, 193, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel2.setText("Detalhes");
@@ -192,73 +209,43 @@ public class RentView extends javax.swing.JDialog {
                 .addContainerGap(42, Short.MAX_VALUE))
         );
 
+        getContentPane().add(jPanelRentDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 102, -1, -1));
+
         jLabel7.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel7.setText("Observaçao");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 360, -1, -1));
 
         jTextAreaObservation.setColumns(20);
         jTextAreaObservation.setRows(5);
         jScrollPane1.setViewportView(jTextAreaObservation);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(306, 306, 306)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButtonChooseBook)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jPanelBookChosenBook, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jPanelRentDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addComponent(jLabel7)
-                                                .addGap(67, 67, 67)))))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jPanelChosenRenter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButtonChooseRenter)))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jButtonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(261, 261, 261)
-                                    .addComponent(jButtonRent, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 675, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(18, Short.MAX_VALUE))
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 394, 675, 112));
+
+        javax.swing.GroupLayout jPanelBookSearchLayout = new javax.swing.GroupLayout(jPanelBookSearch);
+        jPanelBookSearch.setLayout(jPanelBookSearchLayout);
+        jPanelBookSearchLayout.setHorizontalGroup(
+            jPanelBookSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 160, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonChooseRenter)
-                    .addComponent(jButtonChooseBook))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanelBookChosenBook, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                    .addComponent(jPanelChosenRenter, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanelRentDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel7)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonCancel)
-                    .addComponent(jButtonRent))
-                .addContainerGap())
+        jPanelBookSearchLayout.setVerticalGroup(
+            jPanelBookSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 330, Short.MAX_VALUE)
         );
+
+        getContentPane().add(jPanelBookSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 160, 330));
+
+        javax.swing.GroupLayout jPanelBookSearch1Layout = new javax.swing.GroupLayout(jPanelBookSearch1);
+        jPanelBookSearch1.setLayout(jPanelBookSearch1Layout);
+        jPanelBookSearch1Layout.setHorizontalGroup(
+            jPanelBookSearch1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 160, Short.MAX_VALUE)
+        );
+        jPanelBookSearch1Layout.setVerticalGroup(
+            jPanelBookSearch1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 330, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanelBookSearch1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 60, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -270,6 +257,11 @@ public class RentView extends javax.swing.JDialog {
     private void jButtonRentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRentActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonRentActionPerformed
+
+    private void jButtonChooseBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChooseBookActionPerformed
+        controller.chooseBook();
+        controller.start();
+    }//GEN-LAST:event_jButtonChooseBookActionPerformed
 
     /**
      * @param args the command line arguments
@@ -329,6 +321,8 @@ public class RentView extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanelBookChosenBook;
+    private javax.swing.JPanel jPanelBookSearch;
+    private javax.swing.JPanel jPanelBookSearch1;
     private javax.swing.JPanel jPanelChosenRenter;
     private javax.swing.JPanel jPanelRentDetails;
     private javax.swing.JScrollPane jScrollPane1;
