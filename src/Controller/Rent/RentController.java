@@ -5,6 +5,7 @@
  */
 package Controller.Rent;
 
+import DAO.RentDAO;
 import View.Rent.RentView;
 
 /**
@@ -14,5 +15,13 @@ import View.Rent.RentView;
 public class RentController {
     
     private RentView view;
-    
+    private RentDAO rentDAO;
+    private RentHelper helper;
+
+    public RentController(RentView view,RentDAO rentDAO, RentHelper helper) {
+        
+        this.view = view;
+        this.rentDAO = rentDAO;
+        this.helper = helper;
+    }
 }
