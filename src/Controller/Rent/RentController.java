@@ -5,6 +5,7 @@
  */
 package Controller.Rent;
 
+import Controller.Helper.Rent.RentHelper;
 import DAO.RentDAO;
 import View.Rent.RentView;
 
@@ -18,10 +19,26 @@ public class RentController {
     private final RentDAO rentDAO;
     private final RentHelper helper;
 
-    public RentController(RentView view,RentDAO rentDAO, RentHelper helper) {
+    public RentController(RentView view,RentDAO rentDAO) {
         
         this.view = view;
         this.rentDAO = rentDAO;
-        this.helper = helper;
+        this.helper = new RentHelper(view,rentDAO);
+        
+        start();
+    }
+    
+    public RentController(RentView view) {
+        
+        this.view = view;
+        this.rentDAO = new RentDAO();
+        this.helper = new RentHelper(view,rentDAO);
+        
+        start();
+    }
+    
+    public void start(){
+    
+        setBook(view.getC());
     }
 }

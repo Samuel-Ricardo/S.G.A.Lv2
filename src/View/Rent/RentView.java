@@ -24,10 +24,13 @@ public class RentView extends javax.swing.JDialog {
      * Creates new form Rent
      */
     
+    private final RentController controller;
     
     public RentView(java.awt.Frame parent, boolean modal, Book chosenBook, User chosedUser) {
         super(parent, modal);
         initComponents();
+        
+        this.controller = new RentController(this);
     }
 
     /**
