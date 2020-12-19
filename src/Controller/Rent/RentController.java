@@ -5,7 +5,7 @@
  */
 package Controller.Rent;
 
-import View.Rent.Rent;
+import View.Rent.RentView;
 
 /**
  *
@@ -13,6 +13,6 @@ import View.Rent.Rent;
  */
 public class RentController {
     
-    private Rent view;
+    private RentView view;
     
 }

@@ -7,7 +7,7 @@ package Controller;
 
 import View.Researchers.ListOfBooks;
 import View.MainMenu;
-import View.Rent.Rent;
+import View.Rent.RentView;
 
 /**
  *
@@ -30,7 +30,7 @@ public class MainMenuController {
 
     public void OpenRent() {
        
-        Rent rent = new Rent(view, true, null, null);
+        RentView rent = new RentView(view, true, null, null);
         
         rent.setVisible(true);
         view.getDesktop().add(rent);
