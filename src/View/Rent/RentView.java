@@ -5,6 +5,7 @@
  */
 package View.Rent;
 
+import Controller.Rent.RentController;
 import Model.Book;
 import Model.User;
 import javax.swing.JButton;
@@ -25,6 +26,8 @@ public class RentView extends javax.swing.JDialog {
      */
     
     private final RentController controller;
+    private Book chosenBook;
+    private User chosenUser; 
     
     public RentView(java.awt.Frame parent, boolean modal, Book chosenBook, User chosedUser) {
         super(parent, modal);
@@ -417,5 +420,20 @@ public class RentView extends javax.swing.JDialog {
     public void setjTextAreaObservation(JTextArea jTextAreaObservation) {
         this.jTextAreaObservation = jTextAreaObservation;
     }
-    
+
+    public Book getChosenBook() {
+        return chosenBook;
+    }
+
+    public void setChosenBook(Book chosenBook) {
+        this.chosenBook = chosenBook;
+    }
+
+    public User getChosenUser() {
+        return chosenUser;
+    }
+
+    public void setChosenUser(User chosenUser) {
+        this.chosenUser = chosenUser;
+    }
 }
