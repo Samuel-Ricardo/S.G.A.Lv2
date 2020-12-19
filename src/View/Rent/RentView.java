@@ -65,7 +65,7 @@ public class RentView extends javax.swing.JDialog {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaObservation = new javax.swing.JTextArea();
         jPanelBookSearch = new javax.swing.JPanel();
-        jPanelBookSearch1 = new javax.swing.JPanel();
+        jPanelUserSearch = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -234,18 +234,18 @@ public class RentView extends javax.swing.JDialog {
 
         getContentPane().add(jPanelBookSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 160, 330));
 
-        javax.swing.GroupLayout jPanelBookSearch1Layout = new javax.swing.GroupLayout(jPanelBookSearch1);
-        jPanelBookSearch1.setLayout(jPanelBookSearch1Layout);
-        jPanelBookSearch1Layout.setHorizontalGroup(
-            jPanelBookSearch1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelUserSearchLayout = new javax.swing.GroupLayout(jPanelUserSearch);
+        jPanelUserSearch.setLayout(jPanelUserSearchLayout);
+        jPanelUserSearchLayout.setHorizontalGroup(
+            jPanelUserSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 160, Short.MAX_VALUE)
         );
-        jPanelBookSearch1Layout.setVerticalGroup(
-            jPanelBookSearch1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelUserSearchLayout.setVerticalGroup(
+            jPanelUserSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 330, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanelBookSearch1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 60, -1, -1));
+        getContentPane().add(jPanelUserSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 60, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -322,9 +322,9 @@ public class RentView extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanelBookChosenBook;
     private javax.swing.JPanel jPanelBookSearch;
-    private javax.swing.JPanel jPanelBookSearch1;
     private javax.swing.JPanel jPanelChosenRenter;
     private javax.swing.JPanel jPanelRentDetails;
+    private javax.swing.JPanel jPanelUserSearch;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextAreaObservation;
     private javax.swing.JTextField jTextFieldPenalty;
@@ -440,5 +440,21 @@ public class RentView extends javax.swing.JDialog {
 
     public void setChosenUser(User chosenUser) {
         this.chosenUser = chosenUser;
+    }
+
+    public JPanel getjPanelBookSearch() {
+        return jPanelBookSearch;
+    }
+
+    public void setjPanelBookSearch(JPanel jPanelBookSearch) {
+        this.jPanelBookSearch = jPanelBookSearch;
+    }
+
+    public JPanel getjPanelUserSearch() {
+        return jPanelUserSearch;
+    }
+
+    public void setjPanelUserSearch(JPanel jPanelUserSearch) {
+        this.jPanelUserSearch = jPanelUserSearch;
     }
 }
