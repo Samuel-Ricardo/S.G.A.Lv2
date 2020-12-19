@@ -6,6 +6,8 @@
 package View.Components;
 
 import com.sun.prism.j2d.J2DPipeline;
+import java.awt.Dimension;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 
 /**
@@ -23,7 +25,9 @@ public class BookList extends javax.swing.JPanel {
         
     }
     
-    public JScrollPane getInstance(){
+    public JScrollPane getInstance(Dimension size){
+        
+        jScrollPane.setSize(size);
         
         return this.jScrollPane;
     }
@@ -39,8 +43,16 @@ public class BookList extends javax.swing.JPanel {
 
         jScrollPane = new javax.swing.JScrollPane();
         jPanelBookList = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
+        jPanelBookList.setMaximumSize(new java.awt.Dimension(100000, 100000));
+        jPanelBookList.setMinimumSize(new java.awt.Dimension(100, 100));
+        jPanelBookList.setPreferredSize(new java.awt.Dimension(200, 200));
         jPanelBookList.setLayout(new javax.swing.BoxLayout(jPanelBookList, javax.swing.BoxLayout.LINE_AXIS));
+
+        jLabel1.setText("jLabel1");
+        jPanelBookList.add(jLabel1);
+
         jScrollPane.setViewportView(jPanelBookList);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -67,6 +79,7 @@ public class BookList extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanelBookList;
     private javax.swing.JScrollPane jScrollPane;
     // End of variables declaration//GEN-END:variables
