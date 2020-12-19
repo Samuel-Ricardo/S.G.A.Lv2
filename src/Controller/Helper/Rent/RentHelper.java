@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller.Rent;
+package Controller.Helper.Rent;
 
 import DAO.RentDAO;
 import View.Rent.RentView;
@@ -12,16 +12,13 @@ import View.Rent.RentView;
  *
  * @author Samuel
  */
-public class RentController {
+public class RentHelper {
     
     private final RentView view;
     private final RentDAO rentDAO;
-    private final RentHelper helper;
 
-    public RentController(RentView view,RentDAO rentDAO, RentHelper helper) {
-        
+    public RentHelper(RentView view, RentDAO rentDAO) {
         this.view = view;
         this.rentDAO = rentDAO;
-        this.helper = helper;
     }
 }
