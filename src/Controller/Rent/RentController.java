@@ -7,6 +7,8 @@ package Controller.Rent;
 
 import Controller.Helper.Rent.RentHelper;
 import DAO.RentDAO;
+import Model.Book;
+import Model.User;
 import Time.Time;
 import View.Rent.RentView;
 
@@ -19,12 +21,17 @@ public class RentController {
     private final RentView view;
     private final RentDAO rentDAO;
     private final RentHelper helper;
+    private Book book;
+    private User user;
 
     public RentController(RentView view,RentDAO rentDAO) {
         
         this.view = view;
         this.rentDAO = rentDAO;
         this.helper = new RentHelper(view,rentDAO);
+        
+        book = view.getChosenBook();
+        user = view.getChosenUser();
         
         start();
     }
@@ -53,6 +60,10 @@ public class RentController {
         view.getjFormattedTextFieldRentDate().setText(time.getOnlyDate());
         
         time.addMonth();
+        
+        view.getjFormattedTextFieldReturnDate().setText(time.getOnlyDate());
+        
+        view.getjTextFieldPenalty().setText("1,00");
         
     }
 }

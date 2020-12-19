@@ -12,7 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JSpinner;
+import javax.swing.JTextField;
 import javax.swing.JTextArea;
 
 /**
@@ -59,7 +59,8 @@ public class RentView extends javax.swing.JDialog {
         jLabel5 = new javax.swing.JLabel();
         jFormattedTextFieldReturnDate = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
-        jSpinnerPenalty = new javax.swing.JSpinner();
+        jLabel8 = new javax.swing.JLabel();
+        jTextFieldPenalty = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaObservation = new javax.swing.JTextArea();
@@ -137,6 +138,11 @@ public class RentView extends javax.swing.JDialog {
         jLabel6.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
         jLabel6.setText("Penalidade: ");
 
+        jLabel8.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        jLabel8.setText("R$");
+
+        jTextFieldPenalty.setText("1.00");
+
         javax.swing.GroupLayout jPanelRentDetailsLayout = new javax.swing.GroupLayout(jPanelRentDetails);
         jPanelRentDetails.setLayout(jPanelRentDetailsLayout);
         jPanelRentDetailsLayout.setHorizontalGroup(
@@ -159,7 +165,10 @@ public class RentView extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanelRentDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jFormattedTextFieldReturnDate)
-                            .addComponent(jSpinnerPenalty))))
+                            .addGroup(jPanelRentDetailsLayout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldPenalty)))))
                 .addContainerGap())
         );
         jPanelRentDetailsLayout.setVerticalGroup(
@@ -175,11 +184,12 @@ public class RentView extends javax.swing.JDialog {
                 .addGroup(jPanelRentDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jFormattedTextFieldReturnDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
+                .addGap(25, 25, 25)
                 .addGroup(jPanelRentDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jSpinnerPenalty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(38, Short.MAX_VALUE))
+                    .addComponent(jLabel8)
+                    .addComponent(jTextFieldPenalty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         jLabel7.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
@@ -317,12 +327,13 @@ public class RentView extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanelBookChosenBook;
     private javax.swing.JPanel jPanelChosenRenter;
     private javax.swing.JPanel jPanelRentDetails;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSpinner jSpinnerPenalty;
     private javax.swing.JTextArea jTextAreaObservation;
+    private javax.swing.JTextField jTextFieldPenalty;
     // End of variables declaration//GEN-END:variables
 
     public JButton getjButtonCancel() {
@@ -405,12 +416,12 @@ public class RentView extends javax.swing.JDialog {
         this.jScrollPane1 = jScrollPane1;
     }
 
-    public JSpinner getjSpinnerPenalty() {
-        return jSpinnerPenalty;
+    public JTextField getjTextFieldPenalty() {
+        return jTextFieldPenalty;
     }
 
-    public void setjSpinnerPenalty(JSpinner jSpinnerPenalty) {
-        this.jSpinnerPenalty = jSpinnerPenalty;
+    public void setjTextFieldPenalty(JTextField jTextFieldPenalty) {
+        this.jTextFieldPenalty = jTextFieldPenalty;
     }
 
     public JTextArea getjTextAreaObservation() {
