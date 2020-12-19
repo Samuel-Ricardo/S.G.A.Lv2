@@ -38,7 +38,10 @@ public class RentController {
     }
     
     public void start(){
-    
-        setBook(view.getC());
+        
+        setBook(view.getChosenBook());
+        setUser(view.getChosenUser());
+        
+        loadDetails();
     }
 }
