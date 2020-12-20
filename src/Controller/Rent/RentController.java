@@ -39,7 +39,7 @@ public class RentController {
             @Override
             public void mouseClicked(MouseEvent e) {
                 
-                chooseBook();
+                RentController.chooseBook();
             }
 
             @Override
