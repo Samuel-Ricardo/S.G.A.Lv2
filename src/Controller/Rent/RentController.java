@@ -52,8 +52,8 @@ public class RentController {
     
     public void start(){
         
-        view.getjPanelBookSearch().setVisible(false);
-        view.getjPanelUserSearch().setVisible(false);
+        view.getjScrollPaneBookSearch().setVisible(false);
+        view.getjScrollPaneUserSearch().setVisible(false);
         
 //        setBook(view.getChosenBook());
 //        setUser(view.getChosenUser());
@@ -76,14 +76,17 @@ public class RentController {
 
     public void chooseBook() {
         
-        bookListVisible = !bookListVisible;
+        bookListVisible = ! bookListVisible;
         
-        bookList.setVisible(bookListVisible);
+        bookList.setVisible(true);
         
-        view.getjPanelBookSearch().setVisible(bookListVisible);
+        view.getjScrollPaneBookSearch().setVisible(true);
+        view.getjPanelBookSearch().setVisible(true);
         
-        if(bookListVisible = true){
-         view.getjPanelBookSearch().add(bookList.getJScrollPane(view.getjPanelBookSearch().getSize()));
-        }
+     //   if(bookListVisible = true){
+          view.getjPanelBookSearch().add(bookList.getjPanelBookList());
+          view.getjPanelBookSearch().updateUI();
+          view.getjScrollPaneBookSearch().updateUI();
+   //     }
     }
 }

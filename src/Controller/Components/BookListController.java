@@ -43,11 +43,13 @@ public class BookListController {
             pane.getInsets().set(10, 10, 10, 10);
 
             layout.add(pane);
+            
+            System.out.println("Booooooooooooooks - " + books.size());
          }
          
         view.getjPanelBookList().add(layout);
         
-       // view.updateUI();
+        view.updateUI();
         view.getjPanelBookList().updateUI();
     }
     

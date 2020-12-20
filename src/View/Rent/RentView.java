@@ -47,6 +47,7 @@ public class RentView extends javax.swing.JDialog {
 
         jScrollPaneUserSearch = new javax.swing.JScrollPane();
         jScrollPaneBookSearch = new javax.swing.JScrollPane();
+        jPanelBookSearch = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButtonChooseRenter = new javax.swing.JButton();
         jButtonChooseBook = new javax.swing.JButton();
@@ -70,6 +71,20 @@ public class RentView extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jScrollPaneUserSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 210, 330));
+
+        javax.swing.GroupLayout jPanelBookSearchLayout = new javax.swing.GroupLayout(jPanelBookSearch);
+        jPanelBookSearch.setLayout(jPanelBookSearchLayout);
+        jPanelBookSearchLayout.setHorizontalGroup(
+            jPanelBookSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 197, Short.MAX_VALUE)
+        );
+        jPanelBookSearchLayout.setVerticalGroup(
+            jPanelBookSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 327, Short.MAX_VALUE)
+        );
+
+        jScrollPaneBookSearch.setViewportView(jPanelBookSearch);
+
         getContentPane().add(jScrollPaneBookSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 200, 330));
 
         jLabel1.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
@@ -296,6 +311,7 @@ public class RentView extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanelBookChosenBook;
+    private javax.swing.JPanel jPanelBookSearch;
     private javax.swing.JPanel jPanelChosenRenter;
     private javax.swing.JPanel jPanelRentDetails;
     private javax.swing.JScrollPane jScrollPane1;
@@ -433,5 +449,14 @@ public class RentView extends javax.swing.JDialog {
         this.jScrollPaneUserSearch = jScrollPaneUserSearch;
     }
 
+    public JPanel getjPanelBookSearch() {
+        return jPanelBookSearch;
+    }
+
+    public void setjPanelBookSearch(JPanel jPanelBookSearch) {
+        this.jPanelBookSearch = jPanelBookSearch;
+    }
+    
+    
    
 }
