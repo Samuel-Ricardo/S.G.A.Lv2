@@ -8,7 +8,9 @@ package Controller.Rent;
 import Controller.Helper.Rent.RentHelper;
 import Controller.MainMenuController;
 import DAO.RentDAO;
+import Model.Book;
 import Time.Time;
+import View.Components.BookPane;
 import View.Rent.RentWindow;
 
 /**
@@ -17,9 +19,10 @@ import View.Rent.RentWindow;
  */
 public class RentController {
     
-    private final RentWindow view;
-    private final RentDAO rentDAO;
-    private final RentHelper helper;
+    private static RentWindow view;
+    private static RentDAO rentDAO;
+    private static RentHelper helper;
+
     
     public RentController(RentWindow view,RentDAO rentDAO) {
         
@@ -39,14 +42,17 @@ public class RentController {
         start();
     }
     
-    public void start(){
+    public static void start(){
         
-        
+        if(view.getChosenBook() != null){
+            
+            loadBook(view.getChosenBook());
+        }
         
         loadDetails();
     }
 
-    private void loadDetails() {
+    private static void loadDetails() {
    
         Time time = Time.now();
         
@@ -59,8 +65,16 @@ public class RentController {
         view.getjTextFieldPenalty().setText("1,00");
     }
 
-    public void chooseBook() {
+    public static void chooseBook() {
      
         MainMenuController.openBookList();
     }
+    
+    public static void loadBook(Book book) {
+     
+        BookPane pane = BookPaneFactory.generatePane();
+        
+        view.getjPanelBookChosenBook().add(pane);
+    }
+    
 }

@@ -18,7 +18,7 @@ import View.Rent.RentWindow;
 public class MainMenuController {
     
     public static MainMenu view;
-    public static RentWindow rentWindow;
+    public static RentWindow RENT_WINDOW;
 
     public MainMenuController(MainMenu view) {
         
@@ -37,11 +37,11 @@ public class MainMenuController {
 
     public static void OpenRent(Book book, User user) {
        
-        MainMenuController.rentWindow = new RentWindow(book, user);
+        MainMenuController.RENT_WINDOW = new RentWindow(book, user);
    
-        MainMenuController.rentWindow.setVisible(true);
+        MainMenuController.RENT_WINDOW.setVisible(true);
         
-        MainMenuController.view.getDesktop().add(MainMenuController.rentWindow);
+        MainMenuController.view.getDesktop().add(MainMenuController.RENT_WINDOW);
     }
     
     

@@ -6,11 +6,13 @@
 package Controller.Researchers;
 
 import Controller.Helper.Researcher.BookListHelper;
+import Controller.MainMenuController;
 import DAO.BookDAO;
 import Model.Book;
 import Model.ImageFile;
 import Services.Dialoger;
 import Time.Time;
+import View.MainMenu;
 import View.Researchers.ListOfBooks;
 import java.awt.Component;
 import java.awt.event.KeyEvent;
@@ -289,5 +291,16 @@ public class BookListController {
 
             loadAllBooks();
         }
+    }
+
+    public void rentBook() {
+    
+        if(MainMenuController.RENT_WINDOW != null){
+            if(MainMenuController.RENT_WINDOW.isClosed() == false){
+                
+                RentController.
+            }
+        }
+        
     }
 }
