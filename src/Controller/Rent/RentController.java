@@ -7,12 +7,9 @@ package Controller.Rent;
 
 import Controller.Helper.Rent.RentHelper;
 import Controller.MainMenuController;
-import DAO.BookDAO;
 import DAO.RentDAO;
 import Time.Time;
-import View.Components.BookList;
 import View.Rent.RentWindow;
-import javax.swing.Box;
 
 /**
  *
@@ -43,6 +40,8 @@ public class RentController {
     }
     
     public void start(){
+        
+        
         
         loadDetails();
     }
