@@ -33,7 +33,7 @@ public class BookList extends javax.swing.JPanel {
         controller = new BookListController(this,layout,books);
     }
     
-    public JScrollPane getInstance(Dimension size){
+    public JScrollPane getJScrollPane(Dimension size){
         
         jScrollPane.setSize(size);
         
@@ -51,6 +51,9 @@ public class BookList extends javax.swing.JPanel {
 
         jScrollPane = new javax.swing.JScrollPane();
         jPanelBookList = new javax.swing.JPanel();
+
+        jScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         jPanelBookList.setMaximumSize(new java.awt.Dimension(100000, 100000));
         jPanelBookList.setMinimumSize(new java.awt.Dimension(100, 100));

@@ -6,12 +6,12 @@
 package Controller.Rent;
 
 import Controller.Helper.Rent.RentHelper;
+import DAO.BookDAO;
 import DAO.RentDAO;
-import Model.Book;
-import Model.User;
 import Time.Time;
 import View.Components.BookList;
 import View.Rent.RentView;
+import javax.swing.Box;
 
 /**
  *
@@ -21,6 +21,7 @@ public class RentController {
     
     private final RentView view;
     private final RentDAO rentDAO;
+    private final BookDAO bookDAO;
     private final RentHelper helper;
     private BookList bookList;
     private boolean bookListVisible = false;
@@ -30,8 +31,9 @@ public class RentController {
         this.view = view;
         this.rentDAO = rentDAO;
         this.helper = new RentHelper(view,rentDAO);
+        this.bookDAO = new BookDAO();
         
-        bookList = new BookList();
+        bookList = new BookList(Box.createVerticalBox(),bookDAO.selectAll());
         
         start();
     }
@@ -41,8 +43,9 @@ public class RentController {
         this.view = view;
         this.rentDAO = new RentDAO();
         this.helper = new RentHelper(view,rentDAO);
+        this.bookDAO = new BookDAO();
         
-        bookList = new BookList();
+        bookList = new BookList(Box.createVerticalBox(),bookDAO.selectAll());
         
         start();
     }
@@ -80,7 +83,7 @@ public class RentController {
         view.getjPanelBookSearch().setVisible(bookListVisible);
         
         if(bookListVisible = true){
-         view.getjPanelBookSearch().add(bookList.getInstance(view.getjPanelBookSearch().getSize()));
+         view.getjPanelBookSearch().add(bookList.getJScrollPane(view.getjPanelBookSearch().getSize()));
         }
     }
 }

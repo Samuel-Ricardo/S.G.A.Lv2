@@ -35,10 +35,10 @@ public class BookListController {
     }
 
     public void loadBooks(List<Book> books) {
-      
+        
          for (Book book : books) {
             
-            BookPane pane = new BookPane(book, null);
+            BookPane pane = new BookPane(book, null, null);
 
             pane.getInsets().set(10, 10, 10, 10);
 
@@ -47,7 +47,8 @@ public class BookListController {
          
         view.getjPanelBookList().add(layout);
         
-        view.updateUI();
+       // view.updateUI();
+        view.getjPanelBookList().updateUI();
     }
     
 }

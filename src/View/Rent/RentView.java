@@ -45,8 +45,8 @@ public class RentView extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanelBookSearch = new javax.swing.JPanel();
-        jPanelUserSearch = new javax.swing.JPanel();
+        jScrollPaneUserSearch = new javax.swing.JScrollPane();
+        jScrollPaneBookSearch = new javax.swing.JScrollPane();
         jLabel1 = new javax.swing.JLabel();
         jButtonChooseRenter = new javax.swing.JButton();
         jButtonChooseBook = new javax.swing.JButton();
@@ -69,36 +69,8 @@ public class RentView extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanelBookSearch.setBackground(new java.awt.Color(255, 0, 0));
-
-        javax.swing.GroupLayout jPanelBookSearchLayout = new javax.swing.GroupLayout(jPanelBookSearch);
-        jPanelBookSearch.setLayout(jPanelBookSearchLayout);
-        jPanelBookSearchLayout.setHorizontalGroup(
-            jPanelBookSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
-        );
-        jPanelBookSearchLayout.setVerticalGroup(
-            jPanelBookSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(jPanelBookSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 160, 330));
-
-        jPanelUserSearch.setBackground(new java.awt.Color(255, 0, 51));
-
-        javax.swing.GroupLayout jPanelUserSearchLayout = new javax.swing.GroupLayout(jPanelUserSearch);
-        jPanelUserSearch.setLayout(jPanelUserSearchLayout);
-        jPanelUserSearchLayout.setHorizontalGroup(
-            jPanelUserSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
-        );
-        jPanelUserSearchLayout.setVerticalGroup(
-            jPanelUserSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(jPanelUserSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 60, -1, -1));
+        getContentPane().add(jScrollPaneUserSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 210, 330));
+        getContentPane().add(jScrollPaneBookSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 200, 330));
 
         jLabel1.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
         jLabel1.setText("Aluguel");
@@ -125,7 +97,7 @@ public class RentView extends javax.swing.JDialog {
         );
         jPanelBookChosenBookLayout.setVerticalGroup(
             jPanelBookChosenBookLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 280, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanelBookChosenBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 102, -1, 280));
@@ -324,11 +296,11 @@ public class RentView extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanelBookChosenBook;
-    private javax.swing.JPanel jPanelBookSearch;
     private javax.swing.JPanel jPanelChosenRenter;
     private javax.swing.JPanel jPanelRentDetails;
-    private javax.swing.JPanel jPanelUserSearch;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPaneBookSearch;
+    private javax.swing.JScrollPane jScrollPaneUserSearch;
     private javax.swing.JTextArea jTextAreaObservation;
     private javax.swing.JTextField jTextFieldPenalty;
     // End of variables declaration//GEN-END:variables
@@ -445,19 +417,21 @@ public class RentView extends javax.swing.JDialog {
         this.chosenUser = chosenUser;
     }
 
-    public JPanel getjPanelBookSearch() {
-        return jPanelBookSearch;
+    public JScrollPane getjScrollPaneBookSearch() {
+        return jScrollPaneBookSearch;
     }
 
-    public void setjPanelBookSearch(JPanel jPanelBookSearch) {
-        this.jPanelBookSearch = jPanelBookSearch;
+    public void setjScrollPaneBookSearch(JScrollPane jScrollPaneBookSearch) {
+        this.jScrollPaneBookSearch = jScrollPaneBookSearch;
     }
 
-    public JPanel getjPanelUserSearch() {
-        return jPanelUserSearch;
+    public JScrollPane getjScrollPaneUserSearch() {
+        return jScrollPaneUserSearch;
     }
 
-    public void setjPanelUserSearch(JPanel jPanelUserSearch) {
-        this.jPanelUserSearch = jPanelUserSearch;
+    public void setjScrollPaneUserSearch(JScrollPane jScrollPaneUserSearch) {
+        this.jScrollPaneUserSearch = jScrollPaneUserSearch;
     }
+
+   
 }
