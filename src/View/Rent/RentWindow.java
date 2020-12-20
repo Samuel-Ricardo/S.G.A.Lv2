@@ -5,35 +5,17 @@
  */
 package View.Rent;
 
-import Controller.Rent.RentController;
-import Model.Book;
-import Model.User;
-import javax.swing.JButton;
-import javax.swing.JFormattedTextField;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextField;
-import javax.swing.JTextArea;
-
 /**
  *
  * @author Samuel
  */
-public class RentView extends javax.swing.JDialog {
+public class RentWindow extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form Rent
+     * Creates new form RentWindow
      */
-    
-    private final RentController controller;
-    private Book chosenBook;
-    private User chosenUser; 
-    
-    public RentView(java.awt.Frame parent, boolean modal, Book chosenBook, User chosedUser) {
-        super(parent, modal);
+    public RentWindow() {
         initComponents();
-        
-        this.controller = new RentController(this);
     }
 
     /**
@@ -45,13 +27,14 @@ public class RentView extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButtonChooseRenter = new javax.swing.JButton();
         jButtonChooseBook = new javax.swing.JButton();
         jPanelBookChosenBook = new javax.swing.JPanel();
         jPanelChosenRenter = new javax.swing.JPanel();
         jButtonCancel = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
         jButtonRent = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextAreaObservation = new javax.swing.JTextArea();
         jPanelRentDetails = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -61,16 +44,8 @@ public class RentView extends javax.swing.JDialog {
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jTextFieldPenalty = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextAreaObservation = new javax.swing.JTextArea();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        jLabel1.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
-        jLabel1.setText("Aluguel");
-
-        jButtonChooseRenter.setText("Escolher Alugador");
+        jLabel1 = new javax.swing.JLabel();
+        jButtonChooseRenter = new javax.swing.JButton();
 
         jButtonChooseBook.setText("Escolher Livro");
         jButtonChooseBook.addActionListener(new java.awt.event.ActionListener() {
@@ -112,12 +87,19 @@ public class RentView extends javax.swing.JDialog {
             }
         });
 
+        jLabel7.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
+        jLabel7.setText("Observaçao");
+
         jButtonRent.setText("Alugar");
         jButtonRent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonRentActionPerformed(evt);
             }
         });
+
+        jTextAreaObservation.setColumns(20);
+        jTextAreaObservation.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaObservation);
 
         jLabel2.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel2.setText("Detalhes");
@@ -197,12 +179,10 @@ public class RentView extends javax.swing.JDialog {
                 .addContainerGap(42, Short.MAX_VALUE))
         );
 
-        jLabel7.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jLabel7.setText("Observaçao");
+        jLabel1.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        jLabel1.setText("Aluguel");
 
-        jTextAreaObservation.setColumns(20);
-        jTextAreaObservation.setRows(5);
-        jScrollPane1.setViewportView(jTextAreaObservation);
+        jButtonChooseRenter.setText("Escolher Alugador");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -264,6 +244,10 @@ public class RentView extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButtonChooseBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChooseBookActionPerformed
+        controller.chooseBook();
+    }//GEN-LAST:event_jButtonChooseBookActionPerformed
+
     private void jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonCancelActionPerformed
@@ -272,52 +256,6 @@ public class RentView extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonRentActionPerformed
 
-    private void jButtonChooseBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChooseBookActionPerformed
-        controller.chooseBook();
-    }//GEN-LAST:event_jButtonChooseBookActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RentView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RentView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RentView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RentView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                RentView dialog = new RentView(new javax.swing.JFrame(), true, null, null);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCancel;
@@ -340,128 +278,4 @@ public class RentView extends javax.swing.JDialog {
     private javax.swing.JTextArea jTextAreaObservation;
     private javax.swing.JTextField jTextFieldPenalty;
     // End of variables declaration//GEN-END:variables
-
-    public JButton getjButtonCancel() {
-        return jButtonCancel;
-    }
-
-    public void setjButtonCancel(JButton jButtonCancel) {
-        this.jButtonCancel = jButtonCancel;
-    }
-
-    public JButton getjButtonChooseBook() {
-        return jButtonChooseBook;
-    }
-
-    public void setjButtonChooseBook(JButton jButtonChooseBook) {
-        this.jButtonChooseBook = jButtonChooseBook;
-    }
-
-    public JButton getjButtonChooseRenter() {
-        return jButtonChooseRenter;
-    }
-
-    public void setjButtonChooseRenter(JButton jButtonChooseRenter) {
-        this.jButtonChooseRenter = jButtonChooseRenter;
-    }
-
-    public JButton getjButtonRent() {
-        return jButtonRent;
-    }
-
-    public void setjButtonRent(JButton jButtonRent) {
-        this.jButtonRent = jButtonRent;
-    }
-
-    public JFormattedTextField getjFormattedTextFieldRentDate() {
-        return jFormattedTextFieldRentDate;
-    }
-
-    public void setjFormattedTextFieldRentDate(JFormattedTextField jFormattedTextFieldRentDate) {
-        this.jFormattedTextFieldRentDate = jFormattedTextFieldRentDate;
-    }
-
-    public JFormattedTextField getjFormattedTextFieldReturnDate() {
-        return jFormattedTextFieldReturnDate;
-    }
-
-    public void setjFormattedTextFieldReturnDate(JFormattedTextField jFormattedTextFieldReturnDate) {
-        this.jFormattedTextFieldReturnDate = jFormattedTextFieldReturnDate;
-    }
-
-    public JPanel getjPanelBookChosenBook() {
-        return jPanelBookChosenBook;
-    }
-
-    public void setjPanelBookChosenBook(JPanel jPanelBookChosenBook) {
-        this.jPanelBookChosenBook = jPanelBookChosenBook;
-    }
-
-    public JPanel getjPanelChosenRenter() {
-        return jPanelChosenRenter;
-    }
-
-    public void setjPanelChosenRenter(JPanel jPanelChosenRenter) {
-        this.jPanelChosenRenter = jPanelChosenRenter;
-    }
-
-    public JPanel getjPanelRentDetails() {
-        return jPanelRentDetails;
-    }
-
-    public void setjPanelRentDetails(JPanel jPanelRentDetails) {
-        this.jPanelRentDetails = jPanelRentDetails;
-    }
-
-    public JScrollPane getjScrollPane1() {
-        return jScrollPane1;
-    }
-
-    public void setjScrollPane1(JScrollPane jScrollPane1) {
-        this.jScrollPane1 = jScrollPane1;
-    }
-
-    public JTextField getjTextFieldPenalty() {
-        return jTextFieldPenalty;
-    }
-
-    public void setjTextFieldPenalty(JTextField jTextFieldPenalty) {
-        this.jTextFieldPenalty = jTextFieldPenalty;
-    }
-
-    public JTextArea getjTextAreaObservation() {
-        return jTextAreaObservation;
-    }
-
-    public void setjTextAreaObservation(JTextArea jTextAreaObservation) {
-        this.jTextAreaObservation = jTextAreaObservation;
-    }
-
-    public Book getChosenBook() {
-        return chosenBook;
-    }
-
-    public void setChosenBook(Book chosenBook) {
-        this.chosenBook = chosenBook;
-    }
-
-    public User getChosenUser() {
-        return chosenUser;
-    }
-
-    public void setChosenUser(User chosenUser) {
-        this.chosenUser = chosenUser;
-    }
-
-    public JScrollPane getjScrollPaneBookSearch() {
-        return jScrollPaneBookSearch;
-    }
-
-    public void setjScrollPaneBookSearch(JScrollPane jScrollPaneBookSearch) {
-        this.jScrollPaneBookSearch = jScrollPaneBookSearch;
-    }
-
- 
-    
-   
 }

@@ -6,6 +6,7 @@
 package Controller.Rent;
 
 import Controller.Helper.Rent.RentHelper;
+import Controller.MainMenuController;
 import DAO.BookDAO;
 import DAO.RentDAO;
 import Time.Time;
@@ -52,12 +53,6 @@ public class RentController {
     
     public void start(){
         
-        view.getjScrollPaneBookSearch().setVisible(false);
-//        view.getjScrollPaneUserSearch().setVisible(false);
-        
-//        setBook(view.getChosenBook());
-//        setUser(view.getChosenUser());
-        
         loadDetails();
     }
 
@@ -75,6 +70,7 @@ public class RentController {
     }
 
     public void chooseBook() {
-        
-        
+     
+        MainMenuController.openBookList();
+    }
 }
