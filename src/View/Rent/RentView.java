@@ -453,15 +453,4 @@ public class RentView extends javax.swing.JDialog {
         this.chosenUser = chosenUser;
     }
 
-    public JScrollPane getjScrollPaneBookSearch() {
-        return jScrollPaneBookSearch;
-    }
-
-    public void setjScrollPaneBookSearch(JScrollPane jScrollPaneBookSearch) {
-        this.jScrollPaneBookSearch = jScrollPaneBookSearch;
-    }
-
- 
-    
-   
 }

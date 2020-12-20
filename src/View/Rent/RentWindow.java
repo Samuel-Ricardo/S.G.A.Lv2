@@ -5,6 +5,15 @@
  */
 package View.Rent;
 
+import Model.Book;
+import Model.User;
+import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Samuel
@@ -278,4 +287,116 @@ public class RentWindow extends javax.swing.JInternalFrame {
     private javax.swing.JTextArea jTextAreaObservation;
     private javax.swing.JTextField jTextFieldPenalty;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getjButtonCancel() {
+        return jButtonCancel;
+    }
+
+    public void setjButtonCancel(JButton jButtonCancel) {
+        this.jButtonCancel = jButtonCancel;
+    }
+
+    public JButton getjButtonChooseBook() {
+        return jButtonChooseBook;
+    }
+
+    public void setjButtonChooseBook(JButton jButtonChooseBook) {
+        this.jButtonChooseBook = jButtonChooseBook;
+    }
+
+    public JButton getjButtonChooseRenter() {
+        return jButtonChooseRenter;
+    }
+
+    public void setjButtonChooseRenter(JButton jButtonChooseRenter) {
+        this.jButtonChooseRenter = jButtonChooseRenter;
+    }
+
+    public JButton getjButtonRent() {
+        return jButtonRent;
+    }
+
+    public void setjButtonRent(JButton jButtonRent) {
+        this.jButtonRent = jButtonRent;
+    }
+
+    public JFormattedTextField getjFormattedTextFieldRentDate() {
+        return jFormattedTextFieldRentDate;
+    }
+
+    public void setjFormattedTextFieldRentDate(JFormattedTextField jFormattedTextFieldRentDate) {
+        this.jFormattedTextFieldRentDate = jFormattedTextFieldRentDate;
+    }
+
+    public JFormattedTextField getjFormattedTextFieldReturnDate() {
+        return jFormattedTextFieldReturnDate;
+    }
+
+    public void setjFormattedTextFieldReturnDate(JFormattedTextField jFormattedTextFieldReturnDate) {
+        this.jFormattedTextFieldReturnDate = jFormattedTextFieldReturnDate;
+    }
+
+    public JPanel getjPanelBookChosenBook() {
+        return jPanelBookChosenBook;
+    }
+
+    public void setjPanelBookChosenBook(JPanel jPanelBookChosenBook) {
+        this.jPanelBookChosenBook = jPanelBookChosenBook;
+    }
+
+    public JPanel getjPanelChosenRenter() {
+        return jPanelChosenRenter;
+    }
+
+    public void setjPanelChosenRenter(JPanel jPanelChosenRenter) {
+        this.jPanelChosenRenter = jPanelChosenRenter;
+    }
+
+    public JPanel getjPanelRentDetails() {
+        return jPanelRentDetails;
+    }
+
+    public void setjPanelRentDetails(JPanel jPanelRentDetails) {
+        this.jPanelRentDetails = jPanelRentDetails;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JTextField getjTextFieldPenalty() {
+        return jTextFieldPenalty;
+    }
+
+    public void setjTextFieldPenalty(JTextField jTextFieldPenalty) {
+        this.jTextFieldPenalty = jTextFieldPenalty;
+    }
+
+    public JTextArea getjTextAreaObservation() {
+        return jTextAreaObservation;
+    }
+
+    public void setjTextAreaObservation(JTextArea jTextAreaObservation) {
+        this.jTextAreaObservation = jTextAreaObservation;
+    }
+
+    public Book getChosenBook() {
+        return chosenBook;
+    }
+
+    public void setChosenBook(Book chosenBook) {
+        this.chosenBook = chosenBook;
+    }
+
+    public User getChosenUser() {
+        return chosenUser;
+    }
+
+    public void setChosenUser(User chosenUser) {
+        this.chosenUser = chosenUser;
+    }
 }
