@@ -37,7 +37,7 @@ public class MainMenuController {
 
     public static void OpenRent(Book book, User user) {
        
-        MainMenuController.rentWindow = new RentView(MainMenuController.view, true, book, user);
+        MainMenuController.rentWindow = new RentView(book, user);
    
         MainMenuController.rentWindow.setVisible(true);
         

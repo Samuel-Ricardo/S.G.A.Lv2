@@ -5,6 +5,7 @@
  */
 package View.Rent;
 
+import Controller.Rent.RentController;
 import Model.Book;
 import Model.User;
 import javax.swing.JButton;
@@ -23,8 +24,18 @@ public class RentWindow extends javax.swing.JInternalFrame {
     /**
      * Creates new form RentWindow
      */
-    public RentWindow() {
+    
+    private final RentController controller;
+    private Book chosenBook;
+    private User chosenUser; 
+    
+    public RentWindow(Book chosenBook, User chosedUser) {
         initComponents();
+        
+        this.chosenBook = chosenBook;
+        this.chosenUser = chosenUser;
+        
+        this.controller = new RentController(this);
     }
 
     /**
