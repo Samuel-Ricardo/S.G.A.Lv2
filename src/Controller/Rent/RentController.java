@@ -13,6 +13,8 @@ import Time.Time;
 import View.Components.BookPane;
 import View.Rent.RentWindow;
 import View.Researchers.ListOfBooks;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 /**
  *
@@ -23,6 +25,7 @@ public class RentController {
     private static RentWindow view;
     private static RentDAO rentDAO;
     private static RentHelper helper;
+    private static MouseListener changeBook;
 
     
     public RentController(RentWindow view,RentDAO rentDAO) {
@@ -30,6 +33,35 @@ public class RentController {
         this.view = view;
         this.rentDAO = rentDAO;
         this.helper = new RentHelper(view,rentDAO);
+        
+        
+        this.changeBook = new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                
+                chooseBook();
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+          
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+           
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+     
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+     
+            }
+        };
         
         start();
     }
@@ -73,9 +105,10 @@ public class RentController {
     
     public static void loadBook(Book book, ListOfBooks parent) {
      
-        BookPane pane = new BookPane(book, null, parent);
+        BookPane pane = new BookPane(book, changeBook, parent);
         
         view.getjPanelBookChosenBook().setVisible(true);
+        view.getjPanelBookChosenBook().removeAll();
         view.getjPanelBookChosenBook().add(pane);
         
         view.getjPanelBookChosenBook().updateUI();
