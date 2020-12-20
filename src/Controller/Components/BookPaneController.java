@@ -32,35 +32,37 @@ public class BookPaneController {
         this.book = book;
         this.father = father;
         
-        this.MouseSelectListener = new MouseListener() {
-            
-            @Override
-            public void mouseClicked(MouseEvent e) {
-             
-                ListOfBooks.setSelectedBookPane(view);
-                father.getController().loadDetails();
-            }
+        if (father != null){
+            this.MouseSelectListener = new MouseListener() {
 
-            @Override
-            public void mousePressed(MouseEvent e) {
-           
-            }
+                @Override
+                public void mouseClicked(MouseEvent e) {
 
-            @Override
-            public void mouseReleased(MouseEvent e) {
-              
-            }
+                    ListOfBooks.setSelectedBookPane(view);
+                    father.getController().loadDetails();
+                }
 
-            @Override
-            public void mouseEntered(MouseEvent e) {
-            
-            }
+                @Override
+                public void mousePressed(MouseEvent e) {
 
-            @Override
-            public void mouseExited(MouseEvent e) {
-            
-            }
-        };
+                }
+
+                @Override
+                public void mouseReleased(MouseEvent e) {
+
+                }
+
+                @Override
+                public void mouseEntered(MouseEvent e) {
+
+                }
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+
+                }
+            };
+        }    
     }
 
     public void start() {
