@@ -29,7 +29,7 @@ public class RentWindow extends javax.swing.JInternalFrame {
     private Book chosenBook;
     private User chosenUser; 
     
-    public RentWindow(Book chosenBook, User chosedUser) {
+    public RentWindow(Book chosenBook, User chosenUser) {
         initComponents();
         
         this.chosenBook = chosenBook;
@@ -66,6 +66,11 @@ public class RentWindow extends javax.swing.JInternalFrame {
         jTextFieldPenalty = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jButtonChooseRenter = new javax.swing.JButton();
+
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
 
         jButtonChooseBook.setText("Escolher Livro");
         jButtonChooseBook.addActionListener(new java.awt.event.ActionListener() {

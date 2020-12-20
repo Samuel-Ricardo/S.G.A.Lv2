@@ -12,6 +12,7 @@ import DAO.RentDAO;
 import Time.Time;
 import View.Components.BookList;
 import View.Rent.RentView;
+import View.Rent.RentWindow;
 import javax.swing.Box;
 
 /**
@@ -20,14 +21,14 @@ import javax.swing.Box;
  */
 public class RentController {
     
-    private final RentView view;
+    private final RentWindow view;
     private final RentDAO rentDAO;
     private final BookDAO bookDAO;
     private final RentHelper helper;
     private BookList bookList;
     private boolean bookListVisible = false;
     
-    public RentController(RentView view,RentDAO rentDAO) {
+    public RentController(RentWindow view,RentDAO rentDAO) {
         
         this.view = view;
         this.rentDAO = rentDAO;
@@ -39,7 +40,7 @@ public class RentController {
         start();
     }
     
-    public RentController(RentView view) {
+    public RentController(RentWindow view) {
         
         this.view = view;
         this.rentDAO = new RentDAO();

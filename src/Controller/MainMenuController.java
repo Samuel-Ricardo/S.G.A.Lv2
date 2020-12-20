@@ -10,6 +10,7 @@ import Model.User;
 import View.Researchers.ListOfBooks;
 import View.MainMenu;
 import View.Rent.RentView;
+import View.Rent.RentWindow;
 
 /**
  *
@@ -18,7 +19,7 @@ import View.Rent.RentView;
 public class MainMenuController {
     
     public static MainMenu view;
-    public static RentView rentWindow;
+    public static RentWindow rentWindow;
 
     public MainMenuController(MainMenu view) {
         
@@ -37,7 +38,7 @@ public class MainMenuController {
 
     public static void OpenRent(Book book, User user) {
        
-        MainMenuController.rentWindow = new RentView(book, user);
+        MainMenuController.rentWindow = new RentWindow(book, user);
    
         MainMenuController.rentWindow.setVisible(true);
         

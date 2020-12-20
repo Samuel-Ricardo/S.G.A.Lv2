@@ -7,6 +7,7 @@ package Controller.Helper.Rent;
 
 import DAO.RentDAO;
 import View.Rent.RentView;
+import View.Rent.RentWindow;
 
 /**
  *
@@ -14,10 +15,10 @@ import View.Rent.RentView;
  */
 public class RentHelper {
     
-    private final RentView view;
+    private final RentWindow view;
     private final RentDAO rentDAO;
 
-    public RentHelper(RentView view, RentDAO rentDAO) {
+    public RentHelper(RentWindow view, RentDAO rentDAO) {
         this.view = view;
         this.rentDAO = rentDAO;
     }
