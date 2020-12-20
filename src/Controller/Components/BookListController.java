@@ -31,10 +31,10 @@ public class BookListController {
     
     public void start(){
      
-        loadBooks();
+        loadBooks(books);
     }
 
-    private void loadBooks() {
+    public void loadBooks(List<Book> books) {
       
          for (Book book : books) {
             
@@ -45,7 +45,9 @@ public class BookListController {
             layout.add(pane);
          }
          
-        view.getj.add(box);
+        view.getjPanelBookList().add(layout);
+        
+        view.updateUI();
     }
     
 }

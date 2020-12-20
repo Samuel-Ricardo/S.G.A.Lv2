@@ -12,6 +12,7 @@ import java.awt.Dimension;
 import java.util.List;
 import javax.swing.Box;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 /**
@@ -50,16 +51,11 @@ public class BookList extends javax.swing.JPanel {
 
         jScrollPane = new javax.swing.JScrollPane();
         jPanelBookList = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
 
         jPanelBookList.setMaximumSize(new java.awt.Dimension(100000, 100000));
         jPanelBookList.setMinimumSize(new java.awt.Dimension(100, 100));
         jPanelBookList.setPreferredSize(new java.awt.Dimension(200, 200));
         jPanelBookList.setLayout(new javax.swing.BoxLayout(jPanelBookList, javax.swing.BoxLayout.LINE_AXIS));
-
-        jLabel1.setText("jLabel1");
-        jPanelBookList.add(jLabel1);
-
         jScrollPane.setViewportView(jPanelBookList);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -86,8 +82,23 @@ public class BookList extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanelBookList;
     private javax.swing.JScrollPane jScrollPane;
     // End of variables declaration//GEN-END:variables
+
+    public JPanel getjPanelBookList() {
+        return jPanelBookList;
+    }
+
+    public void setjPanelBookList(JPanel jPanelBookList) {
+        this.jPanelBookList = jPanelBookList;
+    }
+
+    public JScrollPane getjScrollPane() {
+        return jScrollPane;
+    }
+
+    public void setjScrollPane(JScrollPane jScrollPane) {
+        this.jScrollPane = jScrollPane;
+    }
 }
