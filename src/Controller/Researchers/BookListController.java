@@ -11,6 +11,7 @@ import Controller.Rent.RentController;
 import DAO.BookDAO;
 import Model.Book;
 import Model.ImageFile;
+import Model.User;
 import Services.Dialoger;
 import Time.Time;
 import View.MainMenu;
@@ -309,7 +310,13 @@ public class BookListController {
                 } catch (PropertyVetoException ex) {
                     Logger.getLogger(BookListController.class.getName()).log(Level.SEVERE, null, ex);
                 }
-            }
+            }else{
+            
+            MainMenuController.OpenRent(ListOfBooks.getSelectedBookPane().getBook(), new User());
+           }
+        }else{
+            
+            MainMenuController.OpenRent(ListOfBooks.getSelectedBookPane().getBook(), new User());
         }
         
     }
