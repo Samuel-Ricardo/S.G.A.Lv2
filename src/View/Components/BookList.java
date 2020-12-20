@@ -5,8 +5,12 @@
  */
 package View.Components;
 
+import Controller.Components.BookListController;
+import Model.Book;
 import com.sun.prism.j2d.J2DPipeline;
 import java.awt.Dimension;
+import java.util.List;
+import javax.swing.Box;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 
@@ -19,10 +23,13 @@ public class BookList extends javax.swing.JPanel {
     /**
      * Creates new form BookList
      */
-    public BookList() {
+    
+    private final BookListController controller;
+    
+    public BookList(Box layout,List<Book> books) {
         initComponents();
         
-        
+        controller = new BookListController(this,layout,books);
     }
     
     public JScrollPane getInstance(Dimension size){
