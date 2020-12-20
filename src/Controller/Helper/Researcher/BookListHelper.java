@@ -10,6 +10,8 @@ import Model.ImageFile;
 import Services.FileManager;
 import View.Components.BookPane;
 import View.Researchers.ListOfBooks;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.Box;
 import javax.swing.JLabel;
@@ -28,9 +30,43 @@ public class BookListHelper {
 
     public void setBookOnList(ArrayList<Book> books, Box box) {
 
+        
+        MouseListener listener =  new MouseListener() {
+
+                @Override
+                public void mouseClicked(MouseEvent e) {
+
+                    
+                    view.getController().loadDetails();
+                }
+
+                @Override
+                public void mousePressed(MouseEvent e) {
+
+                }
+
+                @Override
+                public void mouseReleased(MouseEvent e) {
+
+                }
+
+                @Override
+                public void mouseEntered(MouseEvent e) {
+
+                }
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+
+                }
+            };
+        
+        
+        
+        
         for (Book book : books) {
             
-            BookPane pane = new BookPane(book, view);
+            BookPane pane = new BookPane(book, listener, view);
 
             pane.getInsets().set(10, 10, 10, 10);
 

@@ -9,6 +9,8 @@ import Controller.Components.BookPaneController;
 import Model.Book;
 import View.Researchers.ListOfBooks;
 import java.awt.Dimension;
+import java.awt.event.MouseListener;
+import java.util.EventListener;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -25,14 +27,14 @@ public class BookPane extends javax.swing.JPanel {
     private final Book book;
     private final ListOfBooks father;
     
-    public BookPane(Book book, ListOfBooks father) {
+    public BookPane(Book book, MouseListener event, ListOfBooks father) {
         
         initComponents();
         
         this.book = book;
         this.father = father;
         
-        controller = new BookPaneController(this, book, father);
+        controller = new BookPaneController(this, book, event, father);
         
         controller.start();
     }
@@ -184,9 +186,9 @@ public class BookPane extends javax.swing.JPanel {
         return book;
     }
 
-    public ListOfBooks getFather() {
-        return father;
-    }
+//    public ListOfBooks getFather() {
+//        return father;
+//    }
 
     public JLabel getjLabel4() {
         return jLabel4;
