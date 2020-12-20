@@ -17,25 +17,31 @@ import View.Rent.RentView;
  */
 public class MainMenuController {
     
-    private final MainMenu view;
+    public static MainMenu view;
+    public static RentView rentWindow;
 
     public MainMenuController(MainMenu view) {
-        this.view = view;
+        
+        MainMenuController.view = view;
+        
     }
-
-    public void openBookList() {
+    
+    public static void openBookList() {
    
         ListOfBooks bookList = new ListOfBooks();
+        
         bookList.setVisible(true);
-        view.getDesktop().add(bookList);
+        
+        MainMenuController.view.getDesktop().add(bookList);
     }
 
-    public void OpenRent() {
+    public static void OpenRent(Book book, User user) {
        
-        RentView rent = new RentView(view, true, new Book(), new User());
+        MainMenuController.rentWindow = new RentView(MainMenuController.view, true, book, user);
+   
+        MainMenuController.rentWindow.setVisible(true);
         
-        rent.setVisible(true);
-        view.getDesktop().add(rent);
+        MainMenuController.view.getDesktop().add(MainMenuController.rentWindow);
     }
     
     

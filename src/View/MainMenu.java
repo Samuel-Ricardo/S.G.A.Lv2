@@ -3,6 +3,8 @@ package View;
 import View.Researchers.ListOfStudents;
 import View.Registers.StudentRegistrationView;
 import Controller.MainMenuController;
+import Model.Book;
+import Model.User;
 import javax.swing.JOptionPane;
 import View.Registers.BookRegistrationView;
 import javax.swing.JDesktopPane;
@@ -212,7 +214,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_menIntCadUserActionPerformed
 
     private void menAlugLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menAlugLivroActionPerformed
-        controller.OpenRent();
+        MainMenuController.OpenRent(new Book(), new User());
     }//GEN-LAST:event_menAlugLivroActionPerformed
 
     private void menListaClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menListaClientesActionPerformed
@@ -222,7 +224,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_menListaClientesActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        controller.openBookList();
+        MainMenuController.openBookList();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
