@@ -39,8 +39,6 @@ public class RentController {
         this.rentDAO = new RentDAO();
         this.helper = new RentHelper(view,rentDAO);
         
-        bookList = new BookList(Box.createVerticalBox(),);
-        
         start();
     }
     
