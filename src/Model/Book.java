@@ -7,15 +7,8 @@ package Model;
 
 import DAO.ImageDAO;
 import Time.Time;
-import com.sun.swing.internal.plaf.basic.resources.basic;
-import java.io.InputStream;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.Icon;
 
 /**
  *
@@ -47,7 +40,12 @@ public class Book {
     public Book() {
         
         this.acquired = new Time();
-        image = new BackupImage();
+        this.image = new BackupImage();
+        this.author =  "Empty";
+        this.genre = "Empty";
+        this.name = "Empty";
+        this.publisher = "Empty";
+        this.stock = 0;
         
     }
 

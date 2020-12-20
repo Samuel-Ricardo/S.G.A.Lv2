@@ -10,5 +10,13 @@ package Factory;
  * @author Samuel
  */
 public class BookPaneFactory {
+
+    public BookPaneFactory() {
+    }
+    
+    
+    public static void generateBookPane(){
+        
+    }
     
 }

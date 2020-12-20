@@ -7,6 +7,7 @@ package Controller.Researchers;
 
 import Controller.Helper.Researcher.BookListHelper;
 import Controller.MainMenuController;
+import Controller.Rent.RentController;
 import DAO.BookDAO;
 import Model.Book;
 import Model.ImageFile;
@@ -19,7 +20,10 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.beans.PropertyVetoException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
@@ -298,7 +302,13 @@ public class BookListController {
         if(MainMenuController.RENT_WINDOW != null){
             if(MainMenuController.RENT_WINDOW.isClosed() == false){
                 
-                RentController.
+                RentController.loadBook(ListOfBooks.getSelectedBookPane().getBook(), view);
+                
+                try {
+                    view.setClosed(true);
+                } catch (PropertyVetoException ex) {
+                    Logger.getLogger(BookListController.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         }
         

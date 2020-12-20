@@ -12,6 +12,7 @@ import Model.Book;
 import Time.Time;
 import View.Components.BookPane;
 import View.Rent.RentWindow;
+import View.Researchers.ListOfBooks;
 
 /**
  *
@@ -46,7 +47,7 @@ public class RentController {
         
         if(view.getChosenBook() != null){
             
-            loadBook(view.getChosenBook());
+            loadBook(view.getChosenBook(), null);
         }
         
         loadDetails();
@@ -70,11 +71,20 @@ public class RentController {
         MainMenuController.openBookList();
     }
     
-    public static void loadBook(Book book) {
+    public static void loadBook(Book book, ListOfBooks parent) {
      
-        BookPane pane = BookPaneFactory.generatePane();
+        BookPane pane = new BookPane(book, null, parent);
         
+        view.getjPanelBookChosenBook().setVisible(true);
         view.getjPanelBookChosenBook().add(pane);
+        
+        view.getjPanelBookChosenBook().updateUI();
+        view.getjPanelBookChosenBook().revalidate();
+        view.getjPanelBookChosenBook().repaint();
+        
+        view.revalidate();
+        view.repaint();
+        view.updateUI();
     }
     
 }
