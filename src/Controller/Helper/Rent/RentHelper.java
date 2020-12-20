@@ -6,7 +6,6 @@
 package Controller.Helper.Rent;
 
 import DAO.RentDAO;
-import View.Rent.RentView;
 import View.Rent.RentWindow;
 
 /**

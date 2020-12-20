@@ -9,7 +9,6 @@ import Model.Book;
 import Model.User;
 import View.Researchers.ListOfBooks;
 import View.MainMenu;
-import View.Rent.RentView;
 import View.Rent.RentWindow;
 
 /**

@@ -11,7 +11,6 @@ import DAO.BookDAO;
 import DAO.RentDAO;
 import Time.Time;
 import View.Components.BookList;
-import View.Rent.RentView;
 import View.Rent.RentWindow;
 import javax.swing.Box;
 
@@ -23,19 +22,13 @@ public class RentController {
     
     private final RentWindow view;
     private final RentDAO rentDAO;
-    private final BookDAO bookDAO;
     private final RentHelper helper;
-    private BookList bookList;
-    private boolean bookListVisible = false;
     
     public RentController(RentWindow view,RentDAO rentDAO) {
         
         this.view = view;
         this.rentDAO = rentDAO;
         this.helper = new RentHelper(view,rentDAO);
-        this.bookDAO = new BookDAO();
-        
-        bookList = new BookList(Box.createVerticalBox(),bookDAO.selectAll());
         
         start();
     }
@@ -45,9 +38,8 @@ public class RentController {
         this.view = view;
         this.rentDAO = new RentDAO();
         this.helper = new RentHelper(view,rentDAO);
-        this.bookDAO = new BookDAO();
         
-        bookList = new BookList(Box.createVerticalBox(),bookDAO.selectAll());
+        bookList = new BookList(Box.createVerticalBox(),);
         
         start();
     }
