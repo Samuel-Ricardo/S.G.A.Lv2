@@ -8,6 +8,9 @@ package View.Rent;
 import Controller.Rent.RentController;
 import Model.Book;
 import Model.User;
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JPanel;
@@ -261,11 +264,15 @@ public class RentWindow extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButtonChooseBookActionPerformed
 
     private void jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelActionPerformed
-        // TODO add your handling code here:
+        try {
+            this.setClosed(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(RentWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonCancelActionPerformed
 
     private void jButtonRentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRentActionPerformed
-        // TODO add your handling code here:
+        controller.rent();
     }//GEN-LAST:event_jButtonRentActionPerformed
 
     private void jButtonChooseRenterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChooseRenterActionPerformed

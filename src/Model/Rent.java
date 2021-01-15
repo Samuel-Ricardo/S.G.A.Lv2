@@ -15,9 +15,8 @@ import java.util.Date;
 public class Rent {
     
     private Long id;
-    private Student student;
+    private User user;
     private Book book;
-    private User client;
     private Time rentedDate;
     private Time returnDate;
     private boolean returned;
@@ -25,10 +24,10 @@ public class Rent {
     private double penality;
     private String obrservation;
 
-    public Rent(Student student, Book book, User client, Time rented, Time returnDate, Time returnedDate, boolean delivered, double penality, String obrservation) {
-        this.student = student;
+    public Rent(User user, Book book, Time rented, Time returnDate, Time returnedDate, boolean delivered, double penality, String obrservation) {
+        
+        this.user = user;
         this.book = book;
-        this.client = client;
         this.rentedDate = rented;
         this.returnDate = returnDate;
         this.returned = delivered;
@@ -58,12 +57,12 @@ public class Rent {
         this.id = new Long (id);
     }
 
-    public Student getStudent() {
-        return student;
+    public User getUser() {
+        return user;
     }
 
-    public void setStudent(Student student) {
-        this.student = student;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Book getBook() {
@@ -112,14 +111,6 @@ public class Rent {
 
     public void setPenality(double penality) {
         this.penality = penality;
-    }
-
-    public User getClient() {
-        return client;
-    }
-
-    public void setClient(User client) {
-        this.client = client;
     }
 
     public String getObrservation() {

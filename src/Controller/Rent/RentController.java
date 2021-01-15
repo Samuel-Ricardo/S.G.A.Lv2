@@ -9,8 +9,10 @@ import Controller.Helper.Rent.RentHelper;
 import Controller.MainMenuController;
 import DAO.RentDAO;
 import Model.Book;
+import Model.Rent;
 import Model.Student;
 import Model.User;
+import Services.Dialoger;
 import Time.Time;
 import View.Components.BookPane;
 import View.Components.StudentPane;
@@ -158,5 +160,20 @@ public class RentController {
         view.repaint();
         view.updateUI();
         }
+
+    public void rent() {
+    
+        Rent rent = new Rent(view.getChosenUser(),
+                            view.getChosenBook(),
+                            helper.getRentedDate(),
+                            helper.getReturnDate(), 
+                            new Time(),
+                            false,
+                            helper.getPenality(),
+                            helper.getObrservation());
+        
+        rentDAO.insert(rent);
+        Dialoger.message(view, "O Livro "+view.getChosenBook().getName()+" foi alugado para "+view.getChosenUser()+" Com sucesso");
+    }
     
 }
