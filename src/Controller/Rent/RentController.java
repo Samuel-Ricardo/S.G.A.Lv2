@@ -88,7 +88,7 @@ public class RentController {
         
         if(view.getChosenUser() != null){
             
-            loadUser(view.getChosenUser());
+            loadUser(view.getChosenUser(), null);
         }
         
         loadDetails();
@@ -133,7 +133,17 @@ public class RentController {
      
         StudentPane pane = new StudentPane((Student) user, father);
         
-
+        view.getjPanelChosenRenter().setVisible(true);
+        view.getjPanelChosenRenter().removeAll();
+        view.getjPanelChosenRenter().add(pane);
+        
+        view.getjPanelChosenRenter().updateUI();
+        view.getjPanelChosenRenter().revalidate();
+        view.getjPanelChosenRenter().repaint();
+        
+        view.revalidate();
+        view.repaint();
+        view.updateUI();
     }
     
 }
