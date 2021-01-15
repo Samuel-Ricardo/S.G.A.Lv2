@@ -30,4 +30,11 @@ public class RentHelper {
         
         return new Time(text);
     }
+    
+     public Time getRenturnDate(){
+        
+        String text = view.getjFormattedTextFieldReturnDate().getText();
+        
+        return new Time(text);
+    }
 }
