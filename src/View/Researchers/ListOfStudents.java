@@ -5,6 +5,7 @@
  */
 package View.Researchers;
 
+import Controller.MainMenuController;
 import Controller.Researchers.BookListController;
 import Controller.Researchers.StudentListController;
 import View.Components.StudentPane;
@@ -307,6 +308,11 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
         getContentPane().add(jLabelStudentImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, 200, 200));
 
         jButton1.setText("Alugar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 490, 110, 40));
 
         pack();
@@ -323,6 +329,10 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
     private void jButtonDeletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeletActionPerformed
         controller.delete();
     }//GEN-LAST:event_jButtonDeletActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        controller.openRent();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

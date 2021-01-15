@@ -7,10 +7,13 @@ package Controller.Researchers;
 
 
 import Controller.Helper.Researcher.StudentListHelper;
+import Controller.MainMenuController;
+import Controller.Rent.RentController;
 import DAO.StudentDAO;
 import Model.Student;
 import Model.ImageFile;
 import Model.Student;
+import Model.User;
 import Services.Dialoger;
 import Time.Time;
 import View.Researchers.ListOfStudents;
@@ -358,4 +361,23 @@ public class StudentListController {
             loadAllStudents();
         }
     }
+
+    public void openRent() {
+     
+        if(MainMenuController.RENT_WINDOW != null){
+            if(MainMenuController.RENT_WINDOW.isClosed() == false ){
+                
+                RentController.loadUser(getUser(), view);
+            }else{
+                
+                MainMenuController.OpenRent(null, getUser());
+            }
+    }else{
+       
+        MainMenuController.OpenRent(null, getUser());
+    }    
 }
+
+    private static User getUser() {
+        return (User) ListOfStudents.getSelectedStudentPane().getStudent();
+    }
