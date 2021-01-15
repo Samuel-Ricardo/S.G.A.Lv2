@@ -10,6 +10,7 @@ import Model.User;
 import View.Researchers.ListOfBooks;
 import View.MainMenu;
 import View.Rent.RentWindow;
+import View.Researchers.ListOfStudents;
 
 /**
  *
@@ -19,6 +20,16 @@ public class MainMenuController {
     
     public static MainMenu view;
     public static RentWindow RENT_WINDOW;
+
+    public static void openStudentList() {
+        
+        ListOfStudents studentList = new ListOfStudents();
+        
+        studentList.setVisible(true);
+        
+        MainMenuController.view.getDesktop().add(studentList);
+    
+    }
 
     public MainMenuController(MainMenu view) {
         

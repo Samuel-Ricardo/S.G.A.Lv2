@@ -112,6 +112,11 @@ public class RentController {
         MainMenuController.openBookList();
     }
     
+    public static void chooseUser() {
+     
+        MainMenuController.openStudentList();
+    }
+    
     public static void loadBook(Book book, ListOfBooks parent) {
      
         BookPane pane = new BookPane(book, changeBook, parent);

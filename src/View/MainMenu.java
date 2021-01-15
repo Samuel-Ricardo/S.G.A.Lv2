@@ -214,13 +214,11 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_menIntCadUserActionPerformed
 
     private void menAlugLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menAlugLivroActionPerformed
-        MainMenuController.OpenRent(new Book(), new User());
+        MainMenuController.OpenRent(null, null);
     }//GEN-LAST:event_menAlugLivroActionPerformed
 
     private void menListaClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menListaClientesActionPerformed
-        ListOfStudents lt = new ListOfStudents();
-        lt.setVisible(true);
-        Desktop.add(lt);
+        MainMenuController.openStudentList();
     }//GEN-LAST:event_menListaClientesActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
