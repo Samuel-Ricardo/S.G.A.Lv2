@@ -31,10 +31,10 @@ public class RentHelper {
         return new Time(text);
     }
     
-     public Time getRenturnDate(){
+     public double getPenality(){
         
-        String text = view.getjFormattedTextFieldReturnDate().getText();
+        String text = view.getjTextFieldPenalty().getText();
         
-        return new Time(text);
+        return Double.parseDouble(text);
     }
 }
