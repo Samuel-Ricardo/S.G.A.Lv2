@@ -170,7 +170,7 @@ public class RentController {
                             new Time(),
                             false,
                             helper.getPenality(),
-                            helper.getObrservation());
+                            helper.getObservation());
         
         rentDAO.insert(rent);
         Dialoger.message(view, "O Livro "+view.getChosenBook().getName()+" foi alugado para "+view.getChosenUser()+" Com sucesso");
