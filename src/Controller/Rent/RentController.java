@@ -9,10 +9,14 @@ import Controller.Helper.Rent.RentHelper;
 import Controller.MainMenuController;
 import DAO.RentDAO;
 import Model.Book;
+import Model.Student;
+import Model.User;
 import Time.Time;
 import View.Components.BookPane;
+import View.Components.StudentPane;
 import View.Rent.RentWindow;
 import View.Researchers.ListOfBooks;
+import View.Researchers.ListOfStudents;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -82,6 +86,11 @@ public class RentController {
             loadBook(view.getChosenBook(), null);
         }
         
+        if(view.getChosenUser() != null){
+            
+            loadUser(view.getChosenUser());
+        }
+        
         loadDetails();
     }
 
@@ -118,6 +127,13 @@ public class RentController {
         view.revalidate();
         view.repaint();
         view.updateUI();
+    }
+    
+    public static void loadUser(User user, ListOfStudents father) {
+     
+        StudentPane pane = new StudentPane((Student) user, father);
+        
+
     }
     
 }

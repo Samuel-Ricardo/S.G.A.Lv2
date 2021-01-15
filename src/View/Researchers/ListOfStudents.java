@@ -110,6 +110,7 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
         jButtonUpdate = new javax.swing.JButton();
         jButtonDelet = new javax.swing.JButton();
         jLabelStudentImage = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -305,6 +306,9 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
         jLabelStudentImage.setText("Image");
         getContentPane().add(jLabelStudentImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, 200, 200));
 
+        jButton1.setText("Alugar");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 490, 110, 40));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -322,6 +326,7 @@ public class ListOfStudents extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonDelet;
     private javax.swing.JButton jButtonUpdate;
     private javax.swing.JComboBox<String> jComboBoxAddress;
