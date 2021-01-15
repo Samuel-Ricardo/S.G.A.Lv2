@@ -24,7 +24,10 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.beans.PropertyVetoException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JComboBox;
@@ -376,6 +379,12 @@ public class StudentListController {
        
         MainMenuController.OpenRent(null, getUser());
     }    
+        
+        try {
+            view.setClosed(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(StudentListController.class.getName()).log(Level.SEVERE, null, ex);
+        }
 }
 
     private static User getUser() {
