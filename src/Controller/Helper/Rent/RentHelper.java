@@ -6,6 +6,7 @@
 package Controller.Helper.Rent;
 
 import DAO.RentDAO;
+import Time.Time;
 import View.Rent.RentWindow;
 
 /**
@@ -20,5 +21,13 @@ public class RentHelper {
     public RentHelper(RentWindow view, RentDAO rentDAO) {
         this.view = view;
         this.rentDAO = rentDAO;
+    }
+    
+    
+    public Time getRentedDate(){
+        
+        String text = view.getjFormattedTextFieldRentDate().getText();
+        
+        return new Time(text);
     }
 }
