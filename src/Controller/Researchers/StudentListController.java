@@ -381,3 +381,5 @@ public class StudentListController {
     private static User getUser() {
         return (User) ListOfStudents.getSelectedStudentPane().getStudent();
     }
+    
+}

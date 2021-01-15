@@ -38,7 +38,11 @@ public class StudentPaneController {
             public void mouseClicked(MouseEvent e) {
              
                 ListOfStudents.setSelectedStudentPane(view);
-                father.getController().loadDetails();
+                
+                if(father != null){
+                    
+                    father.getController().loadDetails();
+                }
             }
 
             @Override

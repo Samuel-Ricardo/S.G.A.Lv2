@@ -186,6 +186,11 @@ public class RentWindow extends javax.swing.JInternalFrame {
         jLabel1.setText("Aluguel");
 
         jButtonChooseRenter.setText("Escolher Alugador");
+        jButtonChooseRenter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonChooseRenterActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -262,6 +267,10 @@ public class RentWindow extends javax.swing.JInternalFrame {
     private void jButtonRentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRentActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonRentActionPerformed
+
+    private void jButtonChooseRenterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChooseRenterActionPerformed
+        controller.chooseUser();
+    }//GEN-LAST:event_jButtonChooseRenterActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

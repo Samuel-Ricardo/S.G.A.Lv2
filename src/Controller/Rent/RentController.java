@@ -134,9 +134,17 @@ public class RentController {
         view.updateUI();
     }
     
-    public static void loadUser(User user, ListOfStudents father) {
+    public static void loadUser(User user, ListOfStudents studentFather) {
      
-        StudentPane pane = new StudentPane((Student) user, father);
+        StudentPane pane = null;
+        
+        if(user.getClass().equals(Student.class)){
+                   
+            pane = new StudentPane((Student) user, studentFather);
+        
+    }else{
+          // ClientPane pane = new ClientPane (Client, clientFather);
+        }
         
         view.getjPanelChosenRenter().setVisible(true);
         view.getjPanelChosenRenter().removeAll();
@@ -149,6 +157,6 @@ public class RentController {
         view.revalidate();
         view.repaint();
         view.updateUI();
-    }
+        }
     
 }
