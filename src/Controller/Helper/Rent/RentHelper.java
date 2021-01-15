@@ -37,4 +37,11 @@ public class RentHelper {
         
         return Double.parseDouble(text);
     }
+     
+     public String getObservation(){
+        
+        String text = view.getjTextAreaObservation().getText();
+        
+        return text;
+    }
 }
